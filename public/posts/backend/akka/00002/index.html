@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Akka
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Akka</div>
+
+        
+<div class="section" id="content">
+    2018-08-28 (Tue) &#183; 168 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/akka">
+                Akka
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h3 id="サンプルコードのダウンロード">サンプルコードのダウンロード</h3>
+
+<p><a href="https://github.com/akka-ja/akka-in-action">https://github.com/akka-ja/akka-in-action</a></p>
+
+<ul>
+<li>sbtはインタプリタを持っている</li>
+</ul>
+
+<h3 id="actorの4つの機能">Actorの4つの機能</h3>
+
+<ul>
+<li>create(生成)</li>
+<li>send/receive(送信/受信)</li>
+<li>become(状態変化)</li>
+<li>supervive(監督)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>パッケージ</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>akka.actor.{ActorSystem, Actor, Props}</td>
+<td>アクター関連のコード</td>
+</tr>
+
+<tr>
+<td>akka.event.Logging</td>
+<td>ロギング拡張</td>
+</tr>
+
+<tr>
+<td>akka.util.Timeout</td>
+<td>ask処理のタイムアウト</td>
+</tr>
+
+<tr>
+<td>akka.http.scaladsl.Http~</td>
+<td>HTTP関連のコード</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>package com.goticks
+
+import scala.concurrent.Future
+import akka.actor.ActorSystem
+import akka.event.Logging
+import akka.util.Timeout
+import akka.http.scaladsl.Http
+import akka.http.scaladsl.Http.ServerBinding
+import akka.stream.ActorMaterializer
+import com.typesafe.config.{ Config, ConfigFactory }
+import scala.util.{ Failure, Success }
+
+object Main extends App
+    with RequestTimeout {
+
+  val config = ConfigFactory.load()
+  val host = config.getString(&quot;http.host&quot;) // 設定からホスト名とポートを取得
+  val port = config.getInt(&quot;http.port&quot;)
+
+  implicit val system = ActorSystem()
+  implicit val ec = system.dispatcher  // bindAndHandleは暗黙のExecutionContextが必要
+
+  val api = new RestApi(system, requestTimeout(config)).routes // the RestApi provides a Route
+
+  implicit val materializer = ActorMaterializer()
+  val bindingFuture: Future[ServerBinding] =
+    Http().bindAndHandle(api, host, port) // HTTPサーバーの起動
+
+  val log =  Logging(system.eventStream, &quot;go-ticks&quot;)
+  bindingFuture.map { serverBinding =&gt;
+    log.info(s&quot;RestApi bound to ${serverBinding.localAddress} &quot;)
+  }.onComplete {
+    case Success(_) =&gt;
+      log.info(&quot;Success to bind to {}:{}&quot;, host, port)
+    case Failure(ex) =&gt;
+      log.error(ex, &quot;Failed to bind to {}:{}!&quot;, host, port)
+      system.terminate()
+  }
+}
+
+trait RequestTimeout {
+  import scala.concurrent.duration._
+  def requestTimeout(config: Config): Timeout = {
+    val t = config.getString(&quot;akka.http.server.request-timeout&quot;)
+    val d = Duration(t)
+    FiniteDuration(d.length, d.unit)
+  }
+}
+</code></pre>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

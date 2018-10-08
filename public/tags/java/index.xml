@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/java/</link>
+    <description>Recent content in Java on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Mar 2018 09:41:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javaの整理</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/java/00001/</link>
+      <pubDate>Fri, 02 Mar 2018 09:41:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/java/00001/</guid>
+      <description>今更ながら、JavaEE JSFで動くWebアプリケーションを開発してみる
+IDE : eclispe Oxygen.2 Release (4.7.2) Java : jdk1.8.0_121 Sever: GlassFish 4.3.1
+（Eclipseからサーバアダプタ（GlassFish Tools）経由でGlassFishを利用する）
+はじめに Java EE (Java Enterprise Edition) Java SE (Java Standard Edition)がデスクトップアプリケーション開発向けの仕様がまとめられているのに対して、
+企業向けWebアプリケーション開発の仕様・ライブラリがまとめられたモジュール群
+JSF (Java Server Faces)  コンポーネントベースのフレームワーク Viewは、xhtml  コンポーネントベースとアクションベース  アクションベース URLを元にアクションが決まり、そのアクション内で画面が決まる
+ コンポーネントベース URLを元に画面が決まり、その画面に対応するバッキングビーンが決まる
+  OracleJDK Javaを開発したSun Microsystemsを買収したOracleが提供しているプロジェクト （一応本家？）
+OpenJDK Sun Microsystemsが買収される前にJavaのオープンソース化を唱えて始まったプロジェクト
+Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Edition) 標準的なAPI（ライブラリ） System.</description>
+    </item>
+    
+  </channel>
+</rss>

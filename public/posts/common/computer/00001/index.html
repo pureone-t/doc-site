@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Mac
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Mac</div>
+
+        
+<div class="section" id="content">
+    2018-07-15 (Sun) &#183; 160 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/mac">
+                Mac
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h3 id="homebrew-install">Homebrew install</h3>
+
+<ol>
+<li>XcodeをApp storeからインストール</li>
+<li><code>$ xcode-select --install</code></li>
+<li><code>$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></li>
+<li>インストール完了確認
+<code>
+$ brew doctor
+Your system is ready to brew.
+</code></li>
+</ol>
+
+<h3 id="bash-profile">bash_profile</h3>
+
+<pre><code>$ touch ~/.bash_profile
+$ vi ~/bash_profile
+# PATH
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+</code></pre>
+
+<h3 id="bashrc">bashrc</h3>
+
+<pre><code>$ touch ~/.bashrc
+$ vi ~/.bashrc
+# Alias Setting
+alias ls='ls -FG'
+alias ll='ls -alFG'
+
+# Permmision View Setting
+if [ $UID -eq 0 ]; then
+    PS1=&quot;\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &quot;
+else
+    PS1=&quot;\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &quot;
+fi
+
+#for bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
+
+# git ps1
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+</code></pre>
+
+<h3 id="git">Git</h3>
+
+<pre><code>$ brew install git
+$ git config --global user.name HOGE
+$ git config --global user.email HOGE
+</code></pre>
+
+<h3 id="homebrew-cask">Homebrew cask</h3>
+
+<pre><code>$ brew tap caskroom/cask
+</code></pre>
+
+<h3 id="キー操作">キー操作</h3>
+
+<ol>
+<li><p>capsキーをcommandキーへ割り当て
+「システム環境変数」「キーボード」「修飾キー」<br />
+Caps Lockをcommandへ割り当てる</p></li>
+
+<li><p>コピーする時に元のスタイルを保持しない
+「システム環境変数」「キーボード」「ショートカット」「アプリケーション」「&rsquo;＋&rsquo;ボタン押下」<br />
+メニュータイトル：ペーストしてスタイルを合わせる
+キーボードショートカットキー：command + v</p></li>
+
+<li><p>ホスト名の変更
+ターミナルから変更する</p>
+
+<pre><code>$ hostname
+hogehoge
+$ scutil --set ComputerName 'mbp'
+$ hostname
+mbp
+</code></pre></li>
+</ol>
+
+<p>システム環境変数から変更する<br />
+「共有」「コンピュータ名を編集」</p>
+
+<h3 id="finder設定">Finder設定</h3>
+
+<p>環境設定　→　詳細　→　「すべてのファイル名拡張子を表示」にチェック</p>
+
+<h3 id="ドットファイルの表示方法">ドットファイルの表示方法</h3>
+
+<p>command + shit + &lsquo;.&rsquo;</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

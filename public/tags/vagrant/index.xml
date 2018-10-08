@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vagrant on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/vagrant/</link>
+    <description>Recent content in Vagrant on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jul 2018 01:10:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vagrant</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/vm/00002/</link>
+      <pubDate>Sun, 22 Jul 2018 01:10:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/vm/00002/</guid>
+      <description>プログラミング勉強用の仮想環境作成手順
+Vagrant インストール  インストーラーのダウンロード
+https://www.vagrantup.com/downloads.html vagrantXXX.dmg ダブルクリック vagrant.pkg ダブルクリック インストール  [pureone@mbp MyVagrant]$ vagrant -v Vagrant 2.1.2  boxの追加 (イメージファイルのようなもの)
+$ vagrant box list There are no installed boxes! Use `vagrant box add` to add some. $ vagrant box add centos/7 ..... 1) hyperv 2) libvirt 3) virtualbox 4) vmware_desktop Enter your choice: 3 An error occurred while downloading the remote file. The error message, if any, is reproduced below.</description>
+    </item>
+    
+  </channel>
+</rss>

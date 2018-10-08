@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/docker/</link>
+    <description>Recent content in Docker on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Aug 2018 03:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/docker/00001/</link>
+      <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/docker/00001/</guid>
+      <description> Docker Install https://store.docker.com/editions/community/docker-ce-desktop-mac
+- Get Docker - Docker.dmg 実行 - Applicationフォルダへ移動 - Docker.app 実行 - Docker認証
+Setting  ファイル共有 Preference -&amp;gt; File Sharing  </description>
+    </item>
+    
+    <item>
+      <title>Docker2</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/docker/00002/</link>
+      <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/docker/00002/</guid>
+      <description>Nginx $ docker pull nginx Using default tag: latest latest: Pulling from library/nginx be8881be8156: Pull complete 32d9726baeef: Pull complete 87e5e6f71297: Pull complete Digest: sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424 Status: Downloaded newer image for nginx:latest $ docker image ls REPOSITORY TAG IMAGE ID CREATED SIZE nginx latest c82521676580 2 weeks ago 109MB  イメージの確認
+$ docker image ls  起動
+$ docker container run --name webserver -d -p 80:80 nginx 456dc2e68cf15398c442ee4a0b1791c4b695764473b590c7924f49417fc4bed2  アクセスして確認してみる
+http://localhost:80/</description>
+    </item>
+    
+  </channel>
+</rss>

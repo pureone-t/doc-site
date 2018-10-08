@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Vagrant
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Vagrant</div>
+
+        
+<div class="section" id="content">
+    2018-07-22 (Sun) &#183; 169 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/vagrant">
+                Vagrant
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<p>プログラミング勉強用の仮想環境作成手順</p>
+
+<h3 id="vagrant-インストール">Vagrant インストール</h3>
+
+<ul>
+<li>インストーラーのダウンロード<br />
+<a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></li>
+<li>vagrantXXX.dmg ダブルクリック</li>
+<li>vagrant.pkg ダブルクリック</li>
+<li>インストール</li>
+</ul>
+
+<pre><code>[pureone@mbp MyVagrant]$ vagrant -v
+Vagrant 2.1.2
+</code></pre>
+
+<h3 id="boxの追加">boxの追加</h3>
+
+<p>(イメージファイルのようなもの)</p>
+
+<pre><code>$ vagrant box list
+There are no installed boxes! Use `vagrant box add` to add some.
+$ vagrant box add centos/7
+.....
+1) hyperv
+2) libvirt
+3) virtualbox
+4) vmware_desktop
+
+Enter your choice: 3
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+transfer closed with 112519168 bytes remaining to read
+</code></pre>
+
+<p>エラー発生！！！一旦、調べながら再チャレンジを試みる。</p>
+
+<pre><code>==&gt; box: Successfully added box 'centos/7' (v1804.02) for 'virtualbox'!
+</code></pre>
+
+<p>OK！！！</p>
+
+<h3 id="初期設定">初期設定</h3>
+
+<pre><code>$ vagrant init centos/7
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+$ ll
+-rw-r--r--  1 pureone  staff  3015  7 22 22:47 Vagrantfile
+</code></pre>
+
+<h3 id="起動">起動</h3>
+
+<pre><code>$ vagrant up # 起動
+$ vagrant status # 確認
+$ vagrant ssh # SSH接続
+$ vagrant halt # 終了
+</code></pre>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scala on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/scala/</link>
+    <description>Recent content in Scala on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Aug 2018 08:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Akka</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</link>
+      <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</guid>
+      <description>サンプルコードのダウンロード https://github.com/akka-ja/akka-in-action
+ sbtはインタプリタを持っている  Actorの4つの機能  create(生成) send/receive(送信/受信) become(状態変化) supervive(監督)     パッケージ 説明     akka.actor.{ActorSystem, Actor, Props} アクター関連のコード   akka.event.Logging ロギング拡張   akka.util.Timeout ask処理のタイムアウト   akka.http.scaladsl.Http~ HTTP関連のコード    package com.goticks import scala.concurrent.Future import akka.actor.ActorSystem import akka.event.Logging import akka.util.Timeout import akka.http.scaladsl.Http import akka.http.scaladsl.Http.ServerBinding import akka.stream.ActorMaterializer import com.typesafe.config.{ Config, ConfigFactory } import scala.util.{ Failure, Success } object Main extends App with RequestTimeout { val config = ConfigFactory.</description>
+    </item>
+    
+    <item>
+      <title>Akka</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</link>
+      <pubDate>Mon, 27 Aug 2018 08:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</guid>
+      <description>  sample code
+https://github.com/akka-ja/akka-in-action  Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
+アクター概要 メッセージキューに似ている
+ アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する
+ アクターは他のアクターにメッセージを送ることができる(キューとは異なる)
+ 全て非同期 =&amp;gt; メッセージの送受信でアプリケーションを構築する =&amp;gt; メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する
+  (補足 )リアクティブ宣言
+アクターシステム Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン
+val supervisor = ActorSystem(&amp;quot;TeamChat&amp;quot;)  ActorRefは、アクターにメッセージを送信するためのアドレス アクターシステム内でアクターを探したい場合はアクターパスを使う アクターパスはURLパス構造とアクターの階層をマッピングできる メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する
+ディスパッチャー アクターはディスパッチャーによってある時呼び出される ディスパッチャーはメールボックス内のメッセージをアクターにプッシュする アクターは落ちてきたメッセージを処理する 複数スレッドの場合は、複数のアクターが処理する
+アクターにメッセージを送信するときは、メールボックスにメッセージを残すだけ ディスパッチャーがアクターにメッセージをプッシュする
+用語 並行と並列 CPUがどんな様子で処理をするのか？という観点において、 - 並行(Concurrent)
+ある1つの時点で、複数タスクを切り替えることで同時処理を見せかけている - 並列(Pararell) ある1つの時点で、複数タスクを実際に(物理的に)同時処理している
+プロセスとスレッド  プロセス
+実行プログラムは親プロセスと共有し、実行状態(変数など)は子プロセス独自に割り当てられたメモリ領域を使う スレッド // TODO  スケールアウト スケーリング クラスタリング フェイルオーバー  稼働中のシステムで問題が生じてシステムやサーバーが停止してしまった際に、自動的に待機システムに切り替える仕組みをいいます。HA機能ともいわれ、システムの可用性を高めるための冗長化の一つです。 // TODO  </description>
+    </item>
+    
+    <item>
+      <title>Scala環境構築（VM）</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</link>
+      <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</guid>
+      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel  sbtの導入 公式サイトのドキュメントより、インストール方法を参照する。
+https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
+$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt  $ sbt sbt-version Getting org.</description>
+    </item>
+    
+  </channel>
+</rss>

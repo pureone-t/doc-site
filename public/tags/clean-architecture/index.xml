@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clean Architecture on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/clean-architecture/</link>
+    <description>Recent content in Clean Architecture on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Sep 2018 14:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/clean-architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>クリーンアーキテクチャ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/design/00001/</link>
+      <pubDate>Tue, 04 Sep 2018 14:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/design/00001/</guid>
+      <description>クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
+Scala sealed final class 継承できない final def f オーバーライドできない sealed class 同一ファイル内のクラスからのみ継承できる sealed class を継承したクラスは、別ファイルのクラスから継承できる
+型 型とは、本来何なのかについて整理
+=&amp;gt; 型によって取りうる値の範囲（種類を含む）が決まってくる
+// java int: -2147483648 ~ 2147483647 // haskell Bool: False|True data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値  型クラス 型は、値の範囲を決める 型クラスは、クラスの範囲を決める？
+型クラスは、振る舞いを定義するインターフェース
+型クラスのインスタンスである型 Eq型クラスのインスタンスInt型
+型クラスはアドホック多相(polymorphism)を実現している
+アドホック多相 オブジェクト指向 importは、どのプログラムに依存しているか見極めるたみに便利</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Javaの整理
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Javaの整理</div>
+
+        
+<div class="section" id="content">
+    2018-03-02 (Fri) &#183; 106 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/java">
+                Java
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<p>今更ながら、JavaEE JSFで動くWebアプリケーションを開発してみる</p>
+
+<p>IDE : eclispe Oxygen.2 Release (4.7.2)
+Java : jdk1.8.0_121
+Sever: GlassFish 4.3.1<br />
+（Eclipseからサーバアダプタ（GlassFish Tools）経由でGlassFishを利用する）</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="java-ee-java-enterprise-edition">Java EE (Java Enterprise Edition)</h3>
+
+<p>Java SE (Java Standard Edition)がデスクトップアプリケーション開発向けの仕様がまとめられているのに対して、<br />
+企業向けWebアプリケーション開発の仕様・ライブラリがまとめられたモジュール群</p>
+
+<h3 id="jsf-java-server-faces">JSF (Java Server Faces)</h3>
+
+<ul>
+<li>コンポーネントベースのフレームワーク</li>
+<li>Viewは、xhtml</li>
+</ul>
+
+<h4 id="コンポーネントベースとアクションベース">コンポーネントベースとアクションベース</h4>
+
+<ul>
+<li><p>アクションベース
+URLを元にアクションが決まり、そのアクション内で画面が決まる</p></li>
+
+<li><p>コンポーネントベース
+URLを元に画面が決まり、その画面に対応するバッキングビーンが決まる</p></li>
+</ul>
+
+<h3 id="oraclejdk">OracleJDK</h3>
+
+<p>Javaを開発したSun Microsystemsを買収したOracleが提供しているプロジェクト
+（一応本家？）</p>
+
+<h3 id="openjdk">OpenJDK</h3>
+
+<p>Sun Microsystemsが買収される前にJavaのオープンソース化を唱えて始まったプロジェクト</p>
+
+<h2 id="java-platform">Java Platform</h2>
+
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>MEANING</th>
+<th>REMARKS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Java SE (Java Platform, Standard Edition)</td>
+<td>標準的なAPI（ライブラリ）</td>
+<td><code>System.out.println</code>とか</td>
+</tr>
+
+<tr>
+<td>Java EE (Java 2 Platform, Enterprise Edition)</td>
+<td>SE にサーバ機能が追加されたAPI（ライブラリ）</td>
+<td><code>HttpServletRequest</code>とか</td>
+</tr>
+
+<tr>
+<td>Java ME (Java 2 Platform, Micro Edition)</td>
+<td>組み込み機器向けの機能セットとなるAPI（ライブラリ）</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="jsr-java-specification-request">JSR (Java Specification Request)</h2>
+
+<p>Javaに関する標準仕様は、 JCP (Java Community Process)という標準化手続きに則って決められている。<br />
+JCPでは、 JSR (Java Specification Request)という単位で仕様が策定されている。<br />
+JSRには番号が「JSR 346」のように振られている。</p>
+
+<h2 id="framework">Framework</h2>
+
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>Java Platform</th>
+<th>REMARKS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>JSF（Java Server Faces）</td>
+<td>Java EE</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>// TODO</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

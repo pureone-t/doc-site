@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration Test on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/integration-test/</link>
+    <description>Recent content in Integration Test on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Mar 2018 13:08:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/integration-test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>結合テスト仕様書の作成</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/test/00001/</link>
+      <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/test/00001/</guid>
+      <description>テストプロセス テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
+https://qiita.com/kawasima/items/1fed574e7456edbad727
+テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計 テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。
+第三者が客観的にテストすることができるような仕様書であるべき。
+そのために、
+- 要求事項や設計を満たすかどうか - どうやって確認するのか - 結果はどうあるべきなのか - 誰がやっても迷わず同じことが可能か を明確に定義する。（＝テスト設計）
+機能と観点を明確にしていく。
+テスト設計の手順  テスト種別の一覧表を作成する デシジョンテーブル  デシジョンテーブル http://gihyo.jp/dev/serial/01/test_up/0005
+様々な入力条件に対して、どのように動作（出力）するのか決定する表のこと
+カルノー図と組み合わせるとさらに便利
+https://qiita.com/kawasima/items/98b5636db0172d9b5051</description>
+    </item>
+    
+  </channel>
+</rss>

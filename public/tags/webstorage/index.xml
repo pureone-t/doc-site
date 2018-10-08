@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webstorage on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/webstorage/</link>
+    <description>Recent content in Webstorage on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Mar 2018 09:43:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/webstorage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebStorageについて</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/browser/00001/</link>
+      <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/browser/00001/</guid>
+      <description>ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
+WebStorageとCookieの違い 共通点 クライアント側で自由に書き換え可能
+保存するデータは「キーと値」のペアで取り扱われる
+相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化
+https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5
+サンプルで遊ぶ https://github.com/iv-garden/webstorage-sandbox
+デバック （chrome）
+開発者ツール「Source」</description>
+    </item>
+    
+  </channel>
+</rss>

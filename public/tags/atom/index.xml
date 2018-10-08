@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/atom/</link>
+    <description>Recent content in Atom on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Aug 2018 03:10:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Atom</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</link>
+      <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</guid>
+      <description>プログラミング用フォントの導入 RectyDiminished
+Atomインストール https://atom.io/
+Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
+- Show invisibles : chek on
+- Soft Wrap : chek on
+テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー Atomメニュー -&amp;gt; keymap
+&#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  dotinstall_pane alt + shift + d（ドットインストールタブを表示
+alt + shift + enter（再生）</description>
+    </item>
+    
+  </channel>
+</rss>

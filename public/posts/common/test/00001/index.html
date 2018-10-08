@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        結合テスト仕様書の作成
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">結合テスト仕様書の作成</div>
+
+        
+<div class="section" id="content">
+    2018-03-08 (Thu) &#183; 45 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/integration-test">
+                Integration Test
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h3 id="テストプロセス">テストプロセス</h3>
+
+<p>テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。</p>
+
+<p><a href="https://qiita.com/kawasima/items/1fed574e7456edbad727">https://qiita.com/kawasima/items/1fed574e7456edbad727</a></p>
+
+<h3 id="テスト工程">テスト工程</h3>
+
+<table>
+<thead>
+<tr>
+<th>TEST</th>
+<th>Ja-NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>UT</td>
+<td>単体テスト</td>
+<td>システム内のコンポーネントをテストする</td>
+</tr>
+
+<tr>
+<td>ITa</td>
+<td>結合テストa</td>
+<td>システム内のコンポーネントを結合してテストする</td>
+</tr>
+
+<tr>
+<td>ITa</td>
+<td>結合テストb</td>
+<td>他システム結合してテストする</td>
+</tr>
+
+<tr>
+<td>ST</td>
+<td>システムテスト</td>
+<td>システム全体でテストする</td>
+</tr>
+
+<tr>
+<td>UAT</td>
+<td>ユーザ受け入れテスト</td>
+<td>ユーザがテストする</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="テスト設計">テスト設計</h3>
+
+<p>テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。<br />
+第三者が客観的にテストすることができるような仕様書であるべき。</p>
+
+<p>そのために、<br />
+- 要求事項や設計を満たすかどうか
+- どうやって確認するのか
+- 結果はどうあるべきなのか
+- 誰がやっても迷わず同じことが可能か
+を明確に定義する。（＝テスト設計）</p>
+
+<p>機能と観点を明確にしていく。</p>
+
+<h4 id="テスト設計の手順">テスト設計の手順</h4>
+
+<ol>
+<li>テスト種別の一覧表を作成する</li>
+<li>デシジョンテーブル</li>
+</ol>
+
+<h3 id="デシジョンテーブル">デシジョンテーブル</h3>
+
+<p><a href="http://gihyo.jp/dev/serial/01/test_up/0005">http://gihyo.jp/dev/serial/01/test_up/0005</a><br />
+様々な入力条件に対して、どのように動作（出力）するのか決定する表のこと</p>
+
+<p>カルノー図と組み合わせるとさらに便利<br />
+<a href="https://qiita.com/kawasima/items/98b5636db0172d9b5051">https://qiita.com/kawasima/items/98b5636db0172d9b5051</a></p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

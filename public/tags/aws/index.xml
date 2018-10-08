@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/aws/</link>
+    <description>Recent content in Aws on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 May 2018 14:25:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS CLI (command line interface)についてのまとめ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</link>
+      <pubDate>Wed, 09 May 2018 14:25:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</guid>
+      <description>about AWSリソースをコマンドラインから操作できるツール
+install $ brew install python $ brew install awscli  configure $ aws configure AWS Access Key ID [None]: accesskeyId1 AWS Secret Access Key [None]: secretAccesskey1 Default region name [None]: ap-northeast-1 Default output format [None]: text $ $ aws configure --profile user2 AWS Access Key ID [None]: accesskeyId2 AWS Secret Access Key [None]: secretAccesskey2 Default region name [None]: ap-northeast-1 Default output format [None]: text  設定内容の確認
+$ cat .</description>
+    </item>
+    
+    <item>
+      <title>多要素認証（MFA）の設定</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</link>
+      <pubDate>Mon, 05 Mar 2018 14:04:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</guid>
+      <description>1.MFA用のアプリのインストール 今回はAnthyを使います。 Anthy を Apple Storeからインストールする。
+   Item Value     Code Japan(81)   Cellphone number 先頭0を除く電話番号   Backups Password パスワード    2.AWSのルートアカウントのMFA有効化 「IAM(Identity and Access Management)コンソール」を開く
+「ルートアカウントのMFAを有効化」より、「MFAの管理」を選択する
+  「仮想MFAデバイス」を選択する
+3.QRコードAnthyから読み込む AWSの「QAコード」をAnthyから読み込む
+Anthyの6桁の数字を認証コード1に入力する 30秒後に切り替える6桁の数字を認証コード2に入力する 「仮想MFAの有効化」を選択し、完了
+※念のためログインし直す</description>
+    </item>
+    
+  </channel>
+</rss>

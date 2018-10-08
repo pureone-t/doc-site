@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/posts/</link>
+    <description>Recent content in Posts on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>クリーンアーキテクチャ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/design/00001/</link>
+      <pubDate>Tue, 04 Sep 2018 14:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/design/00001/</guid>
+      <description>クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
+Scala sealed final class 継承できない final def f オーバーライドできない sealed class 同一ファイル内のクラスからのみ継承できる sealed class を継承したクラスは、別ファイルのクラスから継承できる
+型 型とは、本来何なのかについて整理
+=&amp;gt; 型によって取りうる値の範囲（種類を含む）が決まってくる
+// java int: -2147483648 ~ 2147483647 // haskell Bool: False|True data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値  型クラス 型は、値の範囲を決める 型クラスは、クラスの範囲を決める？
+型クラスは、振る舞いを定義するインターフェース
+型クラスのインスタンスである型 Eq型クラスのインスタンスInt型
+型クラスはアドホック多相(polymorphism)を実現している
+アドホック多相 オブジェクト指向 importは、どのプログラムに依存しているか見極めるたみに便利</description>
+    </item>
+    
+    <item>
+      <title>Akka</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</link>
+      <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</guid>
+      <description>サンプルコードのダウンロード https://github.com/akka-ja/akka-in-action
+ sbtはインタプリタを持っている  Actorの4つの機能  create(生成) send/receive(送信/受信) become(状態変化) supervive(監督)     パッケージ 説明     akka.actor.{ActorSystem, Actor, Props} アクター関連のコード   akka.event.Logging ロギング拡張   akka.util.Timeout ask処理のタイムアウト   akka.http.scaladsl.Http~ HTTP関連のコード    package com.goticks import scala.concurrent.Future import akka.actor.ActorSystem import akka.event.Logging import akka.util.Timeout import akka.http.scaladsl.Http import akka.http.scaladsl.Http.ServerBinding import akka.stream.ActorMaterializer import com.typesafe.config.{ Config, ConfigFactory } import scala.util.{ Failure, Success } object Main extends App with RequestTimeout { val config = ConfigFactory.</description>
+    </item>
+    
+    <item>
+      <title>Akka</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</link>
+      <pubDate>Mon, 27 Aug 2018 08:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</guid>
+      <description>  sample code
+https://github.com/akka-ja/akka-in-action  Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
+アクター概要 メッセージキューに似ている
+ アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する
+ アクターは他のアクターにメッセージを送ることができる(キューとは異なる)
+ 全て非同期 =&amp;gt; メッセージの送受信でアプリケーションを構築する =&amp;gt; メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する
+  (補足 )リアクティブ宣言
+アクターシステム Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン
+val supervisor = ActorSystem(&amp;quot;TeamChat&amp;quot;)  ActorRefは、アクターにメッセージを送信するためのアドレス アクターシステム内でアクターを探したい場合はアクターパスを使う アクターパスはURLパス構造とアクターの階層をマッピングできる メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する
+ディスパッチャー アクターはディスパッチャーによってある時呼び出される ディスパッチャーはメールボックス内のメッセージをアクターにプッシュする アクターは落ちてきたメッセージを処理する 複数スレッドの場合は、複数のアクターが処理する
+アクターにメッセージを送信するときは、メールボックスにメッセージを残すだけ ディスパッチャーがアクターにメッセージをプッシュする
+用語 並行と並列 CPUがどんな様子で処理をするのか？という観点において、 - 並行(Concurrent)
+ある1つの時点で、複数タスクを切り替えることで同時処理を見せかけている - 並列(Pararell) ある1つの時点で、複数タスクを実際に(物理的に)同時処理している
+プロセスとスレッド  プロセス
+実行プログラムは親プロセスと共有し、実行状態(変数など)は子プロセス独自に割り当てられたメモリ領域を使う スレッド // TODO  スケールアウト スケーリング クラスタリング フェイルオーバー  稼働中のシステムで問題が生じてシステムやサーバーが停止してしまった際に、自動的に待機システムに切り替える仕組みをいいます。HA機能ともいわれ、システムの可用性を高めるための冗長化の一つです。 // TODO  </description>
+    </item>
+    
+    <item>
+      <title>Atom</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</link>
+      <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</guid>
+      <description>プログラミング用フォントの導入 RectyDiminished
+Atomインストール https://atom.io/
+Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
+- Show invisibles : chek on
+- Soft Wrap : chek on
+テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー Atomメニュー -&amp;gt; keymap
+&#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  dotinstall_pane alt + shift + d（ドットインストールタブを表示
+alt + shift + enter（再生）</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/docker/00001/</link>
+      <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/docker/00001/</guid>
+      <description> Docker Install https://store.docker.com/editions/community/docker-ce-desktop-mac
+- Get Docker - Docker.dmg 実行 - Applicationフォルダへ移動 - Docker.app 実行 - Docker認証
+Setting  ファイル共有 Preference -&amp;gt; File Sharing  </description>
+    </item>
+    
+    <item>
+      <title>Docker2</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/docker/00002/</link>
+      <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/docker/00002/</guid>
+      <description>Nginx $ docker pull nginx Using default tag: latest latest: Pulling from library/nginx be8881be8156: Pull complete 32d9726baeef: Pull complete 87e5e6f71297: Pull complete Digest: sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424 Status: Downloaded newer image for nginx:latest $ docker image ls REPOSITORY TAG IMAGE ID CREATED SIZE nginx latest c82521676580 2 weeks ago 109MB  イメージの確認
+$ docker image ls  起動
+$ docker container run --name webserver -d -p 80:80 nginx 456dc2e68cf15398c442ee4a0b1791c4b695764473b590c7924f49417fc4bed2  アクセスして確認してみる
+http://localhost:80/</description>
+    </item>
+    
+    <item>
+      <title>Cyberduck</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/vm/00003/</link>
+      <pubDate>Sat, 28 Jul 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/vm/00003/</guid>
+      <description>Cyberduck インストール  ダウンロード https://cyberduck.io/
+ 「Download Cyberduck for Mac.」  インストール
+ 「Zipファイルをダブルクリック」 「アプリケーションをアプリケーションフォルダへ移動」  環境設定
+ ブラウザ　一般の「&amp;rsquo;.&amp;lsquo;で始まるファイルを表示」「ダブルクリックしたファイルを外部エディタで開く」にチェック 外部エディタ　   接続 仮想マシンの設定を確認
+$ vagrant ssh-config Host default HostName 127.0.0.1 User vagrant Port 2222 UserKnownHostsFile /dev/null StrictHostKeyChecking no PasswordAuthentication no IdentityFile /Users/pureone/workspace/MyVagrant/MyCentOS_scala/.vagrant/machines/default/virtualbox/private_key IdentitiesOnly yes LogLevel FATAL  新規接続　→　SFTP
+サーバ名：127.0.0.1 ポート：2222 ユーザ名：vagrant パスワード：vagrant : /Users/pureone/workspace/MyVagrant/MyCentOS_scala/.vagrant/machines/default/virtualbox/private_key
+ブックマークをつけておく！！</description>
+    </item>
+    
+    <item>
+      <title>Scala環境構築（VM）</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</link>
+      <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</guid>
+      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel  sbtの導入 公式サイトのドキュメントより、インストール方法を参照する。
+https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
+$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt  $ sbt sbt-version Getting org.</description>
+    </item>
+    
+    <item>
+      <title>Vagrant</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/vm/00002/</link>
+      <pubDate>Sun, 22 Jul 2018 01:10:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/vm/00002/</guid>
+      <description>プログラミング勉強用の仮想環境作成手順
+Vagrant インストール  インストーラーのダウンロード
+https://www.vagrantup.com/downloads.html vagrantXXX.dmg ダブルクリック vagrant.pkg ダブルクリック インストール  [pureone@mbp MyVagrant]$ vagrant -v Vagrant 2.1.2  boxの追加 (イメージファイルのようなもの)
+$ vagrant box list There are no installed boxes! Use `vagrant box add` to add some. $ vagrant box add centos/7 ..... 1) hyperv 2) libvirt 3) virtualbox 4) vmware_desktop Enter your choice: 3 An error occurred while downloading the remote file. The error message, if any, is reproduced below.</description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/computer/00001/</link>
+      <pubDate>Sun, 15 Jul 2018 23:40:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/computer/00001/</guid>
+      <description>Homebrew install  XcodeをApp storeからインストール $ xcode-select --install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  インストール完了確認  $ brew doctor Your system is ready to brew.   bash_profile $ touch ~/.bash_profile $ vi ~/bash_profile # PATH if [ -f ~/.bashrc ]; then . ~/.bashrc fi  bashrc $ touch ~/.bashrc $ vi ~/.bashrc # Alias Setting alias ls=&#39;ls -FG&#39; alias ll=&#39;ls -alFG&#39; # Permmision View Setting if [ $UID -eq 0 ]; then PS1=&amp;quot;\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; else PS1=&amp;quot;\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; fi #for bash_completion if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion fi # git ps1 source /usr/local/etc/bash_completion.</description>
+    </item>
+    
+    <item>
+      <title>Haskell</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/haskell/00001/</link>
+      <pubDate>Sat, 14 Jul 2018 12:39:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/haskell/00001/</guid>
+      <description>set up stack
+haskell platform
+$ brew install haskell-stack $ cd ~/ $ stack setup $ vi ~/.bashrc alias ghc=&amp;quot;stack ghc&amp;quot; alias ghci=&amp;quot;stack ghci&amp;quot; alias runghc=&amp;quot;stack runghc&amp;quot; alias runhaskell=&amp;quot;stack runghc&amp;quot;  Atom Editor Atomメニューより、「シェルコマンドをインストール」する
+$ vi ~/.bashrc export PATH=&#39;$HOME/.local/bin:$PATH&#39;  ###</description>
+    </item>
+    
+    <item>
+      <title>AWS CLI (command line interface)についてのまとめ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</link>
+      <pubDate>Wed, 09 May 2018 14:25:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</guid>
+      <description>about AWSリソースをコマンドラインから操作できるツール
+install $ brew install python $ brew install awscli  configure $ aws configure AWS Access Key ID [None]: accesskeyId1 AWS Secret Access Key [None]: secretAccesskey1 Default region name [None]: ap-northeast-1 Default output format [None]: text $ $ aws configure --profile user2 AWS Access Key ID [None]: accesskeyId2 AWS Secret Access Key [None]: secretAccesskey2 Default region name [None]: ap-northeast-1 Default output format [None]: text  設定内容の確認
+$ cat .</description>
+    </item>
+    
+    <item>
+      <title>SSL自己証明書の作成方法</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/network/00001/</link>
+      <pubDate>Mon, 02 Apr 2018 13:16:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/network/00001/</guid>
+      <description>SSLサーバ証明書 役割 SSLの接続要求時に認証情報・公開鍵情報等をひとつにまとめて、クライアントへ渡す クライアントは、受け取ったSSLサーバ証明書から、接続相手の情報を確認して通信を行う
+発行元  信頼された認証局が発行 信頼されていない認証局が発行（自己証明書（オレオレ））  中身  公開鍵の情報 コモンネーム 公開鍵の所有者情報 所有者を証明した認証局の情報 証明書の有効期限 証明書のシリアル番号 証明書の失効リスト参照先  Apache SSL 設定 ＜前提＞
+Windows Server 2012 Apache 2.4
+秘密鍵（server.key）の生成 $ cd ~/Apache24/bin $ openssl.exe genrsa -out ..\conf\server.key 1024  公開鍵（server.csr）の生成 $ openssl.exe req -new -key ..\conf\server.key -out ..\conf\server.csr -config ..\conf\openssl.cnf   Country Name (2 letter code) [AU]:JP // C:Country Name（国コード） State or Province Name (full name) [Some-State]:TOKYO // S:State or Province Name（都道府県） Locality Name (eg, city) []:KANDA // L:Locality Name（市区町村） Organization Name (eg, company) [Internet Widgits Pty Ltd]:NESCO // O:Organization Name（組織） Organizational Unit Name (eg, section) []:NESCO // OU:Organizational Unit Name（部門） Common Name (e.</description>
+    </item>
+    
+    <item>
+      <title>HTML5が使われているか確認する方法</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/html/00001/</link>
+      <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/html/00001/</guid>
+      <description>HTML5 markup detector HTML5 markup detector をインストールし、
+HTML5 で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。
+仕様 HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定し、
+アドレスバーの右端に&amp;rdquo;マル５&amp;rdquo;と表示してくれるものです</description>
+    </item>
+    
+    <item>
+      <title>WebStorageについて</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/browser/00001/</link>
+      <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/browser/00001/</guid>
+      <description>ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
+WebStorageとCookieの違い 共通点 クライアント側で自由に書き換え可能
+保存するデータは「キーと値」のペアで取り扱われる
+相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化
+https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5
+サンプルで遊ぶ https://github.com/iv-garden/webstorage-sandbox
+デバック （chrome）
+開発者ツール「Source」</description>
+    </item>
+    
+    <item>
+      <title>JavaScriptの正規表現</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/js/00001/</link>
+      <pubDate>Thu, 22 Mar 2018 14:22:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/js/00001/</guid>
+      <description> JavaScriptの正規表現 str = &amp;quot;S0009&amp;quot;; reg = /^[Ss]+\d{1,4}/ if (str.match(ret)) { alert(&amp;quot;Match!&amp;quot;); } alert(&amp;quot;No Match!&amp;quot;);  デバック方法  ソース内に debugger ステートメントを記述する console.log(&amp;ldquo;);  </description>
+    </item>
+    
+    <item>
+      <title>MySQL root ユーザのパスワード再設定</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/db/00001/</link>
+      <pubDate>Sun, 18 Mar 2018 13:14:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/db/00001/</guid>
+      <description>前提 # cat /etc/redhat-release CentOS Linux release 7.3.1611 (Core)  MySQLの設定変更 /etc/my.cnfにskip-grant-tablesを追加（パスワードなしでログインする）
+# vi /etc/my.cnf // ADD EOF &amp;quot;skip-grant-tables&amp;quot;  MySQLを使っているサービスを停止させる
+MySQLを再起動
+# systemctl restart mysqld  rootユーザのパスワード変更 # mysql -u root mysql&amp;gt; use mysql ・・・ Database changed mysql&amp;gt; UPDATE user SET authentication_string=password(&#39;新規パスワード&#39;) WHERE user=&#39;root&#39;; Query OK, 1 row affected, 1 warning (0.02 sec) Rows matched: 1 Changed: 1 Warnings: 1 mysql&amp;gt; flush privileges; Query OK, 0 rows affected (0.</description>
+    </item>
+    
+    <item>
+      <title>結合テスト仕様書の作成</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/test/00001/</link>
+      <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/test/00001/</guid>
+      <description>テストプロセス テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
+https://qiita.com/kawasima/items/1fed574e7456edbad727
+テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計 テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。
+第三者が客観的にテストすることができるような仕様書であるべき。
+そのために、
+- 要求事項や設計を満たすかどうか - どうやって確認するのか - 結果はどうあるべきなのか - 誰がやっても迷わず同じことが可能か を明確に定義する。（＝テスト設計）
+機能と観点を明確にしていく。
+テスト設計の手順  テスト種別の一覧表を作成する デシジョンテーブル  デシジョンテーブル http://gihyo.jp/dev/serial/01/test_up/0005
+様々な入力条件に対して、どのように動作（出力）するのか決定する表のこと
+カルノー図と組み合わせるとさらに便利
+https://qiita.com/kawasima/items/98b5636db0172d9b5051</description>
+    </item>
+    
+    <item>
+      <title>多要素認証（MFA）の設定</title>
+      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</link>
+      <pubDate>Mon, 05 Mar 2018 14:04:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</guid>
+      <description>1.MFA用のアプリのインストール 今回はAnthyを使います。 Anthy を Apple Storeからインストールする。
+   Item Value     Code Japan(81)   Cellphone number 先頭0を除く電話番号   Backups Password パスワード    2.AWSのルートアカウントのMFA有効化 「IAM(Identity and Access Management)コンソール」を開く
+「ルートアカウントのMFAを有効化」より、「MFAの管理」を選択する
+  「仮想MFAデバイス」を選択する
+3.QRコードAnthyから読み込む AWSの「QAコード」をAnthyから読み込む
+Anthyの6桁の数字を認証コード1に入力する 30秒後に切り替える6桁の数字を認証コード2に入力する 「仮想MFAの有効化」を選択し、完了
+※念のためログインし直す</description>
+    </item>
+    
+    <item>
+      <title>Javaの整理</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/java/00001/</link>
+      <pubDate>Fri, 02 Mar 2018 09:41:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/java/00001/</guid>
+      <description>今更ながら、JavaEE JSFで動くWebアプリケーションを開発してみる
+IDE : eclispe Oxygen.2 Release (4.7.2) Java : jdk1.8.0_121 Sever: GlassFish 4.3.1
+（Eclipseからサーバアダプタ（GlassFish Tools）経由でGlassFishを利用する）
+はじめに Java EE (Java Enterprise Edition) Java SE (Java Standard Edition)がデスクトップアプリケーション開発向けの仕様がまとめられているのに対して、
+企業向けWebアプリケーション開発の仕様・ライブラリがまとめられたモジュール群
+JSF (Java Server Faces)  コンポーネントベースのフレームワーク Viewは、xhtml  コンポーネントベースとアクションベース  アクションベース URLを元にアクションが決まり、そのアクション内で画面が決まる
+ コンポーネントベース URLを元に画面が決まり、その画面に対応するバッキングビーンが決まる
+  OracleJDK Javaを開発したSun Microsystemsを買収したOracleが提供しているプロジェクト （一応本家？）
+OpenJDK Sun Microsystemsが買収される前にJavaのオープンソース化を唱えて始まったプロジェクト
+Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Edition) 標準的なAPI（ライブラリ） System.</description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/node/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/node/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React.js</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/react/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/react/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/vue/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/vue/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

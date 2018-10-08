@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssl on doc site</title>
+    <link>https://pureone-t.github.io/doc-site/tags/ssl/</link>
+    <description>Recent content in Ssl on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Apr 2018 13:16:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-t.github.io/doc-site/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSL自己証明書の作成方法</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/network/00001/</link>
+      <pubDate>Mon, 02 Apr 2018 13:16:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/network/00001/</guid>
+      <description>SSLサーバ証明書 役割 SSLの接続要求時に認証情報・公開鍵情報等をひとつにまとめて、クライアントへ渡す クライアントは、受け取ったSSLサーバ証明書から、接続相手の情報を確認して通信を行う
+発行元  信頼された認証局が発行 信頼されていない認証局が発行（自己証明書（オレオレ））  中身  公開鍵の情報 コモンネーム 公開鍵の所有者情報 所有者を証明した認証局の情報 証明書の有効期限 証明書のシリアル番号 証明書の失効リスト参照先  Apache SSL 設定 ＜前提＞
+Windows Server 2012 Apache 2.4
+秘密鍵（server.key）の生成 $ cd ~/Apache24/bin $ openssl.exe genrsa -out ..\conf\server.key 1024  公開鍵（server.csr）の生成 $ openssl.exe req -new -key ..\conf\server.key -out ..\conf\server.csr -config ..\conf\openssl.cnf   Country Name (2 letter code) [AU]:JP // C:Country Name（国コード） State or Province Name (full name) [Some-State]:TOKYO // S:State or Province Name（都道府県） Locality Name (eg, city) []:KANDA // L:Locality Name（市区町村） Organization Name (eg, company) [Internet Widgits Pty Ltd]:NESCO // O:Organization Name（組織） Organizational Unit Name (eg, section) []:NESCO // OU:Organizational Unit Name（部門） Common Name (e.</description>
+    </item>
+    
+  </channel>
+</rss>
