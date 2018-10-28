@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Scala まとめ
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Scala まとめ</div>
+
+        
+<div class="section" id="content">
+    2018-10-22 (Mon) &#183; 241 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="object">object</h1>
+
+<h2 id="用途">用途</h2>
+
+<ul>
+<li>ユーティリティメソッド、グローバルなプロパティ値の置き場(equivalent of java static)</li>
+<li>同名クラスのオブジェクトのファクトリメソッド</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleSuper</span><span style="color:#f92672">(</span>a<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sample</span><span style="color:#f92672">(</span>b<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">SampleSuper</span><span style="color:#f92672">(</span>b<span style="color:#f92672">)</span>
+
+<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">SampleSuper</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>c<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">SampleSuper</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Sample</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Sample</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>c<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">SampleSuper</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Sample</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<ul>
+<li>new クラス名による直接的なオブジェクト生成よりも、実装の詳細を隠蔽できる（インターフェースのみ公開）</li>
+<li>サブクラスのインスタンスを返却することもできる</li>
+</ul>
+
+<h2 id="コンパニオンオブジェクト">コンパニオンオブジェクト</h2>
+
+<ul>
+<li>クラスと同じファイル内に、同じ名前で定義されたオブジェクト（シングルトン）のこと</li>
+</ul>
+
+<h1 id="trait">trait</h1>
+
+<h2 id="抽象メンバーの上書き">抽象メンバーの上書き</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">TraitA</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> name<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span>
+  <span style="color:#66d9ef">def</span> printName<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> println<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassA</span><span style="color:#f92672">(</span><span style="color:#66d9ef">val</span> name<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">TraitA</span></code></pre></div>
+<p>トレイとをミックスインしたクラスのコンストラクタで、抽象メンバー name をオーバーライドしている。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">ObjectA</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> a2 <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TraitA</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">val</span> name <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;tsuchiya&#34;</span> <span style="color:#f92672">}</span>  
+<span style="color:#f92672">}</span></code></pre></div>
+<p>name を上書きするような実装を与えてもよい</p>
+
+<h2 id="菱形継承問題">菱形継承問題</h2>
+
+<ul>
+<li>override指定なしのメソッド定義衝突はコンパイルエラー</li>
+</ul>
+
+<h2 id="初期化順の要注意">初期化順の要注意</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> foo<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// トレイトの初期化順序
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> bar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> foo <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;World&#34;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassB</span> <span style="color:#66d9ef">extends</span> B <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> foo <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+  <span style="color:#66d9ef">def</span> printBar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> println<span style="color:#f92672">(</span>bar<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClassB</span><span style="color:#f92672">).</span>printBar <span style="color:#75715e">// nullWorld
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 初期化順の回避1 遅延評価
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">C</span> <span style="color:#66d9ef">extends</span> A <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">lazy</span> <span style="color:#66d9ef">val</span> bar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> foo <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;World&#34;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassC</span> <span style="color:#66d9ef">extends</span> C <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> foo <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+  <span style="color:#66d9ef">def</span> printBar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> println<span style="color:#f92672">(</span>bar<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClassC</span><span style="color:#f92672">).</span>printBar <span style="color:#75715e">// HelloWorld
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 初期化順の回避2 関数化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">extends</span> A <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> bar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> foo <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;World&#34;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassD</span> <span style="color:#66d9ef">extends</span> D <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> foo <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+  <span style="color:#66d9ef">def</span> printBar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> println<span style="color:#f92672">(</span>bar<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClassD</span><span style="color:#f92672">).</span>printBar <span style="color:#75715e">// HelloWorld
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 初期化順の回避3 事前定義（Early Definitions）
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">E</span> <span style="color:#66d9ef">extends</span> A <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> bar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> foo <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;World&#34;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassE</span> <span style="color:#66d9ef">extends</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> foo <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">with</span> E <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> printBar<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> println<span style="color:#f92672">(</span>bar<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClassE</span><span style="color:#f92672">).</span>printBar <span style="color:#f92672">//</span> <span style="color:#a6e22e">HelloWorld</span></code></pre></div>
+<ul>
+<li>トレイトの初期化問題は継承されるトレイト側で解決したほうが良いことが多い</li>
+</ul>
+
+<h1 id="型パラメータ-type-parameter">型パラメータ(type parameter)</h1>
+
+<ul>
+<li>クラスが受け取ることのできるパラメータ</li>
+<li>命名規則としては、A.B..の順が多い</li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

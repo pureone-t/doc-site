@@ -40,18 +40,18 @@
     
     <title>
         
-        css
+        css 使い方（のまとめ）集
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">css</div>
+        <div class="section" id="title">css 使い方（のまとめ）集</div>
 
         
 <div class="section" id="content">
-    0001-01-01 (Mon) &#183; 0 words
+    2018-10-25 (Thu) &#183; 122 words
     
     <div class="tag-container">
         
@@ -65,6 +65,103 @@
     
     <hr/>
     
+
+<h2 id="class-属性と-id-属性の使い分け">class 属性と、id 属性の使い分け</h2>
+
+<h3 id="class-属性">class 属性</h3>
+
+<pre><code>&lt;p class=&quot;example01&quot;&gt;Example Class Attribute&lt;/p&gt;
+p.example01 { color:red; }
+&lt;!- p要素の指定は省略可能 -&gt;
+</code></pre>
+
+<ul>
+<li>class名 : example01</li>
+<li>要素名 : p</li>
+</ul>
+
+<p><strong>学級名</strong>
+- 種別名を割り当てる
+- 同一 class 名を１ページで何度でも使える</p>
+
+<h3 id="id-属性">id 属性</h3>
+
+<pre><code>&lt;p id=&quot;example02&quot;&gt;Example Id Attribute&lt;/p&gt;
+p#example02 { color:blue; }
+&lt;!- p要素の指定は省略可能 -&gt;
+</code></pre>
+
+<ul>
+<li>id名 : example02</li>
+<li>要素名 : p</li>
+</ul>
+
+<p><strong>学籍番号</strong>
+- 固有の名前を割り当てる
+- 同一 id 名は、１ページに1度しか使えない</p>
+
+<h2 id="スタイルの適用順序">スタイルの適用順序</h2>
+
+<ul>
+<li>同一属性内でのスタイル適用重複については、後勝</li>
+<li>id属性、class属性でスタイル適用が重複している場合は id属性が優先される
+```html
+<p class="example01" id="example02">Example Class</p></li>
+</ul>
+
+<p>p.example01 { color:red; }
+p.example01 { color:blue; } // こちらが優先される</p>
+
+<p>#example02 { color:bule; } // こちらが優先される
+p.example01 { color:red; }</p>
+
+<pre><code>
+## まとめ
+- 基本的には class 属性を使う
+- id属性を使う場合は、その要素を一意に特定する必要があるのか？、　特定した方がわかりやくすいのか？を判断基準にする。
+- id属性は、一意に要素を特定するという性質より、ページ内リンクの指定先として使用できる
+```html
+&lt;a href=&quot;#footer&quot;&gt;ページ末尾へ&lt;/a&gt;
+
+&lt;div id=&quot;footer&quot;&gt;
+  ページフッター
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="命名規則は-bem-block-element-modifier">命名規則は BEM(Block-Element-Modifier)</h2>
+
+<p>BEM表記</p>
+
+<pre><code>block__element--modifier
+</code></pre>
+
+<h3 id="exmaple">exmaple</h3>
+
+<ul>
+<li>block
+フロントエンドフレームワークでいうところのコンポーネントに近い
+
+<ul>
+<li>card</li>
+</ul></li>
+<li>element
+block 内にのみ存在できるもの
+
+<ul>
+<li>card<strong>title, card</strong>text, card__button</li>
+</ul></li>
+<li>modifier
+block または element を修飾したい場合に使用する
+
+<ul>
+<li>TODO</li>
+</ul></li>
+</ul>
+
+<h2 id="css設計">CSS設計</h2>
+
+<p>スタイル役割の分割</p>
+
 </div>
 
 

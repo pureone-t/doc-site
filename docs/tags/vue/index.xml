@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://pureone-t.github.io/doc-site/posts/frontend/vue/00001/</guid>
-      <description></description>
+      <description>前提 $ npm --version 6.2.0  vue-cli インストール $ npm install -g vue-cli ? Project name my-project ? Project description A Vue.js project ? Author XXX ? Vue build standalone #ここ重要# ? Install vue-router? No ? Use ESLint to lint your code? Yes ? Pick an ESLint preset Standard ? Set up unit tests Yes ? Pick a test runner jest ? Setup e2e tests with Nightwatch? Yes ? Should we run `npm install` for you after the project has been created?</description>
     </item>
     
   </channel>

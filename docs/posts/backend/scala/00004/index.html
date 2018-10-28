@@ -40,18 +40,18 @@
     
     <title>
         
-        Scala環境構築（VM）
+        Atom &#43; ensime で Scala 開発環境を構築する
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Scala環境構築（VM）</div>
+        <div class="section" id="title">Atom &#43; ensime で Scala 開発環境を構築する</div>
 
         
 <div class="section" id="content">
-    2018-07-24 (Tue) &#183; 106 words
+    2018-10-17 (Wed) &#183; 71 words
     
     <div class="tag-container">
         
@@ -61,68 +61,73 @@
             </a>
         </span>
         
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/atom">
+                Atom
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/ensime">
+                ensime
+            </a>
+        </span>
+        
     </div>
     
     <hr/>
     
 
-<h2 id="前提">前提</h2>
+<h2 id="atom-editor">Atom Editor</h2>
+
+<h3 id="パッケージのインストール">パッケージのインストール</h3>
 
 <ul>
-<li>vagrant導入済（<a href="#">vagrat導入手順</a>）</li>
-<li>FTPクライアントの導入（<a href="#">cyber</a>）</li>
+<li>language-scala</li>
+<li>Ensime
+setting -&gt; Sbt Exec = /usr/local/bin/sbt</li>
 </ul>
 
-<h2 id="仮想環境のメモリ増設">仮想環境のメモリ増設</h2>
+<h3 id="sbtのプラグイン設定">sbtのプラグイン設定</h3>
 
-<pre><code>$ vi Vagrantfile
-config.vm.provider &quot;virtualbox&quot; do |vb|
-#   # Display the VirtualBox GUI when booting the machine
-#   vb.gui = true
-#
-#   # Customize the amount of memory on the VM:
-  vb.memory = &quot;2048&quot;
-end
-$ vagrant reload
+<pre><code>$ vi ~/.sbt/1.0/plugins/plugins.sbt
+addSbtPlugin(&quot;org.ensime&quot; % &quot;sbt-ensime&quot; % &quot;2.5.1&quot;)
 </code></pre>
 
-<h2 id="javaのインストール">javaのインストール</h2>
+<h3 id="global設定の追加">global設定の追加</h3>
 
-<p><code>$ sudo yum -y install java-1.8.0-openjdk-devel</code></p>
+<pre><code>$ vi ~/.sbt/1.0/global.sbt
 
-<h2 id="sbtの導入">sbtの導入</h2>
+import org.ensime.EnsimeKeys._
+
+ensimeIgnoreMissingDirectories := true
+</code></pre>
+
+<h3 id="ローカルプロジェクトより設定を読み込む">ローカルプロジェクトより設定を読み込む</h3>
+
+<p>プロジェクトのルートで以下を実行</p>
+
+<pre><code>$ cd ~/PROJECT_ROOT
+$ sbt ensimeConfig
+</code></pre>
+
+<h3 id="ensime-start">ensime start</h3>
 
 <ul>
-<li>公式サイトのドキュメントより、インストール方法を参照する。<br />
-
-<ul>
-<li><a href="https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html">https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html</a>
-<code>
-$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-$ sudo yum install sbt
-</code></li>
-</ul></li>
+<li>プロジェクトを開いて、 command + shift + p</li>
+<li>command + shift + p</li>
+<li>ensime start</li>
 </ul>
 
-<pre><code>$ sbt sbt-version
-Getting org.scala-sbt sbt 1.1.6  (this may take some time)...
-</code></pre>
+<h3 id="エラーが発生した場合">エラーが発生した場合</h3>
 
-<h2 id="文字コードの設定">文字コードの設定</h2>
-
-<p><code>$ rpm -ql sbt</code></p>
-
-<h2 id="sbtからscalaを起動">sbtからScalaを起動</h2>
-
-<pre><code>$ mkdir scala_lessons
-$ cd scala_lessons
-$ echo 'scalaVersion := &quot;2.13.0-M4&quot;' &gt; build.sbt
-$ sbt
-sbt:scala_lessons&gt; help
-sbt:scala_lessons&gt; console
-scala&gt; :quit
-sbt:scala_lessons&gt; exit
-</code></pre>
+<ul>
+<li>ensime パッケージを Atom からアンインストール</li>
+<li><code>$ apm install ensime/ensime-atom</code></li>
+<li>Atom 再起動</li>
+<li>プロジェクトを開いて、 command + shift + p</li>
+<li>ensime start</li>
+</ul>
 
 </div>
 

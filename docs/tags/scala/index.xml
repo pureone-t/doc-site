@@ -6,10 +6,40 @@
     <description>Recent content in Scala on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Aug 2018 08:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Oct 2018 08:20:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureone-t.github.io/doc-site/tags/scala/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scala まとめ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</link>
+      <pubDate>Mon, 22 Oct 2018 08:20:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</guid>
+      <description>object 用途  ユーティリティメソッド、グローバルなプロパティ値の置き場(equivalent of java static) 同名クラスのオブジェクトのファクトリメソッド  class SampleSuper(a: Int) class Sample(b: Int) extends SampleSuper(b) object SampleSuper { def apply(c: Int): SampleSuper = new Sample(c) } object Sample { def apply(c: Int): SampleSuper = new Sample(c) }  new クラス名による直接的なオブジェクト生成よりも、実装の詳細を隠蔽できる（インターフェースのみ公開） サブクラスのインスタンスを返却することもできる  コンパニオンオブジェクト  クラスと同じファイル内に、同じ名前で定義されたオブジェクト（シングルトン）のこと  trait 抽象メンバーの上書き trait TraitA { val name: String def printName: String = println(name) } class ClassA(val name: String) extends TraitA トレイとをミックスインしたクラスのコンストラクタで、抽象メンバー name をオーバーライドしている。</description>
+    </item>
+    
+    <item>
+      <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</link>
+      <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
+$ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
+    </item>
+    
+    <item>
+      <title>Scala Test</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</link>
+      <pubDate>Wed, 10 Oct 2018 14:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</guid>
+      <description>Property Based Testing テストデータを半自動生成する
+Mastering flatMap ! flatten と map が、同時に行われるのが flatMap - map -&amp;gt; flatten
+Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatMap(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).map(identity) // List(List(1, 2, 3), List(), List(5.6)): scala.collection.SeqSeq(Seq(1,2,3), Seq(), Seq(5.6)) flatten { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) flatMap { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) map { x =&amp;gt; x.</description>
+    </item>
     
     <item>
       <title>Akka</title>
@@ -50,9 +80,9 @@ val supervisor = ActorSystem(&amp;quot;TeamChat&amp;quot;)  ActorRefは、アク
       <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
       
       <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</guid>
-      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel  sbtの導入 公式サイトのドキュメントより、インストール方法を参照する。
-https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
-$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt  $ sbt sbt-version Getting org.</description>
+      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel
+sbtの導入  公式サイトのドキュメントより、インストール方法を参照する。
+ https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html  $ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt    $ sbt sbt-version Getting org.</description>
     </item>
     
   </channel>

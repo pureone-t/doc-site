@@ -6,10 +6,116 @@
     <description>Recent content on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Oct 2018 01:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Oct 2018 22:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureone-t.github.io/doc-site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>関数型プログラミング</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/design/00002/</link>
+      <pubDate>Sun, 28 Oct 2018 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/design/00002/</guid>
+      <description>Scala sealed final class 継承できない final def f オーバーライドできない sealed class 同一ファイル内のクラスからのみ継承できる sealed class を継承したクラスは、別ファイルのクラスから継承できる
+型 型とは、本来何なのかについて整理
+=&amp;gt; 型によって取りうる値の範囲（種類を含む）が決まってくる
+// java int: -2147483648 ~ 2147483647 // haskell Bool: False|True data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値  型クラス 型は、値の範囲を決める 型クラスは、クラスの範囲を決める？
+型クラスは、振る舞いを定義するインターフェース
+型クラスのインスタンスである型 Eq型クラスのインスタンスInt型
+型クラスはアドホック多相(polymorphism)を実現している
+アドホック多相 オブジェクト指向 importは、どのプログラムに依存しているか見極めるたみに便利</description>
+    </item>
+    
+    <item>
+      <title>エンジニアの目標設定に関するあれこれ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/common/engineer/00001/</link>
+      <pubDate>Thu, 25 Oct 2018 15:25:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/common/engineer/00001/</guid>
+      <description>目標設定をする理由  営業職などと違い、数字での評価が難しい 日々の行動指針を考えるキッカケになる 努力が結果に結び使いない場合のロードマップを把握するキッカケになる  SMART の法則 正しい目標設定をすると、効率が上がる（＝生産性）
+ Specific（明確な） Measurable（測定可能な） Achievable（達成可能な） Relevant （関連性がある） Time-bound （期限のある）  運用 - インシデント件数に対応件数と対応時間の数値化およびグラフにおける視覚化
+開発 - チーム内でのレビューに何らかの工夫を凝らす ？
+その他 - 技術MTGを月1 ? - フロントエンドスキルとの付き合い方 - データサイエンスとの付き合い方</description>
+    </item>
+    
+    <item>
+      <title>css 使い方（のまとめ）集</title>
+      <link>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</link>
+      <pubDate>Thu, 25 Oct 2018 14:25:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</guid>
+      <description>class 属性と、id 属性の使い分け class 属性 &amp;lt;p class=&amp;quot;example01&amp;quot;&amp;gt;Example Class Attribute&amp;lt;/p&amp;gt; p.example01 { color:red; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   class名 : example01 要素名 : p  学級名 - 種別名を割り当てる - 同一 class 名を１ページで何度でも使える
+id 属性 &amp;lt;p id=&amp;quot;example02&amp;quot;&amp;gt;Example Id Attribute&amp;lt;/p&amp;gt; p#example02 { color:blue; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   id名 : example02 要素名 : p  学籍番号 - 固有の名前を割り当てる - 同一 id 名は、１ページに1度しか使えない
+スタイルの適用順序  同一属性内でのスタイル適用重複については、後勝 id属性、class属性でスタイル適用が重複している場合は id属性が優先される ```html Example Class</description>
+    </item>
+    
+    <item>
+      <title>Scala まとめ</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</link>
+      <pubDate>Mon, 22 Oct 2018 08:20:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</guid>
+      <description>object 用途  ユーティリティメソッド、グローバルなプロパティ値の置き場(equivalent of java static) 同名クラスのオブジェクトのファクトリメソッド  class SampleSuper(a: Int) class Sample(b: Int) extends SampleSuper(b) object SampleSuper { def apply(c: Int): SampleSuper = new Sample(c) } object Sample { def apply(c: Int): SampleSuper = new Sample(c) }  new クラス名による直接的なオブジェクト生成よりも、実装の詳細を隠蔽できる（インターフェースのみ公開） サブクラスのインスタンスを返却することもできる  コンパニオンオブジェクト  クラスと同じファイル内に、同じ名前で定義されたオブジェクト（シングルトン）のこと  trait 抽象メンバーの上書き trait TraitA { val name: String def printName: String = println(name) } class ClassA(val name: String) extends TraitA トレイとをミックスインしたクラスのコンストラクタで、抽象メンバー name をオーバーライドしている。</description>
+    </item>
+    
+    <item>
+      <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</link>
+      <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
+$ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
+    </item>
+    
+    <item>
+      <title>Scala Test</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</link>
+      <pubDate>Wed, 10 Oct 2018 14:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</guid>
+      <description>Property Based Testing テストデータを半自動生成する
+Mastering flatMap ! flatten と map が、同時に行われるのが flatMap - map -&amp;gt; flatten
+Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatMap(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).map(identity) // List(List(1, 2, 3), List(), List(5.6)): scala.collection.SeqSeq(Seq(1,2,3), Seq(), Seq(5.6)) flatten { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) flatMap { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) map { x =&amp;gt; x.</description>
+    </item>
+    
+    <item>
+      <title>Laravel 開発環境構築</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/php/00001/</link>
+      <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/php/00001/</guid>
+      <description>Laravel  PHPフレームワーク
+ Artisan (アーティザン) Laravel用コマンドラインインターフェース  Composer  ライブラリ依存管理ツール vendorフォルダにダウンロードする  Homestead  Laravel公式のvagrant box  Vagrant  VirtualBox   Vagrant インストール  https://www.vagrantup.com/downloads.html  VirtualBox インストール  https://www.virtualbox.org/wiki/Downloads  OS X hosts   Homestead vagrant box ダウンロード $ vagrant box add laravel/homestead  Composer インストール $ brew install composer  Homestead インストール $ mkdir laravel-app $ cd laravel-app $ git clone https://github.com/laravel/homestead.git Homestead $ cd Homestead $ bash init.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/python/00001/</link>
+      <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/python/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/r/00001/</link>
+      <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/r/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>default</title>
+      <link>https://pureone-t.github.io/doc-site/posts/backend/go/00001/</link>
+      <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-t.github.io/doc-site/posts/backend/go/00001/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About Me</title>
@@ -30,15 +136,19 @@ GitHub</description>
       <pubDate>Tue, 04 Sep 2018 14:00:00 +0900</pubDate>
       
       <guid>https://pureone-t.github.io/doc-site/posts/common/design/00001/</guid>
-      <description>クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
-Scala sealed final class 継承できない final def f オーバーライドできない sealed class 同一ファイル内のクラスからのみ継承できる sealed class を継承したクラスは、別ファイルのクラスから継承できる
-型 型とは、本来何なのかについて整理
-=&amp;gt; 型によって取りうる値の範囲（種類を含む）が決まってくる
-// java int: -2147483648 ~ 2147483647 // haskell Bool: False|True data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値  型クラス 型は、値の範囲を決める 型クラスは、クラスの範囲を決める？
-型クラスは、振る舞いを定義するインターフェース
-型クラスのインスタンスである型 Eq型クラスのインスタンスInt型
-型クラスはアドホック多相(polymorphism)を実現している
-アドホック多相 オブジェクト指向 importは、どのプログラムに依存しているか見極めるたみに便利</description>
+      <description> Robert C. Martin
+クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
+イントロダクション  ソフトウェアを「一度だけ」動かすのは、難しいことではない ソフトウェアを「正しく」動かすのは、とても難しい
+ ソフトウェアを正しくすると以下のようなことが発生する
+ 大量のエンジニアが不要になる 課題の管理が不要になる 欠陥（バグ）が減る 変更が容易になる 労力が最小になり、機能性と柔軟性は最大になる   アーキテクチャ  アーキテクチャの魅力は構造である 重要性は変更コストで表現できる プログラムの構成要素をどのように組み立てるか  設計とアーキテクチャ  両者に違いはない ソフトウェアアーキテクチャの目的は、システム開発・保守するための人材を必要最小限にすること  数値で見る崩壊とエンジニアの給料  リリースごとに生産性は低下、エンジニアの給与は増加  価値  完璧に動作するが変更できないソフトウェア（振る舞い） 完璧に動作しないが変更できるソフトウェア（アーキテクチャ）
+ ソフトウェア＝ソフトであるべき
+ アイゼンハワーのマトリクス
+ 振る舞いは、緊急だが重要ではない アーキテクチャは、緊急ではないが重要である よくある間違いは、緊急だが重要ではないタスクを最優先してしまうこと   ソフトウェアアーキテクト  機能よりもその構造を重要視する 機能を簡単に開発・変更・拡張できる構造（アーキテクチャ）を構築する
+ コンポーネントの分離
+ データ管理
+ 機能
+ ソフトウェアは科学である
+ テストはバグが存在しないことを実証できないが、バグが存在することは実証できる つまり反証可能なモジュール単位としての構造が大事   </description>
     </item>
     
     <item>
@@ -134,9 +244,9 @@ $ vagrant ssh-config Host default HostName 127.0.0.1 User vagrant Port 2222 User
       <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
       
       <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</guid>
-      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel  sbtの導入 公式サイトのドキュメントより、インストール方法を参照する。
-https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
-$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt  $ sbt sbt-version Getting org.</description>
+      <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel
+sbtの導入  公式サイトのドキュメントより、インストール方法を参照する。
+ https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html  $ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt    $ sbt sbt-version Getting org.</description>
     </item>
     
     <item>
@@ -320,16 +430,7 @@ Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Editi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://pureone-t.github.io/doc-site/posts/frontend/vue/00001/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-t.github.io/doc-site/posts/frontend/css/00001/</guid>
-      <description></description>
+      <description>前提 $ npm --version 6.2.0  vue-cli インストール $ npm install -g vue-cli ? Project name my-project ? Project description A Vue.js project ? Author XXX ? Vue build standalone #ここ重要# ? Install vue-router? No ? Use ESLint to lint your code? Yes ? Pick an ESLint preset Standard ? Set up unit tests Yes ? Pick a test runner jest ? Setup e2e tests with Nightwatch? Yes ? Should we run `npm install` for you after the project has been created?</description>
     </item>
     
   </channel>

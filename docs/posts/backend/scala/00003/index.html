@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Scala Test
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Scala Test</div>
+
+        
+<div class="section" id="content">
+    2018-10-10 (Wed) &#183; 137 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h2 id="property-based-testing">Property Based Testing</h2>
+
+<p>テストデータを半自動生成する</p>
+
+<h2 id="mastering-flatmap">Mastering flatMap !</h2>
+
+<p>flatten と map が、同時に行われるのが flatMap
+- map -&gt; flatten</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">)).</span>flatten<span style="color:#f92672">(</span>identity<span style="color:#f92672">)</span> <span style="color:#75715e">// List(1, 2, 3, 5.6): scala.collection.Seq
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">)).</span>flatMap<span style="color:#f92672">(</span>identity<span style="color:#f92672">)</span> <span style="color:#75715e">// List(1, 2, 3, 5.6): scala.collection.Seq
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">)).</span>map<span style="color:#f92672">(</span>identity<span style="color:#f92672">)</span> <span style="color:#f92672">//</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">scala.collection.Seq</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> flatten <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> x<span style="color:#f92672">.</span>size <span style="color:#f92672">}</span> <span style="color:#75715e">// コンパイルエラー
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> flatMap <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> x<span style="color:#f92672">.</span>size <span style="color:#f92672">}</span> <span style="color:#75715e">// コンパイルエラー
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> map <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> x<span style="color:#f92672">.</span>size <span style="color:#f92672">}</span> <span style="color:#f92672">//</span>  <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">scala.collection.Seq</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> flatten <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>size<span style="color:#f92672">)</span> <span style="color:#f92672">}</span> <span style="color:#75715e">// List(3, 0, 1): scala.collection.Seq
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> flatMap <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>size<span style="color:#f92672">)</span> <span style="color:#f92672">}</span> <span style="color:#75715e">// List(3, 0, 1): scala.collection.Seq
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(),</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#ae81ff">5.6</span><span style="color:#f92672">))</span> map <span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>size<span style="color:#f92672">)</span> <span style="color:#f92672">}</span> <span style="color:#f92672">//</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">))</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">scala.collection.Seq</span></code></pre></div>
+<h2 id="cake-パターン">Cake パターン</h2>
+
+<p>NG</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">UserRepository</span>
+
+<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">UserRepositoryImpl</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">UserRepository</span>
+
+<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> rep <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">UserRepositoryImpl</span>
+<span style="color:#f92672">}</span></code></pre></div>
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-t.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

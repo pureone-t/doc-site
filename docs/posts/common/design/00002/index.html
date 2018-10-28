@@ -40,86 +40,88 @@
     
     <title>
         
-        Scala
+        関数型プログラミング
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Scala</div>
+        <div class="section" id="title">関数型プログラミング</div>
 
         
 <div class="section" id="content">
+    2018-10-28 (Sun) &#183; 52 words
     
-    <ul>
+    <div class="tag-container">
         
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/scala/00005/">
-              Scala まとめ
-          </a>
-            
-              &nbsp; 2018-10-22 (Mon)
-            
-        </li>
+        <span class="tag">
+            <a href="https://pureone-t.github.io/doc-site/tags/functional-programming">
+                functional programming
+            </a>
+        </span>
         
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/scala/00004/">
-              Atom &#43; ensime で Scala 開発環境を構築する
-          </a>
-            
-              &nbsp; 2018-10-17 (Wed)
-            
-        </li>
-        
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/scala/00003/">
-              Scala Test
-          </a>
-            
-              &nbsp; 2018-10-10 (Wed)
-            
-        </li>
-        
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/akka/00002/">
-              Akka
-          </a>
-            
-              &nbsp; 2018-08-28 (Tue)
-            
-        </li>
-        
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/akka/00001/">
-              Akka
-          </a>
-            
-              &nbsp; 2018-08-27 (Mon)
-            
-        </li>
-        
-        <li>
-          <a href="https://pureone-t.github.io/doc-site/posts/backend/scala/00002/">
-              Scala環境構築（VM）
-          </a>
-            
-              &nbsp; 2018-07-24 (Tue)
-            
-        </li>
-        
-    </ul>
+    </div>
+    
+    <hr/>
+    
+
+<h3 id="scala-sealed">Scala sealed</h3>
+
+<p><code>final class</code> 継承できない
+<code>final def f</code> オーバーライドできない
+<code>sealed class</code> 同一ファイル内のクラスからのみ継承できる
+<code>sealed class</code> を継承したクラスは、別ファイルのクラスから継承できる</p>
+
+<h3 id="型">型</h3>
+
+<p>型とは、本来何なのかについて整理</p>
+
+<p><strong>=&gt; 型によって取りうる値の範囲（種類を含む）が決まってくる</strong></p>
+
+<pre><code>// java
+int: -2147483648 ~ 2147483647
+
+// haskell
+Bool: False|True
+data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値
+</code></pre>
+
+<h3 id="型クラス">型クラス</h3>
+
+<p>型は、値の範囲を決める
+型クラスは、クラスの範囲を決める？</p>
+
+<p>型クラスは、振る舞いを定義するインターフェース</p>
+
+<p>型クラスのインスタンスである型
+Eq型クラスのインスタンスInt型</p>
+
+<p>型クラスはアドホック多相(polymorphism)を実現している</p>
+
+<h3 id="アドホック多相">アドホック多相</h3>
+
+<h3 id="オブジェクト指向">オブジェクト指向</h3>
+
+<p>importは、どのプログラムに依存しているか見極めるたみに便利</p>
+
 </div>
 
 
         
-        <div class="section bottom-menu">
+<div class="section bottom-menu">
+    
 <hr />
 <p>
 
     <a href="https://pureone-t.github.io/doc-site/">
     Top</a>
     &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
     
 
     <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
@@ -128,8 +130,9 @@
       &nbsp;&nbsp;&nbsp;
     <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
 </p>
+
 </div>
-        
+
 
         <div class="section footer">&copy; 2018 pureone-t.</div>
     </div>

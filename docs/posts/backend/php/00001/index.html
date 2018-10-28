@@ -40,24 +40,24 @@
     
     <title>
         
-        Scala環境構築（VM）
+        Laravel 開発環境構築
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Scala環境構築（VM）</div>
+        <div class="section" id="title">Laravel 開発環境構築</div>
 
         
 <div class="section" id="content">
-    2018-07-24 (Tue) &#183; 106 words
+    2018-10-10 (Wed) &#183; 112 words
     
     <div class="tag-container">
         
         <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/scala">
-                Scala
+            <a href="https://pureone-t.github.io/doc-site/tags/php">
+                php
             </a>
         </span>
         
@@ -66,63 +66,94 @@
     <hr/>
     
 
-<h2 id="前提">前提</h2>
+<ul>
+<li>Laravel
 
 <ul>
-<li>vagrant導入済（<a href="#">vagrat導入手順</a>）</li>
-<li>FTPクライアントの導入（<a href="#">cyber</a>）</li>
-</ul>
-
-<h2 id="仮想環境のメモリ増設">仮想環境のメモリ増設</h2>
-
-<pre><code>$ vi Vagrantfile
-config.vm.provider &quot;virtualbox&quot; do |vb|
-#   # Display the VirtualBox GUI when booting the machine
-#   vb.gui = true
-#
-#   # Customize the amount of memory on the VM:
-  vb.memory = &quot;2048&quot;
-end
-$ vagrant reload
-</code></pre>
-
-<h2 id="javaのインストール">javaのインストール</h2>
-
-<p><code>$ sudo yum -y install java-1.8.0-openjdk-devel</code></p>
-
-<h2 id="sbtの導入">sbtの導入</h2>
+<li>PHPフレームワーク<br /></li>
+<li>Artisan (アーティザン)
+Laravel用コマンドラインインターフェース</li>
+</ul></li>
+<li>Composer
 
 <ul>
-<li>公式サイトのドキュメントより、インストール方法を参照する。<br />
+<li>ライブラリ依存管理ツール</li>
+<li>vendorフォルダにダウンロードする</li>
+</ul></li>
+<li>Homestead
 
 <ul>
-<li><a href="https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html">https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html</a>
-<code>
-$ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-$ sudo yum install sbt
-</code></li>
+<li>Laravel公式のvagrant box</li>
+</ul></li>
+<li>Vagrant
+
+<ul>
+<li>VirtualBox</li>
 </ul></li>
 </ul>
 
-<pre><code>$ sbt sbt-version
-Getting org.scala-sbt sbt 1.1.6  (this may take some time)...
+<h2 id="vagrant-インストール">Vagrant インストール</h2>
+
+<ul>
+<li><a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></li>
+</ul>
+
+<h2 id="virtualbox-インストール">VirtualBox インストール</h2>
+
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>
+
+<ul>
+<li>OS X hosts</li>
+</ul></li>
+</ul>
+
+<h2 id="homestead-vagrant-box-ダウンロード">Homestead vagrant box ダウンロード</h2>
+
+<pre><code>$ vagrant box add laravel/homestead
 </code></pre>
 
-<h2 id="文字コードの設定">文字コードの設定</h2>
+<h2 id="composer-インストール">Composer インストール</h2>
 
-<p><code>$ rpm -ql sbt</code></p>
-
-<h2 id="sbtからscalaを起動">sbtからScalaを起動</h2>
-
-<pre><code>$ mkdir scala_lessons
-$ cd scala_lessons
-$ echo 'scalaVersion := &quot;2.13.0-M4&quot;' &gt; build.sbt
-$ sbt
-sbt:scala_lessons&gt; help
-sbt:scala_lessons&gt; console
-scala&gt; :quit
-sbt:scala_lessons&gt; exit
+<pre><code>$ brew install composer
 </code></pre>
+
+<h2 id="homestead-インストール">Homestead インストール</h2>
+
+<pre><code>$ mkdir laravel-app
+$ cd laravel-app
+$ git clone https://github.com/laravel/homestead.git Homestead
+$ cd Homestead
+$ bash init.sh
+Homestead initialized!
+</code></pre>
+
+<h2 id="ssh-generate">SSH Generate</h2>
+
+<pre><code>$ mkdir ~/.ssh/homestead
+$ ssh-keygen -t rsa
+$ Enter file in which to save the key (/Users/XXX/.ssh/id_rsa): /Users/XXX/.ssh/homestead/id_rsa
+</code></pre>
+
+<h2 id="homestead-の設定ファイルの編集">Homestead の設定ファイルの編集</h2>
+
+<pre><code>$ vi Homestead.yaml
+#folders:
+#    - map: ~/code
+folders:
+    - map: ~/code
+</code></pre>
+
+<h2 id="仮想マシンの起動">仮想マシンの起動</h2>
+
+<pre><code>$ cd laravel-app/Homestead
+$ vagrant up
+$ vagrant ssh
+$ cd code
+$ composer create-project laravel/laravel --prefer-dist Laravel
+</code></pre>
+
+<p>##</p>
 
 </div>
 
