@@ -51,7 +51,7 @@
 
         
 <div class="section" id="content">
-    2018-09-04 (Tue) &#183; 45 words
+    2018-09-04 (Tue) &#183; 233 words
     
     <div class="tag-container">
         
@@ -156,6 +156,103 @@
 <li>テストはバグが存在しないことを実証できないが、バグが存在することは実証できる</li>
 <li>つまり反証可能なモジュール単位としての構造が大事</li>
 </ul></li>
+</ul>
+
+<h1 id="ポリモーフィズムの利点-依存関係逆転の原則">ポリモーフィズムの利点＝依存関係逆転の原則</h1>
+
+<ul>
+<li>上位レベルの関数が下位レベルの関数を呼び出す場合、依存関係は <code>上位 -&gt; 下位</code> だが、インタフェースを使用することで、<code>下位 -&gt; 上位</code> に依存する</li>
+<li>ビジネスルールがUI、DBに依存するのではなく、UI、DBがビジネスルールに依存するが正しい
+
+<ul>
+<li><code>UI -&gt; Business Rle &lt;- DB</code></li>
+<li>依存関係逆転の原則は、ビジネスルールへの依存を制御する</li>
+<li>独立デプロイ可能性</li>
+</ul></li>
+<li>OOは、ポリモーフィズムを使用してソースコードの依存関係を制御する能力のこと</li>
+</ul>
+
+<h1 id="関数型プログラミング">関数型プログラミング</h1>
+
+<ul>
+<li><p>不変性</p>
+
+<ul>
+<li>競合、デットロック、並行更新は、可変を許容する変数が原因</li>
+<li>副作用のコンポーネントは分離し、トランザクション制御により、上記の問題は全て失敗させればいい</li>
+</ul></li>
+
+<li><p>イベントソーシング</p>
+
+<ul>
+<li>状態ではなく取引（トランザクション）を保存する戦略</li>
+<li>ソースコードの管理システムと同じ</li>
+<li>関数型である</li>
+</ul></li>
+</ul>
+
+<h1 id="solid">SOLID</h1>
+
+<h2 id="srp-single-responsibilty-principle-単一責任の原則">SRP (Single Responsibilty Principle) 単一責任の原則</h2>
+
+<ul>
+<li>モジュールを変更する理由はひとつだけでなければならない</li>
+<li>モジュールはひとつのアクターに対して責務を負う
+アクターがポイント</li>
+<li>給与システムの例
+<code>Scala
+class Employee {
+def calculatePay(pay: Pay): Unit
+def reportHours(report: Report): Unit
+def save(data: Data): Unit
+}
+</code></li>
+<li><code>calculatePay()</code> は経理部が使用し、報告先は CFO</li>
+<li><code>reportHours()</code> は人事部が使用し、報告先は COO</li>
+
+<li><p><code>save()</code> はデータベース管理者が使用し、報告先は CTO</p></li>
+
+<li><p>アクターが異なるため、上記の各メソッドは、別のクラスに分割するべき</p></li>
+
+<li><p>データと関数に切り分け、分割する
+-&gt; Facadeパターン</p></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeFacade</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> calculatePay <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PayCalculator</span><span style="color:#f92672">).</span>calculatePay
+  <span style="color:#66d9ef">def</span> reportHours <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HourReporter</span><span style="color:#f92672">).</span>reportHours
+  <span style="color:#66d9ef">def</span> save <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EmployeeSaver</span><span style="color:#f92672">).</span>saveEmployee
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PayCalculator</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">def</span> calculatePay <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span> <span style="color:#75715e">// EmployeeData }
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HourReporter</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">def</span> reportHours <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span> <span style="color:#75715e">// EmployeeData }
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeSaver</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">def</span> saveEmployee <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span> <span style="color:#75715e">// EmployeeData }
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeData</span> <span style="color:#f92672">{}</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#75715e">// データを内部にもつFacade
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeFacade</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">val</span> employData<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">EmployeeData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EmployeeData</span><span style="color:#f92672">()</span>
+  <span style="color:#66d9ef">def</span> calculatePay <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PayCalculator</span><span style="color:#f92672">).</span>calculatePay
+  <span style="color:#66d9ef">def</span> reportHours <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HourReporter</span><span style="color:#f92672">).</span>reportHours
+  <span style="color:#66d9ef">def</span> save <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PayCalculator</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">def</span> calculatePay <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span> <span style="color:#75715e">// EmployeeData }
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HourReporter</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">def</span> reportHours <span style="color:#66d9ef">=</span> <span style="color:#f92672">???</span> <span style="color:#75715e">// EmployeeData }
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeData</span> <span style="color:#f92672">{}</span></code></pre></div>
+<h2 id="ocp-open-closed-principle-オープン-クローズドの原則">OCP (Open-Closed Principle) オープン・クローズドの原則</h2>
+
+<ul>
+<li>モジュールは</li>
+</ul>
+
+<h2 id="lsp-liskov-substitution-principle-リスコフの置換原則">LSP (Liskov Substitution Principle) リスコフの置換原則</h2>
+
+<h2 id="isp-interface-segregation-principle-インタフェース分離の原則">ISP (Interface Segregation Principle) インタフェース分離の原則</h2>
+
+<h2 id="dip-dependency-inversion-principle-依存関係逆転の原則">DIP (Dependency Inversion Principle) 依存関係逆転の原則</h2>
+
+<ul>
+<li>下位レベルのモジュールは、上位レベルのモジュールに依存するべき</li>
 </ul>
 
 </div>
