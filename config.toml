@@ -1,5 +1,5 @@
 
-baseurl                 = "https://pureone-t.github.io/doc-site/" # Your domain name. Must end with "/"
+baseurl                 = "https://pureonedoya.github.io/doc-site/" # Your domain name. Must end with "/"
 languageCode            = "en-us"
 defaultContentLanguage  = "en"
 isMultilingual          = false
