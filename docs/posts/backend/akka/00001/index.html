@@ -13,23 +13,32 @@
 <meta name="description" content="doc site by pureone-t.">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
-<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
 <meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
 <meta name="og:type" content="website">
-<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
 
-<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
-<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
 
 
 
@@ -51,18 +60,18 @@
 
         
 <div class="section" id="content">
-    2018-08-27 (Mon) &#183; 57 words
+    2018-08-27 (Mon) &#183; 78 words
     
     <div class="tag-container">
         
         <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/akka">
+            <a href="https://pureonedoya.github.io/doc-site/tags/akka">
                 Akka
             </a>
         </span>
         
         <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/scala">
+            <a href="https://pureonedoya.github.io/doc-site/tags/scala">
                 Scala
             </a>
         </span>
@@ -72,47 +81,49 @@
     <hr/>
     
 
-<ul>
-<li>sample code<br />
-<a href="https://github.com/akka-ja/akka-in-action">https://github.com/akka-ja/akka-in-action</a></li>
-</ul>
-
-<h2 id="akkaとは">Akkaとは</h2>
+<h1 id="akkaとは">Akkaとは</h1>
 
 <ul>
 <li>並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する</li>
-
-<li><p>アクターはスケールアップとスケールアウトのためのプログラミングモデル</p>
-
-<h4 id="アクター概要">アクター概要</h4></li>
-
-<li><p>メッセージキューに似ている</p></li>
-
-<li><p>アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する</p></li>
-
-<li><p>アクターは他のアクターにメッセージを送ることができる(キューとは異なる)</p></li>
-
-<li><p>全て非同期
-=&gt; <strong>メッセージの送受信でアプリケーションを構築する</strong>
-=&gt; <strong>メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する</strong></p></li>
+<li>アクターはスケールアップとスケールアウトのためのプログラミングモデル<br /></li>
 </ul>
 
-<p>(補足 )リアクティブ宣言</p>
+<h2 id="アクター概要">アクター概要</h2>
 
-<h3 id="アクターシステム">アクターシステム</h3>
+<ul>
+<li>メッセージキューに似ている<br /></li>
+<li>アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する<br /></li>
+<li>アクターは他のアクターにメッセージを送ることができる(キューとは異なる)</li>
+<li>全て非同期</li>
+<li><strong>メッセージの送受信でアプリケーションを構築する</strong></li>
+<li><strong>メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する</strong></li>
+</ul>
 
-<p>Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること
-アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン</p>
+<h2 id="リアクティブ-宣言">リアクティブ (宣言)</h2>
 
-<pre><code>val supervisor = ActorSystem(&quot;TeamChat&quot;)
-</code></pre>
+<ul>
+<li>ブロッキングI/Oは並列化を制限するため → <strong>ノンブロッキングI/O</strong></li>
+<li>同期処理は並列化を制限するため → <strong>非同期</strong></li>
+<li>ポーリングはリソース消費機会を減らしてしまうため → <strong>イベント駆動</strong></li>
+<li>回復力(レジリエンス)</li>
+<li>弾力性(需要が小さければリソース減、需要が大きければリソース増)</li>
+</ul>
 
-<p>ActorRefは、アクターにメッセージを送信するためのアドレス
+<h2 id="アクターシステム">アクターシステム</h2>
+
+<ul>
+<li>Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること</li>
+<li>アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン
+<code>
+val supervisor = ActorSystem(&quot;TeamChat&quot;)
+</code>
+ActorRefは、アクターにメッセージを送信するためのアドレス
 アクターシステム内でアクターを探したい場合はアクターパスを使う
 アクターパスはURLパス構造とアクターの階層をマッピングできる
-メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する</p>
+メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する</li>
+</ul>
 
-<h3 id="ディスパッチャー">ディスパッチャー</h3>
+<h2 id="ディスパッチャー">ディスパッチャー</h2>
 
 <p>アクターはディスパッチャーによってある時呼び出される
 ディスパッチャーはメールボックス内のメッセージをアクターにプッシュする
@@ -122,9 +133,14 @@
 <p>アクターにメッセージを送信するときは、メールボックスにメッセージを残すだけ
 ディスパッチャーがアクターにメッセージをプッシュする</p>
 
-<h2 id="用語">用語</h2>
+<h2 id="並行処理の歴史">並行処理の歴史</h2>
 
-<h4 id="並行と並列">並行と並列</h4>
+<ul>
+<li>OSのプロセスによる並行処理</li>
+<li>スレッドによる並行処理</li>
+</ul>
+
+<h3 id="並行と並列">並行と並列</h3>
 
 <p>CPUがどんな様子で処理をするのか？という観点において、
 - 並行(Concurrent)<br />
@@ -151,7 +167,29 @@
 
 <ul>
 <li>稼働中のシステムで問題が生じてシステムやサーバーが停止してしまった際に、自動的に待機システムに切り替える仕組みをいいます。HA機能ともいわれ、システムの可用性を高めるための冗長化の一つです。
-// TODO</li>
+// TODO
+<br /></li>
+</ul>
+
+<h1 id="akka-によるスケール">Akka によるスケール</h1>
+
+<ul>
+<li>ここでは、アクターをオブジェクトとして理解しておく</li>
+<li>インメモリ状態を使い続ける</li>
+<li>状態の変更は、メッセージとしてログに送られる</li>
+</ul>
+
+<p>// TODO</p>
+
+<p>CPUがどんな様子で処理をするのか？という観点において、</p>
+
+<h2 id="参考になる資料">参考になる資料</h2>
+
+<ul>
+<li><p><a href="https://www.slideshare.net/sifue/akka-39611889">https://www.slideshare.net/sifue/akka-39611889</a></p></li>
+
+<li><p>sample code<br />
+<a href="https://github.com/akka-ja/akka-in-action">https://github.com/akka-ja/akka-in-action</a></p></li>
 </ul>
 
 </div>
@@ -163,7 +201,7 @@
 <hr />
 <p>
 
-    <a href="https://pureone-t.github.io/doc-site/">
+    <a href="https://pureonedoya.github.io/doc-site/">
     Top</a>
     &nbsp;&nbsp;&nbsp;
     
@@ -173,11 +211,11 @@
         
     
 
-    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
 </p>
 
 </div>

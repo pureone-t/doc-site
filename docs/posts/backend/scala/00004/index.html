@@ -13,23 +13,32 @@
 <meta name="description" content="doc site by pureone-t.">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
-<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
 <meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
 <meta name="og:type" content="website">
-<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
 
-<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
-<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
 
 
 
@@ -40,36 +49,24 @@
     
     <title>
         
-        Atom &#43; ensime で Scala 開発環境を構築する
+        エラーハンドリング
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Atom &#43; ensime で Scala 開発環境を構築する</div>
+        <div class="section" id="title">エラーハンドリング</div>
 
         
 <div class="section" id="content">
-    2018-10-17 (Wed) &#183; 71 words
+    2018-11-18 (Sun) &#183; 14 words
     
     <div class="tag-container">
         
         <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/scala">
+            <a href="https://pureonedoya.github.io/doc-site/tags/scala">
                 Scala
-            </a>
-        </span>
-        
-        <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/atom">
-                Atom
-            </a>
-        </span>
-        
-        <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/ensime">
-                ensime
             </a>
         </span>
         
@@ -78,55 +75,21 @@
     <hr/>
     
 
-<h2 id="atom-editor">Atom Editor</h2>
+<h2 id="参考スライド">参考スライド</h2>
 
-<h3 id="パッケージのインストール">パッケージのインストール</h3>
+<p><a href="http://gakuzzzz.github.io/slides/error_handling_practice/#24">http://gakuzzzz.github.io/slides/error_handling_practice/#24</a></p>
 
-<ul>
-<li>language-scala</li>
-<li>Ensime
-setting -&gt; Sbt Exec = /usr/local/bin/sbt</li>
-</ul>
-
-<h3 id="sbtのプラグイン設定">sbtのプラグイン設定</h3>
-
-<pre><code>$ vi ~/.sbt/1.0/plugins/plugins.sbt
-addSbtPlugin(&quot;org.ensime&quot; % &quot;sbt-ensime&quot; % &quot;2.5.1&quot;)
-</code></pre>
-
-<h3 id="global設定の追加">global設定の追加</h3>
-
-<pre><code>$ vi ~/.sbt/1.0/global.sbt
-
-import org.ensime.EnsimeKeys._
-
-ensimeIgnoreMissingDirectories := true
-</code></pre>
-
-<h3 id="ローカルプロジェクトより設定を読み込む">ローカルプロジェクトより設定を読み込む</h3>
-
-<p>プロジェクトのルートで以下を実行</p>
-
-<pre><code>$ cd ~/PROJECT_ROOT
-$ sbt ensimeConfig
-</code></pre>
-
-<h3 id="ensime-start">ensime start</h3>
+<h2 id="nonfatal">NonFatal</h2>
 
 <ul>
-<li>プロジェクトを開いて、 command + shift + p</li>
-<li>command + shift + p</li>
-<li>ensime start</li>
-</ul>
-
-<h3 id="エラーが発生した場合">エラーが発生した場合</h3>
-
-<ul>
-<li>ensime パッケージを Atom からアンインストール</li>
-<li><code>$ apm install ensime/ensime-atom</code></li>
-<li>Atom 再起動</li>
-<li>プロジェクトを開いて、 command + shift + p</li>
-<li>ensime start</li>
+<li>捕捉しない方がイイ例外を捕捉しない
+<code>Scala
+try {
+//
+} catch {
+case NonFatal(e)
+}
+</code></li>
 </ul>
 
 </div>
@@ -138,7 +101,7 @@ $ sbt ensimeConfig
 <hr />
 <p>
 
-    <a href="https://pureone-t.github.io/doc-site/">
+    <a href="https://pureonedoya.github.io/doc-site/">
     Top</a>
     &nbsp;&nbsp;&nbsp;
     
@@ -148,11 +111,11 @@ $ sbt ensimeConfig
         
     
 
-    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
 </p>
 
 </div>

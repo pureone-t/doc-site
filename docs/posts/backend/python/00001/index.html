@@ -13,23 +13,32 @@
 <meta name="description" content="doc site by pureone-t.">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://pureone-t.github.io/doc-site/">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
-<meta name="twitter:image" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
 <meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
 <meta name="og:type" content="website">
-<meta name="og:url" content="https://pureone-t.github.io/doc-site/">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-t.github.io/doc-site/tn.png">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
 
-<link rel="shortcut icon" href="https://pureone-t.github.io/doc-site/favicon.ico" id="favicon">
-<link rel="stylesheet" href="https://pureone-t.github.io/doc-site/css/style.css">
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
 
 
 
@@ -40,23 +49,23 @@
     
     <title>
         
-        Python
+        Python 環境構築
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Python</div>
+        <div class="section" id="title">Python 環境構築</div>
 
         
 <div class="section" id="content">
-    2018-10-10 (Wed) &#183; 0 words
+    2018-12-09 (Sun) &#183; 48 words
     
     <div class="tag-container">
         
         <span class="tag">
-            <a href="https://pureone-t.github.io/doc-site/tags/python">
+            <a href="https://pureonedoya.github.io/doc-site/tags/python">
                 python
             </a>
         </span>
@@ -65,6 +74,33 @@
     
     <hr/>
     
+
+<h1 id="python-インストール">Python インストール</h1>
+
+<h2 id="構成">構成</h2>
+
+<pre><code>Homebrew
+ |- python3
+ |- pip3
+     |- python3で使用するライブラリ...
+ |- etc...
+</code></pre>
+
+<h2 id="python">Python</h2>
+
+<pre><code>$ brew install python3
+$ witch python3
+$ witch pip3
+</code></pre>
+
+<h2 id="libraries">Libraries</h2>
+
+<pre><code>$ pip3 install numpy  # 線形代数
+$ pip3 install scipy  # 数式処理
+$ pip3 install matplotlib   # 描画
+$ pip3 install pandas  # データ操作
+</code></pre>
+
 </div>
 
 
@@ -74,7 +110,7 @@
 <hr />
 <p>
 
-    <a href="https://pureone-t.github.io/doc-site/">
+    <a href="https://pureonedoya.github.io/doc-site/">
     Top</a>
     &nbsp;&nbsp;&nbsp;
     
@@ -84,11 +120,11 @@
         
     
 
-    <a href="https://pureone-t.github.io/doc-site/posts">Posts</a>
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/tags">Tags</a>
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
       &nbsp;&nbsp;&nbsp;
-    <a href="https://pureone-t.github.io/doc-site/about">About Me</a>
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
 </p>
 
 </div>

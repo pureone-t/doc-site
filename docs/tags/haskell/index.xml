@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Haskell on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/haskell/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/haskell/</link>
     <description>Recent content in Haskell on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2018 12:39:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Haskell</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/haskell/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/haskell/00001/</link>
       <pubDate>Sat, 14 Jul 2018 12:39:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/haskell/00001/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/haskell/00001/</guid>
       <description>set up stack
 haskell platform
 $ brew install haskell-stack $ cd ~/ $ stack setup $ vi ~/.bashrc alias ghc=&amp;quot;stack ghc&amp;quot; alias ghci=&amp;quot;stack ghci&amp;quot; alias runghc=&amp;quot;stack runghc&amp;quot; alias runhaskell=&amp;quot;stack runghc&amp;quot;  Atom Editor Atomメニューより、「シェルコマンドをインストール」する

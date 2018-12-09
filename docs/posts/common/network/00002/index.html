@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        ドメイン名、ホスト名、FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名の違い
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">ドメイン名、ホスト名、FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名の違い</div>
+
+        
+<div class="section" id="content">
+    2018-11-07 (Wed) &#183; 91 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureonedoya.github.io/doc-site/tags/network">
+                network
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h2 id="macアドレス">Macアドレス</h2>
+
+<ul>
+<li>ネットワーク部品に割り当てられたアドレス</li>
+<li>48ビットのアドレス</li>
+<li>先頭24ビットは、部品メーカーの識別番号</li>
+<li>後半24ビットは、TODO</li>
+<li>16進数表記</li>
+<li>OSIの第2層のデータリンク層</li>
+</ul>
+
+<h2 id="osi">OSI</h2>
+
+<h3 id="レイヤー7-アプリケーション層">レイヤー7:アプリケーション層</h3>
+
+<ul>
+<li>アプリケーションに特化したプロトコルを規定</li>
+<li>HTTP</li>
+<li>メール送信のSMTP</li>
+</ul>
+
+<h3 id="レイヤー6-プレゼンテーション層">レイヤー6:プレゼンテーション層</h3>
+
+<ul>
+<li>データの表現形式を規定</li>
+<li>データ保存形式、圧縮、文字コード</li>
+</ul>
+
+<h3 id="レイヤー5-セッション層">レイヤー5:セッション層</h3>
+
+<ul>
+<li>コネクション確立、データ転送のタイミングを規定</li>
+</ul>
+
+<h3 id="レイヤー4-トランスポート層">レイヤー4:トランスポート層</h3>
+
+<ul>
+<li>データ転送の制御を規定</li>
+<li>TCP/IP</li>
+</ul>
+
+<h3 id="レイヤー3-ネットワーク層">レイヤー3:ネットワーク層</h3>
+
+<ul>
+<li>IPアドレス</li>
+<li>異なるネットワークへデータを転送するルーティングの制御</li>
+<li>ルーター、レイヤー3スイッチ</li>
+<li>パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理</li>
+</ul>
+
+<h3 id="レイヤー2-データリンク層">レイヤー2:データリンク層</h3>
+
+<ul>
+<li>MACアドレスによるデータ転送</li>
+<li>同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する</li>
+<li>レイヤー2スイッチ</li>
+<li>通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している</li>
+</ul>
+
+<h3 id="レイヤー1-物理層">レイヤー1:物理層</h3>
+
+<ul>
+<li>ケーブルやコネクタの形状を規定</li>
+<li>100BASE-T(イーサネット)</li>
+</ul>
+
+<h2 id="ファイヤーウォール">ファイヤーウォール</h2>
+
+<h3 id="パケットフィルタ">パケットフィルタ</h3>
+
+<ul>
+<li>IPアドレス、ポート番号を元にフィルタリング
+
+<ul>
+<li>80(http), 443(https)のみパケットの通過を許可</li>
+</ul></li>
+<li>パケットフィルタリングのルールのことをACL</li>
+</ul>
+
+<h3 id="アプリケーションゲートウェイ">アプリケーションゲートウェイ</h3>
+
+<ul>
+<li>プロキシのこと</li>
+</ul>
+
+<h2 id="linux">Linux</h2>
+
+<ul>
+<li>メモリ上に展開してプログラムをプロセス（PID）</li>
+<li>ハードディスに割り当てる仮想メモリのことをスワップ</li>
+</ul>
+
+<h3 id="fhs-ディレクトリ構成">FHS（ディレクトリ構成）</h3>
+
+<ul>
+<li>/bin
+
+<ul>
+<li>基本コマンドを格納したディレクトリ</li>
+</ul></li>
+<li>/boot
+
+<ul>
+<li>OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体</li>
+</ul></li>
+<li>/dev
+
+<ul>
+<li>デバイスを格納したディレクトリ、dev/nullは、何もないを表す</li>
+</ul></li>
+<li>/etc
+
+<ul>
+<li>OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など</li>
+</ul></li>
+<li>/home
+
+<ul>
+<li>ユーザを格納したディレクトリ</li>
+</ul></li>
+<li>/proc
+
+<ul>
+<li>カーネルやプロセス情報を格納したディレクトリ</li>
+</ul></li>
+<li>/sbin
+
+<ul>
+<li>システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される</li>
+</ul></li>
+<li>/tmp
+
+<ul>
+<li>一時ファイルを格納したディレクトリ</li>
+</ul></li>
+<li>/usr
+
+<ul>
+<li>アプリケーションを格納したディレクトリ</li>
+</ul></li>
+<li>/var
+
+<ul>
+<li>ログとかを格納したディレクトリ</li>
+</ul></li>
+</ul>
+
+<h2 id="ドメイン名">ドメイン名</h2>
+
+<ul>
+<li>インターネット上のネットワークを一意に識別するための名称<br />
+ex.) 違うマンションなのに住所が一緒だと困る</li>
+<li><a href="http://www">http://www</a>. <strong>hoge.co.jp</strong>  // 太字部分が該当</li>
+</ul>
+
+<h2 id="ホスト名">ホスト名</h2>
+
+<ul>
+<li>インターネット上のネットワークのホストを一意に識別するための名称<br />
+ex.） 同じマンションで部屋番号が一緒だと困る</li>
+<li>http:// <strong>www</strong> .hoge.co.jp // 太字部分が該当</li>
+</ul>
+
+<h2 id="fqdn-fully-qualified-domain-name-完全修飾ドメイン名">FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名</h2>
+
+<ul>
+<li>ドメイン名とホスト名を繋げた文字列のこと</li>
+<li>http:// <strong>www.hoge.co.jp</strong> // 太字部分が該当</li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureonedoya.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

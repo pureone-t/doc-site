@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atom on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/atom/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/atom/</link>
     <description>Recent content in Atom on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Oct 2018 11:50:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/atom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>
     
     <item>
       <title>Atom</title>
-      <link>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/editor/00001/</link>
       <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/common/editor/00001/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/editor/00001/</guid>
       <description>プログラミング用フォントの導入 RectyDiminished
 Atomインストール https://atom.io/
 Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished

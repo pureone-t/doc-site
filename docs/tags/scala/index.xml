@@ -2,40 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scala on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/scala/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/scala/</link>
     <description>Recent content in Scala on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Oct 2018 08:20:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Nov 2018 16:20:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/scala/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Scala 非同期処理プログラミング</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00008/</link>
+      <pubDate>Thu, 29 Nov 2018 16:20:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00008/</guid>
+      <description> マルチプロジェクトの作成 $ sbt new mattsu6/multi-sbt.g8  MySql $ docker exec -it CONTAINER_ID /bin/bash $ mysql -u sample -p -D mydb -h localhost -P 3306  </description>
+    </item>
+    
+    <item>
+      <title>エラーハンドリング</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00004/</link>
+      <pubDate>Sun, 18 Nov 2018 11:35:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <description> 参考スライド http://gakuzzzz.github.io/slides/error_handling_practice/#24
+NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } catch { case NonFatal(e) }   </description>
+    </item>
+    
+    <item>
+      <title>akka-stream</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</link>
+      <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</guid>
+      <description> akka-stream </description>
+    </item>
+    
+    <item>
+      <title>plugins</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00007/</link>
+      <pubDate>Tue, 06 Nov 2018 10:40:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00007/</guid>
+      <description>plugins sbt-native-packager  Dockerイメージを作成できる  https://qiita.com/takebayashi/items/99dcf293423a27caa73a https://qiita.com/petitviolet/items/cf5d699521b08e6ec933   sbt-assembly  実行可能jarファイル作成  sbt-multi-jvm  複数のJVM上で動作させるAkkaシステムのテスティングプラグイン  sbt-hoge  foo  ScalaOption -feature -deprecation -unchecked -Xfatal-warnings -Xlint sbt new シングルプロジェクト作成コマンド $ sbt new sbt/scala-seed.g8
+マルチプロジェクト作成コマンド $ sbt new mattsu6/multi-sbt.g8</description>
+    </item>
+    
+    <item>
+      <title>Apache Spark for Scala 使ってみた</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</link>
+      <pubDate>Thu, 01 Nov 2018 18:50:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</guid>
+      <description>Spark  オープンソースの分散処理フレームワーク 分散処理で有名な Hadoopは、独自ファイルシステム(hdfs)を介して処理 Spark は、RDD(Resilient Distributed Dataset)という障害耐久性分散可能なデータセットを、オンメモリで実行できるため、高速な処理が可能  Sparkの構成  Spark Core Spark  RDDを提供  Spark Streaming  データストリーム処理を提供 Twitterなどのリアルタイムデータを取得する場合などに使える  Spark SQL  構造化データにアクセスする機能を提供 JSONなども扱える  Mlib  汎用的な機械学習ライブラリを提供 word2vecを使った類似後分類とかできる  Graph X  ソーシャルグラフを扱う場面で役にたつ   サンプルのアプリケーション作成 https://blog.excite.co.jp/exdev/27638387/
+環境構築  Spark アプリケーションは、Java、Scala、Python、R の４言語で記述することが可能 Spark の実装に Scala が用いられている  インストール $ brew intall apache-spark $ brew intall scala $ brew intall sbt  環境変数に Sparkを通す (x.</description>
+    </item>
+    
+    <item>
       <title>Scala まとめ</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00005/</link>
       <pubDate>Mon, 22 Oct 2018 08:20:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00005/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00005/</guid>
       <description>object 用途  ユーティリティメソッド、グローバルなプロパティ値の置き場(equivalent of java static) 同名クラスのオブジェクトのファクトリメソッド  class SampleSuper(a: Int) class Sample(b: Int) extends SampleSuper(b) object SampleSuper { def apply(c: Int): SampleSuper = new Sample(c) } object Sample { def apply(c: Int): SampleSuper = new Sample(c) }  new クラス名による直接的なオブジェクト生成よりも、実装の詳細を隠蔽できる（インターフェースのみ公開） サブクラスのインスタンスを返却することもできる  コンパニオンオブジェクト  クラスと同じファイル内に、同じ名前で定義されたオブジェクト（シングルトン）のこと  trait 抽象メンバーの上書き trait TraitA { val name: String def printName: String = println(name) } class ClassA(val name: String) extends TraitA トレイとをミックスインしたクラスのコンストラクタで、抽象メンバー name をオーバーライドしている。</description>
     </item>
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>
     
     <item>
+      <title>Scalaローカル開発環境構築</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00001/</link>
+      <pubDate>Sun, 14 Oct 2018 11:35:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00001/</guid>
+      <description>前提  Mac OSX  Homebrew Install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;   command line tool はアップデートされるため、Xcodeのインストール、xcode-select --installされる  $ brew doctor Your system is ready to brew.  Java8 Install $ brew tap caskroom/versions $ brew cask install java8 $ java -version  sbt Install $ brew install sbt  Git Install $ brew install git  $ mkdir ~/repository $ mkdir ~/repository/office $ mkdir ~/repository/pureone  $ vi ~/repository/office/.</description>
+    </item>
+    
+    <item>
       <title>Scala Test</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00003/</link>
       <pubDate>Wed, 10 Oct 2018 14:30:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00003/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00003/</guid>
       <description>Property Based Testing テストデータを半自動生成する
 Mastering flatMap ! flatten と map が、同時に行われるのが flatMap - map -&amp;gt; flatten
 Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatMap(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).map(identity) // List(List(1, 2, 3), List(), List(5.6)): scala.collection.SeqSeq(Seq(1,2,3), Seq(), Seq(5.6)) flatten { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) flatMap { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) map { x =&amp;gt; x.</description>
@@ -43,43 +100,36 @@ Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.
     
     <item>
       <title>Akka</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</link>
       <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00002/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</guid>
       <description>サンプルコードのダウンロード https://github.com/akka-ja/akka-in-action
  sbtはインタプリタを持っている  Actorの4つの機能  create(生成) send/receive(送信/受信) become(状態変化) supervive(監督)     パッケージ 説明     akka.actor.{ActorSystem, Actor, Props} アクター関連のコード   akka.event.Logging ロギング拡張   akka.util.Timeout ask処理のタイムアウト   akka.http.scaladsl.Http~ HTTP関連のコード    package com.goticks import scala.concurrent.Future import akka.actor.ActorSystem import akka.event.Logging import akka.util.Timeout import akka.http.scaladsl.Http import akka.http.scaladsl.Http.ServerBinding import akka.stream.ActorMaterializer import com.typesafe.config.{ Config, ConfigFactory } import scala.util.{ Failure, Success } object Main extends App with RequestTimeout { val config = ConfigFactory.</description>
     </item>
     
     <item>
       <title>Akka</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</link>
       <pubDate>Mon, 27 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/akka/00001/</guid>
-      <description>  sample code
-https://github.com/akka-ja/akka-in-action  Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
-アクター概要 メッセージキューに似ている
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</guid>
+      <description>Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
+  アクター概要  メッセージキューに似ている
  アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する
- アクターは他のアクターにメッセージを送ることができる(キューとは異なる)
- 全て非同期 =&amp;gt; メッセージの送受信でアプリケーションを構築する =&amp;gt; メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する
-  (補足 )リアクティブ宣言
-アクターシステム Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン
-val supervisor = ActorSystem(&amp;quot;TeamChat&amp;quot;)  ActorRefは、アクターにメッセージを送信するためのアドレス アクターシステム内でアクターを探したい場合はアクターパスを使う アクターパスはURLパス構造とアクターの階層をマッピングできる メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する
-ディスパッチャー アクターはディスパッチャーによってある時呼び出される ディスパッチャーはメールボックス内のメッセージをアクターにプッシュする アクターは落ちてきたメッセージを処理する 複数スレッドの場合は、複数のアクターが処理する
+ アクターは他のアクターにメッセージを送ることができる(キューとは異なる) 全て非同期 メッセージの送受信でアプリケーションを構築する メッセージは、ローカルスレッドまたは、リモートスレッド(別のサーバ)で処理する  リアクティブ (宣言)  ブロッキングI/Oは並列化を制限するため → ノンブロッキングI/O 同期処理は並列化を制限するため → 非同期 ポーリングはリソース消費機会を減らしてしまうため → イベント駆動 回復力(レジリエンス) 弾力性(需要が小さければリソース減、需要が大きければリソース増)  アクターシステム  Akkaのアプリケーションで最初に行うことはアクターシステムを作成すること アプリケーション内の全てのアクターに対してトップレベルアクターを１つだけ作成するのが一般的なパターン  val supervisor = ActorSystem(&amp;quot;TeamChat&amp;quot;)  ActorRefは、アクターにメッセージを送信するためのアドレス アクターシステム内でアクターを探したい場合はアクターパスを使う アクターパスはURLパス構造とアクターの階層をマッピングできる メッセージはActorRefに送信され、メールボックス（キュー）に到着順に保存する  ディスパッチャー アクターはディスパッチャーによってある時呼び出される ディスパッチャーはメールボックス内のメッセージをアクターにプッシュする アクターは落ちてきたメッセージを処理する 複数スレッドの場合は、複数のアクターが処理する
 アクターにメッセージを送信するときは、メールボックスにメッセージを残すだけ ディスパッチャーがアクターにメッセージをプッシュする
-用語 並行と並列 CPUがどんな様子で処理をするのか？という観点において、 - 並行(Concurrent)
+並行処理の歴史  OSのプロセスによる並行処理 スレッドによる並行処理  並行と並列 CPUがどんな様子で処理をするのか？という観点において、 - 並行(Concurrent)
 ある1つの時点で、複数タスクを切り替えることで同時処理を見せかけている - 並列(Pararell) ある1つの時点で、複数タスクを実際に(物理的に)同時処理している
-プロセスとスレッド  プロセス
-実行プログラムは親プロセスと共有し、実行状態(変数など)は子プロセス独自に割り当てられたメモリ領域を使う スレッド // TODO  スケールアウト スケーリング クラスタリング フェイルオーバー  稼働中のシステムで問題が生じてシステムやサーバーが停止してしまった際に、自動的に待機システムに切り替える仕組みをいいます。HA機能ともいわれ、システムの可用性を高めるための冗長化の一つです。 // TODO  </description>
+プロセスとスレッド  プロセス</description>
     </item>
     
     <item>
       <title>Scala環境構築（VM）</title>
-      <link>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00002/</link>
       <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/backend/scala/00002/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00002/</guid>
       <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel
 sbtの導入  公式サイトのドキュメントより、インストール方法を参照する。
  https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html  $ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt    $ sbt sbt-version Getting org.</description>

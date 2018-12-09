@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Html5 on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/html5/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/html5/</link>
     <description>Recent content in Html5 on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 29 Mar 2018 09:43:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/html5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTML5が使われているか確認する方法</title>
-      <link>https://pureone-t.github.io/doc-site/posts/frontend/html/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/frontend/html/00001/</link>
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/frontend/html/00001/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/html/00001/</guid>
       <description>HTML5 markup detector HTML5 markup detector をインストールし、
 HTML5 で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。
 仕様 HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定し、

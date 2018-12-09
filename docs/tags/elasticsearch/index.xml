@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elasticsearch on doc site</title>
+    <link>https://pureonedoya.github.io/doc-site/tags/elasticsearch/</link>
+    <description>Recent content in Elasticsearch on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Dec 2018 15:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A similarity</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
+      <pubDate>Fri, 07 Dec 2018 15:30:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Amazon Elasticsearch Service</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
+      <pubDate>Wed, 05 Dec 2018 17:30:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
+      <description> Index設計  データ量、更新速度の考慮  index は、複数の shard から構成されている shard を複数の node に分散することで、1つの index のに対する書き込み速度を分散することができる  親子関係データは、1つのindex or 1つのdocument内に　Nested Type型のデータとしてインデックス トランザクションがないため、Alias(View機能を確認) index につけられる？ 多言語対応　言語ごとに index Tribe Node を使うならすべてのクラスターで重複しないインデックス名で設計   </description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch 実践</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
+      <pubDate>Wed, 07 Nov 2018 23:50:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
+      <description>1.Elasticsearch 特徴  Apache Luceneをベースとした javaで書かれた全文検索ソフトウェア ログ収集・解析・分析プラットフォーム  kibana、logstash  分散配置による高速、高可用性の実現  クラスタ構成、分散ノード、シャード分割  RESTAPIアクセスによるリソース操作の明確化
+ URLを参照すればどのリソースにアクセスしているか分かる  Elastic Stack
+ Kibana バックエンドのElasticsearchにクエリ発行、可視化 Elasticsearch Logstash Input, Filter, Output Beats   全文検索  索引型検索 転置インデックス（各単語と出現した文書IDの組み合わせをインデックスとして保存）  Doc1: イベントが東京で開催される Doc2: 東京マラソンに参加する     単語 DocId     東京 1, 2   イベント 1   マラソン 2     各単語は、英語の場合：空白区切り、日本語の場合：形態素解析
+ インデクサ (indexer)</description>
+    </item>
+    
+    <item>
+      <title>Amazon Elasticsearch Service</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
+      <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
+      <description>構築 新しいドメインの定義  ドメイン名:pureone
+ バージョン:最新
+  -&amp;gt; Next
+クラスターの設定  ノードの設定
+ インスタンス数:1 インスタンスタイプ:t2.small.elasticsearch 専用マスター有効化:OFF ゾーン対応の有効化:OFF  ストレージ設定
+ ストレージタイプ:EBS EBSボリュームタイプ:汎用(SSD) EBSボリュームサイズ:１０ 保存時の暗号化の有効化:OFF  スナップショットの設定
+自動スナップショットの開始時間:デフォルト  -&amp;gt; Next
+アクセスの設定  ネットワーク構成
+ パブリックアクセス ノード間の暗号化：OFF  Kibana認証
+ OFF  アクセスポリシー
+ ドメインアクセスポリシーの設定
+ 特定のIPからのドメインへのアクセスを許可：パブリックIPを入力(ブラウザで自分のIPを検索)   -&amp;gt; Next
+確認  OK  操作 https://dev.classmethod.jp/server-side/elasticsearch/use-kibana-on-aws/
+インデックスの作成 $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/shakespeare/_doc/1 -d &amp;#39;{ &amp;#34;mappings&amp;#34; : { &amp;#34;_default_&amp;#34; : { &amp;#34;properties&amp;#34; : { &amp;#34;speaker&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;play_name&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;line_id&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; }, &amp;#34;speech_number&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; } } } } }&amp;#39; -H &amp;#39;Content-Type: application/json&amp;#39; データインポート  Jsonデータ shell $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/_bulk --data-binary @shakespeare.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
+      <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
+      <description>Elastic Search  オープンソースの全文検索エンジン https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329 https://qiita.com/makaishi2/items/598d24ea65e6ec79f887
+(自動起動の設定)  インストール  java8
+$ brew cask install homebrew/cask-versions/java8  Elasticsearch
+$ brew install elasticsearch  kibana
+$ brew install kibana   起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
+{ &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.4.3&amp;quot;, &amp;quot;build_flavor&amp;quot; : &amp;quot;oss&amp;quot;, &amp;quot;build_type&amp;quot; : &amp;quot;tar&amp;quot;, &amp;quot;build_hash&amp;quot; : &amp;quot;fe40335&amp;quot;, &amp;quot;build_date&amp;quot; : &amp;quot;2018-10-30T23:17:19.084789Z&amp;quot;, &amp;quot;build_snapshot&amp;quot; : false, &amp;quot;lucene_version&amp;quot; : &amp;quot;7.</description>
+    </item>
+    
+  </channel>
+</rss>

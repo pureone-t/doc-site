@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on doc site</title>
+    <link>https://pureonedoya.github.io/doc-site/tags/ssh/</link>
+    <description>Recent content in Ssh on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Nov 2018 18:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac (OSX) SSH接続</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</link>
+      <pubDate>Wed, 21 Nov 2018 18:30:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</guid>
+      <description> 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  </description>
+    </item>
+    
+  </channel>
+</rss>

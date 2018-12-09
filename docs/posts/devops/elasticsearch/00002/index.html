@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Elasticsearch 実践
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Elasticsearch 実践</div>
+
+        
+<div class="section" id="content">
+    2018-11-07 (Wed) &#183; 198 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureonedoya.github.io/doc-site/tags/elasticsearch">
+                elasticsearch
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="1-elasticsearch-特徴">1.Elasticsearch 特徴</h1>
+
+<ul>
+<li>Apache Luceneをベースとした javaで書かれた全文検索ソフトウェア</li>
+<li>ログ収集・解析・分析プラットフォーム
+
+<ul>
+<li>kibana、logstash</li>
+</ul></li>
+<li>分散配置による高速、高可用性の実現
+
+<ul>
+<li>クラスタ構成、分散ノード、シャード分割</li>
+</ul></li>
+
+<li><p>RESTAPIアクセスによるリソース操作の明確化</p>
+
+<ul>
+<li>URLを参照すればどのリソースにアクセスしているか分かる</li>
+</ul></li>
+
+<li><p>Elastic Stack</p>
+
+<ul>
+<li>Kibana</li>
+<li>バックエンドのElasticsearchにクエリ発行、可視化</li>
+<li>Elasticsearch</li>
+<li>Logstash</li>
+<li>Input, Filter, Output</li>
+<li>Beats</li>
+</ul></li>
+</ul>
+
+<h2 id="全文検索">全文検索</h2>
+
+<ul>
+<li>索引型検索</li>
+<li>転置インデックス（各単語と出現した文書IDの組み合わせをインデックスとして保存）</li>
+</ul>
+
+<pre><code>Doc1: イベントが東京で開催される
+Doc2: 東京マラソンに参加する
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>単語</th>
+<th>DocId</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>東京</td>
+<td>1, 2</td>
+</tr>
+
+<tr>
+<td>イベント</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>マラソン</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><p>各単語は、英語の場合：空白区切り、日本語の場合：形態素解析</p></li>
+
+<li><p>インデクサ (indexer)</p>
+
+<ul>
+<li>対象ドキュメントから、単語を抽出し、インデックスのデータベースを構成</li>
+<li>メタデータとして、検索キーワードと関連ドキュメントを格納</li>
+</ul></li>
+
+<li><p>サーチャー (searcher)</p>
+
+<ul>
+<li>インデクサが構成したインデックスに基づいて、検索クエリの機能を提供</li>
+<li>検索サーバを利用するフロントエンドに対して、Java API、REST APIなどのインタフェースを公開</li>
+</ul></li>
+
+<li><p>クローラー (crawler)</p>
+
+<ul>
+<li>検索対象となるサイトからドキュメントを収集</li>
+<li>定期巡回によるインデックス更新（インデクサに渡す）</li>
+</ul></li>
+</ul>
+
+<h1 id="1-elasticsearch-基礎">1.Elasticsearch 基礎</h1>
+
+<h2 id="ドキュメント-document">ドキュメント (Document)</h2>
+
+<ul>
+<li>RDBでいうところの1レコード</li>
+<li>1つの文書</li>
+<li>Jsonオブジェクト形式</li>
+<li>ドキュメントをElasticsearchへ格納するときには、IDが採番される</li>
+<li>IDはインデックスへの格納時に明示的に指定することが可能</li>
+</ul>
+
+<p>ドキュメントの例</p>
+
+<pre><code>{
+  &quot;host&quot; : &quot;192.168....&quot;,
+  &quot;user&quot; : &quot;MyName&quot;,
+  &quot;date&quot; : &quot;2018-12-07T12:00:10&quot;
+}
+</code></pre>
+
+<h2 id="フィールド">フィールド</h2>
+
+<ul>
+<li>ドキュメントの項目(Key,Value)のこと</li>
+<li>転置インデックスは、フィールドごとに作成される</li>
+<li>クエリ実行時には、基本的にフィールド単位で検索することになる</li>
+<li>文字列、数値、日付などの基本データ型、配列、ネスト構造などのデータ型もサポートされている</li>
+</ul>
+
+<h3 id="文字列">文字列</h3>
+
+<ul>
+<li><p>text型</p>
+
+<ul>
+<li>文字列からなる文書を格納するデータ型</li>
+<li>ニュース記事の本文、商品説明、Blogエントリ本文などに使える</li>
+<li>格納時に Analyzer によって単語に分割され、分割された単語ごとに転置インデックスが構成される</li>
+<li>クエリの際には、単語を指定することが可能<br />
+例： <code>{&quot;news&quot; : &quot;Powerful hurricane heads toward Ireland.&quot;}</code>
+<br /></li>
+</ul></li>
+
+<li><p>keyword型</p>
+
+<ul>
+<li>text型と同様に文書を格納するデータ型</li>
+<li>Analyzer による分割処理は行われない</li>
+<li>クエリの際には、文書の完全一致で指定する<br />
+例： <code>{&quot;author&quot; : &quot;taro.yamada@example.com&quot;}</code></li>
+</ul></li>
+</ul>
+
+<h3 id="数値">数値</h3>
+
+<ul>
+<li>long, short, integer, float</li>
+<li>数値の大小比較、レンジ検索が可能</li>
+</ul>
+
+<h3 id="日付">日付</h3>
+
+<ul>
+<li>date(日付のみ、時刻、UNIXエポック表記のいずれか)</li>
+</ul>
+
+<h3 id="真偽値">真偽値</h3>
+
+<ul>
+<li>boolean(true, false)</li>
+</ul>
+
+<h3 id="オブジェクト">オブジェクト</h3>
+
+<ul>
+<li>入れ子構造のJsonデータに対して定義可能<br />
+例： <code>{&quot;book&quot; : {&quot;title&quot; : &quot;elasticsearch guide&quot;, &quot;price&quot; : &quot;500&quot;} }</code></li>
+</ul>
+
+<h3 id="配列">配列</h3>
+
+<ul>
+<li>array
+<code>
+&quot;ids&quot; : [1,2,3]
+&quot;city&quot; : [&quot;Tokyo&quot;, &quot;Osaka&quot;, &quot;Nagoya&quot;]
+&quot;vms&quot; : [{&quot;host&quot; : &quot;web1&quot;, &quot;flavor&quot;: &quot;small&quot;}, {&quot;host&quot; : &quot;web2&quot;, &quot;flavor&quot;: &quot;large&quot;}]
+</code>
+<br /></li>
+</ul>
+
+<h3 id="マルチフィールド型">マルチフィールド型</h3>
+
+<ul>
+<li>1つのフィールドに、text型、keyword型などの複数のデータ型を指定できる型</li>
+<li>マッピング定義で明示的に型を指定しない場合は、暗黙的にマルチフィールド型になる</li>
+</ul>
+
+<h2 id="インデックス">インデックス</h2>
+
+<ul>
+<li>ドキュメントの格納場所</li>
+<li>アナライザによる分割、転置インデックス情報など様々なデータ形式で格納される</li>
+</ul>
+
+<h2 id="ドキュメントタイプ">ドキュメントタイプ</h2>
+
+<ul>
+<li>ドキュメントの構造を表す抽象概念</li>
+<li>フィールドの型や属性情報などのデータ構造が定義されたもの</li>
+<li>1つのインデックスに定義できるドキュメントタイプは1つ</li>
+</ul>
+
+<h2 id="マッピング">マッピング</h2>
+
+<ul>
+<li>ドキュメント内の各フィールドのデータ構造、データ型を記述した情報のこと</li>
+<li>マッピング定義をコマンドで行える<br />
+<code>Json
+$ curl -XPUT http://localhost:9200/my_index/_mapping/tweet -H 'Content-Type: application/json' -d
+{
+&quot;properties&quot; : {
+   &quot;user_name&quot; : { &quot;type&quot; : &quot;text&quot; },
+   &quot;message&quot; : { &quot;type&quot; : &quot;text&quot; }
+}
+}
+</code></li>
+<li>事前にマッピング定義しない場合、Elasticsearchが型推論によるマッピング定義を行う
+[](img/00002/img00001.png)</li>
+</ul>
+
+<h1 id="物理概念">物理概念</h1>
+
+<h2 id="ノード">ノード</h2>
+
+<h2 id="クラスタ">クラスタ</h2>
+
+<h2 id="シャード">シャード</h2>
+
+<h2 id="レプリカ">レプリカ</h2>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureonedoya.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

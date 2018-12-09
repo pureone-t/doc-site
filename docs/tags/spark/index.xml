@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on doc site</title>
+    <link>https://pureonedoya.github.io/doc-site/tags/spark/</link>
+    <description>Recent content in Spark on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Nov 2018 18:50:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache Spark for Scala 使ってみた</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</link>
+      <pubDate>Thu, 01 Nov 2018 18:50:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</guid>
+      <description>Spark  オープンソースの分散処理フレームワーク 分散処理で有名な Hadoopは、独自ファイルシステム(hdfs)を介して処理 Spark は、RDD(Resilient Distributed Dataset)という障害耐久性分散可能なデータセットを、オンメモリで実行できるため、高速な処理が可能  Sparkの構成  Spark Core Spark  RDDを提供  Spark Streaming  データストリーム処理を提供 Twitterなどのリアルタイムデータを取得する場合などに使える  Spark SQL  構造化データにアクセスする機能を提供 JSONなども扱える  Mlib  汎用的な機械学習ライブラリを提供 word2vecを使った類似後分類とかできる  Graph X  ソーシャルグラフを扱う場面で役にたつ   サンプルのアプリケーション作成 https://blog.excite.co.jp/exdev/27638387/
+環境構築  Spark アプリケーションは、Java、Scala、Python、R の４言語で記述することが可能 Spark の実装に Scala が用いられている  インストール $ brew intall apache-spark $ brew intall scala $ brew intall sbt  環境変数に Sparkを通す (x.</description>
+    </item>
+    
+  </channel>
+</rss>

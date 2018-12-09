@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Integration Test on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/integration-test/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/integration-test/</link>
     <description>Recent content in Integration Test on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Mar 2018 13:08:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/integration-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/integration-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>結合テスト仕様書の作成</title>
-      <link>https://pureone-t.github.io/doc-site/posts/common/test/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/test/00001/</link>
       <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/common/test/00001/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/test/00001/</guid>
       <description>テストプロセス テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
 https://qiita.com/kawasima/items/1fed574e7456edbad727
 テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計 テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。

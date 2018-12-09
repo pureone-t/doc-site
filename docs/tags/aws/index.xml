@@ -2,39 +2,96 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/aws/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/aws/</link>
     <description>Recent content in Aws on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 May 2018 14:25:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 14:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>AWS CLI (command line interface)についてのまとめ</title>
-      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</link>
-      <pubDate>Wed, 09 May 2018 14:25:00 +0900</pubDate>
+      <title>RDS</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00008/</link>
+      <pubDate>Wed, 28 Nov 2018 14:00:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00002/</guid>
-      <description>about AWSリソースをコマンドラインから操作できるツール
-install $ brew install python $ brew install awscli  configure $ aws configure AWS Access Key ID [None]: accesskeyId1 AWS Secret Access Key [None]: secretAccesskey1 Default region name [None]: ap-northeast-1 Default output format [None]: text $ $ aws configure --profile user2 AWS Access Key ID [None]: accesskeyId2 AWS Secret Access Key [None]: secretAccesskey2 Default region name [None]: ap-northeast-1 Default output format [None]: text  設定内容の確認
-$ cat .</description>
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00008/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>多要素認証（MFA）の設定</title>
-      <link>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</link>
-      <pubDate>Mon, 05 Mar 2018 14:04:00 +0900</pubDate>
+      <title>VPC EC2 Apache PHP MySQL を使ったWebアプリケーション構築</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00003/</link>
+      <pubDate>Tue, 27 Nov 2018 00:20:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/devops/aws/00001/</guid>
-      <description>1.MFA用のアプリのインストール 今回はAnthyを使います。 Anthy を Apple Storeからインストールする。
-   Item Value     Code Japan(81)   Cellphone number 先頭0を除く電話番号   Backups Password パスワード    2.AWSのルートアカウントのMFA有効化 「IAM(Identity and Access Management)コンソール」を開く
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00003/</guid>
+      <description> OS  Amazon Linux  ホスト名の変更 $ sudo vi /etc/sysconfig/network HOSTNAME=変更するホスト名 $ sudo vi /etc/hosts 127.0.0.1 変更するホスト名 localhost $ sudo reboot  言語設定 $ sudo vi /etc/sysconfig/i18n LANG=ja_JP.UTF-8  時刻設定 $ sudo cp /usr/share/zoneinfo/Japan /etc/localtime $ sudo vi /etc/sysconfig/clock ZONE=&amp;quot;Asia/Tokyo&amp;quot; $ date  Apache PHP MySQL Git インストール $ sudo yum update -y $ sudo yum install -y httpd24 $ sudo yum install -y php70 php70-mbstring php70-pdo php70-mysqlnd $ sudo yum install -y mysql $ sudo yum install -y git  </description>
+    </item>
+    
+    <item>
+      <title>CodeDeploy</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00007/</link>
+      <pubDate>Mon, 19 Nov 2018 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00007/</guid>
+      <description>##</description>
+    </item>
+    
+    <item>
+      <title>AWS CloudFormation</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00004/</link>
+      <pubDate>Mon, 12 Nov 2018 14:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00004/</guid>
+      <description> Flow  Change AWS CLI Profile Create CloudFormation Template Create Stack  Change AWS CLI Profile  管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する (シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す) ローカルのAWSプロファイルを更新する  $ aws configure --profile pureone-worker AWS Access Key ID [None]:アクセスキー AWS Secret Access Key [None]:シークレットアクセスキー Default region name [None]:ap-northeast-1 Default output format [None]:json   Create CloudFormation Template https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+  Create Stack  テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ  </description>
+    </item>
+    
+    <item>
+      <title>ECR (Amazon Elastic Container Registry)</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00005/</link>
+      <pubDate>Thu, 08 Nov 2018 14:50:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00005/</guid>
+      <description> 完全マネージド型の Docker コンテナレジストリ   </description>
+    </item>
+    
+    <item>
+      <title>Kinesis</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00006/</link>
+      <pubDate>Mon, 05 Nov 2018 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00006/</guid>
+      <description> https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb
+Kinesis $ export AWS_DEFAULT_PROFILE=&#39;pureone-worker&#39; $ aws kinesis create-stream --stream-name kinesis-test-stream --shard-count 1 $ aws kinesis describe-stream --stream-name kinesis-test-stream $ aws kinesis put-record --stream-name kinesis-test-stream --data hogehoge_$RANDOM --partition-key $RANDOM  Scala </description>
+    </item>
+    
+    <item>
+      <title>AWS アカウント作成後に実施するリスト</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00001/</link>
+      <pubDate>Mon, 05 Nov 2018 10:54:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00001/</guid>
+      <description> アカウント作成後に行うこと  多要素認証（MFA）の設定 IAMユーザ作成 Cloud Trail 料金アラート設定  MFAの設定 MFA用のアプリのインストール 今回はAnthyを使います。 Anthy を Apple Store からインストールする。
+   Item Value     Code Japan(81)   Cellphone number 先頭0を除く電話番号   Backups Password パスワード    AWSのルートアカウントのMFA有効化 「IAM(Identity and Access Management)コンソール」を開く
 「ルートアカウントのMFAを有効化」より、「MFAの管理」を選択する
-  「仮想MFAデバイス」を選択する
-3.QRコードAnthyから読み込む AWSの「QAコード」をAnthyから読み込む
+「仮想MFAデバイス」を選択する
+QRコードAnthyから読み込む AWSの「QAコード」をAnthyから読み込む
 Anthyの6桁の数字を認証コード1に入力する 30秒後に切り替える6桁の数字を認証コード2に入力する 「仮想MFAの有効化」を選択し、完了
-※念のためログインし直す</description>
+※念のためログインし直す
+IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている機能 90日分の以下２種類のログ 管理イベント  EC2インスタンスの作成、S3バケットの作成など  データイベント  S3バケット上のデータ操作、Lambda関数の実行など  S3に保存することができる（エビデンス残し） 管理イベントのみデフォルトで有効になっている  S3  S3名はグローバルユニーク  料金アラート設定 CloudWatch </description>
+    </item>
+    
+    <item>
+      <title>AWS CLI (command line interface)についてのまとめ</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00002/</link>
+      <pubDate>Wed, 09 May 2018 14:25:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00002/</guid>
+      <description>About AWSリソースをコマンドラインから操作できるツール
+Install $ brew install python $ brew install awscli  Configure $ aws configure AWS Access Key ID [None]: accesskeyId1 AWS Secret Access Key [None]: secretAccesskey1 Default region name [None]: ap-northeast-1 Default output format [None]: text $ aws configure --profile user2 AWS Access Key ID [None]: accesskeyId2 AWS Secret Access Key [None]: secretAccesskey2 Default region name [None]: ap-northeast-1 Default output format [None]: text  設定内容の確認
+$ cat .</description>
     </item>
     
   </channel>

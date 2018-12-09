@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-t.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        機械学習 入門#1
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">機械学習 入門#1</div>
+
+        
+<div class="section" id="content">
+    2018-12-07 (Fri) &#183; 128 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureonedoya.github.io/doc-site/tags/datascience">
+                DataScience
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h2 id="機械学習の位置付け">機械学習の位置付け</h2>
+
+<p>人工知能 &gt; 機械学習 &gt; ディープラーニング</p>
+
+<pre><code>目 -&gt; 画像 -&gt; 数値 -&gt; 機械学習
+耳 -&gt; 音声(時系列を含む) -&gt; 数値 -&gt; 機械学習
+口 -&gt; 自然言語 -&gt; 数値(word2vec) -&gt; 機械学習
+
+入力𝑥 -&gt; 機械学習 -&gt; 出力𝑦
+=&gt; 入力𝑥 と 出力𝑦 の関係性(規則性)を見つける
+
+機械学習 {
+  ディープラーニング、
+  単回帰分析、
+  SVM(Support Vector Machine)
+}
+</code></pre>
+
+<h2 id="機械学習に必要な数学">機械学習に必要な数学</h2>
+
+<ul>
+<li>微分積分</li>
+<li>線形代数</li>
+<li>確率・統計
+ディープラーニングは、微分と線形代数が重要！</li>
+</ul>
+
+<h2 id="機械学習の３大トピック">機械学習の３大トピック</h2>
+
+<ul>
+<li>教師あり学習（入力𝑥と出力𝑦）
+
+<ul>
+<li>回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&gt; 家賃(𝑦)</li>
+<li>分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール(𝑥) -&gt; 種類(𝑦)</li>
+</ul></li>
+<li>教師なし学習（入力𝑥）
+
+<ul>
+<li>クラスタリング（グルーピング）</li>
+<li>次元削減（入力変数を減らす）</li>
+</ul></li>
+<li>強化学習（データがない or ほとんどない）
+
+<ul>
+<li>掃除ロボット</li>
+</ul></li>
+</ul>
+
+<h2 id="機械学習と内挿-外挿">機械学習と内挿・外挿</h2>
+
+<pre><code>      (o)   (x)
+x 1 2 (3) 4 (5)
+y 2 4 (6) 8 (10)
+=&gt; y = ax
+</code></pre>
+
+<p>内挿：持っている入力データ内で予測すること（1~4）
+外挿：持っている入力データ外で予測すること</p>
+
+<p>機械学習は、内挿を保証するため、外挿は取り扱わない</p>
+
+<h3 id="株価について">株価について</h3>
+
+<p>価格と時間のデータ（時系列データ）は、縦軸の価格の範囲が内挿になるため、
+明日以降のデータを予測することは、機械学習の範囲である。</p>
+
+<h2 id="微分">微分</h2>
+
+<ul>
+<li><p>微分は「何」が求まるのか？</p>
+
+<ul>
+<li>接線の傾き（<code>𝑦 = 𝑎𝑥²</code> の U字の放物線において 、接線<code>𝑦 = 𝑎𝑥 + 𝑏</code>の 𝑎）</li>
+</ul></li>
+
+<li><p>微分は「何」に使えるのか？</p>
+
+<ul>
+<li>傾き「0」を利用することで、ある関数が（例：誤差）最小（もしくは最大）となる点が求まる</li>
+<li><code>誤差 = 実際 - 予測</code></li>
+</ul></li>
+</ul>
+
+<h2 id="微分-導関数-を求める1">微分（導関数）を求める1</h2>
+
+<ul>
+<li>縦軸：𝑓(𝑥)</li>
+<li>横軸：𝑥</li>
+</ul>
+
+<p>$$
+T = S((1 + \frac{E}{R})^{F} - 1)
+$$</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureonedoya.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-t.</div>
+    </div>
+</body>
+
+</html>

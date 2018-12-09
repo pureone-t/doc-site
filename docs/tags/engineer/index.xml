@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Engineer on doc site</title>
-    <link>https://pureone-t.github.io/doc-site/tags/engineer/</link>
+    <link>https://pureonedoya.github.io/doc-site/tags/engineer/</link>
     <description>Recent content in Engineer on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Oct 2018 15:25:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureone-t.github.io/doc-site/tags/engineer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/engineer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>エンジニアの目標設定に関するあれこれ</title>
-      <link>https://pureone-t.github.io/doc-site/posts/common/engineer/00001/</link>
+      <link>https://pureonedoya.github.io/doc-site/posts/common/engineer/00001/</link>
       <pubDate>Thu, 25 Oct 2018 15:25:00 +0900</pubDate>
       
-      <guid>https://pureone-t.github.io/doc-site/posts/common/engineer/00001/</guid>
+      <guid>https://pureonedoya.github.io/doc-site/posts/common/engineer/00001/</guid>
       <description>目標設定をする理由  営業職などと違い、数字での評価が難しい 日々の行動指針を考えるキッカケになる 努力が結果に結び使いない場合のロードマップを把握するキッカケになる  SMART の法則 正しい目標設定をすると、効率が上がる（＝生産性）
  Specific（明確な） Measurable（測定可能な） Achievable（達成可能な） Relevant （関連性がある） Time-bound （期限のある）  運用 - インシデント件数に対応件数と対応時間の数値化およびグラフにおける視覚化
 開発 - チーム内でのレビューに何らかの工夫を凝らす ？
