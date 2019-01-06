@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Ansible</title>
+      <link>https://pureonedoya.github.io/doc-site/tags/ansible/</link>
+      <pubDate>Sun, 23 Dec 2018 14:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Atom</title>
       <link>https://pureonedoya.github.io/doc-site/tags/atom/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
@@ -41,7 +50,7 @@
     <item>
       <title>Aws</title>
       <link>https://pureonedoya.github.io/doc-site/tags/aws/</link>
-      <pubDate>Wed, 28 Nov 2018 14:00:00 +0900</pubDate>
+      <pubDate>Fri, 14 Dec 2018 16:00:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/tags/aws/</guid>
       <description></description>
@@ -86,7 +95,7 @@
     <item>
       <title>Datascience</title>
       <link>https://pureonedoya.github.io/doc-site/tags/datascience/</link>
-      <pubDate>Fri, 07 Dec 2018 23:00:00 +0900</pubDate>
+      <pubDate>Fri, 04 Jan 2019 22:00:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/tags/datascience/</guid>
       <description></description>
@@ -210,6 +219,15 @@
     </item>
     
     <item>
+      <title>Logstash</title>
+      <link>https://pureonedoya.github.io/doc-site/tags/logstash/</link>
+      <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/tags/logstash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mac</title>
       <link>https://pureonedoya.github.io/doc-site/tags/mac/</link>
       <pubDate>Sun, 15 Jul 2018 23:40:00 +0900</pubDate>
@@ -257,7 +275,7 @@
     <item>
       <title>Python</title>
       <link>https://pureonedoya.github.io/doc-site/tags/python/</link>
-      <pubDate>Sun, 09 Dec 2018 17:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Dec 2018 01:00:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/tags/python/</guid>
       <description></description>

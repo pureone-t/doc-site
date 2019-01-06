@@ -10,14 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="doc site by pureone-t.">
+<meta name="description" content="doc site by pureonedoya.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
 <meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
-<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureonedoya.">
 <meta name="og:type" content="website">
 <meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
@@ -32,7 +32,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
 
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -60,7 +61,7 @@
 
         
 <div class="section" id="content">
-    2018-11-07 (Wed) &#183; 198 words
+    2018-11-07 (Wed) &#183; 654 words
     
     <div class="tag-container">
         
@@ -210,8 +211,7 @@ Doc2: 東京マラソンに参加する
 <li>ニュース記事の本文、商品説明、Blogエントリ本文などに使える</li>
 <li>格納時に Analyzer によって単語に分割され、分割された単語ごとに転置インデックスが構成される</li>
 <li>クエリの際には、単語を指定することが可能<br />
-例： <code>{&quot;news&quot; : &quot;Powerful hurricane heads toward Ireland.&quot;}</code>
-<br /></li>
+例： <code>{&quot;news&quot; : &quot;Powerful hurricane heads toward Ireland.&quot;}</code></li>
 </ul></li>
 
 <li><p>keyword型</p>
@@ -258,8 +258,7 @@ Doc2: 東京マラソンに参加する
 &quot;ids&quot; : [1,2,3]
 &quot;city&quot; : [&quot;Tokyo&quot;, &quot;Osaka&quot;, &quot;Nagoya&quot;]
 &quot;vms&quot; : [{&quot;host&quot; : &quot;web1&quot;, &quot;flavor&quot;: &quot;small&quot;}, {&quot;host&quot; : &quot;web2&quot;, &quot;flavor&quot;: &quot;large&quot;}]
-</code>
-<br /></li>
+</code></li>
 </ul>
 
 <h3 id="マルチフィールド型">マルチフィールド型</h3>
@@ -288,18 +287,8 @@ Doc2: 東京マラソンに参加する
 
 <ul>
 <li>ドキュメント内の各フィールドのデータ構造、データ型を記述した情報のこと</li>
-<li>マッピング定義をコマンドで行える<br />
-<code>Json
-$ curl -XPUT http://localhost:9200/my_index/_mapping/tweet -H 'Content-Type: application/json' -d
-{
-&quot;properties&quot; : {
-   &quot;user_name&quot; : { &quot;type&quot; : &quot;text&quot; },
-   &quot;message&quot; : { &quot;type&quot; : &quot;text&quot; }
-}
-}
-</code></li>
-<li>事前にマッピング定義しない場合、Elasticsearchが型推論によるマッピング定義を行う
-[](img/00002/img00001.png)</li>
+<li>マッピング定義をコマンドで行える<br /></li>
+<li>事前にマッピング定義しない場合、Elasticsearchが型推論によるマッピング定義を行う</li>
 </ul>
 
 <h1 id="物理概念">物理概念</h1>
@@ -311,6 +300,444 @@ $ curl -XPUT http://localhost:9200/my_index/_mapping/tweet -H 'Content-Type: app
 <h2 id="シャード">シャード</h2>
 
 <h2 id="レプリカ">レプリカ</h2>
+
+<h1 id="インデックスとドキュメントの基本操作">インデックスとドキュメントの基本操作</h1>
+
+<h2 id="インデックス-1">インデックス</h2>
+
+<ul>
+<li>インデックス削除時に<code>&quot;*&quot;</code>、<code>「_all」</code>を許可しない設定（誤動作防止）
+<code>action.destructive_requires_name: true</code></li>
+</ul>
+
+<h2 id="ドキュメントタイプの管理">ドキュメントタイプの管理</h2>
+
+<ul>
+<li>ドキュメントの型、データ構造の定義</li>
+<li>実際にバインドする場合をマッピングという（mapping句）<br />
+<code>Json
+PUT /sandbox/_template/INDEX_NAME
+{
+&quot;mappings&quot;: {
+&quot;DOCUMENT_TYPE_NAME&quot;: {
+  &quot;properties&quot;: {
+    &quot;host&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;uri&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;method&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;accesstime&quot;: {&quot;type&quot;: &quot;date&quot;}
+  }
+}
+}
+}
+</code></li>
+</ul>
+
+<h2 id="インデックステンプレート">インデックステンプレート</h2>
+
+<ul>
+<li>名前の異なるインデックス（日付が付与されるなど）間で共通のインデックステンプレートを作成することが可能</li>
+<li>インデックスを作成するタイミングで定義が反映される</li>
+<li><code>GET /INDEX_NAME/DOCUMENT_TYPE_NAME/_mapping?pretty</code> で確認</li>
+<li>テンプレートを複数定義した場合、<code>order</code>パラメータの小さい順で適用されるため、<code>order</code>パラメータが最大のテンプレートで上書きされる可能性があることに注意する<br />
+<code>Json
+PUT /sandbox/_template/my_template
+{
+&quot;index_patterns&quot;: &quot;accesslog-*&quot;,
+&quot;settings&quot;: {
+&quot;number_of_shards&quot;: 1
+},
+&quot;mappings&quot;: {
+&quot;accesslog_type&quot;: {
+  &quot;properties&quot;: {
+    &quot;host&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;uri&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;method&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+    &quot;accesstime&quot;: {&quot;type&quot;: &quot;date&quot;}
+  }
+}
+}
+}
+</code></li>
+</ul>
+
+<h1 id="クエリ">クエリ</h1>
+
+<h2 id="範囲">範囲</h2>
+
+<p><code>GET API_ENDPOINT/INDEX_NAME/INDEX_TYPE_NAME/_search</code></p>
+
+<ul>
+<li><code>/INDEX_NAME/_search</code> : <code>INDEX_NAME</code>を対象に検索</li>
+<li><code>/INDEX_NAME/INDEX_TYPE_NAME/_search</code> : <code>INDEX_TYPE_NAME</code>を対象に検索</li>
+<li><code>/INDEX_NAME1,INDEX_NAME2/_search</code> : <code>INDEX_NAME1</code>、<code>INDEX_NAME1</code>を対象に検索</li>
+<li><code>/INDEX_NAME*/_search</code> : <code>INDEX_NAME</code>で始まるインデックスを対象に検索</li>
+<li><code>/_search</code> : クラスタ内の全てのインデックスを対象に検索</li>
+</ul>
+
+<h2 id="dsl">DSL</h2>
+
+<pre><code>GET API_ENDPOINT/INDEX_NAME/INDEX_TYPE_NAME/_search
+{
+  &quot;query&quot;: {QUERY},
+  &quot;from&quot;: 0,
+  &quot;size&quot;: 10,
+  &quot;sort&quot;: [検索結果のソート指定],
+  &quot;_source&quot;: [検索結果に含めたいフィールド名を絞る]
+}
+</code></pre>
+
+<ul>
+<li><code>query</code> : クエリ内容をJsonオブジェクトで記載</li>
+<li><code>from</code> : 検索結果の何番目から表示するのか</li>
+<li><code>size</code> : 検索結果に含める件数</li>
+<li><code>sort</code> : 日付順や、複数フィールドにまたがったソートが可能</li>
+<li><code>_source</code> : 検索結果に含めたいフィールド名を絞る</li>
+</ul>
+
+<h2 id="クエリdslの種類">クエリDSLの種類</h2>
+
+<h3 id="全文検索クエリ">全文検索クエリ</h3>
+
+<ul>
+<li><code>&quot;match_all&quot;: {}</code></li>
+
+<li><p><code>&quot;match&quot;</code> // 転置インデックスからの検索（text型）</p>
+
+<ul>
+<li><code>&quot;operator&quot;: &quot;and&quot;</code> // AND 条件</li>
+<li><code>&quot;minimum_should_match&quot;: 2</code> // 最低でも何件以上、何%以上</li>
+<li><code>&quot;match_phrase&quot;: one two three</code> // 順番一致</li>
+
+<li><p><code>&quot;query_string&quot;</code> // Luceneシンタックス 低レベル検索用</p>
+
+<h3 id="termクエリ">Termクエリ</h3></li>
+</ul></li>
+
+<li><p><code>&quot;terms&quot;</code> // 完全一致検索（keyword型）</p></li>
+
+<li><p><code>&quot;range&quot;:</code> // 範囲指定</p>
+
+<ul>
+<li>gte : 以上</li>
+<li>lte : 以下</li>
+<li>gt  : より大きい</li>
+<li>lt  : より小さい<br />
+<code>
+{
+&quot;query&quot;: {
+&quot;range&quot;: {
+&quot;stock_price&quot;: {
+&quot;gte&quot;: &quot;15.00&quot;,
+&quot;lte&quot;: &quot;25.00&quot;
+}
+}
+}
+}
+</code><br />
+<code>
+// 日付指定
+&quot;birthday&quot;: {
+&quot;gte&quot;: &quot;2010-10-01&quot;,
+&quot;lte&quot;: &quot;2011-05-24&quot;
+}
+</code><br />
+<code>
+// 1週間以内
+&quot;manufactured_date&quot;: {
+&quot;gte&quot;: &quot;now-1w&quot;
+}
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="boolクエリ-複合クエリ">Boolクエリ （複合クエリ）</h3>
+
+<pre><code>{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [&lt;基本クエリ&gt;, &lt;基本クエリ&gt;,,,],
+      &quot;should&quot;: [&lt;基本クエリ&gt;, &lt;基本クエリ&gt;,,,],
+      &quot;must_not&quot;: [&lt;基本クエリ&gt;, &lt;基本クエリ&gt;,,,],
+      &quot;filter&quot;: [&lt;基本クエリ&gt;, &lt;基本クエリ&gt;,,,]
+      }
+    }
+  }
+}
+</code></pre>
+
+<ul>
+<li><code>&quot;must&quot;</code> : 必ず含まれているべきクエリ、AND条件と同じ意味</li>
+<li><code>&quot;should&quot;</code> : いずれかのクエリがヒットすればイイ、OR条件と同じ意味（<code>minimum_should_match</code>を使うことも可能）</li>
+<li><code>&quot;must_not&quot;</code> : 除外クエリ、NOT条件と同じ意味</li>
+<li><code>&quot;filter&quot;</code> : スコアに関与しない除外（Filterコンテキスト、Queryコンテキスト）</li>
+</ul>
+
+<h1 id="ソート">ソート</h1>
+
+<h2 id="フィールド名指定のソート">フィールド名指定のソート</h2>
+
+<pre><code>{
+  &quot;query&quot;: {&lt;クエリの検索条件&gt;},
+  &quot;sort&quot;: [
+    {&quot;stock_price&quot;: {&quot;order&quot; : &quot;desc&quot;}}
+  ]
+}
+</code></pre>
+
+<h2 id="フィールド名を複数指定したソード">フィールド名を複数指定したソード</h2>
+
+<pre><code>{
+  &quot;query&quot;: {&lt;クエリの検索条件&gt;},
+  &quot;sort&quot;: [
+    {&quot;stock_price&quot;: {&quot;order&quot; : &quot;desc&quot;}},
+    {&quot;founded&quot;: {&quot;order&quot; : &quot;asc&quot;}}
+  ]
+}
+</code></pre>
+
+<h2 id="スコアに基づいたソード">スコアに基づいたソード</h2>
+
+<pre><code>{
+  &quot;query&quot;: {&lt;クエリの検索条件&gt;},
+  &quot;sort&quot;: [
+    {&quot;stock_price&quot;: {&quot;order&quot; : &quot;desc&quot;}},
+    &quot;_score&quot;
+  ]
+}
+</code></pre>
+
+<h2 id="配列型データの計算結果に基づいたソート">配列型データの計算結果に基づいたソート</h2>
+
+<ul>
+<li>配列の値の最小、最大、平均などの計算結果に基づいたソート<br />
+
+<ul>
+<li>&ldquo;avg&rdquo; : 平均</li>
+<li>&ldquo;min&rdquo; : 最小</li>
+<li>&ldquo;max&rdquo; : 最大</li>
+<li>&ldquo;sum&rdquo; : 合計</li>
+<li>&ldquo;median&rdquo; : メジアン
+<code>
+// この例では平均
+&quot;sort&quot;: [
+{&quot;dayoff&quot;: {&quot;order&quot; : &quot;desc&quot;, &quot;mode&quot; : &quot;avg&quot;}}
+]
+</code></li>
+</ul></li>
+</ul>
+
+<h1 id="4章-全文検索とanalyzer">4章 全文検索とAnalyzer</h1>
+
+<ul>
+<li>インデックスへドキュメント（text型）の格納時（転置インデックスの作成）、検索時の検索文字に対して形態素解析を行う</li>
+</ul>
+
+<h2 id="ステミング">ステミング</h2>
+
+<ul>
+<li>語形の変化を揃えて同一表現に統一する処理</li>
+<li>&ldquo;dogs&rdquo; -&gt; &ldquo;dog&rdquo;</li>
+<li>&ldquo;食べる&rdquo;、&rdquo;食べた&rdquo;、&rdquo;食べます&rdquo; -&gt; &ldquo;食べ&rdquo;</li>
+</ul>
+
+<h2 id="正規化">正規化</h2>
+
+<ul>
+<li>大文字、小文字、カタカナ、ひらがな、全角、半角を揃える処理</li>
+</ul>
+
+<h2 id="ストップワード">ストップワード</h2>
+
+<ul>
+<li>冠詞、前置詞、助詞などの単体で意味を持たない単語を除外する処理</li>
+<li>Elasticsearchは、標準で<code>English Analyzer</code>をサポートしている</li>
+</ul>
+
+<h2 id="analyzerの定義">Analyzerの定義</h2>
+
+<h3 id="マッピング定義で定義">マッピング定義で定義</h3>
+
+<pre><code>&quot;mappings&quot;:  {
+  &quot;my_type&quot;: {
+    &quot;properties&quot;: {
+      &quot;blog_message&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;analyzer&quot;: &quot;standard&quot;
+      }
+    }
+  }
+}
+</code></pre>
+
+<h2 id="analyzer内部構成">Analyzer内部構成</h2>
+
+<ol>
+<li>Char filter
+
+<ul>
+<li>入力テキストの前処理</li>
+<li>文字単位の変換処理</li>
+<li>HTML Strip Character Filter -&gt;  タグ除去（<br>とか）</li>
+<li>Mapping Character Filter -&gt; 入力文字に含まれる特定文字にマッピングルールを定義し、変換する（例　&rdquo;:)&rdquo; -&gt; &ldquo;<em>happy</em>&ldquo;）</li>
+<li>Pattern Replace Character Filter -&gt; 正規表現ルールで入力文字を変換する（例 &ldquo;123-456-789&rdquo; -&gt; &ldquo;123_456_789&rdquo;）</li>
+</ul></li>
+<li>Tokenizer
+
+<ul>
+<li>Char filterの出力データを入力として、テキスト分割処理をし、トークン（単語）の列を生成する</li>
+<li>単語分割用Tokenizer :</li>
+<li>N-gram分割用Tokenizer :</li>
+<li>構造化テキスト分割用Tokenizer :</li>
+</ul></li>
+<li>Token filter
+
+<ul>
+<li>Tokenizerが分割したトークン（単語）に対して、トークン単位での変換処理を行うためのフィルタ機能</li>
+<li>Lower case Token filter</li>
+<li>トークン文字を小文字に変換</li>
+<li>Stop Token filter</li>
+<li>ストップワードの除去を行うフィルタリング</li>
+<li>Stremer Token filter</li>
+<li>ステミング処理を行うフィルタ</li>
+<li>Synonym Token filter</li>
+<li>類義語（シノニム）を正規化して1つの単語に変換するためのフィルタ</li>
+</ul></li>
+</ol>
+
+<h2 id="analyzerのカスタム定義">Analyzerのカスタム定義</h2>
+
+<ul>
+<li>TODO</li>
+</ul>
+
+<h1 id="aggregation">Aggregation</h1>
+
+<ul>
+<li>検索結果の集合に対して、分類や集計を行うことができる機能</li>
+<li>ドキュメントを特定のグループに分類することができる</li>
+<li>そのグループごとの件数、最大値、平均値といった統計量の値を返すことができる</li>
+<li>任意のクエリでドキュメントをし盛り込みながら、同時にAggregationを実行する操作が1回のクエリで行える</li>
+</ul>
+
+<h2 id="metrics">Metrics</h2>
+
+<ul>
+<li>分類された各グループに対して、最小、最大、平均などの統計値を計算する<br /></li>
+<li>SQLの<code>COUNT</code>に近い</li>
+</ul>
+
+<h2 id="buckets">Buckets</h2>
+
+<ul>
+<li>ドキュメントをフィールド値に基づいてグループ化するための分類方法
+（書籍の価格ごと、書籍のジャンルでグループ化）</li>
+<li>SQLの<code>GROUP BY</code>に近い</li>
+</ul>
+
+<h2 id="pipeline">Pipeline</h2>
+
+<ul>
+<li>Bucketsなどの他のAggregationの結果を用いて、さらに集計をする機能</li>
+</ul>
+
+<h2 id="matrix">Matrix</h2>
+
+<ul>
+<li>複数フィールドの値を対象に相関、共分散などの統計値を計算する機能</li>
+</ul>
+
+<h2 id="分類と集計の例">分類と集計の例</h2>
+
+<pre><code>Aggregation Query
+
+Book Index {
+  &quot;タイトル&quot;: text,
+  &quot;ジャンル&quot;: keyword,
+  &quot;発売日&quot;: date,
+  &quot;価格&quot;: logn
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Bucktes（ビジネス）</th>
+<th>Metrics（平均価格）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>&ldquo;ビジネス&rdquo;</td>
+<td>3400</td>
+</tr>
+
+<tr>
+<td>&ldquo;文学&rdquo;</td>
+<td>1350</td>
+</tr>
+
+<tr>
+<td>&ldquo;コンピュータ&rdquo;</td>
+<td>3200</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="aggregation文法">Aggregation文法</h2>
+
+<pre><code>&quot;aggregations&quot;: {
+  &quot;&lt;AGGREGATION_NAME&gt;&quot;: {
+    &quot;&lt;AGGREGATION_TYPE&gt;&quot;: {
+      &quot;&lt;AGGREGATION_BODY&gt;&quot;
+    }
+  }
+}
+</code></pre>
+
+<ul>
+<li><code>&quot;aggregations&quot;</code>句は、<code>&quot;aggs&quot;</code>と省略可能</li>
+<li><code>&quot;&lt;AGGREGATION_NAME&gt;&quot;</code>は任意の名前</li>
+<li><code>&quot;&lt;AGGREGATION_TYPE&gt;&quot;</code>は、<code>&quot;Metrics&quot;</code>、<code>&quot;Buckets&quot;</code>、<code>&quot;Pipeline&quot;</code>、<code>&quot;Matrix&quot;</code>の機能タイプを定義する<br />
+（<code>&quot;Metrics&quot;</code>タイプであれば、<code>&quot;sum&quot;</code>、<code>&quot;avg&quot;</code>、<code>&quot;Buckets&quot;</code>タイプであれば、<code>&quot;range&quot;</code>など）</li>
+</ul>
+
+<h2 id="metrics文法">Metrics文法</h2>
+
+<ul>
+<li>query句を使う方法
+
+<ul>
+<li>query句でデータセットを絞り込み、Metricsの集計を適用する</li>
+</ul></li>
+<li>Bucketsを使う方法
+
+<ul>
+<li>Bucketsを使ってドキュメントをグループ化し、グループ化されたデータセットに対して、それぞれMetricsの集計を適用する</li>
+</ul></li>
+<li>何も指定しない方法
+
+<ul>
+<li>インデックスに格納されているドキュメント全体の統計値を計算する</li>
+</ul></li>
+<li><code>&quot;size&quot;</code>に0を指定すると、<code>&quot;aggs&quot;</code>の計算結果だけを返すことができる<br />
+<code>
+// query句を使う方法
+&quot;size&quot;: 0,
+&quot;query&quot;: {
+&quot;match&quot;: {
+  &quot;office&quot;: &quot;1&quot;
+}
+},
+&quot;aggs&quot;: {
+&quot;svg_hoge&quot;: {
+  &quot;avg&quot;: {
+    &quot;field&quot;: &quot;salary&quot;
+  }
+}
+}
+</code></li>
+</ul>
 
 </div>
 
@@ -341,7 +768,7 @@ $ curl -XPUT http://localhost:9200/my_index/_mapping/tweet -H 'Content-Type: app
 </div>
 
 
-        <div class="section footer">&copy; 2018 pureone-t.</div>
+        <div class="section footer">&copy; 2018 pureonedoya.</div>
     </div>
 </body>
 

@@ -6,18 +6,67 @@
     <description>Recent content on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Dec 2018 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 22:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureonedoya.github.io/doc-site/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Python 環境構築</title>
+      <title>機械学習 入門#2</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</link>
+      <pubDate>Fri, 04 Jan 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</guid>
+      <description> 線形代数 スカラー $x, y, z, m, n$
+ベクトル  複数の値を集めたもの スカラーが複数集まったもの エクセルの一列みたい $$ \boldsymbol{x} = \left(\begin{array}{c}x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right) $$  行列 $$ \boldsymbol{X} = \begin{eqnarray}\left( \begin{array}{} x_1 &amp;amp; x_2 \\
+x_3 &amp;amp; x_4 \\
+x_5 &amp;amp; x_6 \end{array}\right) \end{eqnarray} $$
+    小文字 大文字     細字 スカラー変数 $x$ スカラー定数 $N$   太字 ベクトル $\boldsymbol{x}$ 行列 $\boldsymbol{X}$    まとめ  サイズ  $1 \times 1$：スカラー $n \times 1$：ベクトル $n \times n$：行列  行列をさらに並べたテンソルという概念もある  演算 </description>
+    </item>
+    
+    <item>
+      <title>Logstash</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</link>
+      <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</guid>
+      <description> Hoge   </description>
+    </item>
+    
+    <item>
+      <title>Ansible 実践入門</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/ansible/00001/</link>
+      <pubDate>Sun, 23 Dec 2018 14:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/ansible/00001/</guid>
+      <description>サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master
+Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
+- ターゲットノードにはPythonの実行環境が求められる - 各ソフトウェア、ミドルウェアのインストールには特権ユーザ権限が必要である - タスクの用途によってユーザを作成しておく
+内部コンポーネント  柔軟性のあるタスク実行コンポーネントが存在する Playbook、設定ファイルから呼び出すことが可能  (Module)モジュール  Playbook、Ansible APIの中で呼ばれる再利用可能な処理ユニット ファイル転送、サービス起動などをラップしたもの ターゲットノードで実行 Gtihubで公開されている
+ Core(コアモジュール)
+ Network(ネットワークモジュール)
+ Certified(設定ファイルモジュール)
+ Community(コミュニティモジュール)
+ モジュールカテゴリは公式を参照
+  Inventory  ターゲットノードの接続情報リストを定義するファイル 記載されたホストが実行環境となる 単一ノードだけでなくグループ化することが可能 クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う  Playbook  ターゲットノード側で実行したい処理の流れを定義するファイル 記載されたタスクがInventoryのリストにあるホストで実行される タスク(モジュール群の呼び出し)という処理フローを定義 実行したいホストのグループをバインド YAML形式で記載する  Plugin  Ansibleを構成するCore機能に付随する 詳細は公式を参照  Python API  Ansible設けられたインターフェースの一つ Pythonを実行できる  Ansible CLI Install  $ sudo pip3 install ansible $ ansible  ディレクトリ構成 https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Note Book 環境構築</title>
       <link>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</link>
-      <pubDate>Sun, 09 Dec 2018 17:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Dec 2018 01:00:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</guid>
-      <description> Python インストール 構成 Homebrew |- python3 |- pip3 |- python3で使用するライブラリ... |- etc...  Python $ brew install python3 $ witch python3 $ witch pip3  Libraries $ pip3 install numpy # 線形代数 $ pip3 install scipy # 数式処理 $ pip3 install matplotlib # 描画 $ pip3 install pandas # データ操作  </description>
+      <description> 構成 Homebrew |- python3 |- pip3 |- python3で使用するライブラリ... |- etc...  Python $ brew install python3 $ witch python3 $ witch pip3  Libraries $ pip3 install numpy # 線形代数 $ pip3 install scipy # 数式処理 $ pip3 install matplotlib # 描画 $ pip3 install pandas # データ操作 $ pip3 install scikit-learn # 分類や予測のためのモデルが詰まった機械学習用パッケージ $ pip3 install chainer # ディープラーニング  Jupyter Note Book $ pip3 install jupyter $ jupyter notebook  </description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00009/</link>
+      <pubDate>Fri, 14 Dec 2018 16:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00009/</guid>
+      <description> AWS CLIを使って、S3のデータをダウンロードする $ aws s3 cp --region ap-northeast-1 s3://バケット名/ . --recursive  </description>
     </item>
     
     <item>
@@ -26,8 +75,8 @@
       <pubDate>Fri, 07 Dec 2018 23:00:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00001/</guid>
-      <description>機械学習の位置付け 人工知能 &amp;gt; 機械学習 &amp;gt; ディープラーニング
-目 -&amp;gt; 画像 -&amp;gt; 数値 -&amp;gt; 機械学習 耳 -&amp;gt; 音声(時系列を含む) -&amp;gt; 数値 -&amp;gt; 機械学習 口 -&amp;gt; 自然言語 -&amp;gt; 数値(word2vec) -&amp;gt; 機械学習 入力𝑥 -&amp;gt; 機械学習 -&amp;gt; 出力𝑦 =&amp;gt; 入力𝑥 と 出力𝑦 の関係性(規則性)を見つける 機械学習 { ディープラーニング、 単回帰分析、 SVM(Support Vector Machine) }  機械学習に必要な数学  微分積分 線形代数 確率・統計 ディープラーニングは、微分と線形代数が重要！  機械学習の３大トピック  教師あり学習（入力𝑥と出力𝑦）  回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&amp;gt; 家賃(𝑦) 分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール(𝑥) -&amp;gt; 種類(𝑦)  教師なし学習（入力𝑥）  クラスタリング（グルーピング） 次元削減（入力変数を減らす）  強化学習（データがない or ほとんどない）  掃除ロボット   機械学習と内挿・外挿  (o) (x) x 1 2 (3) 4 (5) y 2 4 (6) 8 (10) =&amp;gt; y = ax  内挿：持っている入力データ内で予測すること（1~4） 外挿：持っている入力データ外で予測すること</description>
+      <description>1基礎 機械学習の位置付け 人工知能 &amp;gt; 機械学習 &amp;gt; ディープラーニング
+目 -&amp;gt; 画像 -&amp;gt; 数値 -&amp;gt; 機械学習 耳 -&amp;gt; 音声(時系列を含む) -&amp;gt; 数値 -&amp;gt; 機械学習 口 -&amp;gt; 自然言語 -&amp;gt; 数値(word2vec) -&amp;gt; 機械学習 入力𝑥 -&amp;gt; 機械学習 -&amp;gt; 出力𝑦 =&amp;gt; 入力𝑥 と 出力𝑦 の関係性(規則性)を見つける 機械学習 { ディープラーニング、 単回帰分析、 SVM(Support Vector Machine) }  機械学習に必要な数学  微分積分 線形代数 確率・統計 ディープラーニングは、微分と線形代数が重要！  機械学習の３大トピック  教師あり学習（入力$x$と出力$y$）  回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&amp;gt; 家賃($y$) 分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール($x$) -&amp;gt; 種類($y$)  教師なし学習（入力$x$）  クラスタリング（グルーピング） 次元削減（入力変数を減らす）  強化学習（データがない or ほとんどない）  掃除ロボット   機械学習と内挿・外挿  内挿：持っている入力データ内で予測すること（1~4） 外挿：持っている入力データ外で予測すること  機械学習は、内挿を保証するため、外挿は取り扱わない</description>
     </item>
     
     <item>
@@ -86,12 +135,12 @@ $ sudo yum install gcc  $ wget http://download.redis.io/redis-stable.tar.gz $ ta
     </item>
     
     <item>
-      <title>Mac (OSX) SSH接続</title>
+      <title>ssh</title>
       <link>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</link>
       <pubDate>Wed, 21 Nov 2018 18:30:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</guid>
-      <description> 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  </description>
+      <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  インターネット上の中継サーバを使う方法    LAN内の中継サーバを使う方法       </description>
     </item>
     
     <item>
@@ -189,25 +238,12 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     </item>
     
     <item>
-      <title>Amazon Elasticsearch Service</title>
+      <title>sim</title>
       <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
       <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
-      <description>構築 新しいドメインの定義  ドメイン名:pureone
- バージョン:最新
-  -&amp;gt; Next
-クラスターの設定  ノードの設定
- インスタンス数:1 インスタンスタイプ:t2.small.elasticsearch 専用マスター有効化:OFF ゾーン対応の有効化:OFF  ストレージ設定
- ストレージタイプ:EBS EBSボリュームタイプ:汎用(SSD) EBSボリュームサイズ:１０ 保存時の暗号化の有効化:OFF  スナップショットの設定
-自動スナップショットの開始時間:デフォルト  -&amp;gt; Next
-アクセスの設定  ネットワーク構成
- パブリックアクセス ノード間の暗号化：OFF  Kibana認証
- OFF  アクセスポリシー
- ドメインアクセスポリシーの設定
- 特定のIPからのドメインへのアクセスを許可：パブリックIPを入力(ブラウザで自分のIPを検索)   -&amp;gt; Next
-確認  OK  操作 https://dev.classmethod.jp/server-side/elasticsearch/use-kibana-on-aws/
-インデックスの作成 $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/shakespeare/_doc/1 -d &amp;#39;{ &amp;#34;mappings&amp;#34; : { &amp;#34;_default_&amp;#34; : { &amp;#34;properties&amp;#34; : { &amp;#34;speaker&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;play_name&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;line_id&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; }, &amp;#34;speech_number&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; } } } } }&amp;#39; -H &amp;#39;Content-Type: application/json&amp;#39; データインポート  Jsonデータ shell $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/_bulk --data-binary @shakespeare.</description>
+      <description></description>
     </item>
     
     <item>
@@ -216,12 +252,8 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
       <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
-      <description>Elastic Search  オープンソースの全文検索エンジン https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329 https://qiita.com/makaishi2/items/598d24ea65e6ec79f887
-(自動起動の設定)  インストール  java8
-$ brew cask install homebrew/cask-versions/java8  Elasticsearch
-$ brew install elasticsearch  kibana
-$ brew install kibana   起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
-{ &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.4.3&amp;quot;, &amp;quot;build_flavor&amp;quot; : &amp;quot;oss&amp;quot;, &amp;quot;build_type&amp;quot; : &amp;quot;tar&amp;quot;, &amp;quot;build_hash&amp;quot; : &amp;quot;fe40335&amp;quot;, &amp;quot;build_date&amp;quot; : &amp;quot;2018-10-30T23:17:19.084789Z&amp;quot;, &amp;quot;build_snapshot&amp;quot; : false, &amp;quot;lucene_version&amp;quot; : &amp;quot;7.</description>
+      <description>環境構築リスト  ローカル(Mac OSX) + Elasticsearch ローカル(Mac OSX) + docker ローカル(Mac OSX) + docker-compose EC2 + docker + Elasticsearch EC2 + docker + Elasticsearch by terraform  ローカルMac Elasticsearch Java8 インストール $ brew cask install homebrew/cask-versions/java8  Elasticsearch インストール $ brew install elasticsearch  kibana インストール $ brew install kibana  起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
+{ &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.</description>
     </item>
     
     <item>
@@ -485,8 +517,8 @@ Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.
       <guid>https://pureonedoya.github.io/doc-site/about/</guid>
       <description>Junichi Tsuchiya  Tokyo, Japan
  Engineer
- Scala / Haskell / Go / Python / Java / PHP / Perl Vue.js / React.js / Node.js AWS / docker
-・・・   pureone.ttt@gmail.com
+ Scala / Haskell / Go / Python / Java / PHP / Perl Vue.js / React.js / Node.js AWS / docker / Ansible Elaticsearch
+・・・   pureonedoya@gmail.com
 GitHub</description>
     </item>
     
@@ -530,17 +562,6 @@ Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Di
 テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー Atomメニュー -&amp;gt; keymap
 &#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  dotinstall_pane alt + shift + d（ドットインストールタブを表示
 alt + shift + enter（再生）</description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</link>
-      <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
-      
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</guid>
-      <description> Docker Install https://store.docker.com/editions/community/docker-ce-desktop-mac
-- Get Docker - Docker.dmg 実行 - Applicationフォルダへ移動 - Docker.app 実行 - Docker認証
-Setting  ファイル共有 Preference -&amp;gt; File Sharing  </description>
     </item>
     
     <item>
@@ -731,6 +752,17 @@ Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Editi
       <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00003/</guid>
       <description> &amp;ndash; title: Docker3 date: 2018-11-08T15:00:00+09:00 showDate: true
 tags: [&amp;ldquo;docker&amp;rdquo;] docker  namespace(名前空間)、c-group(コントロールグループ)の制御 プロセス環境を分離(isolate) リソース制限を可能とする  docker hub </description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</guid>
+      <description> docker-compse https://github.com/asashiho/dockertext2.git
+$ git clone https://github.com/asashiho/dockertext2.git $ cat dockertext2/chap07/docker-compose,yml  version: &#39;3.3&#39; services: # WebServer config webserver: build: . ports: - &amp;quot;80:80&amp;quot; # 80番ポートの解放 depends_on: - redis # Redis config redis: # redisサービスへの依存 image: redis:4.0  $ docker-compose up  http://0.0.0.0:80/
+docker-compose.yml 概要  service, networks, volumes  </description>
     </item>
     
     <item>

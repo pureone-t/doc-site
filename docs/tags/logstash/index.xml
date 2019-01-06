@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logstash on doc site</title>
+    <link>https://pureonedoya.github.io/doc-site/tags/logstash/</link>
+    <description>Recent content in Logstash on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Dec 2018 15:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureonedoya.github.io/doc-site/tags/logstash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Logstash</title>
+      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</link>
+      <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</guid>
+      <description> Hoge   </description>
+    </item>
+    
+  </channel>
+</rss>

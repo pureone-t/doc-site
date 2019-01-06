@@ -42,25 +42,12 @@
     </item>
     
     <item>
-      <title>Amazon Elasticsearch Service</title>
+      <title>sim</title>
       <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
       <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
-      <description>構築 新しいドメインの定義  ドメイン名:pureone
- バージョン:最新
-  -&amp;gt; Next
-クラスターの設定  ノードの設定
- インスタンス数:1 インスタンスタイプ:t2.small.elasticsearch 専用マスター有効化:OFF ゾーン対応の有効化:OFF  ストレージ設定
- ストレージタイプ:EBS EBSボリュームタイプ:汎用(SSD) EBSボリュームサイズ:１０ 保存時の暗号化の有効化:OFF  スナップショットの設定
-自動スナップショットの開始時間:デフォルト  -&amp;gt; Next
-アクセスの設定  ネットワーク構成
- パブリックアクセス ノード間の暗号化：OFF  Kibana認証
- OFF  アクセスポリシー
- ドメインアクセスポリシーの設定
- 特定のIPからのドメインへのアクセスを許可：パブリックIPを入力(ブラウザで自分のIPを検索)   -&amp;gt; Next
-確認  OK  操作 https://dev.classmethod.jp/server-side/elasticsearch/use-kibana-on-aws/
-インデックスの作成 $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/shakespeare/_doc/1 -d &amp;#39;{ &amp;#34;mappings&amp;#34; : { &amp;#34;_default_&amp;#34; : { &amp;#34;properties&amp;#34; : { &amp;#34;speaker&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;play_name&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;, &amp;#34;index&amp;#34; : &amp;#34;not_analyzed&amp;#34; }, &amp;#34;line_id&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; }, &amp;#34;speech_number&amp;#34; : { &amp;#34;type&amp;#34; : &amp;#34;integer&amp;#34; } } } } }&amp;#39; -H &amp;#39;Content-Type: application/json&amp;#39; データインポート  Jsonデータ shell $ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/_bulk --data-binary @shakespeare.</description>
+      <description></description>
     </item>
     
     <item>
@@ -69,12 +56,8 @@
       <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
       
       <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
-      <description>Elastic Search  オープンソースの全文検索エンジン https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329 https://qiita.com/makaishi2/items/598d24ea65e6ec79f887
-(自動起動の設定)  インストール  java8
-$ brew cask install homebrew/cask-versions/java8  Elasticsearch
-$ brew install elasticsearch  kibana
-$ brew install kibana   起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
-{ &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.4.3&amp;quot;, &amp;quot;build_flavor&amp;quot; : &amp;quot;oss&amp;quot;, &amp;quot;build_type&amp;quot; : &amp;quot;tar&amp;quot;, &amp;quot;build_hash&amp;quot; : &amp;quot;fe40335&amp;quot;, &amp;quot;build_date&amp;quot; : &amp;quot;2018-10-30T23:17:19.084789Z&amp;quot;, &amp;quot;build_snapshot&amp;quot; : false, &amp;quot;lucene_version&amp;quot; : &amp;quot;7.</description>
+      <description>環境構築リスト  ローカル(Mac OSX) + Elasticsearch ローカル(Mac OSX) + docker ローカル(Mac OSX) + docker-compose EC2 + docker + Elasticsearch EC2 + docker + Elasticsearch by terraform  ローカルMac Elasticsearch Java8 インストール $ brew cask install homebrew/cask-versions/java8  Elasticsearch インストール $ brew install elasticsearch  kibana インストール $ brew install kibana  起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
+{ &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.</description>
     </item>
     
   </channel>

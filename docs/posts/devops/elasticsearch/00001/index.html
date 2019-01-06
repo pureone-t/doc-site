@@ -10,14 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="doc site by pureone-t.">
+<meta name="description" content="doc site by pureonedoya.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
 <meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
-<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureonedoya.">
 <meta name="og:type" content="website">
 <meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
@@ -32,7 +32,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
 
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -60,7 +61,7 @@
 
         
 <div class="section" id="content">
-    2018-11-07 (Wed) &#183; 157 words
+    2018-11-07 (Wed) &#183; 621 words
     
     <div class="tag-container">
         
@@ -75,33 +76,32 @@
     <hr/>
     
 
-<h1 id="elastic-search">Elastic Search</h1>
+<h1 id="環境構築リスト">環境構築リスト</h1>
 
 <ul>
-<li>オープンソースの全文検索エンジン</li>
-<li><a href="https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329">https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329</a></li>
-<li><a href="https://qiita.com/makaishi2/items/598d24ea65e6ec79f887">https://qiita.com/makaishi2/items/598d24ea65e6ec79f887</a><br />
-(自動起動の設定)</li>
+<li><a href="#ローカルMac-Elasticsearch">ローカル(Mac OSX) + Elasticsearch</a></li>
+<li><a href="#ローカルMac-docker-Elasticsearch">ローカル(Mac OSX) + docker</a></li>
+<li><a href="#ローカルMac-docker-compose-Elasticsearch">ローカル(Mac OSX) + docker-compose</a></li>
+<li><a href="#EC2-docker-Elasticsearch">EC2 + docker + Elasticsearch</a></li>
+<li><a href="#EC2-docker-Elasticsearch-terraform">EC2 + docker + Elasticsearch by terraform</a></li>
 </ul>
 
-<h2 id="インストール">インストール</h2>
+<h1 id="ローカルmac-elasticsearch">ローカルMac Elasticsearch</h1>
 
-<ul>
-<li><p>java8</p>
+<h2 id="java8-インストール">Java8 インストール</h2>
 
 <pre><code>$ brew cask install homebrew/cask-versions/java8
-</code></pre></li>
+</code></pre>
 
-<li><p>Elasticsearch</p>
+<h2 id="elasticsearch-インストール">Elasticsearch インストール</h2>
 
 <pre><code>$ brew install elasticsearch
-</code></pre></li>
+</code></pre>
 
-<li><p>kibana</p>
+<h2 id="kibana-インストール">kibana インストール</h2>
 
 <pre><code>$ brew install kibana
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h2 id="起動-アクセス">起動&amp;アクセス</h2>
 
@@ -141,45 +141,320 @@ $ elasticsearch
 <li><p><a href="http://localhost:5601/app/kibana">http://localhost:5601/app/kibana</a></p></li>
 </ul>
 
-<h2 id="elasticsearch">Elasticsearch</h2>
-
-<pre><code>#    +--- Index name
-#    |       +--- Type name
-#    |       |     +--- Document ID
-#    |       |     |
-#    V       V     V
-PUT /library/books/1
-{
-  &quot;title&quot;: &quot;Norwegian Wood&quot;,
-  &quot;name&quot;: {
-    &quot;first&quot;: &quot;Haruki&quot;,
-    &quot;last&quot;: &quot;Murakami&quot;
-  },
-  &quot;publish_date&quot;: &quot;1987-09-04T00:00:00+0900&quot;,
-  &quot;price&quot;: 19.95
-}
-</code></pre>
-
-<h1 id="local-docker">LOCAL &amp; Docker</h1>
-
-<h2 id="dockerコンテナでelasticsearchを起動する">DockerコンテナでElasticsearchを起動する</h2>
+<h1 id="ローカルmac-docker-elasticsearch">ローカルMac docker Elasticsearch</h1>
 
 <ul>
-<li>ダウンロード &amp; 起動
-<code>
-$ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.1
-$ docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.2.1
-</code></li>
-<li>確認
-<code>
+<li>dockerはインストール済み前提</li>
+</ul>
+
+<h2 id="docker-pull-elasticsearch">docker pull Elasticsearch</h2>
+
+<pre><code>$ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.1
+</code></pre>
+
+<h2 id="起動">起動</h2>
+
+<pre><code>$ docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.2.1
 $ docker ps
-</code></li>
+</code></pre>
+
+<ul>
 <li><a href="http://localhost:9200/">http://localhost:9200/</a></li>
 </ul>
 
-<h2 id="hoge">Hoge</h2>
+<h1 id="local-mac-docker-elasticstack">Local Mac docker ElasticStack</h1>
 
-<pre><code>$ docker exec -it [コンテナ名] /bin/bash
+<pre><code>Local(Mac OSX)
+ └─docker-compose
+    ├─Elasticsearch(6.5)
+    ├─Kibana(6.5)
+    └─Logstash(6.5)
+</code></pre>
+
+<h2 id="docker-install">docker install</h2>
+
+<pre><code>$ brew install
+</code></pre>
+
+<h2 id="docker-compose-install">docker compose install</h2>
+
+<pre><code>$ yum update -y
+$ sudo yum install git -y
+$ sudo yum install docker -y
+$ docker -v
+$ sudo service docker start
+$ sudo usermod -a -G docker ec2-user
+$ sudo service docker restart
+$ exit
+</code></pre>
+
+<h2 id="docker-compose-install-1">docker compose install</h2>
+
+<pre><code>$ sudo curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+
+<h2 id="docker-compose-yml">docker-compose yml</h2>
+
+<pre><code>$ vi docker-compose.yml
+</code></pre>
+
+<h1 id="ec2-docker-elasticsearch">EC2 docker Elasticsearch</h1>
+
+<ul>
+<li>EC2インスタンスは、t2.medium</li>
+<li>EC2インスタンは、カスタムTCPで5601ポートを解放しておくこと</li>
+<li>参考にした記事
+<a href="https://runble1.com/aws-docker-elasticsearch-kibana/">https://runble1.com/aws-docker-elasticsearch-kibana/</a></li>
+</ul>
+
+<h2 id="docker-インストール">docker インストール</h2>
+
+<pre><code>$ sudo yum update
+
+# docker インストール
+$ sudo yum install -y docker
+
+# docker 起動
+$ sudo service docker start
+
+# ec2-user を docker グループに追加する
+$ sudo usermod -a -G docker ec2-user
+$ cat /etc/group |grep docker
+docker:x:497:ec2-user
+
+# docker コマンドが使えるか確認する
+$ docker info
+</code></pre>
+
+<h2 id="docker-compose-インストール">docker-compose インストール</h2>
+
+<pre><code># 公式の通り、curlでダウンロード
+$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+
+# バイナリに実行権限を付与する
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+# インストールされたか確認する
+$ docker-compose --version
+docker-compose version 1.23.1, build b02f1306
+</code></pre>
+
+<h2 id="docker-compose-yml-1">docker-compose.yml</h2>
+
+<pre><code>version: &quot;3&quot;
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.0
+    container_name: elasticsearch
+    environment:
+      discovery.type: single-node
+    ports:
+      - &quot;9200:9200&quot;
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.5.0
+    container_name: kibana
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    ports:
+      - &quot;5601:5601&quot;
+    depends_on:
+      - elasticsearch
+
+volumes:
+  es_data:
+    driver: local
+</code></pre>
+
+<h2 id="アクセス">アクセス</h2>
+
+<ul>
+<li><code>$ curl localhost:9200</code></li>
+<li>ブラウザから、http:[AWSのパブリックDNS名]:5601 へアクセス</li>
+</ul>
+
+<h2 id="logstash">Logstash</h2>
+
+<ul>
+<li><p>logstash on docker sample project</p>
+
+<ul>
+<li><a href="https://github.com/elastic/logstash-docker">https://github.com/elastic/logstash-docker</a></li>
+</ul></li>
+
+<li><p>hoge</p></li>
+</ul>
+
+<pre><code>$ git clone https://github.com/elastic/logstash-docker.git
+$ tree .
+.
+├── LICENSE
+├── Makefile
+├── README.md
+├── bin
+│   ├── elastic-version
+│   └── pytest
+├── build
+│   ├── golang
+│   │   └── Dockerfile
+│   └── logstash
+│       ├── bin
+│       │   └── docker-entrypoint
+│       ├── config
+│       │   ├── log4j2.properties
+│       │   ├── logstash-full.yml
+│       │   ├── logstash-oss.yml
+│       │   └── pipelines.yml
+│       ├── env2yaml
+│       │   └── env2yaml.go
+│       └── pipeline
+│           └── default.conf
+├── examples
+│   └── logstash.conf
+├── requirements.txt
+├── templates
+│   ├── Dockerfile.j2
+│   └── docker-compose.yml.j2
+├── tests
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── constants.py
+│   ├── docker-compose.yml
+│   ├── fixtures.py
+│   ├── helpers.py
+│   ├── test_basics.py
+│   ├── test_entrypoint.py
+│   ├── test_labels.py
+│   ├── test_process.py
+│   └── test_settings.py
+├── tox.ini
+└── version.json
+
+11 directories, 30 files
+</code></pre>
+
+<ul>
+<li>docker-compose.demo.yml</li>
+<li>examples/elastic-stack-demo/logstash.conf</li>
+</ul>
+
+<h1 id="ec2-docker-elasticsearch-terraform">EC2 docker Elasticsearch terraform</h1>
+
+<h1 id="elasticsearch-service">Elasticsearch Service</h1>
+
+<h2 id="新しいドメインの定義">新しいドメインの定義</h2>
+
+<ul>
+<li>ドメイン名:pureone<br /></li>
+<li>バージョン:最新<br /></li>
+</ul>
+
+<p>-&gt; Next</p>
+
+<h2 id="クラスターの設定">クラスターの設定</h2>
+
+<ul>
+<li>ノードの設定<br />
+
+<ul>
+<li>インスタンス数:1</li>
+<li>インスタンスタイプ:t2.small.elasticsearch</li>
+<li>専用マスター有効化:OFF</li>
+<li>ゾーン対応の有効化:OFF</li>
+</ul></li>
+<li>ストレージ設定<br />
+
+<ul>
+<li>ストレージタイプ:EBS</li>
+<li>EBSボリュームタイプ:汎用(SSD)</li>
+<li>EBSボリュームサイズ:１０</li>
+<li>保存時の暗号化の有効化:OFF</li>
+</ul></li>
+<li>スナップショットの設定<br />
+自動スナップショットの開始時間:デフォルト</li>
+</ul>
+
+<p>-&gt; Next</p>
+
+<h2 id="アクセスの設定">アクセスの設定</h2>
+
+<ul>
+<li>ネットワーク構成<br />
+
+<ul>
+<li>パブリックアクセス</li>
+<li>ノード間の暗号化：OFF</li>
+</ul></li>
+<li>Kibana認証<br />
+
+<ul>
+<li>OFF</li>
+</ul></li>
+<li>アクセスポリシー<br />
+
+<ul>
+<li>ドメインアクセスポリシーの設定<br /></li>
+<li>特定のIPからのドメインへのアクセスを許可：パブリックIPを入力(ブラウザで自分のIPを検索)</li>
+</ul></li>
+</ul>
+
+<p>-&gt; Next</p>
+
+<h2 id="確認">確認</h2>
+
+<ul>
+<li>OK</li>
+</ul>
+
+<h1 id="操作">操作</h1>
+
+<p><a href="https://dev.classmethod.jp/server-side/elasticsearch/use-kibana-on-aws/">https://dev.classmethod.jp/server-side/elasticsearch/use-kibana-on-aws/</a></p>
+
+<h2 id="インデックスの作成">インデックスの作成</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/shakespeare/_doc/1 -d <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74"> &#34;mappings&#34; : {
+</span><span style="color:#e6db74">  &#34;_default_&#34; : {
+</span><span style="color:#e6db74">   &#34;properties&#34; : {
+</span><span style="color:#e6db74">    &#34;speaker&#34; : {&#34;type&#34;: &#34;string&#34;, &#34;index&#34; : &#34;not_analyzed&#34; },
+</span><span style="color:#e6db74">    &#34;play_name&#34; : {&#34;type&#34;: &#34;string&#34;, &#34;index&#34; : &#34;not_analyzed&#34; },
+</span><span style="color:#e6db74">    &#34;line_id&#34; : { &#34;type&#34; : &#34;integer&#34; },
+</span><span style="color:#e6db74">    &#34;speech_number&#34; : { &#34;type&#34; : &#34;integer&#34; }
+</span><span style="color:#e6db74">   }
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74"> }
+</span><span style="color:#e6db74">}&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span></code></pre></div>
+<h2 id="データインポート">データインポート</h2>
+
+<ul>
+<li><a href="https://www.elastic.co/guide/en/kibana/3.0/snippets/shakespeare.json">Jsonデータ</a>
+<code>shell
+$ curl -XPUT ELASTICSEARCH_DOMAIN_ENDPOINT/_bulk --data-binary @shakespeare.json
+</code>
+<a href="https://docs.aws.amazon.com/ja_jp/elasticsearch-service/latest/developerguide/aes-limits.html">HTTP リクエストペイロードの制限</a>により、10MB を超えたため、エラーが発生。データを変更するかプランを変更するか。。。一旦放置。</li>
+</ul>
+
+<h2 id="形態素解析">形態素解析</h2>
+
+<pre><code>$ curl -XPOST ELASTICSEARCH_DOMAIN_ENDPOINT/kuromoji/ -d'
+  &quot;index&quot;:{
+    &quot;analysis&quot;:{
+      &quot;tokenizer&quot; : {
+        &quot;kuromoji&quot; : {
+          &quot;type&quot; : &quot;kuromoji_tokenizer&quot;
+        }
+      },
+      &quot;analyzer&quot; : {
+        &quot;analyzer&quot; : {
+          &quot;type&quot; : &quot;custom&quot;,
+          &quot;tokenizer&quot; : &quot;kuromoji&quot;
+        }
+      }
+    }
+  }
+}' -H 'Content-Type: application/json'
 </code></pre>
 
 </div>
@@ -211,7 +486,7 @@ $ docker ps
 </div>
 
 
-        <div class="section footer">&copy; 2018 pureone-t.</div>
+        <div class="section footer">&copy; 2018 pureonedoya.</div>
     </div>
 </body>
 

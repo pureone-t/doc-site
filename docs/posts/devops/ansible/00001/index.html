@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureonedoya.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureonedoya.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureonedoya.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureonedoya.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Ansible 実践入門
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Ansible 実践入門</div>
+
+        
+<div class="section" id="content">
+    2018-12-23 (Sun) &#183; 65 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureonedoya.github.io/doc-site/tags/ansible">
+                Ansible
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<p>サンプルソースコード
+<a href="https://gitlab.com/shkitayama/ansible_practical_guide/tree/master">https://gitlab.com/shkitayama/ansible_practical_guide/tree/master</a></p>
+
+<h1 id="ansible-archetecture">Ansible Archetecture</h1>
+
+<h2 id="基本動作の概要">基本動作の概要</h2>
+
+<ul>
+<li>コントロールノードノードからターゲットノードに<strong>ssh</strong>経由でタスクを送信する。</li>
+<li>コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。</li>
+</ul>
+
+<h2 id="基本動作の詳細">基本動作の詳細</h2>
+
+<ul>
+<li>PlaybookをPythonの実行コードにコンパイルする</li>
+<li>コンパイルしたコードをターゲットノード側にsftpコマンドで転送する</li>
+<li>転送されたターゲットノード側で、コードを実行する</li>
+<li>実行結果をコントロールノードに返却する</li>
+<li>コントロールノード、ターゲットノードのPythonの実行ファイルを削除する</li>
+</ul>
+
+<p>（ターゲットノードに関する注意事項）<br />
+- ターゲットノードにはPythonの実行環境が求められる
+- 各ソフトウェア、ミドルウェアのインストールには特権ユーザ権限が必要である
+- タスクの用途によってユーザを作成しておく</p>
+
+<h2 id="内部コンポーネント">内部コンポーネント</h2>
+
+<ul>
+<li>柔軟性のあるタスク実行コンポーネントが存在する</li>
+<li>Playbook、設定ファイルから呼び出すことが可能</li>
+</ul>
+
+<h2 id="module-モジュール">(Module)モジュール</h2>
+
+<ul>
+<li>Playbook、Ansible APIの中で呼ばれる再利用可能な処理ユニット</li>
+<li>ファイル転送、サービス起動などをラップしたもの</li>
+<li>ターゲットノードで実行</li>
+
+<li><p>Gtihubで公開されている</p></li>
+
+<li><p>Core(コアモジュール)</p></li>
+
+<li><p>Network(ネットワークモジュール)</p></li>
+
+<li><p>Certified(設定ファイルモジュール)</p></li>
+
+<li><p>Community(コミュニティモジュール)</p></li>
+
+<li><p>モジュールカテゴリは公式を参照</p></li>
+</ul>
+
+<h2 id="inventory">Inventory</h2>
+
+<ul>
+<li>ターゲットノードの接続情報リストを定義するファイル</li>
+<li>記載されたホストが実行環境となる</li>
+<li>単一ノードだけでなくグループ化することが可能</li>
+<li>クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う</li>
+</ul>
+
+<h2 id="playbook">Playbook</h2>
+
+<ul>
+<li>ターゲットノード側で実行したい処理の流れを定義するファイル</li>
+<li>記載されたタスクがInventoryのリストにあるホストで実行される</li>
+<li>タスク(モジュール群の呼び出し)という処理フローを定義</li>
+<li>実行したいホストのグループをバインド</li>
+<li>YAML形式で記載する</li>
+</ul>
+
+<h2 id="plugin">Plugin</h2>
+
+<ul>
+<li>Ansibleを構成するCore機能に付随する</li>
+<li>詳細は公式を参照</li>
+</ul>
+
+<h2 id="python-api">Python API</h2>
+
+<ul>
+<li>Ansible設けられたインターフェースの一つ</li>
+<li>Pythonを実行できる</li>
+</ul>
+
+<h2 id="ansible-cli">Ansible CLI</h2>
+
+<h1 id="install">Install</h1>
+
+<pre><code></code></pre>
+
+<pre><code>$ sudo pip3 install ansible
+$ ansible
+</code></pre>
+
+<h1 id="ディレクトリ構成">ディレクトリ構成</h1>
+
+<p><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout">https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout</a></p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureonedoya.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureonedoya.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureonedoya.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureonedoya.</div>
+    </div>
+</body>
+
+</html>

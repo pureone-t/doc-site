@@ -10,14 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="doc site by pureone-t.">
+<meta name="description" content="doc site by pureonedoya.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://pureonedoya.github.io/doc-site/">
 
 <meta name="twitter:image" content="https://pureonedoya.github.io/doc-site/tn.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
-<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-t.">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureonedoya.">
 <meta name="og:type" content="website">
 <meta name="og:url" content="https://pureonedoya.github.io/doc-site/">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureonedoya.github.io/doc-site/tn.png">
@@ -32,7 +32,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
 
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -60,7 +61,7 @@
 
         
 <div class="section" id="content">
-    2018-12-07 (Fri) &#183; 128 words
+    2018-12-07 (Fri) &#183; 574 words
     
     <div class="tag-container">
         
@@ -74,6 +75,8 @@
     
     <hr/>
     
+
+<h1 id="1基礎">1基礎</h1>
 
 <h2 id="機械学習の位置付け">機械学習の位置付け</h2>
 
@@ -105,13 +108,13 @@
 <h2 id="機械学習の３大トピック">機械学習の３大トピック</h2>
 
 <ul>
-<li>教師あり学習（入力𝑥と出力𝑦）
+<li>教師あり学習（入力$x$と出力$y$）
 
 <ul>
-<li>回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&gt; 家賃(𝑦)</li>
-<li>分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール(𝑥) -&gt; 種類(𝑦)</li>
+<li>回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&gt; 家賃($y$)</li>
+<li>分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール($x$) -&gt; 種類($y$)</li>
 </ul></li>
-<li>教師なし学習（入力𝑥）
+<li>教師なし学習（入力$x$）
 
 <ul>
 <li>クラスタリング（グルーピング）</li>
@@ -126,14 +129,10 @@
 
 <h2 id="機械学習と内挿-外挿">機械学習と内挿・外挿</h2>
 
-<pre><code>      (o)   (x)
-x 1 2 (3) 4 (5)
-y 2 4 (6) 8 (10)
-=&gt; y = ax
-</code></pre>
-
-<p>内挿：持っている入力データ内で予測すること（1~4）
-外挿：持っている入力データ外で予測すること</p>
+<ul>
+<li>内挿：持っている入力データ内で予測すること（1~4）</li>
+<li>外挿：持っている入力データ外で予測すること</li>
+</ul>
 
 <p>機械学習は、内挿を保証するため、外挿は取り扱わない</p>
 
@@ -148,7 +147,7 @@ y 2 4 (6) 8 (10)
 <li><p>微分は「何」が求まるのか？</p>
 
 <ul>
-<li>接線の傾き（<code>𝑦 = 𝑎𝑥²</code> の U字の放物線において 、接線<code>𝑦 = 𝑎𝑥 + 𝑏</code>の 𝑎）</li>
+<li>接線の傾き（$y = ax^2$ の U字の放物線において 、接線 $y = ax + b$ の $a$）</li>
 </ul></li>
 
 <li><p>微分は「何」に使えるのか？</p>
@@ -159,15 +158,206 @@ y 2 4 (6) 8 (10)
 </ul></li>
 </ul>
 
-<h2 id="微分-導関数-を求める1">微分（導関数）を求める1</h2>
+<h2 id="微分-導関数-を求める">微分（導関数）を求める</h2>
+
+<p>{$x1$,$f(x1)$}、{$x2$,$f(x2)$} の2点を通る接線の傾き$a$</p>
+
+<p>$a = \frac{yの増加量}{xの増加量}$</p>
+
+<p>$a = \frac{f(x_2)-f(x_1)}{x_2-x_1}$</p>
+
+<h3 id="極限">極限</h3>
+
+<p>{$x$, $f(x)$} の1点を通る接戦の傾き$a$<br />
+増加量は $h$ とする</p>
+
+<p>$a = \displaystyle \lim_{ h \to 0 } \frac{f(x+h)-f(x)}{h}$</p>
+
+<h2 id="微分の公式">微分の公式</h2>
+
+<h3 id="記号">記号</h3>
+
+<p>$()&rsquo; = \frac{ dy }{ dx }()$</p>
+
+<h3 id="暗記">暗記</h3>
+
+<p>$(1)&rsquo; = 0$<br />
+$(x)&rsquo; = 1$<br />
+$(x^2)&rsquo; = 2x$</p>
+
+<h3 id="例題">例題</h3>
+
+<p>$(x^2)&rsquo; = 2x$ を解いていく</p>
+
+<p>&lt;公式&gt;<br />
+$f&rsquo;(x) = \displaystyle \lim_{ h \to 0 } \frac{f(x+h)-f(x)}{h}$</p>
+
+<p>&lt;代入&gt;<br />
+$f(x) = x^2$<br />
+$f(x+h) = (x+h)^2 = x^2 + 2xh + h^2$</p>
+
+<p>&lt;計算&gt;<br />
+$(x^2) = \displaystyle \lim_{ h \to 0 } \frac{(x^2 + 2xh + h^2)-x^2}{h}$</p>
+
+<p>$(x^2) = \displaystyle \lim_{ h \to 0 } \frac{2xh + h^2}{h}$</p>
+
+<p>$(x^2) = \displaystyle \lim_{ h \to 0 } (2x + h)$</p>
+
+<p>$(x^2) = (2x + 0)$</p>
+
+<p>$(x^2) = 2x$</p>
+
+<h3 id="例題1">例題1</h3>
+
+<p>$(3x^2)&rsquo; = 3 \times (x^2)&rsquo; = 6x$</p>
+
+<h3 id="例題2">例題2</h3>
+
+<p>$(4x+3)&rsquo; = (4x)&rsquo; + (3)&rsquo; = 4 \times (x)&rsquo; + 3 \times (1)&rsquo; = 4 \times 0 = 4$</p>
+
+<h2 id="偏微分">偏微分</h2>
+
+<p>多変数の微分</p>
+
+<pre><code>𝑦 (家賃)
+├─x_1 (距離)
+├─...
+└─x_m (治安)
+</code></pre>
+
+<h3 id="公式">公式</h3>
+
+<p>$\partial$ =ラウンド、ディー</p>
+
+<p>$\frac{ \partial }{ \partial a }$</p>
+
+<p>$a$ で偏微分する = $a$ 以外を定数だと仮定して微分する</p>
+
+<h3 id="例題1-1">例題1</h3>
+
+<p>&lt;代入&gt;<br />
+$(a^2) = (x^2)&rsquo; = 2a$</p>
+
+<p>&lt;計算&gt;
+$\frac{ \partial }{ \partial a }(3a^2) = 3 \times \frac{ \partial }{ \partial a }(a^2) = 3 \times (a^2) = 3 \times 2a = 6a$</p>
+
+<h3 id="例題2-1">例題2</h3>
+
+<p>$\frac{ \partial }{ \partial a }(4x_1 + 3x_2)$</p>
+
+<p>$\frac{ \partial }{ \partial a }(4x_1) + \frac{ \partial }{ \partial a }(3x_2)$</p>
+
+<p>$4 \times \frac{ \partial }{ \partial a }(x_1) + 3x_2 \times \frac{ \partial }{ \partial a }(1)$</p>
+
+<p>$4 \times 1 + 3x_2 \times 0 = 4$</p>
+
+<h3 id="例題3">例題3</h3>
+
+<p>$\frac{ \partial }{ \partial a }(c_0 - 2c_1a + c_2a^2) = -2c_1 + 2c_2a$</p>
+
+<h1 id="単回帰分析">単回帰分析</h1>
+
+<h2 id="問題設定">問題設定</h2>
 
 <ul>
-<li>縦軸：𝑓(𝑥)</li>
-<li>横軸：𝑥</li>
+<li>例 家賃の予測
+
+<ul>
+<li>出力変数：$y$ (予測したいもの)</li>
+<li>入力変数：$x$ (予測するために使うファクター、広さ、距離)</li>
+<li>何か $x$ ひとつから $y$ を予測する</li>
+<li>複数の $x$ から $y$ を予測したい場合は、重回帰分析を使う</li>
+</ul></li>
 </ul>
 
+<h2 id="フェーズ">フェーズ</h2>
+
+<ul>
+<li>学習
+
+<ul>
+<li>データ（広さが〇〇のとき、家賃が■■）を大量にモデルとして用意する</li>
+</ul></li>
+<li>推論
+
+<ul>
+<li>学習済みモデルは、過去のデータから予測する(=予測値を算出する)</li>
+</ul></li>
+<li>どうやって学習させるか(=部屋の広さと家賃の関係性)</li>
+</ul>
+
+<h2 id="step1-モデルを決める">STEP1 モデルを決める</h2>
+
+<ul>
+<li>グラフや表で整理する</li>
+<li>直線であれば $\hat{ y } = ax + b$ で決めれる ($\hat{ y }$ は予測値)</li>
+<li>データに基づいてパラメータ $a, b$ を決定する</li>
+</ul>
+
+<p>センタリング(データの中心化)を活用すると、切片を0とすることができる。<br />
+- $\bar{ y }$：$y$ の平均<br />
+- $\bar{ x }$：$x$ の平均</p>
+
+<h2 id="step2-評価関数-損失関数-を決める">STEP2 評価関数(損失関数)を決める</h2>
+
+<p>= 誤差の算出</p>
+
+<ul>
+<li>実：$y$</li>
+<li>予：$\hat{ y }$</li>
+<li>実 - 予 = 離れている差分</li>
+<li>$(実 - 予)^2$ することでプラスの値かつ、グラフ上はU字の曲線を描くため、微分の計算が可能となる</li>
+<li>実と予の二重の誤差を算出する(二重誤差)</li>
+</ul>
+
+<p>$\mathcal{L}(評価関数) = (y_1 - \hat{y_1})^2 + (y_2 - \hat{y_2})^2 &hellip;+ (y_n - \hat{y_N})^2$<br />
+($N$ はサンプル数)</p>
+
+<p>$\displaystyle \sum_{n=1}^{N} (y_n - \hat{y_N})^2$</p>
+
+<h2 id="step3-評価関数-損失関数-を最小化する">STEP3 評価関数(損失関数)を最小化する</h2>
+
+<p>= 誤差の小さくする (=傾き0)</p>
+
+<p>$\frac{ \partial }{ \partial a }(\mathcal{L}) = 0$</p>
+
+<h3 id="step3-1-式変形">STEP3-1 式変形</h3>
+
+<p>$\hat{y_{N}} = ax_n$</p>
+
+<p>$\mathcal{L} = \displaystyle \sum_{n=1}^{N} (y_n - ax_n)^2$</p>
+
+<p>$= \displaystyle \sum_{n=1}^{N} (y_n^2 - 2y_nax_n + a^2x_n^2)$</p>
+
+<p>$= \displaystyle \sum_{n=1}^{N} (y_n^2 - 2y_nx_na + x_n^2a^2)$</p>
+
+<p>$\displaystyle \sum_{n=1}^{N}y_n^2$ = $c_0$</p>
+
+<p>$\displaystyle \sum_{n=1}^{N}x_ny_n$ = $c_1$</p>
+
+<p>$\displaystyle \sum_{n=1}^{N}x_n^2$ = $c_2$</p>
+
+<p>$= c_0 - 2c_1a + c_2a^2$</p>
+
+<h3 id="step3-2-最適なパラメータを求める">STEP3-2 最適なパラメータを求める</h3>
+
+<p>$\mathcal{L} = c_0 - 2c_1a + c_2a^2$</p>
+
+<p>$\frac{ \partial }{ \partial a }(\mathcal{L}s) = 0$</p>
+
+<p>$\frac{ \partial }{ \partial a }(c_0 - 2c_1a + c_2a^2) = 0$</p>
+
+<p>$-2c_1 \times \frac{\partial}{\partial a}(a) + c_2 \times \frac{\partial}{\partial a}(a^2) = 0$</p>
+
+<p>$-2c_1 \times + 2c_2a = 0$</p>
+
+<p>$2c_2a = 2c_1$</p>
+
+<p>$a = \frac{c_1}{c_2}$</p>
+
 <p>$$
-T = S((1 + \frac{E}{R})^{F} - 1)
+a = \frac{\displaystyle{\sum<em>{n=1}^{N}}x</em>{n}y<em>{n}}
+{\displaystyle{\sum</em>{n=1}^{N}}x_{n}^{2}}
 $$</p>
 
 </div>
@@ -199,7 +389,7 @@ $$</p>
 </div>
 
 
-        <div class="section footer">&copy; 2018 pureone-t.</div>
+        <div class="section footer">&copy; 2018 pureonedoya.</div>
     </div>
 </body>
 
