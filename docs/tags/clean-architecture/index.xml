@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clean Architecture on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/clean-architecture/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/clean-architecture/</link>
     <description>Recent content in Clean Architecture on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Oct 2018 19:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/clean-architecture/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/clean-architecture/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>クリーンアーキテクチャ</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/design/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</link>
       <pubDate>Wed, 31 Oct 2018 19:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/design/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</guid>
       <description>Robert C. Martin
 クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
 イントロダクション  ソフトウェアを「一度だけ」動かすのは、難しいことではない ソフトウェアを「正しく」動かすのは、とても難しい

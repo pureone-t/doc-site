@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ad on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/ad/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/ad/</link>
     <description>Recent content in Ad on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Nov 2018 14:40:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/ad/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/ad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web広告</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/industry/ad/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00002/</link>
       <pubDate>Mon, 19 Nov 2018 14:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/industry/ad/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00002/</guid>
       <description> ネイティブ広告 インフィード広告  記事と記事の間に広告が表示される  レコメンドウィジェット  記事下の「おすすめ情報」、「こんな記事も読まれています」に広告、または関連記事が表示される  </description>
     </item>
     
     <item>
       <title>Web広告における入札方式</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/industry/ad/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00001/</link>
       <pubDate>Mon, 05 Nov 2018 14:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/industry/ad/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00001/</guid>
       <description> 用語 http://free-web-hope.com/listing-basic-terms
    NAME DESCRIPTION     imp 広告の表示回数（媒体社のメディアの表示回数ではない？＝PV）   CT (Click Through) クリック数   CTR (Click Through Rate) クリック率 = CT / imp   CV (Conversion) hoge   CVR (Conversion Rate) hoge   CPA (Cost Per Action) コンバージョン（CV）1件あたりにかかった広告費用を示す値   hoge hoge   hoge hoge    検索連動型広告の場合の入札方式  検索されるキーワードに対して入札を行う  キーワードに対し、1クリック当たりいくらまでなら広告料金を支払って良いかを決めて、設定する 最低入札価格以上の価格に設定する必要がある   KGI (Key Goal Indicator)  ゴールを測る指標  KPI (Key Performance Indicator)  KGIプロセスの状態を測る指標  </description>
     </item>

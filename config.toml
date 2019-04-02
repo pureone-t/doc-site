@@ -1,5 +1,5 @@
 
-baseurl                 = "https://pureonedoya.github.io/doc-site/" # Your domain name. Must end with "/"
+baseurl                 = "https://pureone-tcy.github.io/doc-site/" # Your domain name. Must end with "/"
 languageCode            = "en-us"
 defaultContentLanguage  = "en"
 isMultilingual          = false
@@ -21,10 +21,10 @@ pygmentsCodefences      = true
                                                          # Note: This will only become active if clickablePhotos is also true.
     smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
                                                          # For each image the small version has to have the same filename as the big version.
-    footerText          = "&copy; 2018 pureonedoya."
+    footerText          = "&copy; 2018 pureone-tcy."
 
 # Metadata
-    description         = "doc site by pureonedoya."            # Max 160 characters show in search results
+    description         = "doc site by pureone-tcy."            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
     primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
 

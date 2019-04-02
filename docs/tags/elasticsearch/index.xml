@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Elasticsearch on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/elasticsearch/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/elasticsearch/</link>
     <description>Recent content in Elasticsearch on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Dec 2018 15:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A similarity</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
       <pubDate>Fri, 07 Dec 2018 15:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon Elasticsearch Service</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
       <pubDate>Wed, 05 Dec 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
       <description> Index設計  データ量、更新速度の考慮  index は、複数の shard から構成されている shard を複数の node に分散することで、1つの index のに対する書き込み速度を分散することができる  親子関係データは、1つのindex or 1つのdocument内に　Nested Type型のデータとしてインデックス トランザクションがないため、Alias(View機能を確認) index につけられる？ 多言語対応　言語ごとに index Tribe Node を使うならすべてのクラスターで重複しないインデックス名で設計   </description>
     </item>
     
     <item>
       <title>Elasticsearch 実践</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
       <pubDate>Wed, 07 Nov 2018 23:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
       <description>1.Elasticsearch 特徴  Apache Luceneをベースとした javaで書かれた全文検索ソフトウェア ログ収集・解析・分析プラットフォーム  kibana、logstash  分散配置による高速、高可用性の実現  クラスタ構成、分散ノード、シャード分割  RESTAPIアクセスによるリソース操作の明確化
  URLを参照すればどのリソースにアクセスしているか分かる  Elastic Stack
  Kibana バックエンドのElasticsearchにクエリ発行、可視化 Elasticsearch Logstash Input, Filter, Output Beats   全文検索  索引型検索 転置インデックス（各単語と出現した文書IDの組み合わせをインデックスとして保存）  Doc1: イベントが東京で開催される Doc2: 東京マラソンに参加する     単語 DocId     東京 1, 2   イベント 1   マラソン 2     各単語は、英語の場合：空白区切り、日本語の場合：形態素解析
@@ -43,19 +43,19 @@
     
     <item>
       <title>sim</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
       <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
       <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
       <description>環境構築リスト  ローカル(Mac OSX) + Elasticsearch ローカル(Mac OSX) + docker ローカル(Mac OSX) + docker-compose EC2 + docker + Elasticsearch EC2 + docker + Elasticsearch by terraform  ローカルMac Elasticsearch Java8 インストール $ brew cask install homebrew/cask-versions/java8  Elasticsearch インストール $ brew install elasticsearch  kibana インストール $ brew install kibana  起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
 { &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.</description>
     </item>

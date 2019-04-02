@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/php/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/php/</link>
     <description>Recent content in Php on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Oct 2018 13:40:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>PHP 書き方</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/php/00002/</link>
+      <title>Laradock</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</link>
       <pubDate>Wed, 31 Oct 2018 13:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/php/00002/</guid>
-      <description> スコープ定義変数 (::) </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</guid>
+      <description> Laradock $ mkdir laradock-project $ cd laradock-project $ git clone https://github.com/laradock/laradock.git  </description>
     </item>
     
     <item>
       <title>Laravel 開発環境構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/php/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/php/00001/</link>
       <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/php/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/php/00001/</guid>
       <description>Laravel  PHPフレームワーク
  Artisan (アーティザン) Laravel用コマンドラインインターフェース  Composer  ライブラリ依存管理ツール vendorフォルダにダウンロードする  Homestead  Laravel公式のvagrant box  Vagrant  VirtualBox   Vagrant インストール  https://www.vagrantup.com/downloads.html  VirtualBox インストール  https://www.virtualbox.org/wiki/Downloads  OS X hosts   Homestead vagrant box ダウンロード $ vagrant box add laravel/homestead  Composer インストール $ brew install composer  Homestead インストール $ mkdir laravel-app $ cd laravel-app $ git clone https://github.com/laravel/homestead.git Homestead $ cd Homestead $ bash init.</description>
     </item>

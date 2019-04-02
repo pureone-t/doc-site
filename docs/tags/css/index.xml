@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/css/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/css/</link>
     <description>Recent content in Css on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Oct 2018 14:25:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>css 使い方（のまとめ）集</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/css/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/css/00001/</link>
       <pubDate>Thu, 25 Oct 2018 14:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/css/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/css/00001/</guid>
       <description>class 属性と、id 属性の使い分け class 属性 &amp;lt;p class=&amp;quot;example01&amp;quot;&amp;gt;Example Class Attribute&amp;lt;/p&amp;gt; p.example01 { color:red; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   class名 : example01 要素名 : p  学級名 - 種別名を割り当てる - 同一 class 名を１ページで何度でも使える
 id 属性 &amp;lt;p id=&amp;quot;example02&amp;quot;&amp;gt;Example Id Attribute&amp;lt;/p&amp;gt; p#example02 { color:blue; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   id名 : example02 要素名 : p  学籍番号 - 固有の名前を割り当てる - 同一 id 名は、１ページに1度しか使えない
 スタイルの適用順序  同一属性内でのスタイル適用重複については、後勝 id属性、class属性でスタイル適用が重複している場合は id属性が優先される ```html Example Class</description>

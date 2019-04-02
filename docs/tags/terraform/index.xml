@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform on doc site</title>
+    <link>https://pureone-tcy.github.io/doc-site/tags/terraform/</link>
+    <description>Recent content in Terraform on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Jan 2019 22:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>terraform</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/terraform/00001/</link>
+      <pubDate>Mon, 21 Jan 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/terraform/00001/</guid>
+      <description> Terraform Install $ brew install terraform $ terraform version Terraform v0.11.11  AWS Network Create Credentials Create terraform.tfvars
+access_key = &amp;quot;AWS_ACCESS_KEY&amp;quot; secret_key = &amp;quot;AWS_SECRET_KEY&amp;quot; region = &amp;quot;ap-northeast-1&amp;quot; key_name = &amp;quot;KEY_PAIR_NAME&amp;quot;  VPC Create main.tf
+variable &amp;quot;access_key&amp;quot; {} variable &amp;quot;secret_key&amp;quot; {} variable &amp;quot;region&amp;quot; {} provider &amp;quot;aws&amp;quot; { access_key = &amp;quot;${var.access_key}&amp;quot; secret_key = &amp;quot;${var.secret_key}&amp;quot; region = &amp;quot;${var.region}&amp;quot; } resource &amp;quot;aws_vpc&amp;quot; &amp;quot;vpc-1&amp;quot; { cidr_block = &amp;quot;10.0.0.0/16&amp;quot; tags { Name = &amp;quot;vpc-tf-sample&amp;quot; } }  // AWS Plugin Install $ terraform init // Run $ terraform apply  </description>
+    </item>
+    
+  </channel>
+</rss>

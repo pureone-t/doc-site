@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/python/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/python/</link>
     <description>Recent content in Python on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Dec 2018 01:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jupyter Note Book 環境構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/python/00001/</link>
       <pubDate>Sun, 16 Dec 2018 01:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/python/00001/</guid>
       <description> 構成 Homebrew |- python3 |- pip3 |- python3で使用するライブラリ... |- etc...  Python $ brew install python3 $ witch python3 $ witch pip3  Libraries $ pip3 install numpy # 線形代数 $ pip3 install scipy # 数式処理 $ pip3 install matplotlib # 描画 $ pip3 install pandas # データ操作 $ pip3 install scikit-learn # 分類や予測のためのモデルが詰まった機械学習用パッケージ $ pip3 install chainer # ディープラーニング  Jupyter Note Book $ pip3 install jupyter $ jupyter notebook  </description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/mac/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/mac/</link>
     <description>Recent content in Mac on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jul 2018 23:40:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/computer/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</link>
       <pubDate>Sun, 15 Jul 2018 23:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/computer/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</guid>
       <description>Homebrew install  XcodeをApp storeからインストール $ xcode-select --install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  インストール完了確認  $ brew doctor Your system is ready to brew.   bash_profile $ touch ~/.bash_profile $ vi ~/bash_profile # PATH if [ -f ~/.bashrc ]; then . ~/.bashrc fi  bashrc $ touch ~/.bashrc $ vi ~/.bashrc # Alias Setting alias ls=&#39;ls -FG&#39; alias ll=&#39;ls -alFG&#39; # Permmision View Setting if [ $UID -eq 0 ]; then PS1=&amp;quot;\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; else PS1=&amp;quot;\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; fi #for bash_completion if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion fi # git ps1 source /usr/local/etc/bash_completion.</description>
     </item>
     

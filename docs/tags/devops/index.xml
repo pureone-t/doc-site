@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on doc site</title>
+    <link>https://pureone-tcy.github.io/doc-site/tags/devops/</link>
+    <description>Recent content in Devops on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Mar 2019 14:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS と CircleCI で実現する DevOps</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</link>
+      <pubDate>Wed, 13 Mar 2019 14:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</guid>
+      <description>DepOpsとCI/CDの関係 by AWS DevOps(development operation)  無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する つまり作業は全て自動化する
+1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？ 再現性
+DevOps観点のアンチパターン 承認フローの追加（ダブルチェック、承認MTG）
+ 安心するためにダブルチェック・会議をするのではなく、システム化するべき   DevOpsタスク [Code] -&amp;gt; [Build] -&amp;gt; [Test] -&amp;gt; (Application) [Deploy] -&amp;gt; (Deploy) [Provision] -&amp;gt; (EC2) -- (OS) -- (Package)   Provisionはあらかじめインフラを作っておくこと CircleCIでは、[Build][Test][Deploy]  DevOpsの失敗パターン  最初からディティールを詰めすぎる（こうあるべき論） アプリが完成してからCI/CDに載せる
+解決策 小さく初めて育てていく
+ Hello WorldのCI/CDを作ってから拡張
+ ロールバックが大事
+  Demo  AYAGASAKI/eb-java-scorekeep
+CircleCIとGithub連携 公式の通り
+IAM USER 作成 Code Deploy
+ S3
+ クレデンシャルは、環境変数としてコンテナに渡す
+Cloud9 EC2上にCloud9の環境を用意している
+ Git Clone</description>
+    </item>
+    
+  </channel>
+</rss>

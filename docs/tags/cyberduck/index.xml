@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cyberduck on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/cyberduck/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/cyberduck/</link>
     <description>Recent content in Cyberduck on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Jul 2018 22:10:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/cyberduck/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/cyberduck/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cyberduck</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/vm/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00003/</link>
       <pubDate>Sat, 28 Jul 2018 22:10:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/vm/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00003/</guid>
       <description>Cyberduck インストール  ダウンロード https://cyberduck.io/
  「Download Cyberduck for Mac.」  インストール
  「Zipファイルをダブルクリック」 「アプリケーションをアプリケーションフォルダへ移動」  環境設定

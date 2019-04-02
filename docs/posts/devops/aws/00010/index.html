@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        AWS Batch
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">AWS Batch</div>
+
+        
+<div class="section" id="content">
+    2019-01-17 (Thu) &#183; 60 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/aws">
+                AWS
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="component">Component</h1>
+
+<ul>
+<li>VPC内で動作</li>
+</ul>
+
+<h2 id="jobs">Jobs</h2>
+
+<ul>
+<li>AWS Batchに送信する作業単位</li>
+<li>EC2上で動作するコンテナ化されたアプリケーションとして、AWS Batchによって実行される作業単位</li>
+<li>必ず<code>Job Definitions</code>を参照する</li>
+<li>コンテナイメージ、コマンド、パラメータを参照する</li>
+<li><code>Job Definitions</code>のパラメータはオーバーライドが可能</li>
+
+<li><p>Linux exe file, Shell Script, Docker Container Image</p>
+
+<h3 id="属性">属性</h3></li>
+
+<li><p>雛形の<code>Job Definitions</code></p></li>
+
+<li><p>実行先が示された<code>Job Queues</code></p></li>
+
+<li><p>実行コマンド</p></li>
+
+<li><p>vCPUとメモリ要件</p></li>
+</ul>
+
+<h2 id="job-queuses">Job Queuses</h2>
+
+<ul>
+<li><p>JobのQueuesの待ち行列</p>
+
+<h3 id="属性-1">属性</h3></li>
+
+<li><p>Jobのブライオリティ(整数の値が小さい方が優先)</p></li>
+
+<li><p>実行先のCompute Envrionment</p></li>
+</ul>
+
+<h2 id="jobdefinitions">JobDefinitions</h2>
+
+<ul>
+<li><p>jobのテンプレート</p>
+
+<h3 id="属性-2">属性</h3></li>
+
+<li><p>IAMロール</p></li>
+
+<li><p>コンテナイメージ</p></li>
+
+<li><p>実行するコマンド</p></li>
+
+<li><p>vCPUとメモリ要件</p></li>
+
+<li><p>ボリュームとマウントポイント</p></li>
+
+<li><p>環境変数</p></li>
+</ul>
+
+<h2 id="compute-environments">Compute Environments</h2>
+
+<ul>
+<li><p>jobの実行環境</p>
+
+<h3 id="属性-3">属性</h3></li>
+
+<li><p>IAM Role</p></li>
+
+<li><p>EC2 Key pair</p></li>
+
+<li><p>Provisioning Model</p></li>
+
+<li><p>Instance type</p></li>
+
+<li><p>vCPU数(最小、最大、希望の数)</p></li>
+
+<li><p>Networking(VPC、subnet、security、group)</p></li>
+
+<li><p>実行先のコンピューと環境</p></li>
+
+<li><p>EC2タグ</p></li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

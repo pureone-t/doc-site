@@ -14,6 +14,6 @@ date: 2018-10-08T01:30:00+09:00
   - Elaticsearch   
   ・・・
 
-<i class='fa fa-envelope'></i>pureonedoya@gmail.com  
+<i class='fa fa-envelope'></i>pureone-tcy@gmail.com  
 
-<i class='fa fa-github'></i><a href="https://github.com/pureonedoya">GitHub</a>  
+<i class='fa fa-github'></i><a href="https://github.com/pureone-tcy">GitHub</a>  

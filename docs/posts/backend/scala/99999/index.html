@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Scala
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Scala</div>
+
+        
+<div class="section" id="content">
+    2019-02-25 (Mon) &#183; 231 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<p><a href="https://speakerdeck.com/taketora/bian-wei-zhi-ding-nituitewakariyasukujie-shuo-sasetekudasai-a9b35ffb-c910-493e-a9f0-de09f6487918?slide=32">https://speakerdeck.com/taketora/bian-wei-zhi-ding-nituitewakariyasukujie-shuo-sasetekudasai-a9b35ffb-c910-493e-a9f0-de09f6487918?slide=32</a></p>
+
+<h1 id="scala型パラメータ">Scala型パラメータ</h1>
+
+<h2 id="はじめに">はじめに</h2>
+
+<ul>
+<li>クラス、インタフェース定義時に何の型が入るか決まっていないがインスタンス化する際に型を決定すること</li>
+</ul>
+
+<p>例） クラス定義時に何の型が入るか不明であるため、型引数としてTを定義</p>
+
+<pre><code>class Glass[T](var content: T) {
+  def put(t: T): Unit = { content = t }
+  def get: T = content
+}
+</code></pre>
+
+<p>型を定義する</p>
+
+<pre><code>class Drink
+class Juice extends Drink
+class Water extends Drink
+</code></pre>
+
+<p>インスタンス化するときに、型を決定する</p>
+
+<pre><code>val waterGlass = new Glass[Water](new Water)
+val juiceGlass = new Glass[Juice](new Juice)
+</code></pre>
+
+<h2 id="サブタイプ">サブタイプ</h2>
+
+<ul>
+<li>スーパークラスにサブクラスのインスタンスをバインドできる機能のこと</li>
+</ul>
+
+<p>例）</p>
+
+<pre><code>val drink: Drink = new Juice
+</code></pre>
+
+<h2 id="非変">非変</h2>
+
+<ul>
+<li>型パラメータ<code>Glass[T]</code>は、デフォルトの状態では、サブタイプの関係が存在しない</li>
+<li>つまり<code>Water</code>が<code>Drink</code>のサブタイプであっても、<code>Glass[Water]</code>型を<code>Glass[Drink]</code>型にバインドできない</li>
+</ul>
+
+<pre><code>// コンパイルエラー
+val glassDrink: Glass[Drink] = new Glass[Water](new Water)
+</code></pre>
+
+<p>これを非変といい、Scalaではデフォルト</p>
+
+<h2 id="共変">共変</h2>
+
+<ul>
+<li>型パラメータで定義したクラスにもサブタイプの関係を利用したい場合もある</li>
+<li>その場合共変[+T]することで、サブタイプの関係を型パラメータで定義したクラスに使うことができる</li>
+</ul>
+
+<pre><code>class Glass[+T](var content: T) {
+  def put(t: T): Unit = { content = t }
+  def get: T = content
+}
+</code></pre>
+
+<pre><code>val glassDrink: Glass[Drink] = new Glass[Water](new Water)
+</code></pre>
+
+<h2 id="反変">反変</h2>
+
+<ul>
+<li>共変の逆</li>
+</ul>
+
+<pre><code>val glassDrink: Glass[Water] = new Glass[Drink](new Drink)
+</code></pre>
+
+<h2 id="変異指定">変異指定</h2>
+
+<ul>
+<li>サブタイプの関係を、型パラメータのクラスで指定する制約のこと</li>
+<li>ボトムタイプの<code>Nothing</code>型を全ての型にバインドできる
+<code>
+Any
+└─AnyVal    | AnyRef
+└─Unit   |  └─String
+└─Int    |  └─class
+└─Long   |  └─Null
+└─Double |
+└─Byte   |
+└─etc... |
+    └─      └─ Nothing
+</code></li>
+</ul>
+
+<h3 id="例-listは共変">例）Listは共変</h3>
+
+<pre><code>val list: List[Any] = List[Int](1,2,3)
+</code></pre>
+
+<ul>
+<li><code>List[Int]</code>を<code>List[Any]</code>にバインドできる</li>
+</ul>
+
+<h2 id="下限境界">下限境界</h2>
+
+<ul>
+<li>BはAのスーパー型</li>
+<li>結果型<code>List[B]</code>は、Listがインスタンス化した要素を返すか、汎化した要素のListを返すことを表している</li>
+</ul>
+
+<pre><code>sealed abstract class List[+A] extends AbstractSeq[A]
+// 省略
+  def ::[B &gt;: A](x: B): List[B] = new scala.collection.immutable.::(x, this)
+</code></pre>
+
+<h3 id="例-同じ要素-int-の場合には-同じ要素-int-の-list-型が作成される">例）同じ要素（<code>Int</code>）の場合には、同じ要素（<code>Int</code>）の<code>List</code>型が作成される</h3>
+
+<pre><code>scala&gt; val list = List(2,3,4)
+list: List[Int] = List(2,3,4)
+
+scala&gt; val listInt = 1 :: list
+listInt: List[Int] = List(1,2,3,4)
+</code></pre>
+
+<h3 id="例-double-型を要素に追加する場合は-int-double-のスーパータイプである-anyval-型の-list-が作られる">例）<code>Double</code>型を要素に追加する場合は、<code>Int、Double</code>のスーパータイプである<code>AnyVal</code>型の<code>List</code>が作られる</h3>
+
+<pre><code>scala&gt; val listAnyVal = 0.5 :: listInt
+listAnyVal: List[AnyVal] = List(0.5,1,2,3,4)
+</code></pre>
+
+<h3 id="例-string-型を要素に追加する場合は-int-string-のスーパータイプである-any-型の-list-が作られる">例）<code>String</code>型を要素に追加する場合は、<code>Int、String</code>のスーパータイプである<code>Any</code>型の<code>List</code>が作られる</h3>
+
+<pre><code>scala&gt; val listAny = &quot;Hello&quot; :: listInt
+listAny: List[Any] = List(Hello,1,2,3,4)
+</code></pre>
+
+<ul>
+<li>通常引数の位置に共変型パラメータが入ると型安全が壊れる可能性があり、このまま型パラメータAを引数に持っていくとコンパイラに怒られる</li>
+<li>しかし、immutableなクラスであれば型は壊れない</li>
+</ul>
+
+<h3 id="通常引数に共変型パラメータが入ると型安全が壊れる理由">通常引数に共変型パラメータが入ると型安全が壊れる理由</h3>
+
+<ul>
+<li>非変で定義された<code>Arrya[T]</code>は、mutableなコレクション（配列）</li>
+</ul>
+
+<p>例）仮に共変がOKだった場合に、<code>Water</code>型が<code>Juice</code>型に変わってしまう例</p>
+
+<pre><code>val arrayWater: Array[Water] = Array(Water,Water)
+
+val arrayDrink: Array[Drink] = arrayWater
+
+arrayDrink(0) = Juice
+</code></pre>
+
+<h2 id="反変のメリット">反変のメリット</h2>
+
+<ul>
+<li>FunctionN（関数を定義するtraitで、通常はシンタックスシュガーを使う）</li>
+<li></li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

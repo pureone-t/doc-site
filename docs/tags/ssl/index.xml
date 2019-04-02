@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssl on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/ssl/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/ssl/</link>
     <description>Recent content in Ssl on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Apr 2018 13:16:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SSL自己証明書の作成方法</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</link>
       <pubDate>Mon, 02 Apr 2018 13:16:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</guid>
       <description>SSLサーバ証明書 役割 SSLの接続要求時に認証情報・公開鍵情報等をひとつにまとめて、クライアントへ渡す クライアントは、受け取ったSSLサーバ証明書から、接続相手の情報を確認して通信を行う
 発行元  信頼された認証局が発行 信頼されていない認証局が発行（自己証明書（オレオレ））  中身  公開鍵の情報 コモンネーム 公開鍵の所有者情報 所有者を証明した認証局の情報 証明書の有効期限 証明書のシリアル番号 証明書の失効リスト参照先  Apache SSL 設定 ＜前提＞
 Windows Server 2012 Apache 2.4

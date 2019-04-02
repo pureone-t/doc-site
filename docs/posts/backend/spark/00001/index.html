@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Apache Spark
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Apache Spark</div>
+
+        
+<div class="section" id="content">
+    2019-03-29 (Fri) &#183; 370 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/spark">
+                Spark
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="spark">Spark</h1>
+
+<ul>
+<li>オープンソースの分散処理フレームワーク</li>
+<li>分散処理で有名な Hadoopは、独自ファイルシステム(hdfs)を介して処理</li>
+<li>Spark は、RDD(Resilient Distributed Dataset)という障害耐久性分散可能なデータセットを、オンメモリで実行できるため、高速な処理が可能</li>
+</ul>
+
+<h1 id="sparkの構成">Sparkの構成</h1>
+
+<ul>
+<li>Spark Core Spark
+
+<ul>
+<li>RDDを提供</li>
+</ul></li>
+<li>Spark Streaming
+
+<ul>
+<li>データストリーム処理を提供</li>
+<li>Twitterなどのリアルタイムデータを取得する場合などに使える</li>
+</ul></li>
+<li>Spark SQL
+
+<ul>
+<li>構造化データにアクセスする機能を提供</li>
+<li>JSONなども扱える</li>
+</ul></li>
+<li>Mlib
+
+<ul>
+<li>汎用的な機械学習ライブラリを提供</li>
+<li>word2vecを使った類似後分類とかできる</li>
+</ul></li>
+<li>Graph X
+
+<ul>
+<li>ソーシャルグラフを扱う場面で役にたつ</li>
+</ul></li>
+</ul>
+
+<h1 id="サンプルのアプリケーション作成">サンプルのアプリケーション作成</h1>
+
+<p><a href="https://blog.excite.co.jp/exdev/27638387/">https://blog.excite.co.jp/exdev/27638387/</a></p>
+
+<h1 id="環境構築">環境構築</h1>
+
+<ul>
+<li>Spark アプリケーションは、Java、Scala、Python、R の４言語で記述することが可能</li>
+<li>Spark の実装に Scala が用いられている</li>
+</ul>
+
+<h3 id="インストール">インストール</h3>
+
+<pre><code>$ brew intall apache-spark
+$ brew intall scala
+$ brew intall sbt
+</code></pre>
+
+<h3 id="環境変数に-sparkを通す-x-y-z-は-バージョン">環境変数に Sparkを通す (x.y.z は、バージョン)</h3>
+
+<pre><code>vi ~/.bashrc
+# ADD
+export Spark_HOME=Spark_HOME-/usr/local/Celler/apache-spark/x.y.z
+</code></pre>
+
+<h3 id="ビルド環境の構築">ビルド環境の構築</h3>
+
+<pre><code>WordCount/
+├── build.sbt(ビルド方法を定義するsbtファイル)
+├── input.txt(ワードカウントする対象の入力ファイル)
+├── output/ (ワードカウントの結果)
+│
+├── project/ (sbtの追加設定を入れるファイル)
+│   └── assembly.sbt (sbtのプラグイン)
+└── src/
+ 　 └──main/
+ 　　 　└── scala/
+　　　 　└── jp/
+ 　　　　　 └── excite/
+　　　　　　　　└── news/
+　　　　　　　　　　└── WordCountApp.scala
+</code></pre>
+
+<ul>
+<li><p>build.sbt</p>
+
+<pre><code>name := &quot;WordCountApp&quot;
+version := &quot;1.0.0&quot;
+scalaVersion := &quot;2.11.8&quot;
+resolvers += &quot;Atilika Open Source repository&quot; at &quot;http://www.atilika.org/nexus/content/repositories/atilika&quot;
+libraryDependencies += &quot;org.apache.spark&quot; %% &quot;spark-core&quot; % &quot;2.1.0&quot;
+libraryDependencies += &quot;org.atilika.kuromoji&quot; % &quot;kuromoji&quot; % &quot;0.7.7&quot;
+assemblyMergeStrategy in assembly := {
+case PathList(&quot;javax&quot;, &quot;servlet&quot;, xs @ _*)         =&gt; MergeStrategy.first
+case PathList(ps @ _*) if ps.last endsWith &quot;.properties&quot; =&gt; MergeStrategy.first
+case PathList(ps @ _*) if ps.last endsWith &quot;.xml&quot; =&gt; MergeStrategy.first
+case PathList(ps @ _*) if ps.last endsWith &quot;.types&quot; =&gt; MergeStrategy.first
+case PathList(ps @ _*) if ps.last endsWith &quot;.class&quot; =&gt; MergeStrategy.first
+case &quot;application.conf&quot;                            =&gt; MergeStrategy.concat
+case &quot;unwanted.txt&quot;                                =&gt; MergeStrategy.discard
+case x =&gt;
+val oldStrategy = (assemblyMergeStrategy in assembly).value
+oldStrategy(x)
+}
+mainClass in assembly := Some(&quot;WordCountApp&quot;)
+</code></pre></li>
+
+<li><p>project/assembly.sbt</p>
+
+<pre><code>addSbtPlugin(&quot;com.eed3si9n&quot; % &quot;sbt-assembly&quot; % &quot;0.14.4&quot;)
+</code></pre>
+
+<ul>
+<li>生成するjarファイルに依存するパッケージも全部入る</li>
+<li>並列処理を行うためのクラスタ環境へのデプロイ(spark-submit)が１つのファイル配布のみで済む</li>
+<li>コンフリクトを解消するMergeStrategyを使っている</li>
+</ul></li>
+</ul>
+
+<h3 id="サンプル実装">サンプル実装</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Scala" data-lang="Scala"><span style="color:#66d9ef">package</span> jp.excite.news
+ 
+<span style="color:#66d9ef">import</span> java.util.regex.<span style="color:#f92672">{</span><span style="color:#a6e22e">Matcher</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Pattern</span><span style="color:#f92672">}</span>
+<span style="color:#66d9ef">import</span> scala.collection.convert.WrapAsScala._
+<span style="color:#66d9ef">import</span> org.apache.spark.SparkConf
+<span style="color:#66d9ef">import</span> org.apache.spark.SparkContext._
+<span style="color:#66d9ef">import</span> org.apache.spark.SparkContext
+<span style="color:#66d9ef">import</span> org.atilika.kuromoji.Tokenizer
+<span style="color:#66d9ef">import</span> org.atilika.kuromoji.Token
+ 
+<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">WordCountApp</span><span style="color:#f92672">{</span>
+<span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//スパークの環境設定
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> sparkConf <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SparkConf</span><span style="color:#f92672">().</span>setMaster<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;local[4]&#34;</span><span style="color:#f92672">).</span>setAppName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;WordCount App&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">val</span> sc <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SparkContext</span><span style="color:#f92672">(</span>sparkConf<span style="color:#f92672">)</span>
+    <span style="color:#75715e">//kuromojiのトークナイザ
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> tokenizer <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Tokenizer</span><span style="color:#f92672">.</span>builder<span style="color:#f92672">.</span>mode<span style="color:#f92672">(</span><span style="color:#a6e22e">Tokenizer</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Mode</span><span style="color:#f92672">.</span><span style="color:#a6e22e">NORMAL</span><span style="color:#f92672">).</span>build<span style="color:#f92672">()</span>
+    <span style="color:#75715e">//テキストファイルから1行ずつ読み込み。名詞を配列に分解する。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//テキストファイルからRDDオブジェクトを取得する。
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">val</span> input <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input.txt&#34;</span><span style="color:#f92672">).</span>flatMap<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">val</span> tokens <span style="color:#66d9ef">:</span> <span style="color:#66d9ef">java.util.List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Token</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Tokenizer</span><span style="color:#f92672">.</span>builder<span style="color:#f92672">().</span>build<span style="color:#f92672">().</span>tokenize<span style="color:#f92672">(</span>line<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">val</span> output <span style="color:#66d9ef">:</span> <span style="color:#66d9ef">scala.collection.mutable.ArrayBuffer</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> collection<span style="color:#f92672">.</span>mutable<span style="color:#f92672">.</span><span style="color:#a6e22e">ArrayBuffer</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">]()</span>
+        tokens<span style="color:#f92672">.</span>foreach<span style="color:#f92672">(</span>token <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>token<span style="color:#f92672">.</span>getAllFeatures<span style="color:#f92672">().</span>indexOf<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;名詞&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+　　　　　　output <span style="color:#f92672">+=</span> token<span style="color:#f92672">.</span>getSurfaceForm<span style="color:#f92672">()</span>
+        <span style="color:#f92672">}})</span>
+        output<span style="color:#75715e">// return
+</span><span style="color:#75715e"></span>　　　　<span style="color:#f92672">})</span>
+    <span style="color:#75715e">//ワードカウントを行う。数える名詞をキーにし、キーを元に加算処理を行う。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> wordCounts <span style="color:#66d9ef">=</span> input<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> <span style="color:#ae81ff">1L</span><span style="color:#f92672">)).</span>reduceByKey<span style="color:#f92672">((</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">)</span><span style="color:#66d9ef">=&gt;</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">)</span>
+    <span style="color:#75715e">//降順に単語を列挙して出力する。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> wordCounts <span style="color:#66d9ef">=</span> input<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> <span style="color:#ae81ff">1L</span><span style="color:#f92672">)).</span>reduceByKey<span style="color:#f92672">((</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">)</span><span style="color:#66d9ef">=&gt;</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">val</span> output <span style="color:#66d9ef">=</span> wordCounts<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span> x <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>_2<span style="color:#f92672">,</span> x<span style="color:#f92672">.</span>_1<span style="color:#f92672">)).</span>sortByKey<span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">).</span>saveAsTextFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ouput&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<h1 id="処理フロー">処理フロー</h1>
+
+<ul>
+<li>input.txt1行ずつ入力 (ex 今日は晴れ。明日も晴れ。)</li>
+<li>読み込んだ文字列を形態素解析で分解し名詞のみ配列に。(ex [今日, 晴れ, 明日, 晴れ])</li>
+<li>数えるために名詞をキーとした（名詞, 1)タプル(組み)に変換 (ex [(今日,1), (晴れ,1), (明日,1), (晴れ,1)])</li>
+<li>同じ名詞（キー）に対して加算をする。（ex [(今日,1), (晴れ,2), (明日,1)])</li>
+<li>キーでソートするためにキーと値を逆にする。（ex [(1,今日), (2,晴れ), (1,明日)])</li>
+<li>キーでソートする(デフォルトは昇順) （ex [(2,晴れ), (1,今日) ,(1,明日)])</li>
+<li>上位10個のデータを取得し、それぞれを出力。</li>
+<li>これらの処理クロージャーを使ってふるまいををRDD変換関数
+
+<ul>
+<li>map (別の型への変換)</li>
+<li>flatMap (別の型への変換。要素数は複数可)</li>
+<li>reduceByKey (キー毎に要素同士を演算する)</li>
+<li>etc…</li>
+</ul></li>
+<li>に記述することで分散処理を比較的簡単に書くことができます。</li>
+</ul>
+
+<h1 id="実行">実行</h1>
+
+<ul>
+<li>input.txt は、Wikipedia から引用 (<a href="https://ja.wikipedia.org/wiki/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92">https://ja.wikipedia.org/wiki/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92</a>)</li>
+</ul>
+
+<pre><code>$ sbt run
+</code></pre>
+
+<pre><code>$ sbt assembly
+</code></pre>
+
+<ul>
+<li><p>Sparkのクラスタ環境へのデプロイ(spark-submit)用のjarファイルが作られる</p></li>
+
+<li><p>output以下にpart-00000x（ｘは数字）のファイルが作られている</p></li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

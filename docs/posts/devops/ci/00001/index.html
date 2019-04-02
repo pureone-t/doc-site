@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        AWS と CircleCI で実現する DevOps
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">AWS と CircleCI で実現する DevOps</div>
+
+        
+<div class="section" id="content">
+    2019-03-13 (Wed) &#183; 178 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/circleci">
+                CircleCI
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/aws">
+                AWS
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/devops">
+                DevOps
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="depopsとci-cdの関係-by-aws">DepOpsとCI/CDの関係 by AWS</h1>
+
+<h2 id="devops-development-operation">DevOps(development operation)</h2>
+
+<ul>
+<li>無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する</li>
+
+<li><p>つまり作業は全て自動化する</p>
+
+<h3 id="1行のコードを変更したとして-通常デプロイにどれくらいの時間がかかる">1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？</h3></li>
+
+<li><p>再現性</p>
+
+<h3 id="devops観点のアンチパターン">DevOps観点のアンチパターン</h3></li>
+
+<li><p>承認フローの追加（ダブルチェック、承認MTG）</p>
+
+<ul>
+<li>安心するためにダブルチェック・会議をするのではなく、システム化するべき</li>
+</ul></li>
+</ul>
+
+<h2 id="devopsタスク">DevOpsタスク</h2>
+
+<pre><code>[Code] -&gt; [Build] -&gt; [Test]      -&gt; (Application)
+                     [Deploy]    -&gt; (Deploy)
+                     [Provision] -&gt; (EC2) -- (OS) -- (Package)
+</code></pre>
+
+<ul>
+<li>Provisionはあらかじめインフラを作っておくこと</li>
+<li>CircleCIでは、[Build][Test][Deploy]</li>
+</ul>
+
+<h2 id="devopsの失敗パターン">DevOpsの失敗パターン</h2>
+
+<ul>
+<li>最初からディティールを詰めすぎる（こうあるべき論）</li>
+
+<li><p>アプリが完成してからCI/CDに載せる</p>
+
+<h3 id="解決策">解決策</h3></li>
+
+<li><p>小さく初めて育てていく</p></li>
+
+<li><p>Hello WorldのCI/CDを作ってから拡張</p></li>
+
+<li><p>ロールバックが大事</p></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<ul>
+<li><p>AYAGASAKI/eb-java-scorekeep</p>
+
+<h2 id="circleciとgithub連携">CircleCIとGithub連携</h2></li>
+
+<li><p>公式の通り</p>
+
+<h2 id="iam-user-作成">IAM USER 作成</h2></li>
+
+<li><p>Code Deploy</p></li>
+
+<li><p>S3</p></li>
+
+<li><p>クレデンシャルは、環境変数としてコンテナに渡す</p>
+
+<h2 id="cloud9">Cloud9</h2></li>
+
+<li><p>EC2上にCloud9の環境を用意している</p></li>
+
+<li><p>Git Clone</p></li>
+
+<li><p>cirlcle/config.yml</p>
+
+<ul>
+<li>codedeployのみデプロイする設定としている</li>
+<li>S3へpush</li>
+</ul></li>
+
+<li><p>appspec.yml</p></li>
+
+<li><p>コードデプロイ中は、ロードバランサで制御されている</p></li>
+
+<li><p>code commit 連携はできない</p></li>
+</ul>
+
+<pre><code>[cloud9] -&gt; [git clone] -&gt; [git push] -&gt; [CircleCI build] -&gt; [CircleCI S3 upload] -&gt; [code deploy] -&gt; [EC2]
+</code></pre>
+
+<ul>
+<li>git push -&gt; (webhook) -&gt; CircleCI</li>
+</ul>
+
+<h1 id="depopsとci-cdの関係-by-circleci">DepOpsとCI/CDの関係 by CircleCI</h1>
+
+<h2 id="ci-cd">CI/CD</h2>
+
+<h3 id="ci">CI</h3>
+
+<ul>
+<li>全てのコミットをトリガーにしてビルドとテストを繰り返すこと</li>
+<li>早い段階でバグを発見できる</li>
+<li>設定で制御可能（開発者地震で制御）</li>
+<li>静的解析</li>
+<li>コードの品質UP</li>
+<li>masterブランチの品質向上</li>
+</ul>
+
+<h3 id="cd">CD</h3>
+
+<ul>
+<li>(狭義)Continuous Delivery(継続的デリバリー)</li>
+<li>Continuous Deployment(継続的デプロイメント)</li>
+<li>(広義)ビジネス価値の継続的デリバリー</li>
+</ul>
+
+<h4 id="大事なこと">大事なこと</h4>
+
+<ul>
+<li>ステップを刻む(成果物の生成、システムテスト、品質保証(第三者検証)、ステージング自動リリース、構成管理、監視対象)</li>
+<li>ステークホルダーを巻き込むこと</li>
+</ul>
+
+<h2 id="devopsとしてcdを導入したとき効率的な成果">DevOpsとしてCDを導入したとき効率的な成果</h2>
+
+<p><a href="https://www2.circleci.com/rs/485-ZMH-626/images/5-Key-Metrics-Engineering.pdf">https://www2.circleci.com/rs/485-ZMH-626/images/5-Key-Metrics-Engineering.pdf</a>
+- Commit-to-Deploy time コードがコミットされてからデプロイされるまでの時間
+- Build Time: CIビルドに掛かる時間
+- Queue Time: CIビルドが始まるまでに待たされる時間
+- How often Master is Red: Masterブランチが壊れてる時間
+- Engineering Overhead: ツールのメンテナンスなど開発以外に掛かっている時間</p>
+
+<ul>
+<li>おすすめ参考書籍: LeanとDevOpsの科学
+
+<ul>
+<li>DevOpsの改善をやっている会社と、やっていない会社で差が開いている</li>
+</ul></li>
+</ul>
+
+<h2 id="circleci思想">CircleCi思想</h2>
+
+<ul>
+<li>configは、ソースコードと同じくレビューとバージョン管理を行うべきである</li>
+<li>明示的であるべき</li>
+</ul>
+
+<h2 id="ワークフロー">ワークフロー</h2>
+
+<ul>
+<li>ジョブを並列で動かす</li>
+<li>スケジューリング: ナイトリービルドのように決まった時刻に実行</li>
+<li>マニュアル承認: 手動承認を挟み込める</li>
+<li>ブランチ指定:</li>
+
+<li><p>タグ指定:</p></li>
+
+<li><p>SSH デバッグ: ビルド終了後2時間、もしくはSSHセッションが終わって10分間までは、コンテナに入れる</p></li>
+</ul>
+
+<h2 id="ビルド高速化">ビルド高速化</h2>
+
+<ul>
+<li>同一ジョブ間のキャッシュ: 同一ジョブで利用される永続データを使い回す</li>
+<li>同一ワークフロー内のキャッシュ: 同一ワークフロー内の異なるジョブで永続データを使い回す</li>
+<li>テストの並列処理
+
+<ul>
+<li>複数コンテナで完全に均等化されたテストを実行する</li>
+<li>前回のビルド結果から処理時間を参照しているため</li>
+</ul></li>
+</ul>
+
+<h2 id="orbs">Orbs</h2>
+
+<ul>
+<li>CircleCIの設定を再利用する</li>
+<li>Orbs Registry (<a href="https://circleci.com/orbs/registry/">https://circleci.com/orbs/registry/</a>)</li>
+<li>CircleCI Orbs 開発完全ガイド 2019年度版(有料)
+
+<ul>
+<li>note</li>
+</ul></li>
+<li><code>aws-ecr: circleci/aws-ecr@1.0.0</code></li>
+<li>Orbsを使っていることを検知し、定義をダウンロード&amp;埋め込み、CircleCIが動作する(シェルがパッケージングされている)</li>
+</ul>
+
+<h2 id="circleciでcdを実現するために">CircleCIでCDを実現するために</h2>
+
+<h3 id="継続的デプロイに必要なこと-機能面">継続的デプロイに必要なこと(機能面)</h3>
+
+<ul>
+<li>アーティファクト(成果物)が管理されていること(APIで取得できる状態)</li>
+<li>デプロイに必要なトークンの情報が秘匿できること(IAMトークン)</li>
+<li>ダウンタイムを最小にできること</li>
+<li>切り戻しが容易であること</li>
+</ul>
+
+<p>CircleCIハンズオンセミナーあるよ!</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

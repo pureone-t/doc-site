@@ -2,21 +2,209 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/</link>
+    <link>https://pureone-tcy.github.io/doc-site/</link>
     <description>Recent content on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jan 2019 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Mar 2019 15:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Apache Spark</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/spark/00001/</link>
+      <pubDate>Fri, 29 Mar 2019 15:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/spark/00001/</guid>
+      <description>Spark  オープンソースの分散処理フレームワーク 分散処理で有名な Hadoopは、独自ファイルシステム(hdfs)を介して処理 Spark は、RDD(Resilient Distributed Dataset)という障害耐久性分散可能なデータセットを、オンメモリで実行できるため、高速な処理が可能  Sparkの構成  Spark Core Spark  RDDを提供  Spark Streaming  データストリーム処理を提供 Twitterなどのリアルタイムデータを取得する場合などに使える  Spark SQL  構造化データにアクセスする機能を提供 JSONなども扱える  Mlib  汎用的な機械学習ライブラリを提供 word2vecを使った類似後分類とかできる  Graph X  ソーシャルグラフを扱う場面で役にたつ   サンプルのアプリケーション作成 https://blog.excite.co.jp/exdev/27638387/
+環境構築  Spark アプリケーションは、Java、Scala、Python、R の４言語で記述することが可能 Spark の実装に Scala が用いられている  インストール $ brew intall apache-spark $ brew intall scala $ brew intall sbt  環境変数に Sparkを通す (x.</description>
+    </item>
+    
+    <item>
+      <title>ブロッキングとノンブロッキング</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</link>
+      <pubDate>Mon, 25 Mar 2019 11:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</guid>
+      <description> https://blog.takanabe.tokyo/2015/03/26/240/
+定義 ブロッキングI/O  ネットワークとして通信先の準備をする IOが開始できるまで待機する コネクションを開くまでの待機? ブロッキングは、全ての処理は停止する  同期I/O  実際にデータのI/Oを行う IOが終わるまで待機する コネクションを使って処理するまで待機?  ノンブロッキングI/O    非同期I/O    </description>
+    </item>
+    
+    <item>
+      <title>Redis Clients Handling</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/00002/</link>
+      <pubDate>Sun, 24 Mar 2019 23:14:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/00002/</guid>
+      <description> https://redis.io/topics/clients
+クライアント接続について  設定された待ち受けTCPポートとUnixソケットが有効になっているとクライアント接続が可能になる クライアントソケットはノンブロッキング状態になる TCP_NODELAYオプションは、接続に遅延がないように設定される(?) クライアントが初期化された後、同時に処理できるクライアント数の制限に達しているか確認する  maxclinets構成ディレクティブを使用する    </description>
+    </item>
+    
+    <item>
+      <title>AWS と CircleCI で実現する DevOps</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</link>
+      <pubDate>Wed, 13 Mar 2019 14:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</guid>
+      <description>DepOpsとCI/CDの関係 by AWS DevOps(development operation)  無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する つまり作業は全て自動化する
+1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？ 再現性
+DevOps観点のアンチパターン 承認フローの追加（ダブルチェック、承認MTG）
+ 安心するためにダブルチェック・会議をするのではなく、システム化するべき   DevOpsタスク [Code] -&amp;gt; [Build] -&amp;gt; [Test] -&amp;gt; (Application) [Deploy] -&amp;gt; (Deploy) [Provision] -&amp;gt; (EC2) -- (OS) -- (Package)   Provisionはあらかじめインフラを作っておくこと CircleCIでは、[Build][Test][Deploy]  DevOpsの失敗パターン  最初からディティールを詰めすぎる（こうあるべき論） アプリが完成してからCI/CDに載せる
+解決策 小さく初めて育てていく
+ Hello WorldのCI/CDを作ってから拡張
+ ロールバックが大事
+  Demo  AYAGASAKI/eb-java-scorekeep
+CircleCIとGithub連携 公式の通り
+IAM USER 作成 Code Deploy
+ S3
+ クレデンシャルは、環境変数としてコンテナに渡す
+Cloud9 EC2上にCloud9の環境を用意している
+ Git Clone</description>
+    </item>
+    
+    <item>
+      <title>EMR</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</link>
+      <pubDate>Sat, 02 Mar 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</guid>
+      <description> デザインパターン 一時的クラスタ  ジョブが実行している間だけ動作する 起動時間が短いため、コスト削減 運用コスト削減  永続的クラスタ  ジョブの実行に関係なく動作する 複数ジョブでデータ共有 一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある  決め手  データロード時間 処理時間 ジョブ数  ノード仕様 マスタノード コアノード ##
+Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
+ 巨大データをバッチ処理する並列分散処理基盤 集中管理型の分散システムで、HDFSとMapReduceの2つのコンポーネントにより、並列分散処理を実現するミドルウェア  HDFS Hadoop Distributed File System
+ 分散ファイルシステム 複数のサーバにファイルを分割して保持する そのため、巨大なファイルを保持することができる マスタースレーブ構成  複数のシステムが動作する環境下において、制御する側（マスター）と、制御される側（スレーブ）に役割を分担して構成される方式  入力ファイルはブロックサイズで分割される（分割されたものをブロックという）  MapReduce  分散処理フレームワーク マスタースレーブ構成  1台のJobTracker、複数台のTaskTracker   </description>
+    </item>
+    
+    <item>
+      <title>Scala</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</link>
+      <pubDate>Mon, 25 Feb 2019 12:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</guid>
+      <description>https://speakerdeck.com/taketora/bian-wei-zhi-ding-nituitewakariyasukujie-shuo-sasetekudasai-a9b35ffb-c910-493e-a9f0-de09f6487918?slide=32
+Scala型パラメータ はじめに  クラス、インタフェース定義時に何の型が入るか決まっていないがインスタンス化する際に型を決定すること  例） クラス定義時に何の型が入るか不明であるため、型引数としてTを定義
+class Glass[T](var content: T) { def put(t: T): Unit = { content = t } def get: T = content }  型を定義する
+class Drink class Juice extends Drink class Water extends Drink  インスタンス化するときに、型を決定する
+val waterGlass = new Glass[Water](new Water) val juiceGlass = new Glass[Juice](new Juice)  サブタイプ  スーパークラスにサブクラスのインスタンスをバインドできる機能のこと  例）
+val drink: Drink = new Juice  非変  型パラメータGlass[T]は、デフォルトの状態では、サブタイプの関係が存在しない つまりWaterがDrinkのサブタイプであっても、Glass[Water]型をGlass[Drink]型にバインドできない  // コンパイルエラー val glassDrink: Glass[Drink] = new Glass[Water](new Water)  これを非変といい、Scalaではデフォルト</description>
+    </item>
+    
+    <item>
+      <title>値クラス</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00010/</link>
+      <pubDate>Fri, 22 Feb 2019 12:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00010/</guid>
+      <description>Memo  reduceLeft  List &amp;lsquo;Tail Element&amp;rsquo; への追加  先頭に追加して、reverseした方が良い(appnedは使用しない)  ##</description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</link>
+      <pubDate>Mon, 18 Feb 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</guid>
+      <description>サーバレスアーキテクチャの３原則  オンデマンドでサービス実行するために、コンピューティング環境を使う 目的が１つでステートレスな関数を書く プッシュベースのイベント駆動パイブラインを設計する 強力なフロントエンドを作る サードパーティサービスを活用する  サーバレスアーキテクチャのユースケース  S3にファイルを保存し、SQSでキューにデータをプッシュし、Lambda関数を起動 データ処理、変換、操作、トランスコード CSV、Json、XMLファイルの処理、データ照合、集計、イメージサイズの変更、フォーマット変換 Kinesisと連携したリアルタイムデータ処理  シャード数と関数の数が同じであり、シャードごとに関数が１つずつある  レガシーAPIプロキシ Blueprint(設計図)というサンプル付きのテンプレート Slackなどのボット開発 Amazon Echo  アーキテクチャ  バックエンドと、グルー（ワークフローを実行するために組み立てられるパイブライン処理） この２つは、相互補完が可能（組み合わせにて使う） Computer-as-back-end アーキテクチャ フロントエンドがセキュアに通信できるのであれば、分厚いフロントエンドとサードパーティサービスを活用し、イベント駆動パイブラインではなく、サーバレスバックエンドが使われる範囲を極力減らす（ナノ関数ともいう）  A Clud Guru  フロントエンドは、AngularJSで構築され、Netlifyによってホスティングされている  Amazon S3と、Amazon CloudFrontによるグローバルなコンテンツデリバリーネットワークに変更もできる  登録、認証機能のためにAuth0を使っている  フロントエンドがFirebaseなど他のサービスと直接セキュアに通信するための委任トークンを作る  Firebase（リアルタイムデータベース）  クライアントは、それぞれウェブソケットを使ってFirebaseと接続し、ほぼリアルタイムでFirebaseから更新情報を受け取る   Instant  TODO  ハイブリッドサーバレスとレガシーAPI  TODO  GraphQL  複数のラウンドトリップ、オーバーフェッチ、バージョニングに弱点のあるRESTに替わるものとして設計された（2012年〜2015年 Facebook社） 単一のエンドポイントで、宣言的な階層構造でクエリを実行する方法を提供している  １つのGraphQL Lambda関数だけで複数のデータソースにクエリを送ることが可能  AWS AppSync  https://github.</description>
+    </item>
+    
+    <item>
+      <title>CircleCI</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/circleci/00001/</link>
+      <pubDate>Mon, 28 Jan 2019 14:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/circleci/00001/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DDD</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</link>
+      <pubDate>Fri, 25 Jan 2019 15:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</guid>
+      <description>ドメイン駆動設計(DDD) https://www.slideshare.net/TakuyaKitamura1/ddd-29003356 e - モデルを中心とした設計・開発手法 - ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する - ドメインモデルをユビキタス言語として共有化 - ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む
+モデルの構成要素 モデルの表現  Entities Value Object Service  モデルのライフサイクル  Aggregates Factories Repositories  Entities 抽象的な連続性と同一性  固有のIDを持つ 分散環境、永続化前後でも追跡可能  属性(状態)に左右されない同一性  連続性を保証するIDは、オブジェクトの属性値に左右されない 属性値が全て同じでもIDが異なれば別のもの 属性値が異なっていてもIDが同じであれば同じもの 同一性の判断とライフサイクルは、モデル毎に個別の設計にする  具体例  顧客、口座、注文、在庫&amp;hellip;etc  Value Objects 連続性と同一性が不要なオブジェクト  属性がどんな値であるかに焦点を置かれるもの 一過性のことも多く、操作のために生成されては破棄される 状態を変更できないもの(immutable)  他の何らかの状態を記述する属性となる  何であるかだけが問題となり、誰であるか、あるいはどれであるかは問われないような設計の要素 エンティティの属性として使用される  具体例  色、量、地域、経路&amp;hellip;etc  Service TODO Entity や Value　Object には不自然な操作  操作であり状態を持たない  EntityとValueObjectのコントローラー サービスはドメイン層のものだけではない todo https://little-hands.</description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/terraform/00001/</link>
+      <pubDate>Mon, 21 Jan 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/terraform/00001/</guid>
+      <description> Terraform Install $ brew install terraform $ terraform version Terraform v0.11.11  AWS Network Create Credentials Create terraform.tfvars
+access_key = &amp;quot;AWS_ACCESS_KEY&amp;quot; secret_key = &amp;quot;AWS_SECRET_KEY&amp;quot; region = &amp;quot;ap-northeast-1&amp;quot; key_name = &amp;quot;KEY_PAIR_NAME&amp;quot;  VPC Create main.tf
+variable &amp;quot;access_key&amp;quot; {} variable &amp;quot;secret_key&amp;quot; {} variable &amp;quot;region&amp;quot; {} provider &amp;quot;aws&amp;quot; { access_key = &amp;quot;${var.access_key}&amp;quot; secret_key = &amp;quot;${var.secret_key}&amp;quot; region = &amp;quot;${var.region}&amp;quot; } resource &amp;quot;aws_vpc&amp;quot; &amp;quot;vpc-1&amp;quot; { cidr_block = &amp;quot;10.0.0.0/16&amp;quot; tags { Name = &amp;quot;vpc-tf-sample&amp;quot; } }  // AWS Plugin Install $ terraform init // Run $ terraform apply  </description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00001/</link>
+      <pubDate>Fri, 18 Jan 2019 18:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00001/</guid>
+      <description> Container を使う理由 歴史的な流れ  スタティックリンク  インストールされるアプリケーションがそれぞれで依存ライブラリを持ち寄るとサイズが大きくなる
+ バーベキューでみんながバーベーキューセットを持ち寄るのと一緒   ↓
+ ダイナミックリンク  共有ライブラリ 依存関係の管理は、管理パッケージ（yum,apt,gem,pip）   ↓
+ インフラ構成管理  複数ミドルウェアの組み合わせによる複雑化に対処 リソースオーバーヘッド 可搬性   ↓
+ Container  Hoge  大掛かりなスタティックリンクされたファイル 全部入りの一つのファイルというシンプルさ  </description>
+    </item>
+    
+    <item>
+      <title>Scala Tips</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00011/</link>
+      <pubDate>Thu, 17 Jan 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00011/</guid>
+      <description>Useful Utility Classes Sorted Sorting  Int,Longのような型は早くなる 独自の型は遅くなる  Random Random  Thread Safe ではある
+ThreadLocalRandom 速い
+  Collection Seq#map  速い
+Set#map 遅い
+ ハッシュコードとかが原因
+  construct Seq Seq() List() 1 :: Nil  new ::(1, Nil)  Scala language features Call by Name  遅延評価 速い  implicit Class  トップレベルに定義できない  value-Class  AnyValを継承 public val フィールドを一つだけコンストラクタとするクラス フィールドには、val、var、trait、class、objectは、定義できない def はいくつもOK コンパイル時には存在するが、ランタイム時には型が消える  val フィールドの型になる  汎用トレイト（universal trait）のみ拡張することができる  汎用トレイト（universal trait）  Anyを継承する メンバとしてdefをもつ 初期化を行わない  https://docs.</description>
+    </item>
+    
+    <item>
+      <title>AWS Batch</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</link>
+      <pubDate>Thu, 17 Jan 2019 17:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</guid>
+      <description>Component  VPC内で動作  Jobs  AWS Batchに送信する作業単位 EC2上で動作するコンテナ化されたアプリケーションとして、AWS Batchによって実行される作業単位 必ずJob Definitionsを参照する コンテナイメージ、コマンド、パラメータを参照する Job Definitionsのパラメータはオーバーライドが可能 Linux exe file, Shell Script, Docker Container Image
+属性 雛形のJob Definitions
+ 実行先が示されたJob Queues
+ 実行コマンド
+ vCPUとメモリ要件
+  Job Queuses  JobのQueuesの待ち行列
+属性 Jobのブライオリティ(整数の値が小さい方が優先)
+ 実行先のCompute Envrionment
+  JobDefinitions  jobのテンプレート
+属性 IAMロール
+ コンテナイメージ
+ 実行するコマンド
+ vCPUとメモリ要件
+ ボリュームとマウントポイント
+ 環境変数
+  Compute Environments  jobの実行環境
+属性 IAM Role</description>
+    </item>
+    
+    <item>
+      <title>fpinscala</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00009/</link>
+      <pubDate>Thu, 10 Jan 2019 18:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00009/</guid>
+      <description>関数型プログラミングにおける副作用の除去は、結果型に副作用の元となるデータを返す 入力Aに対する出力Bを返す関数 f: A =&amp;gt; B は、内部・外部プロセスの変化に影響されない（＝副作用がない） buyCoffeの例では、請求処理という副作用を出力から排除すること
+参照透過性  同じ条件を与えれば必ず同じ結果が得られる 他のいかなる機能の結果にも影響を与えない 関数の結果型に従い、実行する全てのことがその戻り値によって表されるという不変条件 プログラムによる等式推論(equational reasoning)が可能  def add1(x: Int, y: Int): Int = x + y  var x: Int = 1 def add2(y: Int): Int = x + y  参照透過性の確認フロー 例１ val x = &amp;quot;Hello World&amp;quot; val r1 = x.reverse // dlroW olleH val r2 = x.reverse // dlroW olleH   r1、r2は同じ xをxが参照している式（その定義）と置き換える  val r1 = &amp;quot;Hello World&amp;quot;.</description>
+    </item>
+    
+    <item>
       <title>機械学習 入門#2</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/datascience/00002/</link>
       <pubDate>Fri, 04 Jan 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/datascience/00002/</guid>
       <description> 線形代数 スカラー $x, y, z, m, n$
 ベクトル  複数の値を集めたもの スカラーが複数集まったもの エクセルの一列みたい $$ \boldsymbol{x} = \left(\begin{array}{c}x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right) $$  行列 $$ \boldsymbol{X} = \begin{eqnarray}\left( \begin{array}{} x_1 &amp;amp; x_2 \\
 x_3 &amp;amp; x_4 \\
@@ -26,19 +214,19 @@ x_5 &amp;amp; x_6 \end{array}\right) \end{eqnarray} $$
     
     <item>
       <title>Logstash</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticstack/00003/</link>
       <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticstack/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticstack/00003/</guid>
       <description> Hoge   </description>
     </item>
     
     <item>
       <title>Ansible 実践入門</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/ansible/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</link>
       <pubDate>Sun, 23 Dec 2018 14:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/ansible/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</guid>
       <description>サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master
 Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
 - ターゲットノードにはPythonの実行環境が求められる - 各ソフトウェア、ミドルウェアのインストールには特権ユーザ権限が必要である - タスクの用途によってユーザを作成しておく
@@ -53,169 +241,170 @@ Ansible Archetecture 基本動作の概要  コントロールノードノード
     
     <item>
       <title>Jupyter Note Book 環境構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/python/00001/</link>
       <pubDate>Sun, 16 Dec 2018 01:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/python/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/python/00001/</guid>
       <description> 構成 Homebrew |- python3 |- pip3 |- python3で使用するライブラリ... |- etc...  Python $ brew install python3 $ witch python3 $ witch pip3  Libraries $ pip3 install numpy # 線形代数 $ pip3 install scipy # 数式処理 $ pip3 install matplotlib # 描画 $ pip3 install pandas # データ操作 $ pip3 install scikit-learn # 分類や予測のためのモデルが詰まった機械学習用パッケージ $ pip3 install chainer # ディープラーニング  Jupyter Note Book $ pip3 install jupyter $ jupyter notebook  </description>
     </item>
     
     <item>
       <title>S3</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00009/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</link>
       <pubDate>Fri, 14 Dec 2018 16:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00009/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</guid>
       <description> AWS CLIを使って、S3のデータをダウンロードする $ aws s3 cp --region ap-northeast-1 s3://バケット名/ . --recursive  </description>
     </item>
     
     <item>
       <title>機械学習 入門#1</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/datascience/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/datascience/00001/</link>
       <pubDate>Fri, 07 Dec 2018 23:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/datascience/00001/</guid>
       <description>1基礎 機械学習の位置付け 人工知能 &amp;gt; 機械学習 &amp;gt; ディープラーニング
 目 -&amp;gt; 画像 -&amp;gt; 数値 -&amp;gt; 機械学習 耳 -&amp;gt; 音声(時系列を含む) -&amp;gt; 数値 -&amp;gt; 機械学習 口 -&amp;gt; 自然言語 -&amp;gt; 数値(word2vec) -&amp;gt; 機械学習 入力𝑥 -&amp;gt; 機械学習 -&amp;gt; 出力𝑦 =&amp;gt; 入力𝑥 と 出力𝑦 の関係性(規則性)を見つける 機械学習 { ディープラーニング、 単回帰分析、 SVM(Support Vector Machine) }  機械学習に必要な数学  微分積分 線形代数 確率・統計 ディープラーニングは、微分と線形代数が重要！  機械学習の３大トピック  教師あり学習（入力$x$と出力$y$）  回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&amp;gt; 家賃($y$) 分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール($x$) -&amp;gt; 種類($y$)  教師なし学習（入力$x$）  クラスタリング（グルーピング） 次元削減（入力変数を減らす）  強化学習（データがない or ほとんどない）  掃除ロボット   機械学習と内挿・外挿  内挿：持っている入力データ内で予測すること（1~4） 外挿：持っている入力データ外で予測すること  機械学習は、内挿を保証するため、外挿は取り扱わない</description>
     </item>
     
     <item>
       <title>A similarity</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
       <pubDate>Fri, 07 Dec 2018 15:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon Elasticsearch Service</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
       <pubDate>Wed, 05 Dec 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
       <description> Index設計  データ量、更新速度の考慮  index は、複数の shard から構成されている shard を複数の node に分散することで、1つの index のに対する書き込み速度を分散することができる  親子関係データは、1つのindex or 1つのdocument内に　Nested Type型のデータとしてインデックス トランザクションがないため、Alias(View機能を確認) index につけられる？ 多言語対応　言語ごとに index Tribe Node を使うならすべてのクラスターで重複しないインデックス名で設計   </description>
     </item>
     
     <item>
       <title>Scala 非同期処理プログラミング</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00008/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00008/</link>
       <pubDate>Thu, 29 Nov 2018 16:20:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00008/</guid>
-      <description> マルチプロジェクトの作成 $ sbt new mattsu6/multi-sbt.g8  MySql $ docker exec -it CONTAINER_ID /bin/bash $ mysql -u sample -p -D mydb -h localhost -P 3306  </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00008/</guid>
+      <description> マルチプロジェクトの作成 $ sbt new mattsu6/multi-sbt.g8  MySql $ docker exec -it CONTAINER_ID /bin/bash $ mysql -u sample -p -D mydb -h localhost -P 3306  Future http://mashi.hatenablog.com/entry/2014/11/24/010417
+ExecutionContext  非同期処理の仕組み タスクを適切にスレッドに分配する 一定数を最大としたスレッドプールを保持し、空いているスレッドにタスクを割り当てる  fufuter apply  Fufure {} Futureインスタンスの生成 CPUコア数分のスレッドを使う  await Await.result(f, Duration.Inf) Await.redy(f, Duration.Inf)
+implicit parameter  クラス定義とメソッドの実装を分離する 既存クラスでも後から自由に変更できる 型クラスは、implicit parameterを使ったパターンのこと  暗黙にする理由  コンパイルエラーによる証明 Howを分離し、whatを重要視する（filter()）  注意点  自明な定義になっていることが重要  implicit conversion  定義を変更できないクラスにメンバを追加したい 追加したいメンバを保持したクラスを定義し、型としてはそのクラスを使わない手法 既存のクラスに対して、振る舞いを追加するだけ  Enrich my library Scala Value Class </description>
     </item>
     
     <item>
       <title>RDS</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00008/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</link>
       <pubDate>Wed, 28 Nov 2018 14:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00008/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VPC EC2 Apache PHP MySQL を使ったWebアプリケーション構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</link>
       <pubDate>Tue, 27 Nov 2018 00:20:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</guid>
       <description> OS  Amazon Linux  ホスト名の変更 $ sudo vi /etc/sysconfig/network HOSTNAME=変更するホスト名 $ sudo vi /etc/hosts 127.0.0.1 変更するホスト名 localhost $ sudo reboot  言語設定 $ sudo vi /etc/sysconfig/i18n LANG=ja_JP.UTF-8  時刻設定 $ sudo cp /usr/share/zoneinfo/Japan /etc/localtime $ sudo vi /etc/sysconfig/clock ZONE=&amp;quot;Asia/Tokyo&amp;quot; $ date  Apache PHP MySQL Git インストール $ sudo yum update -y $ sudo yum install -y httpd24 $ sudo yum install -y php70 php70-mbstring php70-pdo php70-mysqlnd $ sudo yum install -y mysql $ sudo yum install -y git  </description>
     </item>
     
     <item>
       <title>AWS Elastic Cash Redis</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/redis/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00002/</link>
       <pubDate>Mon, 26 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/redis/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00002/</guid>
       <description> Redis構築 EC2構築 // TODO $ CLI  GNU コンパイラコレクション (gcc) をインストール
 $ sudo yum install gcc  $ wget http://download.redis.io/redis-stable.tar.gz $ tar xvzf redis-stable.tar.gz $ cd redis-stable $ make  $ src/redis-cli -c -h redissample.ezre9w.0001.apne1.cache.amazonaws.com -p 6379  </description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</link>
       <pubDate>Wed, 21 Nov 2018 18:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00005/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</guid>
       <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  インターネット上の中継サーバを使う方法    LAN内の中継サーバを使う方法       </description>
     </item>
     
     <item>
       <title>Redis入門</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/redis/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00001/</link>
       <pubDate>Wed, 21 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/redis/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00001/</guid>
       <description> Redisコマンドリファレンス
 メモリ消費量の削減アプローチ 短いデータ構造ziplist シャーディング ビットバイトのパッキング スケール </description>
     </item>
     
     <item>
       <title>デザインパターン</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/design/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00003/</link>
       <pubDate>Wed, 21 Nov 2018 13:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/design/00003/</guid>
-      <description>分類 オブジェクトの
-- 生成 - 振る舞い - 構造</description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00003/</guid>
+      <description> 分類    CLASSIFICATION PATTERN     構造 Flyweight    Flyweight about  省メモリのためのパターン 軽量化されるべきインスタンスの生成や管理を行う Factory クラスを作成 軽量化されるべきインスタンスは、この Factory クラスを介して取得する  </description>
     </item>
     
     <item>
       <title>CodeDeploy</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00007/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</link>
       <pubDate>Mon, 19 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00007/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</guid>
       <description>##</description>
     </item>
     
     <item>
       <title>Web広告</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/industry/ad/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00002/</link>
       <pubDate>Mon, 19 Nov 2018 14:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/industry/ad/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00002/</guid>
       <description> ネイティブ広告 インフィード広告  記事と記事の間に広告が表示される  レコメンドウィジェット  記事下の「おすすめ情報」、「こんな記事も読まれています」に広告、または関連記事が表示される  </description>
     </item>
     
     <item>
       <title>エラーハンドリング</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00004/</link>
       <pubDate>Sun, 18 Nov 2018 11:35:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00004/</guid>
       <description> 参考スライド http://gakuzzzz.github.io/slides/error_handling_practice/#24
 NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } catch { case NonFatal(e) }   </description>
     </item>
     
     <item>
       <title>AWS CloudFormation</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</link>
       <pubDate>Mon, 12 Nov 2018 14:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00004/</guid>
-      <description> Flow  Change AWS CLI Profile Create CloudFormation Template Create Stack  Change AWS CLI Profile  管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する (シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す) ローカルのAWSプロファイルを更新する  $ aws configure --profile pureone-worker AWS Access Key ID [None]:アクセスキー AWS Secret Access Key [None]:シークレットアクセスキー Default region name [None]:ap-northeast-1 Default output format [None]:json   Create CloudFormation Template https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
-  Create Stack  テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ  </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</guid>
+      <description>Flow  Change AWS CLI Profile Create CloudFormation Template Create Stack  Change AWS CLI Profile  管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する (シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す) ローカルのAWSプロファイルを更新する  $ aws configure --profile pureone-worker AWS Access Key ID [None]:アクセスキー AWS Secret Access Key [None]:シークレットアクセスキー Default region name [None]:ap-northeast-1 Default output format [None]:json   Create CloudFormation Template https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+  Create Stack  テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ  Template  AWSリソース構成を YAML or JSON で記載したドキュメント  Section  Paramters  実行時に埋め込む変数値  Mappings  実行環境によって変わる値をMap形式で定義  Resource</description>
     </item>
     
     <item>
-      <title>ECR (Amazon Elastic Container Registry)</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00005/</link>
+      <title>ECS</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</link>
       <pubDate>Thu, 08 Nov 2018 14:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00005/</guid>
-      <description> 完全マネージド型の Docker コンテナレジストリ   </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</guid>
+      <description> ECR (Amazon Elastic Container Registry)  完全マネージド型の Docker コンテナレジストリ  ECS (Amazon Elastic Container Service) Service  実態は複数のdocker containerの集合体 以下を管理するもの  どんなコンテナを起動するのか 何個起動するのか リクエスト分散するのか   Task  docker container をグループ化するもの  </description>
     </item>
     
     <item>
       <title>Agile</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/communication/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/communication/00001/</link>
       <pubDate>Thu, 08 Nov 2018 10:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/communication/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/communication/00001/</guid>
       <description>参考資料  https://www.slideshare.net/Ryuzee/scrum-8260474
  http://scrumreferencecard.com/ScrumReferenceCard_v1_3_jp.pdf
  https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf
@@ -227,10 +416,10 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     
     <item>
       <title>Elasticsearch 実践</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
       <pubDate>Wed, 07 Nov 2018 23:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
       <description>1.Elasticsearch 特徴  Apache Luceneをベースとした javaで書かれた全文検索ソフトウェア ログ収集・解析・分析プラットフォーム  kibana、logstash  分散配置による高速、高可用性の実現  クラスタ構成、分散ノード、シャード分割  RESTAPIアクセスによるリソース操作の明確化
  URLを参照すればどのリソースにアクセスしているか分かる  Elastic Stack
  Kibana バックエンドのElasticsearchにクエリ発行、可視化 Elasticsearch Logstash Input, Filter, Output Beats   全文検索  索引型検索 転置インデックス（各単語と出現した文書IDの組み合わせをインデックスとして保存）  Doc1: イベントが東京で開催される Doc2: 東京マラソンに参加する     単語 DocId     東京 1, 2   イベント 1   マラソン 2     各単語は、英語の場合：空白区切り、日本語の場合：形態素解析
@@ -239,106 +428,106 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     
     <item>
       <title>sim</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
       <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
       <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
       <description>環境構築リスト  ローカル(Mac OSX) + Elasticsearch ローカル(Mac OSX) + docker ローカル(Mac OSX) + docker-compose EC2 + docker + Elasticsearch EC2 + docker + Elasticsearch by terraform  ローカルMac Elasticsearch Java8 インストール $ brew cask install homebrew/cask-versions/java8  Elasticsearch インストール $ brew install elasticsearch  kibana インストール $ brew install kibana  起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
 { &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.</description>
     </item>
     
     <item>
       <title>DNS関連</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</link>
       <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</guid>
       <description> DNSラウンドロビン  ドメイン名とIPアドレスを 1:n で対応付けること hoge.co.jp = 192.168.1.1, 192.168.1.2, 192.168.1.3 ドメインへのアクセス時には、n のサーバへ負荷分散される RFC3484  </description>
     </item>
     
     <item>
       <title>IP</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</link>
       <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</guid>
       <description> 参考 https://qiita.com/mogulla3/items/efb4c9328d82d24d98e6
 グローバルIPアドレス  世界的には、ICANNが管理、日本では、JPNICが管理  プライベートIPアドレス  グローバルIPアドレスに変換せずにネットワーク接続を試みた場合、ルーター側でパケットの破棄が行われ、接続できない事象になる。     CLASS RANGE     クラスA 10.0.0.0 ～ 10.255.255.255   クラスB 172.16.0.0 ～ 172.31.255.255   クラスC 192.168.0.0 ～ 192.168.255.255    </description>
     </item>
     
     <item>
       <title>ドメイン名、ホスト名、FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名の違い</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</link>
       <pubDate>Wed, 07 Nov 2018 09:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</guid>
       <description>Macアドレス  ネットワーク部品に割り当てられたアドレス 48ビットのアドレス 先頭24ビットは、部品メーカーの識別番号 後半24ビットは、TODO 16進数表記 OSIの第2層のデータリンク層  OSI レイヤー7:アプリケーション層  アプリケーションに特化したプロトコルを規定 HTTP メール送信のSMTP  レイヤー6:プレゼンテーション層  データの表現形式を規定 データ保存形式、圧縮、文字コード  レイヤー5:セッション層  コネクション確立、データ転送のタイミングを規定  レイヤー4:トランスポート層  データ転送の制御を規定 TCP/IP  レイヤー3:ネットワーク層  IPアドレス 異なるネットワークへデータを転送するルーティングの制御 ルーター、レイヤー3スイッチ パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理  レイヤー2:データリンク層  MACアドレスによるデータ転送 同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する レイヤー2スイッチ 通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している  レイヤー1:物理層  ケーブルやコネクタの形状を規定 100BASE-T(イーサネット)  ファイヤーウォール パケットフィルタ  IPアドレス、ポート番号を元にフィルタリング  80(http), 443(https)のみパケットの通過を許可  パケットフィルタリングのルールのことをACL  アプリケーションゲートウェイ  プロキシのこと  Linux  メモリ上に展開してプログラムをプロセス（PID） ハードディスに割り当てる仮想メモリのことをスワップ  FHS（ディレクトリ構成）  /bin  基本コマンドを格納したディレクトリ  /boot  OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体  /dev  デバイスを格納したディレクトリ、dev/nullは、何もないを表す  /etc  OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など  /home  ユーザを格納したディレクトリ  /proc  カーネルやプロセス情報を格納したディレクトリ  /sbin  システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される  /tmp  一時ファイルを格納したディレクトリ  /usr  アプリケーションを格納したディレクトリ  /var  ログとかを格納したディレクトリ   ドメイン名  インターネット上のネットワークを一意に識別するための名称</description>
     </item>
     
     <item>
       <title>Heroku Start!</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/heroku/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/heroku/00001/</link>
       <pubDate>Tue, 06 Nov 2018 17:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/heroku/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/heroku/00001/</guid>
       <description>Heroku create Account https://id.heroku.com/login
 Heroku CLI  install for Mac  $ brew install heroku/brew/heroku   App Deploy $ Foo  // TODO</description>
     </item>
     
     <item>
       <title>akka-stream</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</link>
       <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</guid>
       <description> akka-stream </description>
     </item>
     
     <item>
       <title>plugins</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00007/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00007/</link>
       <pubDate>Tue, 06 Nov 2018 10:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00007/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00007/</guid>
       <description>plugins sbt-native-packager  Dockerイメージを作成できる  https://qiita.com/takebayashi/items/99dcf293423a27caa73a https://qiita.com/petitviolet/items/cf5d699521b08e6ec933   sbt-assembly  実行可能jarファイル作成  sbt-multi-jvm  複数のJVM上で動作させるAkkaシステムのテスティングプラグイン  sbt-hoge  foo  ScalaOption -feature -deprecation -unchecked -Xfatal-warnings -Xlint sbt new シングルプロジェクト作成コマンド $ sbt new sbt/scala-seed.g8
 マルチプロジェクト作成コマンド $ sbt new mattsu6/multi-sbt.g8</description>
     </item>
     
     <item>
       <title>Kinesis</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00006/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</link>
       <pubDate>Mon, 05 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00006/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</guid>
       <description> https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb
 Kinesis $ export AWS_DEFAULT_PROFILE=&#39;pureone-worker&#39; $ aws kinesis create-stream --stream-name kinesis-test-stream --shard-count 1 $ aws kinesis describe-stream --stream-name kinesis-test-stream $ aws kinesis put-record --stream-name kinesis-test-stream --data hogehoge_$RANDOM --partition-key $RANDOM  Scala </description>
     </item>
     
     <item>
       <title>Web広告における入札方式</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/industry/ad/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00001/</link>
       <pubDate>Mon, 05 Nov 2018 14:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/industry/ad/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/industry/ad/00001/</guid>
       <description> 用語 http://free-web-hope.com/listing-basic-terms
    NAME DESCRIPTION     imp 広告の表示回数（媒体社のメディアの表示回数ではない？＝PV）   CT (Click Through) クリック数   CTR (Click Through Rate) クリック率 = CT / imp   CV (Conversion) hoge   CVR (Conversion Rate) hoge   CPA (Cost Per Action) コンバージョン（CV）1件あたりにかかった広告費用を示す値   hoge hoge   hoge hoge    検索連動型広告の場合の入札方式  検索されるキーワードに対して入札を行う  キーワードに対し、1クリック当たりいくらまでなら広告料金を支払って良いかを決めて、設定する 最低入札価格以上の価格に設定する必要がある   KGI (Key Goal Indicator)  ゴールを測る指標  KPI (Key Performance Indicator)  KGIプロセスの状態を測る指標  </description>
     </item>
     
     <item>
       <title>AWS アカウント作成後に実施するリスト</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00001/</link>
       <pubDate>Mon, 05 Nov 2018 10:54:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00001/</guid>
       <description> アカウント作成後に行うこと  多要素認証（MFA）の設定 IAMユーザ作成 Cloud Trail 料金アラート設定  MFAの設定 MFA用のアプリのインストール 今回はAnthyを使います。 Anthy を Apple Store からインストールする。
    Item Value     Code Japan(81)   Cellphone number 先頭0を除く電話番号   Backups Password パスワード    AWSのルートアカウントのMFA有効化 「IAM(Identity and Access Management)コンソール」を開く
 「ルートアカウントのMFAを有効化」より、「MFAの管理」を選択する
@@ -351,20 +540,20 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
     
     <item>
       <title>Apache Spark for Scala 使ってみた</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00006/</link>
       <pubDate>Thu, 01 Nov 2018 18:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00006/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00006/</guid>
       <description>Spark  オープンソースの分散処理フレームワーク 分散処理で有名な Hadoopは、独自ファイルシステム(hdfs)を介して処理 Spark は、RDD(Resilient Distributed Dataset)という障害耐久性分散可能なデータセットを、オンメモリで実行できるため、高速な処理が可能  Sparkの構成  Spark Core Spark  RDDを提供  Spark Streaming  データストリーム処理を提供 Twitterなどのリアルタイムデータを取得する場合などに使える  Spark SQL  構造化データにアクセスする機能を提供 JSONなども扱える  Mlib  汎用的な機械学習ライブラリを提供 word2vecを使った類似後分類とかできる  Graph X  ソーシャルグラフを扱う場面で役にたつ   サンプルのアプリケーション作成 https://blog.excite.co.jp/exdev/27638387/
 環境構築  Spark アプリケーションは、Java、Scala、Python、R の４言語で記述することが可能 Spark の実装に Scala が用いられている  インストール $ brew intall apache-spark $ brew intall scala $ brew intall sbt  環境変数に Sparkを通す (x.</description>
     </item>
     
     <item>
       <title>クリーンアーキテクチャ</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/design/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</link>
       <pubDate>Wed, 31 Oct 2018 19:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/design/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</guid>
       <description>Robert C. Martin
 クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
 イントロダクション  ソフトウェアを「一度だけ」動かすのは、難しいことではない ソフトウェアを「正しく」動かすのは、とても難しい
@@ -381,20 +570,20 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
     </item>
     
     <item>
-      <title>PHP 書き方</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/php/00002/</link>
+      <title>Laradock</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</link>
       <pubDate>Wed, 31 Oct 2018 13:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/php/00002/</guid>
-      <description> スコープ定義変数 (::) </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</guid>
+      <description> Laradock $ mkdir laradock-project $ cd laradock-project $ git clone https://github.com/laradock/laradock.git  </description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/vue/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00002/</link>
       <pubDate>Mon, 29 Oct 2018 17:20:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/vue/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00002/</guid>
       <description> 意識すべきこと  構造の本体は、DOMではなく、JavaScriptのデータ  先にDOMが存在するのではなく、データの状態に適したDOMを構築する  DOMの構築手段としてテンプレートを使用する テンプレートとロジックを関連付けるのが、ディレクティブ（@click, :class&amp;hellip;） DOMの状態を管理・更新するデータバインディング 単一ファイルコンポーネント  豊富なリソース  Awesome Vue Github Vue Curated Element Onsen UI   双方向データバインディング  ここでいうデータバインディングとは、UIとデータを紐付けること 双方向とは、UIが変わればデータが変わり、データが変わればUIも変わる
  Codepen
  JSFiddle
@@ -404,27 +593,11 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
     </item>
     
     <item>
-      <title>関数型プログラミング</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/design/00002/</link>
-      <pubDate>Sun, 28 Oct 2018 22:00:00 +0900</pubDate>
-      
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/design/00002/</guid>
-      <description>Scala sealed final class 継承できない final def f オーバーライドできない sealed class 同一ファイル内のクラスからのみ継承できる sealed class を継承したクラスは、別ファイルのクラスから継承できる
-型 型とは、本来何なのかについて整理
-=&amp;gt; 型によって取りうる値の範囲（種類を含む）が決まってくる
-// java int: -2147483648 ~ 2147483647 // haskell Bool: False|True data TraficLight = Red | Yello | Green // 型を自分で定義... Red は TraficLight型の値  型クラス 型は、値の範囲を決める 型クラスは、クラスの範囲を決める？
-型クラスは、振る舞いを定義するインターフェース
-型クラスのインスタンスである型 Eq型クラスのインスタンスInt型
-型クラスはアドホック多相(polymorphism)を実現している
-アドホック多相 オブジェクト指向 importは、どのプログラムに依存しているか見極めるたみに便利</description>
-    </item>
-    
-    <item>
       <title>エンジニアの目標設定に関するあれこれ</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/engineer/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/engineer/00001/</link>
       <pubDate>Thu, 25 Oct 2018 15:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/engineer/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/engineer/00001/</guid>
       <description>目標設定をする理由  営業職などと違い、数字での評価が難しい 日々の行動指針を考えるキッカケになる 努力が結果に結び使いない場合のロードマップを把握するキッカケになる  SMART の法則 正しい目標設定をすると、効率が上がる（＝生産性）
  Specific（明確な） Measurable（測定可能な） Achievable（達成可能な） Relevant （関連性がある） Time-bound （期限のある）  運用 - インシデント件数に対応件数と対応時間の数値化およびグラフにおける視覚化
 開発 - チーム内でのレビューに何らかの工夫を凝らす ？
@@ -433,10 +606,10 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
     
     <item>
       <title>css 使い方（のまとめ）集</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/css/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/css/00001/</link>
       <pubDate>Thu, 25 Oct 2018 14:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/css/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/css/00001/</guid>
       <description>class 属性と、id 属性の使い分け class 属性 &amp;lt;p class=&amp;quot;example01&amp;quot;&amp;gt;Example Class Attribute&amp;lt;/p&amp;gt; p.example01 { color:red; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   class名 : example01 要素名 : p  学級名 - 種別名を割り当てる - 同一 class 名を１ページで何度でも使える
 id 属性 &amp;lt;p id=&amp;quot;example02&amp;quot;&amp;gt;Example Id Attribute&amp;lt;/p&amp;gt; p#example02 { color:blue; } &amp;lt;!- p要素の指定は省略可能 -&amp;gt;   id名 : example02 要素名 : p  学籍番号 - 固有の名前を割り当てる - 同一 id 名は、１ページに1度しか使えない
 スタイルの適用順序  同一属性内でのスタイル適用重複については、後勝 id属性、class属性でスタイル適用が重複している場合は id属性が優先される ```html Example Class</description>
@@ -444,38 +617,38 @@ id 属性 &amp;lt;p id=&amp;quot;example02&amp;quot;&amp;gt;Example Id Attribute
     
     <item>
       <title>Scala まとめ</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00005/</link>
       <pubDate>Mon, 22 Oct 2018 08:20:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00005/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00005/</guid>
       <description>object 用途  ユーティリティメソッド、グローバルなプロパティ値の置き場(equivalent of java static) 同名クラスのオブジェクトのファクトリメソッド  class SampleSuper(a: Int) class Sample(b: Int) extends SampleSuper(b) object SampleSuper { def apply(c: Int): SampleSuper = new Sample(c) } object Sample { def apply(c: Int): SampleSuper = new Sample(c) }  new クラス名による直接的なオブジェクト生成よりも、実装の詳細を隠蔽できる（インターフェースのみ公開） サブクラスのインスタンスを返却することもできる  コンパニオンオブジェクト  クラスと同じファイル内に、同じ名前で定義されたオブジェクト（シングルトン）のこと  trait 抽象メンバーの上書き trait TraitA { val name: String def printName: String = println(name) } class ClassA(val name: String) extends TraitA トレイとをミックスインしたクラスのコンストラクタで、抽象メンバー name をオーバーライドしている。</description>
     </item>
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/editor/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>
     
     <item>
       <title>Scalaローカル開発環境構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00001/</link>
       <pubDate>Sun, 14 Oct 2018 11:35:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00001/</guid>
       <description>前提  Mac OSX  Homebrew Install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;   command line tool はアップデートされるため、Xcodeのインストール、xcode-select --installされる  $ brew doctor Your system is ready to brew.  Java8 Install $ brew tap caskroom/versions $ brew cask install java8 $ java -version  sbt Install $ brew install sbt  Git Install $ brew install git  $ mkdir ~/repository $ mkdir ~/repository/office $ mkdir ~/repository/pureone  $ vi ~/repository/office/.</description>
     </item>
     
     <item>
       <title>Scala Test</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00003/</link>
       <pubDate>Wed, 10 Oct 2018 14:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00003/</guid>
       <description>Property Based Testing テストデータを半自動生成する
 Mastering flatMap ! flatten と map が、同時に行われるのが flatMap - map -&amp;gt; flatten
 Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatMap(identity) // List(1, 2, 3, 5.6): scala.collection.Seq Seq(Seq(1,2,3), Seq(), Seq(5.6)).map(identity) // List(List(1, 2, 3), List(), List(5.6)): scala.collection.SeqSeq(Seq(1,2,3), Seq(), Seq(5.6)) flatten { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) flatMap { x =&amp;gt; x.size } // コンパイルエラー Seq(Seq(1,2,3), Seq(), Seq(5.6)) map { x =&amp;gt; x.</description>
@@ -483,61 +656,61 @@ Seq(Seq(1,2,3), Seq(), Seq(5.6)).flatten(identity) // List(1, 2, 3, 5.6): scala.
     
     <item>
       <title>Laravel 開発環境構築</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/php/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/php/00001/</link>
       <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/php/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/php/00001/</guid>
       <description>Laravel  PHPフレームワーク
  Artisan (アーティザン) Laravel用コマンドラインインターフェース  Composer  ライブラリ依存管理ツール vendorフォルダにダウンロードする  Homestead  Laravel公式のvagrant box  Vagrant  VirtualBox   Vagrant インストール  https://www.vagrantup.com/downloads.html  VirtualBox インストール  https://www.virtualbox.org/wiki/Downloads  OS X hosts   Homestead vagrant box ダウンロード $ vagrant box add laravel/homestead  Composer インストール $ brew install composer  Homestead インストール $ mkdir laravel-app $ cd laravel-app $ git clone https://github.com/laravel/homestead.git Homestead $ cd Homestead $ bash init.</description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/r/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/r/00001/</link>
       <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/r/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/r/00001/</guid>
       <description></description>
     </item>
     
     <item>
       <title>default</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/go/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/go/00001/</link>
       <pubDate>Wed, 10 Oct 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/go/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/go/00001/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About Me</title>
-      <link>https://pureonedoya.github.io/doc-site/about/</link>
+      <link>https://pureone-tcy.github.io/doc-site/about/</link>
       <pubDate>Mon, 08 Oct 2018 01:30:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/about/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/about/</guid>
       <description>Junichi Tsuchiya  Tokyo, Japan
  Engineer
  Scala / Haskell / Go / Python / Java / PHP / Perl Vue.js / React.js / Node.js AWS / docker / Ansible Elaticsearch
-・・・   pureonedoya@gmail.com
+・・・   pureone-tcy@gmail.com
 GitHub</description>
     </item>
     
     <item>
       <title>Akka</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00002/</link>
       <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00002/</guid>
       <description>サンプルコードのダウンロード https://github.com/akka-ja/akka-in-action
  sbtはインタプリタを持っている  Actorの4つの機能  create(生成) send/receive(送信/受信) become(状態変化) supervive(監督)     パッケージ 説明     akka.actor.{ActorSystem, Actor, Props} アクター関連のコード   akka.event.Logging ロギング拡張   akka.util.Timeout ask処理のタイムアウト   akka.http.scaladsl.Http~ HTTP関連のコード    package com.goticks import scala.concurrent.Future import akka.actor.ActorSystem import akka.event.Logging import akka.util.Timeout import akka.http.scaladsl.Http import akka.http.scaladsl.Http.ServerBinding import akka.stream.ActorMaterializer import com.typesafe.config.{ Config, ConfigFactory } import scala.util.{ Failure, Success } object Main extends App with RequestTimeout { val config = ConfigFactory.</description>
     </item>
     
     <item>
       <title>Akka</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00001/</link>
       <pubDate>Mon, 27 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00001/</guid>
       <description>Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
   アクター概要  メッセージキューに似ている
  アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する
@@ -550,10 +723,10 @@ GitHub</description>
     
     <item>
       <title>Atom</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/editor/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</link>
       <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/editor/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</guid>
       <description>プログラミング用フォントの導入 RectyDiminished
 Atomインストール https://atom.io/
 Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
@@ -566,10 +739,10 @@ alt + shift + enter（再生）</description>
     
     <item>
       <title>Docker2</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00002/</link>
       <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00002/</guid>
       <description>Nginx $ docker pull nginx Using default tag: latest latest: Pulling from library/nginx be8881be8156: Pull complete 32d9726baeef: Pull complete 87e5e6f71297: Pull complete Digest: sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424 Status: Downloaded newer image for nginx:latest $ docker image ls REPOSITORY TAG IMAGE ID CREATED SIZE nginx latest c82521676580 2 weeks ago 109MB  イメージの確認
 $ docker image ls  起動
 $ docker container run --name webserver -d -p 80:80 nginx 456dc2e68cf15398c442ee4a0b1791c4b695764473b590c7924f49417fc4bed2  アクセスして確認してみる
@@ -578,10 +751,10 @@ http://localhost:80/</description>
     
     <item>
       <title>Cyberduck</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/vm/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00003/</link>
       <pubDate>Sat, 28 Jul 2018 22:10:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/vm/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00003/</guid>
       <description>Cyberduck インストール  ダウンロード https://cyberduck.io/
  「Download Cyberduck for Mac.」  インストール
  「Zipファイルをダブルクリック」 「アプリケーションをアプリケーションフォルダへ移動」  環境設定
@@ -593,10 +766,10 @@ $ vagrant ssh-config Host default HostName 127.0.0.1 User vagrant Port 2222 User
     
     <item>
       <title>Scala環境構築（VM）</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/scala/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00002/</link>
       <pubDate>Tue, 24 Jul 2018 11:13:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/scala/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00002/</guid>
       <description>前提  vagrant導入済（vagrat導入手順） FTPクライアントの導入（cyber）  仮想環境のメモリ増設 $ vi Vagrantfile config.vm.provider &amp;quot;virtualbox&amp;quot; do |vb| # # Display the VirtualBox GUI when booting the machine # vb.gui = true # # # Customize the amount of memory on the VM: vb.memory = &amp;quot;2048&amp;quot; end $ vagrant reload  javaのインストール $ sudo yum -y install java-1.8.0-openjdk-devel
 sbtの導入  公式サイトのドキュメントより、インストール方法を参照する。
  https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html  $ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo $ sudo yum install sbt    $ sbt sbt-version Getting org.</description>
@@ -604,10 +777,10 @@ sbtの導入  公式サイトのドキュメントより、インストール方
     
     <item>
       <title>Vagrant</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/vm/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00002/</link>
       <pubDate>Sun, 22 Jul 2018 01:10:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/vm/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/vm/00002/</guid>
       <description>プログラミング勉強用の仮想環境作成手順
 Vagrant インストール  インストーラーのダウンロード
 https://www.vagrantup.com/downloads.html vagrantXXX.dmg ダブルクリック vagrant.pkg ダブルクリック インストール  [pureone@mbp MyVagrant]$ vagrant -v Vagrant 2.1.2  boxの追加 (イメージファイルのようなもの)
@@ -616,19 +789,19 @@ $ vagrant box list There are no installed boxes! Use `vagrant box add` to add so
     
     <item>
       <title>Mac</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/computer/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</link>
       <pubDate>Sun, 15 Jul 2018 23:40:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/computer/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</guid>
       <description>Homebrew install  XcodeをApp storeからインストール $ xcode-select --install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  インストール完了確認  $ brew doctor Your system is ready to brew.   bash_profile $ touch ~/.bash_profile $ vi ~/bash_profile # PATH if [ -f ~/.bashrc ]; then . ~/.bashrc fi  bashrc $ touch ~/.bashrc $ vi ~/.bashrc # Alias Setting alias ls=&#39;ls -FG&#39; alias ll=&#39;ls -alFG&#39; # Permmision View Setting if [ $UID -eq 0 ]; then PS1=&amp;quot;\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; else PS1=&amp;quot;\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; fi #for bash_completion if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion fi # git ps1 source /usr/local/etc/bash_completion.</description>
     </item>
     
     <item>
       <title>Haskell</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/haskell/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/haskell/00001/</link>
       <pubDate>Sat, 14 Jul 2018 12:39:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/haskell/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/haskell/00001/</guid>
       <description>set up stack
 haskell platform
 $ brew install haskell-stack $ cd ~/ $ stack setup $ vi ~/.bashrc alias ghc=&amp;quot;stack ghc&amp;quot; alias ghci=&amp;quot;stack ghci&amp;quot; alias runghc=&amp;quot;stack runghc&amp;quot; alias runhaskell=&amp;quot;stack runghc&amp;quot;  Atom Editor Atomメニューより、「シェルコマンドをインストール」する
@@ -637,10 +810,10 @@ $ vi ~/.bashrc export PATH=&#39;$HOME/.local/bin:$PATH&#39;  ###</description>
     
     <item>
       <title>AWS CLI (command line interface)についてのまとめ</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/aws/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00002/</link>
       <pubDate>Wed, 09 May 2018 14:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/aws/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00002/</guid>
       <description>About AWSリソースをコマンドラインから操作できるツール
 Install $ brew install python $ brew install awscli  Configure $ aws configure AWS Access Key ID [None]: accesskeyId1 AWS Secret Access Key [None]: secretAccesskey1 Default region name [None]: ap-northeast-1 Default output format [None]: text $ aws configure --profile user2 AWS Access Key ID [None]: accesskeyId2 AWS Secret Access Key [None]: secretAccesskey2 Default region name [None]: ap-northeast-1 Default output format [None]: text  設定内容の確認
 $ cat .</description>
@@ -648,10 +821,10 @@ $ cat .</description>
     
     <item>
       <title>SSL自己証明書の作成方法</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/network/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</link>
       <pubDate>Mon, 02 Apr 2018 13:16:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/network/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</guid>
       <description>SSLサーバ証明書 役割 SSLの接続要求時に認証情報・公開鍵情報等をひとつにまとめて、クライアントへ渡す クライアントは、受け取ったSSLサーバ証明書から、接続相手の情報を確認して通信を行う
 発行元  信頼された認証局が発行 信頼されていない認証局が発行（自己証明書（オレオレ））  中身  公開鍵の情報 コモンネーム 公開鍵の所有者情報 所有者を証明した認証局の情報 証明書の有効期限 証明書のシリアル番号 証明書の失効リスト参照先  Apache SSL 設定 ＜前提＞
 Windows Server 2012 Apache 2.4
@@ -660,10 +833,10 @@ Windows Server 2012 Apache 2.4
     
     <item>
       <title>HTML5が使われているか確認する方法</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/html/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/html/00001/</link>
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/html/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/html/00001/</guid>
       <description>HTML5 markup detector HTML5 markup detector をインストールし、
 HTML5 で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。
 仕様 HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定し、
@@ -672,10 +845,10 @@ HTML5 で書かれたサイトにアクセスすると、ロケーションバ�
     
     <item>
       <title>WebStorageについて</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/browser/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/browser/00001/</link>
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/browser/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/browser/00001/</guid>
       <description>ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
 WebStorageとCookieの違い 共通点 クライアント側で自由に書き換え可能
 保存するデータは「キーと値」のペアで取り扱われる
@@ -688,19 +861,19 @@ https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5
     
     <item>
       <title>JavaScriptの正規表現</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/js/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/js/00001/</link>
       <pubDate>Thu, 22 Mar 2018 14:22:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/js/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/js/00001/</guid>
       <description> JavaScriptの正規表現 str = &amp;quot;S0009&amp;quot;; reg = /^[Ss]+\d{1,4}/ if (str.match(ret)) { alert(&amp;quot;Match!&amp;quot;); } alert(&amp;quot;No Match!&amp;quot;);  デバック方法  ソース内に debugger ステートメントを記述する console.log(&amp;ldquo;);  </description>
     </item>
     
     <item>
       <title>MySQL root ユーザのパスワード再設定</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/db/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</link>
       <pubDate>Sun, 18 Mar 2018 13:14:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/db/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</guid>
       <description>前提 # cat /etc/redhat-release CentOS Linux release 7.3.1611 (Core)  MySQLの設定変更 /etc/my.cnfにskip-grant-tablesを追加（パスワードなしでログインする）
 # vi /etc/my.cnf // ADD EOF &amp;quot;skip-grant-tables&amp;quot;  MySQLを使っているサービスを停止させる
 MySQLを再起動
@@ -709,10 +882,10 @@ MySQLを再起動
     
     <item>
       <title>結合テスト仕様書の作成</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/common/test/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/test/00001/</link>
       <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/common/test/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/test/00001/</guid>
       <description>テストプロセス テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
 https://qiita.com/kawasima/items/1fed574e7456edbad727
 テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計 テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。
@@ -728,10 +901,10 @@ https://qiita.com/kawasima/items/98b5636db0172d9b5051</description>
     
     <item>
       <title>Javaの整理</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/java/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/java/00001/</link>
       <pubDate>Fri, 02 Mar 2018 09:41:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/java/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/java/00001/</guid>
       <description>今更ながら、JavaEE JSFで動くWebアプリケーションを開発してみる
 IDE : eclispe Oxygen.2 Release (4.7.2) Java : jdk1.8.0_121 Sever: GlassFish 4.3.1
 （Eclipseからサーバアダプタ（GlassFish Tools）経由でGlassFishを利用する）
@@ -746,49 +919,83 @@ Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Editi
     
     <item>
       <title></title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/common/communication/00002/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/common/communication/00002/</guid>
+      <description>A&amp;mdash; title: Speaker date: 2019-01-10T19:30:00+09:00 showDate: true
+tags: [&amp;ldquo;speaker&amp;rdquo;] Speaker CfP  Call for Proposals / Call for Paper 聞きたいのは”ドラマ”であって、”やったこと”ではない 開発している間に、何か壁にぶち当たることがあるはずなんです。それをどうやって乗り越えたのか、次はどうやったらぶち当たらずに済むのか トピックがなぜ必要なのかを伝えていない hoge hoge  Scalaライブラリ選定  非同期処理: akka monix other &amp;hellip; DBアクセス: scalikejdbc &amp;hellip; Slick &amp;hellip; DI airframe JSONライブラリ: argonaut-shapeless、circe、JSON4S、spray-json-shapeless
+ アーキテクチャ 選定の話になってしまう？多言語でもそうじゃん
+ 実際の現場で決めて言ったストーリーにドラマがあればいい
+  Scala 性能面  jvmじゃん？  Akka Test  ActorモデルのUnitTest どこまでやるの？が正確？ unit test全般？  Scalaを教える awaitしまくっている スピーカー入門 なせやるのか?  正しい使い方 OSSの存続に繋がる 技術への貢献度  なるには  テーマを決める CFPに応募する 先行結果 スライドを準備 練習 本番  伝えたいこと - 好きなライブラリ・ツールのプルリクの流れ - 透明性or失敗 - 個人のOSS</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00003/</guid>
       <description> &amp;ndash; title: Docker3 date: 2018-11-08T15:00:00+09:00 showDate: true
 tags: [&amp;ldquo;docker&amp;rdquo;] docker  namespace(名前空間)、c-group(コントロールグループ)の制御 プロセス環境を分離(isolate) リソース制限を可能とする  docker hub </description>
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</link>
+      <title>ECS</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</guid>
-      <description> docker-compse https://github.com/asashiho/dockertext2.git
-$ git clone https://github.com/asashiho/dockertext2.git $ cat dockertext2/chap07/docker-compose,yml  version: &#39;3.3&#39; services: # WebServer config webserver: build: . ports: - &amp;quot;80:80&amp;quot; # 80番ポートの解放 depends_on: - redis # Redis config redis: # redisサービスへの依存 image: redis:4.0  $ docker-compose up  http://0.0.0.0:80/
-docker-compose.yml 概要  service, networks, volumes  </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</guid>
+      <description>ECS    概念 説明     クラスタ EC2 インスタンス群   サービス タスクとクラスタ、ELB（ターゲットグループ）の紐付け   イメージ コンテナの集合（docker-compose.ymlのイメージ）    ベストプラクティス&amp;amp;アンチパターン https://www.slideshare.net/AmazonWebServicesJapan/aws-black-belt-online-seminar-2016-amazon-ec2-container-service</description>
+    </item>
+    
+    <item>
+      <title>ELB</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</guid>
+      <description> ELB  LBマネージドサービス 負荷分散 正常なインスタンスにリクエスト Auto Scaling  ALB (Application Load Balancer)  L7レイヤ ロードバラシング HTTP、HTTPSトラフィックを使用するWebアプリケーション用のLB  NLB (Network Load Balancer)  L4レイヤ ロードバラシング  CLB (Classic Load Balancer) SPOF  単一障害点をなくす
+改善点の例 NAT GW
+ ElastiCasheのレプリケーション
+ SESを用いる
+  ELB機能  EC2負荷分散 ヘルスチェック  何秒おきか、何回失敗したか  Auto Scaling  条件を決めて、配下のEC2の数を増減させる 2〜6台の範囲で 平均CPU使用率が70%を超えたら、2台、20%割ったら-2台 スケジュールでスケールもできる ELB自体もスケールする   hoge   ターゲットグループの設定  </description>
+    </item>
+    
+    <item>
+      <title>Kinesis</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</guid>
+      <description> https://qiita.com/crossroad0201/items/7509f8ecbc66d380e90e
+KCL (Kinesis Client Library)    </description>
     </item>
     
     <item>
       <title>Node.js</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/node/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/node/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</guid>
       <description></description>
     </item>
     
     <item>
       <title>React.js</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/react/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/react/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/frontend/vue/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00001/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/frontend/vue/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00001/</guid>
       <description>前提 $ npm --version 6.2.0  vue-cli インストール $ npm install -g vue-cli ? Project name my-project ? Project description A Vue.js project ? Author XXX ? Vue build standalone #ここ重要# ? Install vue-router? No ? Use ESLint to lint your code? Yes ? Pick an ESLint preset Standard ? Set up unit tests Yes ? Pick a test runner jest ? Setup e2e tests with Nightwatch? Yes ? Should we run `npm install` for you after the project has been created?</description>
     </item>
     

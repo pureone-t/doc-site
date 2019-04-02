@@ -2,36 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/docker/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/docker/</link>
     <description>Recent content in Docker on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Aug 2018 03:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jan 2019 18:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>docker</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00001/</link>
+      <pubDate>Fri, 18 Jan 2019 18:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00001/</guid>
+      <description> Container を使う理由 歴史的な流れ  スタティックリンク  インストールされるアプリケーションがそれぞれで依存ライブラリを持ち寄るとサイズが大きくなる
+ バーベキューでみんながバーベーキューセットを持ち寄るのと一緒   ↓
+ ダイナミックリンク  共有ライブラリ 依存関係の管理は、管理パッケージ（yum,apt,gem,pip）   ↓
+ インフラ構成管理  複数ミドルウェアの組み合わせによる複雑化に対処 リソースオーバーヘッド 可搬性   ↓
+ Container  Hoge  大掛かりなスタティックリンクされたファイル 全部入りの一つのファイルというシンプルさ  </description>
+    </item>
+    
+    <item>
       <title>Docker2</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00002/</link>
       <pubDate>Sat, 11 Aug 2018 03:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00002/</guid>
       <description>Nginx $ docker pull nginx Using default tag: latest latest: Pulling from library/nginx be8881be8156: Pull complete 32d9726baeef: Pull complete 87e5e6f71297: Pull complete Digest: sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424 Status: Downloaded newer image for nginx:latest $ docker image ls REPOSITORY TAG IMAGE ID CREATED SIZE nginx latest c82521676580 2 weeks ago 109MB  イメージの確認
 $ docker image ls  起動
 $ docker container run --name webserver -d -p 80:80 nginx 456dc2e68cf15398c442ee4a0b1791c4b695764473b590c7924f49417fc4bed2  アクセスして確認してみる
 http://localhost:80/</description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/docker/00001/</guid>
-      <description> docker-compse https://github.com/asashiho/dockertext2.git
-$ git clone https://github.com/asashiho/dockertext2.git $ cat dockertext2/chap07/docker-compose,yml  version: &#39;3.3&#39; services: # WebServer config webserver: build: . ports: - &amp;quot;80:80&amp;quot; # 80番ポートの解放 depends_on: - redis # Redis config redis: # redisサービスへの依存 image: redis:4.0  $ docker-compose up  http://0.0.0.0:80/
-docker-compose.yml 概要  service, networks, volumes  </description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laravel on doc site</title>
+    <link>https://pureone-tcy.github.io/doc-site/tags/laravel/</link>
+    <description>Recent content in Laravel on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Oct 2018 13:40:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laradock</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</link>
+      <pubDate>Wed, 31 Oct 2018 13:40:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/php/00002/</guid>
+      <description> Laradock $ mkdir laradock-project $ cd laradock-project $ git clone https://github.com/laradock/laradock.git  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Heroku on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/heroku/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/heroku/</link>
     <description>Recent content in Heroku on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Nov 2018 17:25:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Heroku Start!</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/devops/heroku/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/heroku/00001/</link>
       <pubDate>Tue, 06 Nov 2018 17:25:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/devops/heroku/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/heroku/00001/</guid>
       <description>Heroku create Account https://id.heroku.com/login
 Heroku CLI  install for Mac  $ brew install heroku/brew/heroku   App Deploy $ Foo  // TODO</description>
     </item>

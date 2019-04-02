@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Scala Tips
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Scala Tips</div>
+
+        
+<div class="section" id="content">
+    2019-01-17 (Thu) &#183; 62 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="useful-utility-classes">Useful Utility Classes</h1>
+
+<h3 id="sorted">Sorted</h3>
+
+<h3 id="sorting">Sorting</h3>
+
+<ul>
+<li>Int,Longのような型は早くなる</li>
+<li>独自の型は遅くなる</li>
+</ul>
+
+<h1 id="random">Random</h1>
+
+<h2 id="random-1">Random</h2>
+
+<ul>
+<li><p>Thread Safe ではある</p>
+
+<h2 id="threadlocalrandom">ThreadLocalRandom</h2></li>
+
+<li><p>速い</p></li>
+</ul>
+
+<h1 id="collection">Collection</h1>
+
+<h2 id="seq-map">Seq#map</h2>
+
+<ul>
+<li><p>速い</p>
+
+<h2 id="set-map">Set#map</h2></li>
+
+<li><p>遅い</p></li>
+
+<li><p>ハッシュコードとかが原因</p></li>
+</ul>
+
+<h1 id="construct-seq">construct Seq</h1>
+
+<h2 id="seq">Seq()</h2>
+
+<h2 id="list">List()</h2>
+
+<h2 id="1-nil">1 :: Nil</h2>
+
+<ul>
+<li><code>new ::(1, Nil)</code></li>
+</ul>
+
+<h1 id="scala-language-features">Scala language features</h1>
+
+<h2 id="call-by-name">Call by Name</h2>
+
+<ul>
+<li>遅延評価</li>
+<li>速い</li>
+</ul>
+
+<h2 id="implicit-class">implicit Class</h2>
+
+<ul>
+<li>トップレベルに定義できない</li>
+</ul>
+
+<h2 id="value-class">value-Class</h2>
+
+<ul>
+<li>AnyValを継承</li>
+<li>public val フィールドを一つだけコンストラクタとするクラス</li>
+<li>フィールドには、val、var、trait、class、objectは、定義できない</li>
+<li>def はいくつもOK</li>
+<li>コンパイル時には存在するが、ランタイム時には型が消える
+
+<ul>
+<li>val フィールドの型になる</li>
+</ul></li>
+<li>汎用トレイト（universal trait）のみ拡張することができる</li>
+</ul>
+
+<h2 id="汎用トレイト-universal-trait">汎用トレイト（universal trait）</h2>
+
+<ul>
+<li>Anyを継承する</li>
+<li>メンバとしてdefをもつ</li>
+<li>初期化を行わない</li>
+</ul>
+
+<p><a href="https://docs.scala-lang.org/ja/overviews/core/value-classes.html">https://docs.scala-lang.org/ja/overviews/core/value-classes.html</a></p>
+
+<h2 id="不変コレクション">不変コレクション</h2>
+
+<ul>
+<li>コレクション要素の追加、削除、更新を模範した演算は提供されるが、全ての場合に置いて演算は新しいコレクションを返し、古いコレクションはイミュータブルである。</li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

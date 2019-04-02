@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Datascience on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/datascience/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/datascience/</link>
     <description>Recent content in Datascience on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Jan 2019 22:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>機械学習 入門#2</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/datascience/00002/</link>
       <pubDate>Fri, 04 Jan 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/datascience/00002/</guid>
       <description> 線形代数 スカラー $x, y, z, m, n$
 ベクトル  複数の値を集めたもの スカラーが複数集まったもの エクセルの一列みたい $$ \boldsymbol{x} = \left(\begin{array}{c}x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right) $$  行列 $$ \boldsymbol{X} = \begin{eqnarray}\left( \begin{array}{} x_1 &amp;amp; x_2 \\
 x_3 &amp;amp; x_4 \\
@@ -26,10 +26,10 @@ x_5 &amp;amp; x_6 \end{array}\right) \end{eqnarray} $$
     
     <item>
       <title>機械学習 入門#1</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/datascience/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/datascience/00001/</link>
       <pubDate>Fri, 07 Dec 2018 23:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/datascience/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/datascience/00001/</guid>
       <description>1基礎 機械学習の位置付け 人工知能 &amp;gt; 機械学習 &amp;gt; ディープラーニング
 目 -&amp;gt; 画像 -&amp;gt; 数値 -&amp;gt; 機械学習 耳 -&amp;gt; 音声(時系列を含む) -&amp;gt; 数値 -&amp;gt; 機械学習 口 -&amp;gt; 自然言語 -&amp;gt; 数値(word2vec) -&amp;gt; 機械学習 入力𝑥 -&amp;gt; 機械学習 -&amp;gt; 出力𝑦 =&amp;gt; 入力𝑥 と 出力𝑦 の関係性(規則性)を見つける 機械学習 { ディープラーニング、 単回帰分析、 SVM(Support Vector Machine) }  機械学習に必要な数学  微分積分 線形代数 確率・統計 ディープラーニングは、微分と線形代数が重要！  機械学習の３大トピック  教師あり学習（入力$x$と出力$y$）  回帰：数値を予測（家賃 50000円） = 広さ(𝑥) -&amp;gt; 家賃($y$) 分類：カテゴリを分類（赤ワイン or 白ワイン）= アルコール($x$) -&amp;gt; 種類($y$)  教師なし学習（入力$x$）  クラスタリング（グルーピング） 次元削減（入力変数を減らす）  強化学習（データがない or ほとんどない）  掃除ロボット   機械学習と内挿・外挿  内挿：持っている入力データ内で予測すること（1~4） 外挿：持っている入力データ外で予測すること  機械学習は、内挿を保証するため、外挿は取り扱わない</description>
     </item>

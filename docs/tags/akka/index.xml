@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Akka on doc site</title>
-    <link>https://pureonedoya.github.io/doc-site/tags/akka/</link>
+    <link>https://pureone-tcy.github.io/doc-site/tags/akka/</link>
     <description>Recent content in Akka on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Nov 2018 16:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://pureonedoya.github.io/doc-site/tags/akka/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/akka/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>akka-stream</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</link>
       <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</guid>
       <description> akka-stream </description>
     </item>
     
     <item>
       <title>Akka</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00002/</link>
       <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00002/</guid>
       <description>サンプルコードのダウンロード https://github.com/akka-ja/akka-in-action
  sbtはインタプリタを持っている  Actorの4つの機能  create(生成) send/receive(送信/受信) become(状態変化) supervive(監督)     パッケージ 説明     akka.actor.{ActorSystem, Actor, Props} アクター関連のコード   akka.event.Logging ロギング拡張   akka.util.Timeout ask処理のタイムアウト   akka.http.scaladsl.Http~ HTTP関連のコード    package com.goticks import scala.concurrent.Future import akka.actor.ActorSystem import akka.event.Logging import akka.util.Timeout import akka.http.scaladsl.Http import akka.http.scaladsl.Http.ServerBinding import akka.stream.ActorMaterializer import com.typesafe.config.{ Config, ConfigFactory } import scala.util.{ Failure, Success } object Main extends App with RequestTimeout { val config = ConfigFactory.</description>
     </item>
     
     <item>
       <title>Akka</title>
-      <link>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00001/</link>
       <pubDate>Mon, 27 Aug 2018 08:00:00 +0900</pubDate>
       
-      <guid>https://pureonedoya.github.io/doc-site/posts/backend/akka/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00001/</guid>
       <description>Akkaとは  並行・分散アプリケーションをシンプルに単一のモデルで実装するプログラミングモデルであるアクタープログラミングモデルを提供する アクターはスケールアップとスケールアウトのためのプログラミングモデル
   アクター概要  メッセージキューに似ている
  アクターは1通ずつメッセージを受信し、その都度何らかの振る舞いを実行する
