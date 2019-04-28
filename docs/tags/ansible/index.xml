@@ -17,8 +17,7 @@
       <pubDate>Sun, 23 Dec 2018 14:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</guid>
-      <description>サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master
-Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
+      <description>前提  サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master  Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
 - ターゲットノードにはPythonの実行環境が求められる - 各ソフトウェア、ミドルウェアのインストールには特権ユーザ権限が必要である - タスクの用途によってユーザを作成しておく
 内部コンポーネント  柔軟性のあるタスク実行コンポーネントが存在する Playbook、設定ファイルから呼び出すことが可能  (Module)モジュール  Playbook、Ansible APIの中で呼ばれる再利用可能な処理ユニット ファイル転送、サービス起動などをラップしたもの ターゲットノードで実行 Gtihubで公開されている
  Core(コアモジュール)
@@ -26,7 +25,7 @@ Ansible Archetecture 基本動作の概要  コントロールノードノード
  Certified(設定ファイルモジュール)
  Community(コミュニティモジュール)
  モジュールカテゴリは公式を参照
-  Inventory  ターゲットノードの接続情報リストを定義するファイル 記載されたホストが実行環境となる 単一ノードだけでなくグループ化することが可能 クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う  Playbook  ターゲットノード側で実行したい処理の流れを定義するファイル 記載されたタスクがInventoryのリストにあるホストで実行される タスク(モジュール群の呼び出し)という処理フローを定義 実行したいホストのグループをバインド YAML形式で記載する  Plugin  Ansibleを構成するCore機能に付随する 詳細は公式を参照  Python API  Ansible設けられたインターフェースの一つ Pythonを実行できる  Ansible CLI Install  $ sudo pip3 install ansible $ ansible  ディレクトリ構成 https://docs.</description>
+  Inventory  ターゲットノードの接続情報リストを定義するファイル 記載されたホストが実行環境となる 単一ノードだけでなくグループ化することが可能 クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う  Playbook  ターゲットノード側で実行したい処理の流れを定義するファイル 記載されたタスクがInventoryのリストにあるホストで実行される タスク(モジュール群の呼び出し)という処理フローを定義 実行したいホストのグループをバインド YAML形式で記載する  Plugin  Ansibleを構成するCore機能に付随する 詳細は公式を参照  Python API  Ansible設けられたインターフェースの一つ Pythonを実行できる  Ansible CLI Install $ sudo pip3 install ansible $ ansible  ディレクトリ構成  https://docs.</description>
     </item>
     
   </channel>

@@ -49,18 +49,18 @@
     
     <title>
         
-        CodeDeploy
+        ELB
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">CodeDeploy</div>
+        <div class="section" id="title">ELB</div>
 
         
 <div class="section" id="content">
-    2018-11-19 (Mon) &#183; 1 words
+    0001-01-01 (Mon) &#183; 41 words
     
     <div class="tag-container">
         
@@ -73,7 +73,65 @@
     </div>
     
     <hr/>
-    <p>##</p>
+    
+
+<h1 id="elb">ELB</h1>
+
+<ul>
+<li>LBマネージドサービス</li>
+<li>負荷分散</li>
+<li>正常なインスタンスにリクエスト</li>
+<li>Auto Scaling</li>
+</ul>
+
+<h2 id="alb-application-load-balancer">ALB (Application Load Balancer)</h2>
+
+<ul>
+<li>L7レイヤ ロードバラシング</li>
+<li>HTTP、HTTPSトラフィックを使用するWebアプリケーション用のLB</li>
+</ul>
+
+<h2 id="nlb-network-load-balancer">NLB (Network Load Balancer)</h2>
+
+<ul>
+<li>L4レイヤ ロードバラシング</li>
+</ul>
+
+<h2 id="clb-classic-load-balancer">CLB (Classic Load Balancer)</h2>
+
+<h2 id="spof">SPOF</h2>
+
+<ul>
+<li><p>単一障害点をなくす</p>
+
+<h3 id="改善点の例">改善点の例</h3></li>
+
+<li><p>NAT GW</p></li>
+
+<li><p>ElastiCasheのレプリケーション</p></li>
+
+<li><p>SESを用いる</p></li>
+</ul>
+
+<h2 id="elb機能">ELB機能</h2>
+
+<ul>
+<li>EC2負荷分散</li>
+<li>ヘルスチェック
+
+<ul>
+<li>何秒おきか、何回失敗したか</li>
+</ul></li>
+<li>Auto Scaling
+
+<ul>
+<li>条件を決めて、配下のEC2の数を増減させる</li>
+<li>2〜6台の範囲で</li>
+<li>平均CPU使用率が70%を超えたら、2台、20%割ったら-2台</li>
+<li>スケジュールでスケールもできる</li>
+<li>ELB自体もスケールする</li>
+</ul></li>
+</ul>
 
 </div>
 

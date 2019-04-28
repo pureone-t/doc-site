@@ -21,9 +21,18 @@
     </item>
     
     <item>
+      <title>Agile</title>
+      <link>https://pureone-tcy.github.io/doc-site/tags/agile/</link>
+      <pubDate>Thu, 08 Nov 2018 10:40:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Akka</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/akka/</link>
-      <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
+      <pubDate>Tue, 28 Aug 2018 08:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/akka/</guid>
       <description></description>
@@ -71,15 +80,6 @@
       <pubDate>Wed, 31 Oct 2018 19:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/clean-architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Communication</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/communication/</link>
-      <pubDate>Thu, 08 Nov 2018 10:40:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/tags/communication/</guid>
       <description></description>
     </item>
     
@@ -219,15 +219,6 @@
     </item>
     
     <item>
-      <title>Integration Test</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/integration-test/</link>
-      <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/tags/integration-test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/java/</link>
       <pubDate>Fri, 02 Mar 2018 09:41:00 +0900</pubDate>
@@ -237,29 +228,11 @@
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/javascript/</link>
-      <pubDate>Thu, 22 Mar 2018 14:22:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Laravel</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/laravel/</link>
       <pubDate>Wed, 31 Oct 2018 13:40:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/laravel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logstash</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/logstash/</link>
-      <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/tags/logstash/</guid>
       <description></description>
     </item>
     
@@ -293,7 +266,7 @@
     <item>
       <title>Node</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/node/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/node/</guid>
       <description></description>
@@ -327,11 +300,11 @@
     </item>
     
     <item>
-      <title>React</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/react/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>React.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/tags/react.js/</link>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/tags/react/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/tags/react.js/</guid>
       <description></description>
     </item>
     
@@ -347,7 +320,7 @@
     <item>
       <title>Scala</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/scala/</link>
-      <pubDate>Fri, 29 Mar 2019 15:30:00 +0900</pubDate>
+      <pubDate>Fri, 26 Apr 2019 17:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/scala/</guid>
       <description></description>
@@ -359,6 +332,15 @@
       <pubDate>Fri, 29 Mar 2019 15:30:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speaker</title>
+      <link>https://pureone-tcy.github.io/doc-site/tags/speaker/</link>
+      <pubDate>Thu, 10 Jan 2019 19:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/tags/speaker/</guid>
       <description></description>
     </item>
     
@@ -390,6 +372,15 @@
     </item>
     
     <item>
+      <title>Test</title>
+      <link>https://pureone-tcy.github.io/doc-site/tags/test/</link>
+      <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vagrant</title>
       <link>https://pureone-tcy.github.io/doc-site/tags/vagrant/</link>
       <pubDate>Sun, 22 Jul 2018 01:10:00 +0900</pubDate>
@@ -399,11 +390,11 @@
     </item>
     
     <item>
-      <title>Vue</title>
-      <link>https://pureone-tcy.github.io/doc-site/tags/vue/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Vanilla.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/tags/vanilla.js/</link>
+      <pubDate>Thu, 22 Mar 2018 14:22:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/tags/vue/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/tags/vanilla.js/</guid>
       <description></description>
     </item>
     

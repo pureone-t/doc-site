@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00012/</loc>
+    <lastmod>2019-04-26T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</loc>
+    <lastmod>2019-04-20T13:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</loc>
+    <lastmod>2019-04-20T13:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/backend/spark/00001/</loc>
     <lastmod>2019-03-29T15:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/design/00004/</loc>
     <lastmod>2019-03-25T11:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00003/</loc>
     <lastmod>2019-03-24T23:14:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</loc>
     <lastmod>2019-03-13T14:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</loc>
     <lastmod>2019-03-02T22:00:00+09:00</lastmod>
   </url>
   
@@ -38,17 +53,12 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</loc>
     <lastmod>2019-02-18T22:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/circleci/00001/</loc>
-    <lastmod>2019-01-28T14:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/design/00002/</loc>
     <lastmod>2019-01-25T15:00:00+09:00</lastmod>
   </url>
   
@@ -68,8 +78,13 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</loc>
     <lastmod>2019-01-17T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/communication/00002/</loc>
+    <lastmod>2019-01-10T19:30:00+09:00</lastmod>
   </url>
   
   <url>
@@ -83,11 +98,6 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticstack/00003/</loc>
-    <lastmod>2018-12-27T15:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</loc>
     <lastmod>2018-12-23T14:00:00+09:00</lastmod>
   </url>
@@ -98,22 +108,17 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</loc>
-    <lastmod>2018-12-14T16:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/datascience/00001/</loc>
     <lastmod>2018-12-07T23:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00005/</loc>
     <lastmod>2018-12-07T15:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00004/</loc>
     <lastmod>2018-12-05T17:30:00+09:00</lastmod>
   </url>
   
@@ -123,38 +128,28 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</loc>
-    <lastmod>2018-11-28T14:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</loc>
     <lastmod>2018-11-27T00:20:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00002/</loc>
     <lastmod>2018-11-26T15:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/network/00003/</loc>
     <lastmod>2018-11-21T18:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00001/</loc>
     <lastmod>2018-11-21T15:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/design/00003/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/design/00003/</loc>
     <lastmod>2018-11-21T13:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</loc>
-    <lastmod>2018-11-19T15:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -168,47 +163,27 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</loc>
-    <lastmod>2018-11-12T14:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</loc>
-    <lastmod>2018-11-08T14:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/communication/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/communication/00001/</loc>
     <lastmod>2018-11-08T10:40:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00002/</loc>
     <lastmod>2018-11-07T23:50:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00003/</loc>
     <lastmod>2018-11-07T17:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00001/</loc>
     <lastmod>2018-11-07T13:40:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</loc>
-    <lastmod>2018-11-07T10:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</loc>
-    <lastmod>2018-11-07T10:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/network/00002/</loc>
     <lastmod>2018-11-07T09:30:00+09:00</lastmod>
   </url>
   
@@ -218,18 +193,8 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</loc>
-    <lastmod>2018-11-06T16:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00007/</loc>
     <lastmod>2018-11-06T10:40:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</loc>
-    <lastmod>2018-11-05T15:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -248,7 +213,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/design/00001/</loc>
     <lastmod>2018-10-31T19:00:00+09:00</lastmod>
   </url>
   
@@ -263,7 +228,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/engineer/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/engineer/00001/</loc>
     <lastmod>2018-10-25T15:25:00+09:00</lastmod>
   </url>
   
@@ -278,7 +243,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</loc>
     <lastmod>2018-10-17T11:50:00+09:00</lastmod>
   </url>
   
@@ -323,7 +288,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/editor/00001/</loc>
     <lastmod>2018-08-11T03:10:00+09:00</lastmod>
   </url>
   
@@ -348,7 +313,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/computer/00001/</loc>
     <lastmod>2018-07-15T23:40:00+09:00</lastmod>
   </url>
   
@@ -363,7 +328,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/network/00001/</loc>
     <lastmod>2018-04-02T13:16:00+09:00</lastmod>
   </url>
   
@@ -378,17 +343,17 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/js/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/vanillajs/00001/</loc>
     <lastmod>2018-03-22T14:22:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/db/mysql/00001/</loc>
     <lastmod>2018-03-18T13:14:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/test/00001/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/other/test/00001/</loc>
     <lastmod>2018-03-08T13:08:00+09:00</lastmod>
   </url>
   
@@ -403,10 +368,6 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/common/communication/00002/</loc>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00003/</loc>
   </url>
   
@@ -417,8 +378,14 @@
   </url>
   
   <url>
+    <loc>https://pureone-tcy.github.io/doc-site/tags/agile/</loc>
+    <lastmod>2018-11-08T10:40:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/akka/</loc>
-    <lastmod>2018-11-06T16:00:00+09:00</lastmod>
+    <lastmod>2018-08-28T08:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -454,12 +421,6 @@
   <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/clean-architecture/</loc>
     <lastmod>2018-10-31T19:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/communication/</loc>
-    <lastmod>2018-11-08T10:40:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -512,11 +473,7 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</loc>
   </url>
   
   <url>
@@ -562,36 +519,14 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/integration-test/</loc>
-    <lastmod>2018-03-08T13:08:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/java/</loc>
     <lastmod>2018-03-02T09:41:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/javascript/</loc>
-    <lastmod>2018-03-22T14:22:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</loc>
-  </url>
-  
-  <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/laravel/</loc>
     <lastmod>2018-10-31T13:40:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/logstash/</loc>
-    <lastmod>2018-12-27T15:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -615,11 +550,8 @@
   
   <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/node/</loc>
+    <lastmod>2019-04-20T13:00:00+09:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</loc>
   </url>
   
   <url>
@@ -641,12 +573,9 @@
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/react/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/tags/react.js/</loc>
+    <lastmod>2019-04-20T13:00:00+09:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</loc>
   </url>
   
   <url>
@@ -657,13 +586,19 @@
   
   <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/scala/</loc>
-    <lastmod>2019-03-29T15:30:00+09:00</lastmod>
+    <lastmod>2019-04-26T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/spark/</loc>
     <lastmod>2019-03-29T15:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pureone-tcy.github.io/doc-site/tags/speaker/</loc>
+    <lastmod>2019-01-10T19:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -692,13 +627,20 @@
   </url>
   
   <url>
+    <loc>https://pureone-tcy.github.io/doc-site/tags/test/</loc>
+    <lastmod>2018-03-08T13:08:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pureone-tcy.github.io/doc-site/tags/vagrant/</loc>
     <lastmod>2018-07-22T01:10:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pureone-tcy.github.io/doc-site/tags/vue/</loc>
+    <loc>https://pureone-tcy.github.io/doc-site/tags/vanilla.js/</loc>
+    <lastmod>2018-03-22T14:22:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -720,7 +662,7 @@
   
   <url>
     <loc>https://pureone-tcy.github.io/doc-site/</loc>
-    <lastmod>2019-03-29T15:30:00+09:00</lastmod>
+    <lastmod>2019-04-26T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

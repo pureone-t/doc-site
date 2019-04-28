@@ -17,12 +17,21 @@
       <pubDate>Mon, 29 Oct 2018 17:20:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00002/</guid>
-      <description> 意識すべきこと  構造の本体は、DOMではなく、JavaScriptのデータ  先にDOMが存在するのではなく、データの状態に適したDOMを構築する  DOMの構築手段としてテンプレートを使用する テンプレートとロジックを関連付けるのが、ディレクティブ（@click, :class&amp;hellip;） DOMの状態を管理・更新するデータバインディング 単一ファイルコンポーネント  豊富なリソース  Awesome Vue Github Vue Curated Element Onsen UI   双方向データバインディング  ここでいうデータバインディングとは、UIとデータを紐付けること 双方向とは、UIが変わればデータが変わり、データが変わればUIも変わる
+      <description> 意識すべきこと  構造の本体は、DOMではなく、JavaScriptのデータ  先にDOMが存在するのではなく、データの状態に適したDOMを構築する  DOMの構築手段としてテンプレートを使用する テンプレートとロジックを関連付けるのが、ディレクティブ（@click, :class&amp;hellip;） DOMの状態を管理・更新するデータバインディング 単一ファイルコンポーネント  豊富なリソース  Awesome Vue Github Vue Curated Element Onsen UI -  双方向データバインディング  ここでいうデータバインディングとは、UIとデータを紐付けること 双方向とは、UIが変わればデータが変わり、データが変わればUIも変わる
  Codepen
  JSFiddle
  CodeSandbox
  vue dev tool
-  オプション構成   </description>
+  </description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00001/</guid>
+      <description>前提 $ npm --version 6.2.0  vue-cli インストール $ npm install -g vue-cli ? Project name my-project ? Project description A Vue.js project ? Author XXX ? Vue build standalone #ここ重要# ? Install vue-router? No ? Use ESLint to lint your code? Yes ? Pick an ESLint preset Standard ? Set up unit tests Yes ? Pick a test runner jest ? Setup e2e tests with Nightwatch? Yes ? Should we run `npm install` for you after the project has been created?</description>
     </item>
     
   </channel>

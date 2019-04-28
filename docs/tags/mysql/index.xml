@@ -13,10 +13,10 @@
     
     <item>
       <title>MySQL root ユーザのパスワード再設定</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/mysql/00001/</link>
       <pubDate>Sun, 18 Mar 2018 13:14:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/mysql/00001/</guid>
       <description>前提 # cat /etc/redhat-release CentOS Linux release 7.3.1611 (Core)  MySQLの設定変更 /etc/my.cnfにskip-grant-tablesを追加（パスワードなしでログインする）
 # vi /etc/my.cnf // ADD EOF &amp;quot;skip-grant-tables&amp;quot;  MySQLを使っているサービスを停止させる
 MySQLを再起動

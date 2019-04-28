@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Essential Scala
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Essential Scala</div>
+
+        
+<div class="section" id="content">
+    2019-04-26 (Fri) &#183; 141 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/scala">
+                Scala
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="2-式-型-値">2 式、型、値</h1>
+
+<ul>
+<li>Scalaのメンタルモデルにおいて、式、型、値が基本的な構成要素</li>
+</ul>
+
+<h2 id="式">式</h2>
+
+<ul>
+<li>式は値に評価される</li>
+<li>式は型をもつ</li>
+<li>プログラムテキストでコンパイル時に存在している</li>
+<li>プログラムテキストの構成要素としては、定義や文も存在する</li>
+</ul>
+
+<h2 id="型">型</h2>
+
+<ul>
+<li>プログラム上の制限を表現する
+
+<ul>
+<li>値が一貫性をもって解釈されるようにプログラム記述を制約するもの</li>
+</ul></li>
+<li>コンパイル時に存在し、チェックする</li>
+<li>型消去によって実行時には存在しない</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:type</span> <span style="color:#960050;background-color:#1e0010">2</span>
+<span style="color:#66d9ef">Int</span></code></pre></div>
+<h2 id="値">値</h2>
+
+<ul>
+<li>メモリに保存した情報で実行時にのみ存在している</li>
+<li>実行しているプログラムが操作の対象</li>
+<li>Scalaの値は全てオブジェクト</li>
+</ul>
+
+<h2 id="評価">評価</h2>
+
+<ul>
+<li>左から右へ評価される</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+res0<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">World</span><span style="color:#f92672">!</span>
+scala<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span><span style="color:#f92672">.</span>toUpperCase
+res1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">HELLO</span> <span style="color:#a6e22e">WORLD</span><span style="color:#f92672">!</span></code></pre></div>
+<h2 id="コンパイル">コンパイル</h2>
+
+<ul>
+<li>コンパイル時には文法と型を検証</li>
+</ul>
+
+<h1 id="オブジェクト">オブジェクト</h1>
+
+<ul>
+<li>データと操作（メソッド）の組み合わせ</li>
+</ul>
+
+<h2 id="中置記法">中置記法</h2>
+
+<ul>
+<li>引数が1つのメソッドは中置記法にできる</li>
+</ul>
+
+<h2 id="リテラル式">リテラル式</h2>
+
+<ul>
+<li>プログラム実行前のプログラムテキストにおける表現</li>
+<li>評価された値と混同しないこと： 値は  プログラムを実行した後のメモリ上における表現</li>
+<li>全てのリテラル式は型をもち、値に評価される</li>
+</ul>
+
+<h2 id="オブジェクトリテラル">オブジェクトリテラル</h2>
+
+<ul>
+<li>記述する際は、式ではなく宣言を利用する</li>
+<li>空のオブジェクトを宣言する例
+
+<ul>
+<li>値に評価されないが</li>
+<li><code>Test</code>という名前に「空のオブジェクト」という値がバインドされる</li>
+<li><code>Test</code>を評価すると、<code>Test.type</code>という型に評価される</li>
+<li><code>Test.type</code>はこのオブジェクトのために作られた新しい型でシングルトン型と呼ばれる</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{}</span>
+defined <span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Test</span>  <span style="color:#75715e">// 定義される
+</span><span style="color:#75715e"></span>
+scala<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">Test</span> <span style="color:#75715e">// 評価する
+</span><span style="color:#75715e"></span>res4<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Test.</span><span style="color:#66d9ef">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Test</span>$<span style="color:#66d9ef">@</span><span style="color:#ae81ff">4</span>b038836 <span style="color:#f92672">//</span></code></pre></div>
+<h2 id="フィールド-メソッド">フィールド&amp;メソッド</h2>
+
+<ul>
+<li>それぞれ名前に値をバインドする</li>
+<li>宣言は式と異なり、値として評価されず、型も持たない</li>
+<li>フィールドは、オブジェクトにバインドした値を参照する</li>
+<li>メソッドは、値を生成する処理を参照する</li>
+<li>オブジェクトは遅延評価のため、参照されるまで評価されない</li>
+<li><strong>フィールドの式は1回だけ実行され、結果がフィールドのバインドされる</strong></li>
+<li><strong>メソッドは参照される度に評価される</strong>
+```scala
+scala&gt; :paste
+object Test7 {
+val simpleField = {
+println(&ldquo;Evaluating simpleFiled&rdquo;)
+42
+}
+def noParameterMethod = {
+println(&ldquo;Evaluating noParameterMethod&rdquo;)
+42
+}
+}
+defined object Test7</li>
+</ul>
+
+<p>scala&gt; Test7
+Evaluating simpleFiled
+res0: Test7.type = Test7$@481763b6</p>
+
+<p>scala&gt; Test7.simpleField
+res1: Int = 42</p>
+
+<p>scala&gt; Test7.noParameterMethod
+Evaluating noParameterMethod
+res2: Int = 42</p>
+
+<p>scala&gt; Test7.noParameterMethod
+Evaluating noParameterMethod
+res3: Int = 42</p>
+
+<pre><code>
+```scala
+
+</code></pre>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

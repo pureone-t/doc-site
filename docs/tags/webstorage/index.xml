@@ -17,14 +17,10 @@
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/browser/00001/</guid>
-      <description>ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
+      <description> ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
 WebStorageとCookieの違い 共通点 クライアント側で自由に書き換え可能
 保存するデータは「キーと値」のペアで取り扱われる
-相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化
-https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5
-サンプルで遊ぶ https://github.com/iv-garden/webstorage-sandbox
-デバック （chrome）
-開発者ツール「Source」</description>
+相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化   https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5  サンプルで遊ぶ  https://github.com/iv-garden/webstorage-sandbox  </description>
     </item>
     
   </channel>

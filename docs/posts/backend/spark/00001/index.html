@@ -60,7 +60,7 @@
 
         
 <div class="section" id="content">
-    2019-03-29 (Fri) &#183; 370 words
+    2019-03-29 (Fri) &#183; 441 words
     
     <div class="tag-container">
         
@@ -275,6 +275,53 @@ mainClass in assembly := Some(&quot;WordCountApp&quot;)
 
 <li><p>output以下にpart-00000x（ｘは数字）のファイルが作られている</p></li>
 </ul>
+
+<h2 id="spark-基礎">Spark 基礎</h2>
+
+<ul>
+<li>Spark2.0以降のRDD(Resilient Distributed Dataset)は、データセットに置き換えられた
+
+<ul>
+<li><a href="http://mogile.web.fc2.com/spark/sql-programming-guide.html">データセットガイド</a></li>
+</ul></li>
+</ul>
+
+<h2 id="データセットの基礎">データセットの基礎</h2>
+
+<pre><code>./bin/spark-shell
+</code></pre>
+
+<p>データセットの作成</p>
+
+<pre><code>scala&gt; val textFile = spark.read.textFile(&quot;README.md&quot;)
+textFile: org.apache.spark.sql.Dataset[String] = [value: string]
+</code></pre>
+
+<p>データセットから直接値を取得</p>
+
+<pre><code>scala&gt; textFile.count()
+res0: Long = 105
+
+scala&gt; textFile.first()
+res1: String = # Apache Spark
+</code></pre>
+
+<p>新たなデータセットに変換</p>
+
+<pre><code>scala&gt; val linesWithSpark = textFile.filter(line =&gt; line.contains(&quot;Spark&quot;))
+linesWithSpark: org.apache.spark.sql.Dataset[String] = [value: string]
+
+scala&gt; linesWithSpark.count()
+res2: Long = 20
+
+# 元のデータセットはそのままだった
+scala&gt; textFile.count()
+res3: Long = 105
+
+# 変換とアクションを繋げることも可能
+scala&gt; textFile.filter(line =&gt; line.contains(&quot;Spark&quot;)).count()
+res4: Long = 20
+</code></pre>
 
 </div>
 

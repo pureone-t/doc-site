@@ -49,18 +49,18 @@
     
     <title>
         
-        ECS
+        Lambda
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">ECS</div>
+        <div class="section" id="title">Lambda</div>
 
         
 <div class="section" id="content">
-    2018-11-08 (Thu) &#183; 24 words
+    2019-02-18 (Mon) &#183; 51 words
     
     <div class="tag-container">
         
@@ -75,31 +75,96 @@
     <hr/>
     
 
-<h2 id="ecr-amazon-elastic-container-registry">ECR (Amazon Elastic Container Registry)</h2>
+<h1 id="サーバレスアーキテクチャの３原則">サーバレスアーキテクチャの３原則</h1>
 
 <ul>
-<li>完全マネージド型の Docker コンテナレジストリ</li>
+<li>オンデマンドでサービス実行するために、コンピューティング環境を使う</li>
+<li>目的が１つでステートレスな関数を書く</li>
+<li>プッシュベースのイベント駆動パイブラインを設計する</li>
+<li>強力なフロントエンドを作る</li>
+<li>サードパーティサービスを活用する</li>
 </ul>
 
-<h2 id="ecs-amazon-elastic-container-service">ECS (Amazon Elastic Container Service)</h2>
-
-<h3 id="service">Service</h3>
+<h1 id="サーバレスアーキテクチャのユースケース">サーバレスアーキテクチャのユースケース</h1>
 
 <ul>
-<li>実態は複数の<code>docker container</code>の集合体</li>
-<li>以下を管理するもの
+<li>S3にファイルを保存し、SQSでキューにデータをプッシュし、Lambda関数を起動</li>
+<li>データ処理、変換、操作、トランスコード</li>
+<li>CSV、Json、XMLファイルの処理、データ照合、集計、イメージサイズの変更、フォーマット変換</li>
+<li>Kinesisと連携したリアルタイムデータ処理
 
 <ul>
-<li>どんなコンテナを起動するのか</li>
-<li>何個起動するのか</li>
-<li>リクエスト分散するのか</li>
+<li>シャード数と関数の数が同じであり、シャードごとに関数が１つずつある</li>
+</ul></li>
+<li>レガシーAPIプロキシ</li>
+<li>Blueprint(設計図)というサンプル付きのテンプレート</li>
+<li>Slackなどのボット開発</li>
+<li>Amazon Echo</li>
+</ul>
+
+<h1 id="アーキテクチャ">アーキテクチャ</h1>
+
+<ul>
+<li>バックエンドと、グルー（ワークフローを実行するために組み立てられるパイブライン処理）</li>
+<li>この２つは、相互補完が可能（組み合わせにて使う）</li>
+<li>Computer-as-back-end アーキテクチャ</li>
+<li>フロントエンドがセキュアに通信できるのであれば、分厚いフロントエンドとサードパーティサービスを活用し、イベント駆動パイブラインではなく、サーバレスバックエンドが使われる範囲を極力減らす（ナノ関数ともいう）</li>
+</ul>
+
+<h1 id="a-clud-guru">A Clud Guru</h1>
+
+<ul>
+<li>フロントエンドは、AngularJSで構築され、Netlifyによってホスティングされている
+
+<ul>
+<li>Amazon S3と、Amazon CloudFrontによるグローバルなコンテンツデリバリーネットワークに変更もできる</li>
+</ul></li>
+<li>登録、認証機能のためにAuth0を使っている
+
+<ul>
+<li>フロントエンドがFirebaseなど他のサービスと直接セキュアに通信するための委任トークンを作る</li>
+</ul></li>
+<li>Firebase（リアルタイムデータベース）
+
+<ul>
+<li>クライアントは、それぞれウェブソケットを使ってFirebaseと接続し、ほぼリアルタイムでFirebaseから更新情報を受け取る</li>
 </ul></li>
 </ul>
 
-<h3 id="task">Task</h3>
+<h1 id="instant">Instant</h1>
 
 <ul>
-<li>docker container をグループ化するもの</li>
+<li>TODO</li>
+</ul>
+
+<h1 id="ハイブリッドサーバレスとレガシーapi">ハイブリッドサーバレスとレガシーAPI</h1>
+
+<ul>
+<li>TODO</li>
+</ul>
+
+<h1 id="graphql">GraphQL</h1>
+
+<ul>
+<li>複数のラウンドトリップ、オーバーフェッチ、バージョニングに弱点のあるRESTに替わるものとして設計された（2012年〜2015年 Facebook社）</li>
+<li>単一のエンドポイントで、宣言的な階層構造でクエリを実行する方法を提供している
+
+<ul>
+<li>１つのGraphQL Lambda関数だけで複数のデータソースにクエリを送ることが可能</li>
+</ul></li>
+<li>AWS AppSync</li>
+</ul>
+
+<p><a href="https://github.com/serverless/serverless-graphql-blog">https://github.com/serverless/serverless-graphql-blog</a></p>
+
+<p><a href="http://kevinold.com/2016/02/01/serverless-graphql.html">http://kevinold.com/2016/02/01/serverless-graphql.html</a></p>
+
+<p><a href="https://medium.com/scaphold/pok/%C3A9mon-go-and-graphql-widh-aws-lambda-a6d53f254424">https://medium.com/scaphold/pok/%C3A9mon-go-and-graphql-widh-aws-lambda-a6d53f254424</a></p>
+
+<h1 id="サンプル実装">サンプル実装</h1>
+
+<ul>
+<li>動画を別の形式にトランスコードするパイプライン処理</li>
 </ul>
 
 </div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React.js on doc site</title>
+    <link>https://pureone-tcy.github.io/doc-site/tags/react.js/</link>
+    <description>Recent content in React.js on doc site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Apr 2019 13:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/react.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</link>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</guid>
+      <description> React  ViewレイヤのJavaScriptフロントエンドフレームワーク  特徴  状態管理がシンプルな設計
+ 状態が変更された時に、適切なコンポーネントだけを効率的に更新してレンダリングすることが可能 開発者が更新すべきコンポーネントを意識する必要がない  コンポーネントベース
+ TODO -  その他
+ JSX記法(JavaScript内にHTMLタグを注入するような記法)が利用できる MITライセンス   Reference Site React  https://qiita.com/nabepon/items/87bb3b4f1e7bfa342489  </description>
+    </item>
+    
+  </channel>
+</rss>

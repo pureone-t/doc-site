@@ -17,10 +17,8 @@
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/html/00001/</guid>
-      <description>HTML5 markup detector HTML5 markup detector をインストールし、
-HTML5 で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。
-仕様 HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定し、
-アドレスバーの右端に&amp;rdquo;マル５&amp;rdquo;と表示してくれるものです</description>
+      <description> HTML5 markup detector  HTML5 markup detector をインストール
+ HTML5で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。  仕様  HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定 アドレスバーの右端に&amp;rdquo;マル５&amp;rdquo;と表示してくれるもの  </description>
     </item>
     
   </channel>

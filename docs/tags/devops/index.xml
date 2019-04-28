@@ -13,10 +13,10 @@
     
     <item>
       <title>AWS と CircleCI で実現する DevOps</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</link>
       <pubDate>Wed, 13 Mar 2019 14:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</guid>
       <description>DepOpsとCI/CDの関係 by AWS DevOps(development operation)  無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する つまり作業は全て自動化する
 1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？ 再現性
 DevOps観点のアンチパターン 承認フローの追加（ダブルチェック、承認MTG）

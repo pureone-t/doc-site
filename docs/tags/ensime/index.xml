@@ -13,10 +13,10 @@
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>

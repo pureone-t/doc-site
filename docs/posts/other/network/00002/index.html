@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        ネットワーク基礎
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">ネットワーク基礎</div>
+
+        
+<div class="section" id="content">
+    2018-11-07 (Wed) &#183; 290 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/network">
+                network
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<hr />
+
+<h1 id="macアドレス">Macアドレス</h1>
+
+<ul>
+<li>ネットワーク部品に割り当てられたアドレス</li>
+<li>48ビットのアドレス</li>
+<li>先頭24ビットは、部品メーカーの識別番号</li>
+<li>後半24ビットは、TODO</li>
+<li>16進数表記</li>
+<li>OSIの第2層のデータリンク層</li>
+</ul>
+
+<hr />
+
+<h1 id="osi">OSI</h1>
+
+<h2 id="osi参照モデル">OSI参照モデル</h2>
+
+<h3 id="レイヤー7-アプリケーション層">レイヤー7:アプリケーション層</h3>
+
+<ul>
+<li>アプリケーションに特化したプロトコルを規定</li>
+<li>HTTP</li>
+<li>メール送信のSMTP</li>
+</ul>
+
+<h3 id="レイヤー6-プレゼンテーション層">レイヤー6:プレゼンテーション層</h3>
+
+<ul>
+<li>データの表現形式を規定</li>
+<li>データ保存形式、圧縮、文字コード</li>
+</ul>
+
+<h3 id="レイヤー5-セッション層">レイヤー5:セッション層</h3>
+
+<ul>
+<li>コネクション確立、データ転送のタイミングを規定</li>
+</ul>
+
+<h3 id="レイヤー4-トランスポート層">レイヤー4:トランスポート層</h3>
+
+<ul>
+<li>データ転送の制御を規定</li>
+<li>TCP/IP</li>
+</ul>
+
+<h3 id="レイヤー3-ネットワーク層">レイヤー3:ネットワーク層</h3>
+
+<ul>
+<li>IPアドレス</li>
+<li>異なるネットワークへデータを転送するルーティングの制御</li>
+<li>ルーター、レイヤー3スイッチ</li>
+<li>パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理</li>
+</ul>
+
+<h3 id="レイヤー2-データリンク層">レイヤー2:データリンク層</h3>
+
+<ul>
+<li>MACアドレスによるデータ転送</li>
+<li>同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する</li>
+<li>レイヤー2スイッチ</li>
+<li>通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している</li>
+</ul>
+
+<h3 id="レイヤー1-物理層">レイヤー1:物理層</h3>
+
+<ul>
+<li>ケーブルやコネクタの形状を規定</li>
+<li>100BASE-T(イーサネット)</li>
+</ul>
+
+<h2 id="ファイヤーウォール">ファイヤーウォール</h2>
+
+<h3 id="パケットフィルタ">パケットフィルタ</h3>
+
+<ul>
+<li>IPアドレス、ポート番号を元にフィルタリング
+
+<ul>
+<li>80(http), 443(https)のみパケットの通過を許可</li>
+</ul></li>
+<li>パケットフィルタリングのルールのことをACL</li>
+</ul>
+
+<h3 id="アプリケーションゲートウェイ">アプリケーションゲートウェイ</h3>
+
+<ul>
+<li>プロキシのこと</li>
+</ul>
+
+<hr />
+
+<h1 id="linux基礎">Linux基礎</h1>
+
+<h2 id="linux">Linux</h2>
+
+<ul>
+<li>メモリ上に展開してプログラムをプロセス（PID）</li>
+<li>ハードディスに割り当てる仮想メモリのことをスワップ</li>
+</ul>
+
+<h3 id="fhs-ディレクトリ構成">FHS（ディレクトリ構成）</h3>
+
+<ul>
+<li>/bin
+
+<ul>
+<li>基本コマンドを格納したディレクトリ</li>
+</ul></li>
+<li>/boot
+
+<ul>
+<li>OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体</li>
+</ul></li>
+<li>/dev
+
+<ul>
+<li>デバイスを格納したディレクトリ、dev/nullは、何もないを表す</li>
+</ul></li>
+<li>/etc
+
+<ul>
+<li>OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など</li>
+</ul></li>
+<li>/home
+
+<ul>
+<li>ユーザを格納したディレクトリ</li>
+</ul></li>
+<li>/proc
+
+<ul>
+<li>カーネルやプロセス情報を格納したディレクトリ</li>
+</ul></li>
+<li>/sbin
+
+<ul>
+<li>システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される</li>
+</ul></li>
+<li>/tmp
+
+<ul>
+<li>一時ファイルを格納したディレクトリ</li>
+</ul></li>
+<li>/usr
+
+<ul>
+<li>アプリケーションを格納したディレクトリ</li>
+</ul></li>
+<li>/var
+
+<ul>
+<li>ログとかを格納したディレクトリ</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h1 id="ドメイン">ドメイン</h1>
+
+<h2 id="ドメイン名">ドメイン名</h2>
+
+<ul>
+<li>インターネット上のネットワークを一意に識別するための名称<br />
+ex.) 違うマンションなのに住所が一緒だと困る</li>
+<li><a href="http://www">http://www</a>. <strong>hoge.co.jp</strong>  // 太字部分が該当</li>
+</ul>
+
+<h2 id="ホスト名">ホスト名</h2>
+
+<ul>
+<li>インターネット上のネットワークのホストを一意に識別するための名称<br />
+ex.） 同じマンションで部屋番号が一緒だと困る</li>
+<li>http:// <strong>www</strong> .hoge.co.jp // 太字部分が該当</li>
+</ul>
+
+<h2 id="fqdn-fully-qualified-domain-name-完全修飾ドメイン名">FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名</h2>
+
+<ul>
+<li>ドメイン名とホスト名を繋げた文字列のこと</li>
+<li>http:// <strong>www.hoge.co.jp</strong> // 太字部分が該当</li>
+</ul>
+
+<h2 id="サブドメイン">サブドメイン</h2>
+
+<ul>
+<li><code>http://example.com/</code>をルートドメインとした場合
+
+<ul>
+<li>サブドメイン: <code>http://sub.example.com/</code></li>
+<li>サブディレクトリ: <code>http://example.com/sub/</code></li>
+</ul></li>
+</ul>
+
+<h3 id="用途">用途</h3>
+
+<ul>
+<li>サブドメインは、テーマをより詳細に掘り下げる場合に作成される</li>
+<li>サブディレクトリは、テーマが分類されていたり役割が異なっていたりする場合に使用される</li>
+</ul>
+
+<h2 id="ドメインの分類">ドメインの分類</h2>
+
+<p><code>hoge.co.jp</code></p>
+
+<ul>
+<li>jp : トップレベルドメイン</li>
+<li>co : セカンドレベルドメイン</li>
+<li>hoge : サードレベルドメイン</li>
+</ul>
+
+<h3 id="トップレベルドメイン">トップレベルドメイン</h3>
+
+<h4 id="gtld">gTLD</h4>
+
+<ul>
+<li>分野別トップレベルドメイン</li>
+<li>利用者の居住国に関係なく誰でも取得できるドメイン</li>
+</ul>
+
+<p>代表的なドメインの種類</p>
+
+<table>
+<thead>
+<tr>
+<th>ドメインの種類</th>
+<th>特徴・用途</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>com</td>
+<td>企業・商用サービスを対象としたドメイン (commercialの略)</td>
+</tr>
+
+<tr>
+<td>net</td>
+<td>ネットワークサービスの提供者を対象としたドメイン (networkの略)</td>
+</tr>
+
+<tr>
+<td>org</td>
+<td>非営利団体を対象としたドメイン</td>
+</tr>
+
+<tr>
+<td>biz</td>
+<td>ビジネスを目的で利用されるドメイン</td>
+</tr>
+
+<tr>
+<td>info</td>
+<td>主に情報の提供者（情報サイト）を対象としたドメイン (information)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="cctld">ccTLD</h4>
+
+<ul>
+<li>国別トップレベルドメイン</li>
+<li>国ごと、地域ごとに割り当てられたドメイン</li>
+<li>原則として、その国・地域に存在する個人（団体）でないと取得できない</li>
+<li>日本では<code>jp</code>が、ccTLDに該当する</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>ドメインの種類</th>
+<th>特徴・用途</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>jp</td>
+<td>企業・商用サービスを対象としたドメイン (commercialの略)</td>
+</tr>
+
+<tr>
+<td>cn</td>
+<td>中国</td>
+</tr>
+
+<tr>
+<td>gb</td>
+<td>イギリス</td>
+</tr>
+
+<tr>
+<td>en</td>
+<td>ヨーロッパ連合</td>
+</tr>
+
+<tr>
+<td>ru</td>
+<td>ロシア</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="属性別jpドメイン">属性別JPドメイン</h4>
+
+<ul>
+<li>ccTLDの<code>jp</code>ドメインの中で、セカンドレベルドメインに指定の文字列が入り、その文字列ごとに取得可能な組織が限定されているドメイン</li>
+<li>ネットワークサービスを示す<code>ne.jp</code>を除き、1組織1つしか取得できない決まりとなっている</li>
+<li>個人が属性別ドメインJPドメインを取得することはできない</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>ドメインの種類</th>
+<th>特徴・用途</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>co.jp</td>
+<td>日本国内に登記のある会社・企業 (例：株式会社、有限会社、合名会社、合資会社、相互会社、特殊会社)</td>
+</tr>
+
+<tr>
+<td>or.jp</td>
+<td>特定の法人組織 (例：財団法人、社団法人、医療法人、監査法人、宗教法人、特殊法人、協同組合)</td>
+</tr>
+
+<tr>
+<td>ac.jp</td>
+<td>学校教育法等で認められた学校 (例：大学、大学校、高等専門学校、学校法人、職業訓練校)</td>
+</tr>
+
+<tr>
+<td>go.jp</td>
+<td>日本国の政府機関、各省庁が管轄する研究所、特殊法人（特殊会社を除く）</td>
+</tr>
+
+<tr>
+<td>ne.jp</td>
+<td>ネットワークサービスごとに登録可能</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="独自ドメインとサブドメインの違い">独自ドメインとサブドメインの違い</h2>
+
+<h3 id="独自ドメイン">独自ドメイン</h3>
+
+<ul>
+<li>お名前.comのようなドメイン登録サービスで取得できるオリジナルドメインのこと</li>
+<li>未使用のドメインである場合、ユーザ自身が希望するドメイン名を取得することができる</li>
+<li>独自ドメインの取得は、取得および更新の際に費用が発生することがある</li>
+</ul>
+
+<h3 id="サブドメイン-1">サブドメイン</h3>
+
+<ul>
+<li>独自ドメインをさらに分割して利用できるドメインのこと</li>
+<li>1つのドメインを目的別や用途別に分けて利用する際に使用される</li>
+<li>独自ドメインを取得するとサブドメインを作成することができる</li>
+<li>独自ドメインの前に<code>.</code>(ドット)で区切った任意の文字列を挿入して使用する</li>
+<li>サブドメインの数量の制限はサービス事業者によって異なる</li>
+<li>複数サイト（またはサービス）を運営する際に用いられることが多い</li>
+</ul>
+
+<p><code>yahoo</code>の例</p>
+
+<table>
+<thead>
+<tr>
+<th>サービス名</th>
+<th>URL</th>
+<th>ドメイン名</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Yahoo! JAPAN</td>
+<td><a href="https://www.yahoo.co.jp">https://www.yahoo.co.jp</a></td>
+<td>yahoo.co.jp</td>
+</tr>
+
+<tr>
+<td>Yahoo!ショッピング</td>
+<td><a href="https://shopping.yahoo.co.jp">https://shopping.yahoo.co.jp</a></td>
+<td>shppping.yahoo.co.jp</td>
+</tr>
+
+<tr>
+<td>ヤフオク</td>
+<td><a href="https://auctions.yahoo.co.jp">https://auctions.yahoo.co.jp</a></td>
+<td>auctions.yahoo.co.jp</td>
+</tr>
+
+<tr>
+<td>Yahoo!天気</td>
+<td><a href="https://weather.yahoo.co.jp">https://weather.yahoo.co.jp</a></td>
+<td>weather.yahoo.co.jp</td>
+</tr>
+
+<tr>
+<td>Yahoo!ニュース</td>
+<td><a href="https://news.yahoo.co.jp">https://news.yahoo.co.jp</a></td>
+<td>news.yahoo.co.jp</td>
+</tr>
+</tbody>
+</table>
+
+<p><code>Jimdo</code>、<code>wix</code>などでは無料版で作成したホームページの場合、サブドメインとして登録される</p>
+
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>無料版で作成できるURLの形式</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Jimdo</td>
+<td><a href="https://XXX.jimdofree.com">https://XXX.jimdofree.com</a></td>
+</tr>
+
+<tr>
+<td>wix</td>
+<td><a href="https://XXX.wixsite.com">https://XXX.wixsite.com</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ドメイン名の">ドメイン名の</h2>
+
+<hr />
+
+<h1 id="dns">DNS</h1>
+
+<ul>
+<li>Domain Name System</li>
+<li>ドメイン名をIPアドレスに変換するシステム</li>
+</ul>
+
+<h2 id="dnsレコード">DNSレコード</h2>
+
+<h3 id="aレコード">Aレコード</h3>
+
+<ul>
+<li>Adress Record</li>
+<li>ドメインをIPアドレスに置き換えるレコード</li>
+<li>例）<code>hoge.com. IN A 192.168.0.1</code></li>
+</ul>
+
+<h3 id="mxレコード">MXレコード</h3>
+
+<ul>
+<li>Mail Exchange</li>
+<li>メールサーバのホスト名を記載するレコード</li>
+<li>ドメインに紐づいたメールを使用する場合には不可欠</li>
+<li>例）<code>hoge.com. IN MX 10 mail.hoge.com</code>
+
+<ul>
+<li>数字の10は優先度を意味している</li>
+<li>1つ目は10、2つ目は20、３つ目は&hellip;.</li>
+<li>10ずつ増やしているのは、間に余裕を持たせているため!?</li>
+<li><code>XX@hoge.com</code>というメールアドレスは、<code>mail.hoge.com</code>が処理(配送)する</li>
+</ul></li>
+</ul>
+
+<h3 id="cnameレコード">CNAMEレコード</h3>
+
+<ul>
+<li>Canonical NAME</li>
+<li>ドメインを別のドメインに置き換えるレコード</li>
+<li>特定のドメインを別のドメインに転送する場合に使用する</li>
+<li>例）<code>www</code>有り無しの場合で同じIPアドレスにアクセスする場合
+<code>
+hoge.com. IN A 192.168.0.1
+www.hoge.com. IN CNAME hoge.com.
+</code></li>
+</ul>
+
+<h3 id="txtレコード">TXTレコード</h3>
+
+<ul>
+<li>TEXT</li>
+</ul>
+
+<h2 id="dnsラウンドロビン">DNSラウンドロビン</h2>
+
+<ul>
+<li>ドメイン名とIPアドレスを 1:n で対応付けること</li>
+<li>hoge.co.jp = 192.168.1.1, 192.168.1.2, 192.168.1.3</li>
+<li>ドメインへのアクセス時には、n のサーバへ負荷分散される</li>
+<li>RFC3484</li>
+</ul>
+
+<hr />
+
+<h1 id="ip-アドレス">IP アドレス</h1>
+
+<p>（参考）
+- <a href="https://qiita.com/mogulla3/items/efb4c9328d82d24d98e6">https://qiita.com/mogulla3/items/efb4c9328d82d24d98e6</a></p>
+
+<h2 id="グローバルipアドレス">グローバルIPアドレス</h2>
+
+<ul>
+<li>世界的には、ICANNが管理、日本では、JPNICが管理</li>
+</ul>
+
+<h2 id="プライベートipアドレス">プライベートIPアドレス</h2>
+
+<ul>
+<li>グローバルIPアドレスに変換せずにネットワーク接続を試みた場合、ルーター側でパケットの破棄が行われ、接続できない事象になる。</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>CLASS</th>
+<th>RANGE</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>クラスA</td>
+<td>10.0.0.0 ～ 10.255.255.255</td>
+</tr>
+
+<tr>
+<td>クラスB</td>
+<td>172.16.0.0 ～ 172.31.255.255</td>
+</tr>
+
+<tr>
+<td>クラスC</td>
+<td>192.168.0.0 ～ 192.168.255.255</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

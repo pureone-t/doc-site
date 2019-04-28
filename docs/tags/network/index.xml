@@ -13,39 +13,20 @@
     
     <item>
       <title>ssh</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/network/00003/</link>
       <pubDate>Wed, 21 Nov 2018 18:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</guid>
-      <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  インターネット上の中継サーバを使う方法    LAN内の中継サーバを使う方法       </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/network/00003/</guid>
+      <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  </description>
     </item>
     
     <item>
-      <title>DNS関連</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</link>
-      <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</guid>
-      <description> DNSラウンドロビン  ドメイン名とIPアドレスを 1:n で対応付けること hoge.co.jp = 192.168.1.1, 192.168.1.2, 192.168.1.3 ドメインへのアクセス時には、n のサーバへ負荷分散される RFC3484  </description>
-    </item>
-    
-    <item>
-      <title>IP</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</link>
-      <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</guid>
-      <description> 参考 https://qiita.com/mogulla3/items/efb4c9328d82d24d98e6
-グローバルIPアドレス  世界的には、ICANNが管理、日本では、JPNICが管理  プライベートIPアドレス  グローバルIPアドレスに変換せずにネットワーク接続を試みた場合、ルーター側でパケットの破棄が行われ、接続できない事象になる。     CLASS RANGE     クラスA 10.0.0.0 ～ 10.255.255.255   クラスB 172.16.0.0 ～ 172.31.255.255   クラスC 192.168.0.0 ～ 192.168.255.255    </description>
-    </item>
-    
-    <item>
-      <title>ドメイン名、ホスト名、FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名の違い</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</link>
+      <title>ネットワーク基礎</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/network/00002/</link>
       <pubDate>Wed, 07 Nov 2018 09:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</guid>
-      <description>Macアドレス  ネットワーク部品に割り当てられたアドレス 48ビットのアドレス 先頭24ビットは、部品メーカーの識別番号 後半24ビットは、TODO 16進数表記 OSIの第2層のデータリンク層  OSI レイヤー7:アプリケーション層  アプリケーションに特化したプロトコルを規定 HTTP メール送信のSMTP  レイヤー6:プレゼンテーション層  データの表現形式を規定 データ保存形式、圧縮、文字コード  レイヤー5:セッション層  コネクション確立、データ転送のタイミングを規定  レイヤー4:トランスポート層  データ転送の制御を規定 TCP/IP  レイヤー3:ネットワーク層  IPアドレス 異なるネットワークへデータを転送するルーティングの制御 ルーター、レイヤー3スイッチ パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理  レイヤー2:データリンク層  MACアドレスによるデータ転送 同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する レイヤー2スイッチ 通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している  レイヤー1:物理層  ケーブルやコネクタの形状を規定 100BASE-T(イーサネット)  ファイヤーウォール パケットフィルタ  IPアドレス、ポート番号を元にフィルタリング  80(http), 443(https)のみパケットの通過を許可  パケットフィルタリングのルールのことをACL  アプリケーションゲートウェイ  プロキシのこと  Linux  メモリ上に展開してプログラムをプロセス（PID） ハードディスに割り当てる仮想メモリのことをスワップ  FHS（ディレクトリ構成）  /bin  基本コマンドを格納したディレクトリ  /boot  OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体  /dev  デバイスを格納したディレクトリ、dev/nullは、何もないを表す  /etc  OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など  /home  ユーザを格納したディレクトリ  /proc  カーネルやプロセス情報を格納したディレクトリ  /sbin  システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される  /tmp  一時ファイルを格納したディレクトリ  /usr  アプリケーションを格納したディレクトリ  /var  ログとかを格納したディレクトリ   ドメイン名  インターネット上のネットワークを一意に識別するための名称</description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/network/00002/</guid>
+      <description>Macアドレス  ネットワーク部品に割り当てられたアドレス 48ビットのアドレス 先頭24ビットは、部品メーカーの識別番号 後半24ビットは、TODO 16進数表記 OSIの第2層のデータリンク層  OSI OSI参照モデル レイヤー7:アプリケーション層  アプリケーションに特化したプロトコルを規定 HTTP メール送信のSMTP  レイヤー6:プレゼンテーション層  データの表現形式を規定 データ保存形式、圧縮、文字コード  レイヤー5:セッション層  コネクション確立、データ転送のタイミングを規定  レイヤー4:トランスポート層  データ転送の制御を規定 TCP/IP  レイヤー3:ネットワーク層  IPアドレス 異なるネットワークへデータを転送するルーティングの制御 ルーター、レイヤー3スイッチ パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理  レイヤー2:データリンク層  MACアドレスによるデータ転送 同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する レイヤー2スイッチ 通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している  レイヤー1:物理層  ケーブルやコネクタの形状を規定 100BASE-T(イーサネット)  ファイヤーウォール パケットフィルタ  IPアドレス、ポート番号を元にフィルタリング  80(http), 443(https)のみパケットの通過を許可  パケットフィルタリングのルールのことをACL  アプリケーションゲートウェイ  プロキシのこと  Linux基礎 Linux  メモリ上に展開してプログラムをプロセス（PID） ハードディスに割り当てる仮想メモリのことをスワップ  FHS（ディレクトリ構成）  /bin  基本コマンドを格納したディレクトリ  /boot  OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体  /dev  デバイスを格納したディレクトリ、dev/nullは、何もないを表す  /etc  OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など  /home  ユーザを格納したディレクトリ  /proc  カーネルやプロセス情報を格納したディレクトリ  /sbin  システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される  /tmp  一時ファイルを格納したディレクトリ  /usr  アプリケーションを格納したディレクトリ  /var  ログとかを格納したディレクトリ   ドメイン ドメイン名  インターネット上のネットワークを一意に識別するための名称</description>
     </item>
     
   </channel>

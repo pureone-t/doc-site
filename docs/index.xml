@@ -6,10 +6,40 @@
     <description>Recent content on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Mar 2019 15:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureone-tcy.github.io/doc-site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essential Scala</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00012/</link>
+      <pubDate>Fri, 26 Apr 2019 17:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00012/</guid>
+      <description>2 式、型、値  Scalaのメンタルモデルにおいて、式、型、値が基本的な構成要素  式  式は値に評価される 式は型をもつ プログラムテキストでコンパイル時に存在している プログラムテキストの構成要素としては、定義や文も存在する  型  プログラム上の制限を表現する  値が一貫性をもって解釈されるようにプログラム記述を制約するもの  コンパイル時に存在し、チェックする 型消去によって実行時には存在しない  scala&amp;gt; :type 2 Int 値  メモリに保存した情報で実行時にのみ存在している 実行しているプログラムが操作の対象 Scalaの値は全てオブジェクト  評価  左から右へ評価される  scala&amp;gt; &amp;#34;Hello World!&amp;#34; res0: String = Hello World! scala&amp;gt; &amp;#34;Hello World!&amp;#34;.toUpperCase res1: String = HELLO WORLD! コンパイル  コンパイル時には文法と型を検証  オブジェクト  データと操作（メソッド）の組み合わせ  中置記法  引数が1つのメソッドは中置記法にできる  リテラル式  プログラム実行前のプログラムテキストにおける表現 評価された値と混同しないこと： 値は プログラムを実行した後のメモリ上における表現 全てのリテラル式は型をもち、値に評価される  オブジェクトリテラル  記述する際は、式ではなく宣言を利用する 空のオブジェクトを宣言する例  値に評価されないが Testという名前に「空のオブジェクト」という値がバインドされる Testを評価すると、Test.</description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</link>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</guid>
+      <description>Node.js  Server Side js GoogleのV8 JavaScriptエンジンを使って構築されたサーバーサイドのJavaScriptプラットフォーム サーバアプリケーションをJavaScript言語で開発するためのプラットフォーム  特徴  Conceput : Scalable Network / Easy Building Fast イベントループ  1つのスレッドでイベントを管理 (シングルスレッド)  ノンブロッキングI/O  ブロックのないイベントループ Google V8 JavaScript エンジンによって実現   使い所  リアルタイムWEB チャットシステム ゲーム  バージョンについて  通常使用する場合は、推奨版は先頭の数字が偶数のバージョンを使用する 最新版のように先頭が奇数のバージョンは、新機能追加時の検証バージョンである  基本 モジュールとパッケージ  Node.jsでは、JavaScriptで記述されたファイルのことをモジュールという モジュール群をディレクトリにまとめたものをパッケージという パッケージ公開サイトとして Node Packaged Modules がある 公式サイトで紹介されているサードパーティ製モジュール  npm Exress Connect Socket.io HTML5 mDNS/Zeroconf/Bonjour RabbitMQ/AMQP &amp;hellip; https://www.npmjs.com/   npm(node package manager)  Node.</description>
+    </item>
+    
+    <item>
+      <title>React.js</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</link>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</guid>
+      <description> React  ViewレイヤのJavaScriptフロントエンドフレームワーク  特徴  状態管理がシンプルな設計
+ 状態が変更された時に、適切なコンポーネントだけを効率的に更新してレンダリングすることが可能 開発者が更新すべきコンポーネントを意識する必要がない  コンポーネントベース
+ TODO -  その他
+ JSX記法(JavaScript内にHTMLタグを注入するような記法)が利用できる MITライセンス   Reference Site React  https://qiita.com/nabepon/items/87bb3b4f1e7bfa342489  </description>
+    </item>
     
     <item>
       <title>Apache Spark</title>
@@ -23,30 +53,30 @@
     
     <item>
       <title>ブロッキングとノンブロッキング</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00004/</link>
       <pubDate>Mon, 25 Mar 2019 11:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00004/</guid>
       <description> https://blog.takanabe.tokyo/2015/03/26/240/
-定義 ブロッキングI/O  ネットワークとして通信先の準備をする IOが開始できるまで待機する コネクションを開くまでの待機? ブロッキングは、全ての処理は停止する  同期I/O  実際にデータのI/Oを行う IOが終わるまで待機する コネクションを使って処理するまで待機?  ノンブロッキングI/O    非同期I/O    </description>
+定義 ブロッキングI/O  ネットワークとして通信先の準備をする IOが開始できるまで待機する コネクションを開くまでの待機? ブロッキングは、全ての処理は停止する  同期I/O  実際にデータのI/Oを行う IOが終わるまで待機する コネクションを使って処理するまで待機?  ノンブロッキングI/O  TODO  非同期I/O  TODO  </description>
     </item>
     
     <item>
       <title>Redis Clients Handling</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00003/</link>
       <pubDate>Sun, 24 Mar 2019 23:14:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00003/</guid>
       <description> https://redis.io/topics/clients
 クライアント接続について  設定された待ち受けTCPポートとUnixソケットが有効になっているとクライアント接続が可能になる クライアントソケットはノンブロッキング状態になる TCP_NODELAYオプションは、接続に遅延がないように設定される(?) クライアントが初期化された後、同時に処理できるクライアント数の制限に達しているか確認する  maxclinets構成ディレクティブを使用する    </description>
     </item>
     
     <item>
       <title>AWS と CircleCI で実現する DevOps</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</link>
       <pubDate>Wed, 13 Mar 2019 14:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</guid>
       <description>DepOpsとCI/CDの関係 by AWS DevOps(development operation)  無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する つまり作業は全て自動化する
 1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？ 再現性
 DevOps観点のアンチパターン 承認フローの追加（ダブルチェック、承認MTG）
@@ -65,28 +95,27 @@ Cloud9 EC2上にCloud9の環境を用意している
     
     <item>
       <title>EMR</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</link>
       <pubDate>Sat, 02 Mar 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</guid>
-      <description> デザインパターン 一時的クラスタ  ジョブが実行している間だけ動作する 起動時間が短いため、コスト削減 運用コスト削減  永続的クラスタ  ジョブの実行に関係なく動作する 複数ジョブでデータ共有 一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある  決め手  データロード時間 処理時間 ジョブ数  ノード仕様 マスタノード コアノード ##
-Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</guid>
+      <description> デザインパターン 一時的クラスタ  ジョブが実行している間だけ動作する 起動時間が短いため、コスト削減 運用コスト削減  永続的クラスタ  ジョブの実行に関係なく動作する 複数ジョブでデータ共有 一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある  決め手  データロード時間 処理時間 ジョブ数  ノード仕様  TODO  Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
  巨大データをバッチ処理する並列分散処理基盤 集中管理型の分散システムで、HDFSとMapReduceの2つのコンポーネントにより、並列分散処理を実現するミドルウェア  HDFS Hadoop Distributed File System
  分散ファイルシステム 複数のサーバにファイルを分割して保持する そのため、巨大なファイルを保持することができる マスタースレーブ構成  複数のシステムが動作する環境下において、制御する側（マスター）と、制御される側（スレーブ）に役割を分担して構成される方式  入力ファイルはブロックサイズで分割される（分割されたものをブロックという）  MapReduce  分散処理フレームワーク マスタースレーブ構成  1台のJobTracker、複数台のTaskTracker   </description>
     </item>
     
     <item>
-      <title>Scala</title>
+      <title>Scala 変位指定</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</link>
       <pubDate>Mon, 25 Feb 2019 12:30:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</guid>
       <description>https://speakerdeck.com/taketora/bian-wei-zhi-ding-nituitewakariyasukujie-shuo-sasetekudasai-a9b35ffb-c910-493e-a9f0-de09f6487918?slide=32
 Scala型パラメータ はじめに  クラス、インタフェース定義時に何の型が入るか決まっていないがインスタンス化する際に型を決定すること  例） クラス定義時に何の型が入るか不明であるため、型引数としてTを定義
-class Glass[T](var content: T) { def put(t: T): Unit = { content = t } def get: T = content }  型を定義する
-class Drink class Juice extends Drink class Water extends Drink  インスタンス化するときに、型を決定する
-val waterGlass = new Glass[Water](new Water) val juiceGlass = new Glass[Juice](new Juice)  サブタイプ  スーパークラスにサブクラスのインスタンスをバインドできる機能のこと  例）
-val drink: Drink = new Juice  非変  型パラメータGlass[T]は、デフォルトの状態では、サブタイプの関係が存在しない つまりWaterがDrinkのサブタイプであっても、Glass[Water]型をGlass[Drink]型にバインドできない  // コンパイルエラー val glassDrink: Glass[Drink] = new Glass[Water](new Water)  これを非変といい、Scalaではデフォルト</description>
+class Glass[T](var content: T) { def put(t: T): Unit = { content = t } def get: T = content } 型を定義する
+class Drink class Juice extends Drink class Water extends Drink インスタンス化するときに、型を決定する
+val waterGlass = new Glass[Water](new Water) val juiceGlass = new Glass[Juice](new Juice) サブタイプ  スーパークラスにサブクラスのインスタンスをバインドできる機能のこと  例）
+val drink: Drink = new Juice 非変  型パラメータGlass[T]は、デフォルトの状態では、サブタイプの関係が存在しない つまりWaterがDrinkのサブタイプであっても、Glass[Water]型をGlass[Drink]型にバインドできない  // コンパイルエラー val glassDrink: Glass[Drink] = new Glass[Water](new Water) これを非変といい、Scalaではデフォルト</description>
     </item>
     
     <item>
@@ -100,29 +129,20 @@ val drink: Drink = new Juice  非変  型パラメータGlass[T]は、デフォ�
     
     <item>
       <title>Lambda</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</link>
       <pubDate>Mon, 18 Feb 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</guid>
       <description>サーバレスアーキテクチャの３原則  オンデマンドでサービス実行するために、コンピューティング環境を使う 目的が１つでステートレスな関数を書く プッシュベースのイベント駆動パイブラインを設計する 強力なフロントエンドを作る サードパーティサービスを活用する  サーバレスアーキテクチャのユースケース  S3にファイルを保存し、SQSでキューにデータをプッシュし、Lambda関数を起動 データ処理、変換、操作、トランスコード CSV、Json、XMLファイルの処理、データ照合、集計、イメージサイズの変更、フォーマット変換 Kinesisと連携したリアルタイムデータ処理  シャード数と関数の数が同じであり、シャードごとに関数が１つずつある  レガシーAPIプロキシ Blueprint(設計図)というサンプル付きのテンプレート Slackなどのボット開発 Amazon Echo  アーキテクチャ  バックエンドと、グルー（ワークフローを実行するために組み立てられるパイブライン処理） この２つは、相互補完が可能（組み合わせにて使う） Computer-as-back-end アーキテクチャ フロントエンドがセキュアに通信できるのであれば、分厚いフロントエンドとサードパーティサービスを活用し、イベント駆動パイブラインではなく、サーバレスバックエンドが使われる範囲を極力減らす（ナノ関数ともいう）  A Clud Guru  フロントエンドは、AngularJSで構築され、Netlifyによってホスティングされている  Amazon S3と、Amazon CloudFrontによるグローバルなコンテンツデリバリーネットワークに変更もできる  登録、認証機能のためにAuth0を使っている  フロントエンドがFirebaseなど他のサービスと直接セキュアに通信するための委任トークンを作る  Firebase（リアルタイムデータベース）  クライアントは、それぞれウェブソケットを使ってFirebaseと接続し、ほぼリアルタイムでFirebaseから更新情報を受け取る   Instant  TODO  ハイブリッドサーバレスとレガシーAPI  TODO  GraphQL  複数のラウンドトリップ、オーバーフェッチ、バージョニングに弱点のあるRESTに替わるものとして設計された（2012年〜2015年 Facebook社） 単一のエンドポイントで、宣言的な階層構造でクエリを実行する方法を提供している  １つのGraphQL Lambda関数だけで複数のデータソースにクエリを送ることが可能  AWS AppSync  https://github.</description>
     </item>
     
     <item>
-      <title>CircleCI</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/circleci/00001/</link>
-      <pubDate>Mon, 28 Jan 2019 14:30:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/circleci/00001/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DDD</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00002/</link>
       <pubDate>Fri, 25 Jan 2019 15:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</guid>
-      <description>ドメイン駆動設計(DDD) https://www.slideshare.net/TakuyaKitamura1/ddd-29003356 e - モデルを中心とした設計・開発手法 - ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する - ドメインモデルをユビキタス言語として共有化 - ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00002/</guid>
+      <description>ドメイン駆動設計(DDD) https://www.slideshare.net/TakuyaKitamura1/ddd-29003356 - モデルを中心とした設計・開発手法 - ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する - ドメインモデルをユビキタス言語として共有化 - ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む
 モデルの構成要素 モデルの表現  Entities Value Object Service  モデルのライフサイクル  Aggregates Factories Repositories  Entities 抽象的な連続性と同一性  固有のIDを持つ 分散環境、永続化前後でも追跡可能  属性(状態)に左右されない同一性  連続性を保証するIDは、オブジェクトの属性値に左右されない 属性値が全て同じでもIDが異なれば別のもの 属性値が異なっていてもIDが同じであれば同じもの 同一性の判断とライフサイクルは、モデル毎に個別の設計にする  具体例  顧客、口座、注文、在庫&amp;hellip;etc  Value Objects 連続性と同一性が不要なオブジェクト  属性がどんな値であるかに焦点を置かれるもの 一過性のことも多く、操作のために生成されては破棄される 状態を変更できないもの(immutable)  他の何らかの状態を記述する属性となる  何であるかだけが問題となり、誰であるか、あるいはどれであるかは問われないような設計の要素 エンティティの属性として使用される  具体例  色、量、地域、経路&amp;hellip;etc  Service TODO Entity や Value　Object には不自然な操作  操作であり状態を持たない  EntityとValueObjectのコントローラー サービスはドメイン層のものだけではない todo https://little-hands.</description>
     </item>
     
@@ -166,10 +186,10 @@ Set#map 遅い
     
     <item>
       <title>AWS Batch</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</link>
       <pubDate>Thu, 17 Jan 2019 17:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</guid>
       <description>Component  VPC内で動作  Jobs  AWS Batchに送信する作業単位 EC2上で動作するコンテナ化されたアプリケーションとして、AWS Batchによって実行される作業単位 必ずJob Definitionsを参照する コンテナイメージ、コマンド、パラメータを参照する Job Definitionsのパラメータはオーバーライドが可能 Linux exe file, Shell Script, Docker Container Image
 属性 雛形のJob Definitions
  実行先が示されたJob Queues
@@ -190,13 +210,24 @@ Set#map 遅い
     </item>
     
     <item>
+      <title>Speaker</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/communication/00002/</link>
+      <pubDate>Thu, 10 Jan 2019 19:30:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/communication/00002/</guid>
+      <description>Speaker CfP  Call for Proposals / Call for Paper 聞きたいのは”ドラマ”であって、”やったこと”ではない 開発している間に、何か壁にぶち当たることがあるはずなんです。それをどうやって乗り越えたのか、次はどうやったらぶち当たらずに済むのか トピックがなぜ必要なのかを伝えていない  スピーカー入門 なせやるのか?  正しい使い方 OSSの存続に繋がる 技術への貢献度  なるには  テーマを決める CFPに応募する 先行結果 スライドを準備 練習 本番  伝えたいこと - 好きなライブラリ・ツールのプルリクの流れ - 透明性or失敗 - 個人のOSS
+なんでそうなったの？なぜ好きなの？
+知らなかったこと - 困っている - 新しい</description>
+    </item>
+    
+    <item>
       <title>fpinscala</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00009/</link>
       <pubDate>Thu, 10 Jan 2019 18:30:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00009/</guid>
       <description>関数型プログラミングにおける副作用の除去は、結果型に副作用の元となるデータを返す 入力Aに対する出力Bを返す関数 f: A =&amp;gt; B は、内部・外部プロセスの変化に影響されない（＝副作用がない） buyCoffeの例では、請求処理という副作用を出力から排除すること
-参照透過性  同じ条件を与えれば必ず同じ結果が得られる 他のいかなる機能の結果にも影響を与えない 関数の結果型に従い、実行する全てのことがその戻り値によって表されるという不変条件 プログラムによる等式推論(equational reasoning)が可能  def add1(x: Int, y: Int): Int = x + y  var x: Int = 1 def add2(y: Int): Int = x + y  参照透過性の確認フロー 例１ val x = &amp;quot;Hello World&amp;quot; val r1 = x.reverse // dlroW olleH val r2 = x.reverse // dlroW olleH   r1、r2は同じ xをxが参照している式（その定義）と置き換える  val r1 = &amp;quot;Hello World&amp;quot;.</description>
+第2章 Scala関数型プログラミングの準備 参照透過性  同じ条件を与えれば必ず同じ結果が得られる 他のいかなる機能の結果にも影響を与えない 関数の結果型に従い、実行する全てのことがその戻り値によって表されるという不変条件 プログラムによる等式推論(equational reasoning)が可能  def add1(x: Int, y: Int): Int = x + y  var x: Int = 1 def add2(y: Int): Int = x + y  参照透過性の確認フロー 例１ val x = &amp;quot;Hello World&amp;quot; val r1 = x.reverse // dlroW olleH val r2 = x.reverse // dlroW olleH   r1、r2は同じ xをxが参照している式（その定義）と置き換える  val r1 = &amp;quot;Hello World&amp;quot;.</description>
     </item>
     
     <item>
@@ -213,22 +244,12 @@ x_5 &amp;amp; x_6 \end{array}\right) \end{eqnarray} $$
     </item>
     
     <item>
-      <title>Logstash</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticstack/00003/</link>
-      <pubDate>Thu, 27 Dec 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticstack/00003/</guid>
-      <description> Hoge   </description>
-    </item>
-    
-    <item>
       <title>Ansible 実践入門</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</link>
       <pubDate>Sun, 23 Dec 2018 14:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ansible/00001/</guid>
-      <description>サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master
-Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
+      <description>前提  サンプルソースコード https://gitlab.com/shkitayama/ansible_practical_guide/tree/master  Ansible Archetecture 基本動作の概要  コントロールノードノードからターゲットノードにssh経由でタスクを送信する。 コントロールノードにAnsibleをインストールし、Inventory(インベントリ)、Playbook(プレイブック)の2つのファイルを用意するだけで動作する。  基本動作の詳細  PlaybookをPythonの実行コードにコンパイルする コンパイルしたコードをターゲットノード側にsftpコマンドで転送する 転送されたターゲットノード側で、コードを実行する 実行結果をコントロールノードに返却する コントロールノード、ターゲットノードのPythonの実行ファイルを削除する  （ターゲットノードに関する注意事項）
 - ターゲットノードにはPythonの実行環境が求められる - 各ソフトウェア、ミドルウェアのインストールには特権ユーザ権限が必要である - タスクの用途によってユーザを作成しておく
 内部コンポーネント  柔軟性のあるタスク実行コンポーネントが存在する Playbook、設定ファイルから呼び出すことが可能  (Module)モジュール  Playbook、Ansible APIの中で呼ばれる再利用可能な処理ユニット ファイル転送、サービス起動などをラップしたもの ターゲットノードで実行 Gtihubで公開されている
  Core(コアモジュール)
@@ -236,7 +257,7 @@ Ansible Archetecture 基本動作の概要  コントロールノードノード
  Certified(設定ファイルモジュール)
  Community(コミュニティモジュール)
  モジュールカテゴリは公式を参照
-  Inventory  ターゲットノードの接続情報リストを定義するファイル 記載されたホストが実行環境となる 単一ノードだけでなくグループ化することが可能 クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う  Playbook  ターゲットノード側で実行したい処理の流れを定義するファイル 記載されたタスクがInventoryのリストにあるホストで実行される タスク(モジュール群の呼び出し)という処理フローを定義 実行したいホストのグループをバインド YAML形式で記載する  Plugin  Ansibleを構成するCore機能に付随する 詳細は公式を参照  Python API  Ansible設けられたインターフェースの一つ Pythonを実行できる  Ansible CLI Install  $ sudo pip3 install ansible $ ansible  ディレクトリ構成 https://docs.</description>
+  Inventory  ターゲットノードの接続情報リストを定義するファイル 記載されたホストが実行環境となる 単一ノードだけでなくグループ化することが可能 クラウドのようにサーバ情報が常時変更する場合にDynamic Inventoryという機能を使う  Playbook  ターゲットノード側で実行したい処理の流れを定義するファイル 記載されたタスクがInventoryのリストにあるホストで実行される タスク(モジュール群の呼び出し)という処理フローを定義 実行したいホストのグループをバインド YAML形式で記載する  Plugin  Ansibleを構成するCore機能に付随する 詳細は公式を参照  Python API  Ansible設けられたインターフェースの一つ Pythonを実行できる  Ansible CLI Install $ sudo pip3 install ansible $ ansible  ディレクトリ構成  https://docs.</description>
     </item>
     
     <item>
@@ -246,15 +267,6 @@ Ansible Archetecture 基本動作の概要  コントロールノードノード
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/python/00001/</guid>
       <description> 構成 Homebrew |- python3 |- pip3 |- python3で使用するライブラリ... |- etc...  Python $ brew install python3 $ witch python3 $ witch pip3  Libraries $ pip3 install numpy # 線形代数 $ pip3 install scipy # 数式処理 $ pip3 install matplotlib # 描画 $ pip3 install pandas # データ操作 $ pip3 install scikit-learn # 分類や予測のためのモデルが詰まった機械学習用パッケージ $ pip3 install chainer # ディープラーニング  Jupyter Note Book $ pip3 install jupyter $ jupyter notebook  </description>
-    </item>
-    
-    <item>
-      <title>S3</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</link>
-      <pubDate>Fri, 14 Dec 2018 16:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</guid>
-      <description> AWS CLIを使って、S3のデータをダウンロードする $ aws s3 cp --region ap-northeast-1 s3://バケット名/ . --recursive  </description>
     </item>
     
     <item>
@@ -269,19 +281,19 @@ Ansible Archetecture 基本動作の概要  コントロールノードノード
     
     <item>
       <title>A similarity</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00005/</link>
       <pubDate>Fri, 07 Dec 2018 15:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00005/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00005/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon Elasticsearch Service</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00004/</link>
       <pubDate>Wed, 05 Dec 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00004/</guid>
       <description> Index設計  データ量、更新速度の考慮  index は、複数の shard から構成されている shard を複数の node に分散することで、1つの index のに対する書き込み速度を分散することができる  親子関係データは、1つのindex or 1つのdocument内に　Nested Type型のデータとしてインデックス トランザクションがないため、Alias(View機能を確認) index につけられる？ 多言語対応　言語ごとに index Tribe Node を使うならすべてのクラスターで重複しないインデックス名で設計   </description>
     </item>
     
@@ -297,15 +309,6 @@ implicit parameter  クラス定義とメソッドの実装を分離する 既�
     </item>
     
     <item>
-      <title>RDS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</link>
-      <pubDate>Wed, 28 Nov 2018 14:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>VPC EC2 Apache PHP MySQL を使ったWebアプリケーション構築</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</link>
       <pubDate>Tue, 27 Nov 2018 00:20:00 +0900</pubDate>
@@ -316,49 +319,40 @@ implicit parameter  クラス定義とメソッドの実装を分離する 既�
     
     <item>
       <title>AWS Elastic Cash Redis</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00002/</link>
       <pubDate>Mon, 26 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00002/</guid>
       <description> Redis構築 EC2構築 // TODO $ CLI  GNU コンパイラコレクション (gcc) をインストール
 $ sudo yum install gcc  $ wget http://download.redis.io/redis-stable.tar.gz $ tar xvzf redis-stable.tar.gz $ cd redis-stable $ make  $ src/redis-cli -c -h redissample.ezre9w.0001.apne1.cache.amazonaws.com -p 6379  </description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/network/00003/</link>
       <pubDate>Wed, 21 Nov 2018 18:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00005/</guid>
-      <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  インターネット上の中継サーバを使う方法    LAN内の中継サーバを使う方法       </description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/network/00003/</guid>
+      <description> Mac (OSX) SSH接続 公開鍵認証 $ ssh &amp;lt;IP_ADDRESS|HOST_NAME&amp;gt; -l USER_NAME -i ~/.ssh/id_rsa  $ vi ~/.ssh/config host HOGE hostname XX.XX.XX.XX user USER_NAME IdentityFile ~/.ssh/id_rsa $ ssh HOGE  ポートフォワード  ある特定のコンピュータのポート番号に対して、送られる送信内容を、別のコンピュータのポート番号に転送すること https://www.clear-code.com/blog/2014/9/12.html  </description>
     </item>
     
     <item>
       <title>Redis入門</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00001/</link>
       <pubDate>Wed, 21 Nov 2018 15:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/redis/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/redis/00001/</guid>
       <description> Redisコマンドリファレンス
 メモリ消費量の削減アプローチ 短いデータ構造ziplist シャーディング ビットバイトのパッキング スケール </description>
     </item>
     
     <item>
       <title>デザインパターン</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00003/</link>
       <pubDate>Wed, 21 Nov 2018 13:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00003/</guid>
       <description> 分類    CLASSIFICATION PATTERN     構造 Flyweight    Flyweight about  省メモリのためのパターン 軽量化されるべきインスタンスの生成や管理を行う Factory クラスを作成 軽量化されるべきインスタンスは、この Factory クラスを介して取得する  </description>
-    </item>
-    
-    <item>
-      <title>CodeDeploy</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</link>
-      <pubDate>Mon, 19 Nov 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</guid>
-      <description>##</description>
     </item>
     
     <item>
@@ -381,45 +375,26 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     </item>
     
     <item>
-      <title>AWS CloudFormation</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</link>
-      <pubDate>Mon, 12 Nov 2018 14:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</guid>
-      <description>Flow  Change AWS CLI Profile Create CloudFormation Template Create Stack  Change AWS CLI Profile  管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する (シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す) ローカルのAWSプロファイルを更新する  $ aws configure --profile pureone-worker AWS Access Key ID [None]:アクセスキー AWS Secret Access Key [None]:シークレットアクセスキー Default region name [None]:ap-northeast-1 Default output format [None]:json   Create CloudFormation Template https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
-  Create Stack  テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ  Template  AWSリソース構成を YAML or JSON で記載したドキュメント  Section  Paramters  実行時に埋め込む変数値  Mappings  実行環境によって変わる値をMap形式で定義  Resource</description>
-    </item>
-    
-    <item>
-      <title>ECS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</link>
-      <pubDate>Thu, 08 Nov 2018 14:50:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</guid>
-      <description> ECR (Amazon Elastic Container Registry)  完全マネージド型の Docker コンテナレジストリ  ECS (Amazon Elastic Container Service) Service  実態は複数のdocker containerの集合体 以下を管理するもの  どんなコンテナを起動するのか 何個起動するのか リクエスト分散するのか   Task  docker container をグループ化するもの  </description>
-    </item>
-    
-    <item>
       <title>Agile</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/communication/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/communication/00001/</link>
       <pubDate>Thu, 08 Nov 2018 10:40:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/communication/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/communication/00001/</guid>
       <description>参考資料  https://www.slideshare.net/Ryuzee/scrum-8260474
  http://scrumreferencecard.com/ScrumReferenceCard_v1_3_jp.pdf
  https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf
 (毎年更新されている、、要確認)
   Agile  顧客の価値、メンバーの価値、会社の利益をあげる道具 競争速度の変化 -&amp;gt; ビジネスモデルの賞味期限の短縮 迅速な意思決定と、ビズネスモデルの早期具象化が求められる時代に  プロダクトオーナー  製品に責任を持つ リリース日とリリース内容を決める 機能の優先順位を見直し、定める  スクラムマスター  プロジェクトマネジメントの代表 外部干渉からチームを守る  チーム  デイリースクラムに出席する責任 完了の定義に従って作業を行う責任 チームメンバーを助ける、育てる責任  レトロスペクティブ  振り返りによる改善 Tryができているのか 同じProblemが出ていないか？ プロセス改善の場でもある  コミットメント  チームがストーリーをDoneにしようとする ことをコミットと定義  ベロシティ  決められた期間の中で、あるチームが届けることができる要求の量のこと  デイリースクラム  タイムボックス
- タイムボックスは厳密に15分を守る 常に時間通りに始める (chatbotでリマインドするのもあり)   意識
+ タイムボックスは厳密に15分を守る 常に時間通りに始める (chatbotでリマインドするのもあり)  意識
  問題解決をしないこと 事実を提供することに集中すること 仕掛り中の仕事を少なく保つこと 小さいタスクは統合すること 大きいタスクは分割すること ミーティング中は集中すること  内容</description>
     </item>
     
     <item>
       <title>Elasticsearch 実践</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00002/</link>
       <pubDate>Wed, 07 Nov 2018 23:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00002/</guid>
       <description>1.Elasticsearch 特徴  Apache Luceneをベースとした javaで書かれた全文検索ソフトウェア ログ収集・解析・分析プラットフォーム  kibana、logstash  分散配置による高速、高可用性の実現  クラスタ構成、分散ノード、シャード分割  RESTAPIアクセスによるリソース操作の明確化
  URLを参照すればどのリソースにアクセスしているか分かる  Elastic Stack
  Kibana バックエンドのElasticsearchにクエリ発行、可視化 Elasticsearch Logstash Input, Filter, Output Beats   全文検索  索引型検索 転置インデックス（各単語と出現した文書IDの組み合わせをインデックスとして保存）  Doc1: イベントが東京で開催される Doc2: 東京マラソンに参加する     単語 DocId     東京 1, 2   イベント 1   マラソン 2     各単語は、英語の場合：空白区切り、日本語の場合：形態素解析
@@ -428,49 +403,30 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     
     <item>
       <title>sim</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00003/</link>
       <pubDate>Wed, 07 Nov 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00003/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00003/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00001/</link>
       <pubDate>Wed, 07 Nov 2018 13:40:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/elasticsearch/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/elasticsearch/00001/</guid>
       <description>環境構築リスト  ローカル(Mac OSX) + Elasticsearch ローカル(Mac OSX) + docker ローカル(Mac OSX) + docker-compose EC2 + docker + Elasticsearch EC2 + docker + Elasticsearch by terraform  ローカルMac Elasticsearch Java8 インストール $ brew cask install homebrew/cask-versions/java8  Elasticsearch インストール $ brew install elasticsearch  kibana インストール $ brew install kibana  起動&amp;amp;アクセス  elasticsearch  $ elasticsearch  http://localhost:9200/ 以下の画面が表示される
 { &amp;quot;name&amp;quot; : &amp;quot;J5lEKmN&amp;quot;, &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch_j_tsuchiya&amp;quot;, &amp;quot;cluster_uuid&amp;quot; : &amp;quot;N9ufUy6hRGaXsbAqICbPRQ&amp;quot;, &amp;quot;version&amp;quot; : { &amp;quot;number&amp;quot; : &amp;quot;6.</description>
     </item>
     
     <item>
-      <title>DNS関連</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</link>
-      <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00003/</guid>
-      <description> DNSラウンドロビン  ドメイン名とIPアドレスを 1:n で対応付けること hoge.co.jp = 192.168.1.1, 192.168.1.2, 192.168.1.3 ドメインへのアクセス時には、n のサーバへ負荷分散される RFC3484  </description>
-    </item>
-    
-    <item>
-      <title>IP</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</link>
-      <pubDate>Wed, 07 Nov 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00004/</guid>
-      <description> 参考 https://qiita.com/mogulla3/items/efb4c9328d82d24d98e6
-グローバルIPアドレス  世界的には、ICANNが管理、日本では、JPNICが管理  プライベートIPアドレス  グローバルIPアドレスに変換せずにネットワーク接続を試みた場合、ルーター側でパケットの破棄が行われ、接続できない事象になる。     CLASS RANGE     クラスA 10.0.0.0 ～ 10.255.255.255   クラスB 172.16.0.0 ～ 172.31.255.255   クラスC 192.168.0.0 ～ 192.168.255.255    </description>
-    </item>
-    
-    <item>
-      <title>ドメイン名、ホスト名、FQDN(Fully Qualified Domain Name)=完全修飾ドメイン名の違い</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</link>
+      <title>ネットワーク基礎</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/network/00002/</link>
       <pubDate>Wed, 07 Nov 2018 09:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00002/</guid>
-      <description>Macアドレス  ネットワーク部品に割り当てられたアドレス 48ビットのアドレス 先頭24ビットは、部品メーカーの識別番号 後半24ビットは、TODO 16進数表記 OSIの第2層のデータリンク層  OSI レイヤー7:アプリケーション層  アプリケーションに特化したプロトコルを規定 HTTP メール送信のSMTP  レイヤー6:プレゼンテーション層  データの表現形式を規定 データ保存形式、圧縮、文字コード  レイヤー5:セッション層  コネクション確立、データ転送のタイミングを規定  レイヤー4:トランスポート層  データ転送の制御を規定 TCP/IP  レイヤー3:ネットワーク層  IPアドレス 異なるネットワークへデータを転送するルーティングの制御 ルーター、レイヤー3スイッチ パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理  レイヤー2:データリンク層  MACアドレスによるデータ転送 同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する レイヤー2スイッチ 通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している  レイヤー1:物理層  ケーブルやコネクタの形状を規定 100BASE-T(イーサネット)  ファイヤーウォール パケットフィルタ  IPアドレス、ポート番号を元にフィルタリング  80(http), 443(https)のみパケットの通過を許可  パケットフィルタリングのルールのことをACL  アプリケーションゲートウェイ  プロキシのこと  Linux  メモリ上に展開してプログラムをプロセス（PID） ハードディスに割り当てる仮想メモリのことをスワップ  FHS（ディレクトリ構成）  /bin  基本コマンドを格納したディレクトリ  /boot  OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体  /dev  デバイスを格納したディレクトリ、dev/nullは、何もないを表す  /etc  OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など  /home  ユーザを格納したディレクトリ  /proc  カーネルやプロセス情報を格納したディレクトリ  /sbin  システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される  /tmp  一時ファイルを格納したディレクトリ  /usr  アプリケーションを格納したディレクトリ  /var  ログとかを格納したディレクトリ   ドメイン名  インターネット上のネットワークを一意に識別するための名称</description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/network/00002/</guid>
+      <description>Macアドレス  ネットワーク部品に割り当てられたアドレス 48ビットのアドレス 先頭24ビットは、部品メーカーの識別番号 後半24ビットは、TODO 16進数表記 OSIの第2層のデータリンク層  OSI OSI参照モデル レイヤー7:アプリケーション層  アプリケーションに特化したプロトコルを規定 HTTP メール送信のSMTP  レイヤー6:プレゼンテーション層  データの表現形式を規定 データ保存形式、圧縮、文字コード  レイヤー5:セッション層  コネクション確立、データ転送のタイミングを規定  レイヤー4:トランスポート層  データ転送の制御を規定 TCP/IP  レイヤー3:ネットワーク層  IPアドレス 異なるネットワークへデータを転送するルーティングの制御 ルーター、レイヤー3スイッチ パケットをどこからどこに転送するかの情報＝ルーティングテーブルを管理  レイヤー2:データリンク層  MACアドレスによるデータ転送 同じネットワーク内（同一セグメント内）にあるノード間の通信を規定する レイヤー2スイッチ 通信したいノードがどのポートに繋がっているかをMACアドレスによって判断してパケットを転送している  レイヤー1:物理層  ケーブルやコネクタの形状を規定 100BASE-T(イーサネット)  ファイヤーウォール パケットフィルタ  IPアドレス、ポート番号を元にフィルタリング  80(http), 443(https)のみパケットの通過を許可  パケットフィルタリングのルールのことをACL  アプリケーションゲートウェイ  プロキシのこと  Linux基礎 Linux  メモリ上に展開してプログラムをプロセス（PID） ハードディスに割り当てる仮想メモリのことをスワップ  FHS（ディレクトリ構成）  /bin  基本コマンドを格納したディレクトリ  /boot  OS起動に必要なファイルを格納したディレクトリ、vmlinuzがLinuxカーネルの正体  /dev  デバイスを格納したディレクトリ、dev/nullは、何もないを表す  /etc  OSやアプリケーションの設定ファイルを格納したディレクトリ、Webサーバを起動するHttpデーモンの設定など  /home  ユーザを格納したディレクトリ  /proc  カーネルやプロセス情報を格納したディレクトリ  /sbin  システム管理用コマンドを格納したディレクトリ、reboot,mount、usr/sibn、usr/local/sbinにも配置される  /tmp  一時ファイルを格納したディレクトリ  /usr  アプリケーションを格納したディレクトリ  /var  ログとかを格納したディレクトリ   ドメイン ドメイン名  インターネット上のネットワークを一意に識別するための名称</description>
     </item>
     
     <item>
@@ -484,15 +440,6 @@ Heroku CLI  install for Mac  $ brew install heroku/brew/heroku   App Deploy $ Fo
     </item>
     
     <item>
-      <title>akka-stream</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</link>
-      <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</guid>
-      <description> akka-stream </description>
-    </item>
-    
-    <item>
       <title>plugins</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00007/</link>
       <pubDate>Tue, 06 Nov 2018 10:40:00 +0900</pubDate>
@@ -500,16 +447,6 @@ Heroku CLI  install for Mac  $ brew install heroku/brew/heroku   App Deploy $ Fo
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00007/</guid>
       <description>plugins sbt-native-packager  Dockerイメージを作成できる  https://qiita.com/takebayashi/items/99dcf293423a27caa73a https://qiita.com/petitviolet/items/cf5d699521b08e6ec933   sbt-assembly  実行可能jarファイル作成  sbt-multi-jvm  複数のJVM上で動作させるAkkaシステムのテスティングプラグイン  sbt-hoge  foo  ScalaOption -feature -deprecation -unchecked -Xfatal-warnings -Xlint sbt new シングルプロジェクト作成コマンド $ sbt new sbt/scala-seed.g8
 マルチプロジェクト作成コマンド $ sbt new mattsu6/multi-sbt.g8</description>
-    </item>
-    
-    <item>
-      <title>Kinesis</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</link>
-      <pubDate>Mon, 05 Nov 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</guid>
-      <description> https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb
-Kinesis $ export AWS_DEFAULT_PROFILE=&#39;pureone-worker&#39; $ aws kinesis create-stream --stream-name kinesis-test-stream --shard-count 1 $ aws kinesis describe-stream --stream-name kinesis-test-stream $ aws kinesis put-record --stream-name kinesis-test-stream --data hogehoge_$RANDOM --partition-key $RANDOM  Scala </description>
     </item>
     
     <item>
@@ -550,10 +487,10 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
     
     <item>
       <title>クリーンアーキテクチャ</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00001/</link>
       <pubDate>Wed, 31 Oct 2018 19:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00001/</guid>
       <description>Robert C. Martin
 クリーンアーキテクチャ  ビジネスロジックの本質（業務上の関心） 入出力処理等の副作用の隔離  クリーンアーキテクチャにおける方針 ビジネスロジックの明確化 フレームワークからの独立 外界との独立（ストアからの独立、UIからの独立）
 イントロダクション  ソフトウェアを「一度だけ」動かすのは、難しいことではない ソフトウェアを「正しく」動かすのは、とても難しい
@@ -584,20 +521,20 @@ IAMユーザ作成 CloudTrail 概要  デフォルトで有効になっている
       <pubDate>Mon, 29 Oct 2018 17:20:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vue/00002/</guid>
-      <description> 意識すべきこと  構造の本体は、DOMではなく、JavaScriptのデータ  先にDOMが存在するのではなく、データの状態に適したDOMを構築する  DOMの構築手段としてテンプレートを使用する テンプレートとロジックを関連付けるのが、ディレクティブ（@click, :class&amp;hellip;） DOMの状態を管理・更新するデータバインディング 単一ファイルコンポーネント  豊富なリソース  Awesome Vue Github Vue Curated Element Onsen UI   双方向データバインディング  ここでいうデータバインディングとは、UIとデータを紐付けること 双方向とは、UIが変わればデータが変わり、データが変わればUIも変わる
+      <description> 意識すべきこと  構造の本体は、DOMではなく、JavaScriptのデータ  先にDOMが存在するのではなく、データの状態に適したDOMを構築する  DOMの構築手段としてテンプレートを使用する テンプレートとロジックを関連付けるのが、ディレクティブ（@click, :class&amp;hellip;） DOMの状態を管理・更新するデータバインディング 単一ファイルコンポーネント  豊富なリソース  Awesome Vue Github Vue Curated Element Onsen UI -  双方向データバインディング  ここでいうデータバインディングとは、UIとデータを紐付けること 双方向とは、UIが変わればデータが変わり、データが変わればUIも変わる
  Codepen
  JSFiddle
  CodeSandbox
  vue dev tool
-  オプション構成   </description>
+  </description>
     </item>
     
     <item>
       <title>エンジニアの目標設定に関するあれこれ</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/engineer/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/engineer/00001/</link>
       <pubDate>Thu, 25 Oct 2018 15:25:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/engineer/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/engineer/00001/</guid>
       <description>目標設定をする理由  営業職などと違い、数字での評価が難しい 日々の行動指針を考えるキッカケになる 努力が結果に結び使いない場合のロードマップを把握するキッカケになる  SMART の法則 正しい目標設定をすると、効率が上がる（＝生産性）
  Specific（明確な） Measurable（測定可能な） Achievable（達成可能な） Relevant （関連性がある） Time-bound （期限のある）  運用 - インシデント件数に対応件数と対応時間の数値化およびグラフにおける視覚化
 開発 - チーム内でのレビューに何らかの工夫を凝らす ？
@@ -626,10 +563,10 @@ id 属性 &amp;lt;p id=&amp;quot;example02&amp;quot;&amp;gt;Example Id Attribute
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>
@@ -723,18 +660,16 @@ GitHub</description>
     
     <item>
       <title>Atom</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00001/</link>
       <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</guid>
-      <description>プログラミング用フォントの導入 RectyDiminished
-Atomインストール https://atom.io/
-Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00001/</guid>
+      <description>前提  プログラミング用フォントの導入
+RectyDiminished  Atomインストール  https://atom.io/
+  Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
 - Show invisibles : chek on
 - Soft Wrap : chek on
-テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー Atomメニュー -&amp;gt; keymap
-&#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  dotinstall_pane alt + shift + d（ドットインストールタブを表示
-alt + shift + enter（再生）</description>
+テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー  Atomメニュー -&amp;gt; keymap  &#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  数式用  markdown-preview-plus  hugo mathjax  http://easy-copy-mathjax.</description>
     </item>
     
     <item>
@@ -789,10 +724,10 @@ $ vagrant box list There are no installed boxes! Use `vagrant box add` to add so
     
     <item>
       <title>Mac</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/computer/00001/</link>
       <pubDate>Sun, 15 Jul 2018 23:40:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/computer/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/computer/00001/</guid>
       <description>Homebrew install  XcodeをApp storeからインストール $ xcode-select --install $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  インストール完了確認  $ brew doctor Your system is ready to brew.   bash_profile $ touch ~/.bash_profile $ vi ~/bash_profile # PATH if [ -f ~/.bashrc ]; then . ~/.bashrc fi  bashrc $ touch ~/.bashrc $ vi ~/.bashrc # Alias Setting alias ls=&#39;ls -FG&#39; alias ll=&#39;ls -alFG&#39; # Permmision View Setting if [ $UID -eq 0 ]; then PS1=&amp;quot;\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; else PS1=&amp;quot;\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[00m\]\\$ &amp;quot; fi #for bash_completion if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion fi # git ps1 source /usr/local/etc/bash_completion.</description>
     </item>
     
@@ -821,10 +756,10 @@ $ cat .</description>
     
     <item>
       <title>SSL自己証明書の作成方法</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/network/00001/</link>
       <pubDate>Mon, 02 Apr 2018 13:16:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/network/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/network/00001/</guid>
       <description>SSLサーバ証明書 役割 SSLの接続要求時に認証情報・公開鍵情報等をひとつにまとめて、クライアントへ渡す クライアントは、受け取ったSSLサーバ証明書から、接続相手の情報を確認して通信を行う
 発行元  信頼された認証局が発行 信頼されていない認証局が発行（自己証明書（オレオレ））  中身  公開鍵の情報 コモンネーム 公開鍵の所有者情報 所有者を証明した認証局の情報 証明書の有効期限 証明書のシリアル番号 証明書の失効リスト参照先  Apache SSL 設定 ＜前提＞
 Windows Server 2012 Apache 2.4
@@ -837,10 +772,8 @@ Windows Server 2012 Apache 2.4
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/html/00001/</guid>
-      <description>HTML5 markup detector HTML5 markup detector をインストールし、
-HTML5 で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。
-仕様 HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定し、
-アドレスバーの右端に&amp;rdquo;マル５&amp;rdquo;と表示してくれるものです</description>
+      <description> HTML5 markup detector  HTML5 markup detector をインストール
+ HTML5で書かれたサイトにアクセスすると、ロケーションバーに緑色で 5と表示される。  仕様  HTML5のdoctypeの書き方が &amp;lt;!doctype html&amp;gt; であることから表示中のページのdoctypeがそれに該当するかどうかで判定 アドレスバーの右端に&amp;rdquo;マル５&amp;rdquo;と表示してくれるもの  </description>
     </item>
     
     <item>
@@ -849,31 +782,27 @@ HTML5 で書かれたサイトにアクセスすると、ロケーションバ�
       <pubDate>Thu, 29 Mar 2018 09:43:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/browser/00001/</guid>
-      <description>ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
+      <description> ローカルストレージ Local Storage https://team-lab.github.io/skillup-nodejs/1/6.html
 WebStorageとCookieの違い 共通点 クライアント側で自由に書き換え可能
 保存するデータは「キーと値」のペアで取り扱われる
-相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化
-https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5
-サンプルで遊ぶ https://github.com/iv-garden/webstorage-sandbox
-デバック （chrome）
-開発者ツール「Source」</description>
+相違点  WebStorageのほうが取り扱えるデータ量が大きい WebStorageはJavaScriptによる制御がより簡単 cookieは通信毎に自動送信するが、WebStorageは必要なデータを必要なときだけ送信可能  localStorageとsessionStorage    分類 有効期限     localStorage 永続的   sessionStorage ウィンドウ・タブ   Cookie 指定期限まで    localstorageの使い方 保存 取得 削除 初期化   https://qiita.com/takahiro_itazuri/items/71c85bcc703f28f29cb5  サンプルで遊ぶ  https://github.com/iv-garden/webstorage-sandbox  </description>
     </item>
     
     <item>
       <title>JavaScriptの正規表現</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/js/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/vanillajs/00001/</link>
       <pubDate>Thu, 22 Mar 2018 14:22:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/js/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/vanillajs/00001/</guid>
       <description> JavaScriptの正規表現 str = &amp;quot;S0009&amp;quot;; reg = /^[Ss]+\d{1,4}/ if (str.match(ret)) { alert(&amp;quot;Match!&amp;quot;); } alert(&amp;quot;No Match!&amp;quot;);  デバック方法  ソース内に debugger ステートメントを記述する console.log(&amp;ldquo;);  </description>
     </item>
     
     <item>
       <title>MySQL root ユーザのパスワード再設定</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/db/mysql/00001/</link>
       <pubDate>Sun, 18 Mar 2018 13:14:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/db/mysql/00001/</guid>
       <description>前提 # cat /etc/redhat-release CentOS Linux release 7.3.1611 (Core)  MySQLの設定変更 /etc/my.cnfにskip-grant-tablesを追加（パスワードなしでログインする）
 # vi /etc/my.cnf // ADD EOF &amp;quot;skip-grant-tables&amp;quot;  MySQLを使っているサービスを停止させる
 MySQLを再起動
@@ -881,22 +810,18 @@ MySQLを再起動
     </item>
     
     <item>
-      <title>結合テスト仕様書の作成</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/test/00001/</link>
+      <title>結合テスト</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/test/00001/</link>
       <pubDate>Thu, 08 Mar 2018 13:08:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/test/00001/</guid>
-      <description>テストプロセス テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
-https://qiita.com/kawasima/items/1fed574e7456edbad727
-テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計 テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。
-第三者が客観的にテストすることができるような仕様書であるべき。
-そのために、
-- 要求事項や設計を満たすかどうか - どうやって確認するのか - 結果はどうあるべきなのか - 誰がやっても迷わず同じことが可能か を明確に定義する。（＝テスト設計）
-機能と観点を明確にしていく。
-テスト設計の手順  テスト種別の一覧表を作成する デシジョンテーブル  デシジョンテーブル http://gihyo.jp/dev/serial/01/test_up/0005
-様々な入力条件に対して、どのように動作（出力）するのか決定する表のこと
-カルノー図と組み合わせるとさらに便利
-https://qiita.com/kawasima/items/98b5636db0172d9b5051</description>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/test/00001/</guid>
+      <description>テストプロセス  テストの世界標準には、ISO/IEC/IEEE 29119があり、テスト工程とテスト種別からテストプロセスが構成されている。
+https://qiita.com/kawasima/items/1fed574e7456edbad727  テスト工程    TEST Ja-NAME DESCRIPTION     UT 単体テスト システム内のコンポーネントをテストする   ITa 結合テストa システム内のコンポーネントを結合してテストする   ITa 結合テストb 他システム結合してテストする   ST システムテスト システム全体でテストする   UAT ユーザ受け入れテスト ユーザがテストする    テスト設計  テスト仕様書は、プロジェクト参画メンバーだけが理解できるようなものであってはならない。
+ 第三者が客観的にテストすることができるような仕様書であるべき。
+  そのために、
+- 要求事項や設計を満たすかどうか - どうやって確認するのか - 結果はどうあるべきなのか - 誰がやっても迷わず同じことが可能か  を明確に定義する。（＝テスト設計）
+ 機能と観点を明確にしていく。
+  テスト設計の手順  テスト種別の一覧表を作成する デシジョンテーブル  デシジョンテーブル  様々な入力条件に対して、どのように動作（出力）するのか決定する表のこと</description>
     </item>
     
     <item>
@@ -919,19 +844,6 @@ Java Platform    NAME MEANING REMARKS     Java SE (Java Platform, Standard Editi
     
     <item>
       <title></title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/communication/00002/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/communication/00002/</guid>
-      <description>A&amp;mdash; title: Speaker date: 2019-01-10T19:30:00+09:00 showDate: true
-tags: [&amp;ldquo;speaker&amp;rdquo;] Speaker CfP  Call for Proposals / Call for Paper 聞きたいのは”ドラマ”であって、”やったこと”ではない 開発している間に、何か壁にぶち当たることがあるはずなんです。それをどうやって乗り越えたのか、次はどうやったらぶち当たらずに済むのか トピックがなぜ必要なのかを伝えていない hoge hoge  Scalaライブラリ選定  非同期処理: akka monix other &amp;hellip; DBアクセス: scalikejdbc &amp;hellip; Slick &amp;hellip; DI airframe JSONライブラリ: argonaut-shapeless、circe、JSON4S、spray-json-shapeless
- アーキテクチャ 選定の話になってしまう？多言語でもそうじゃん
- 実際の現場で決めて言ったストーリーにドラマがあればいい
-  Scala 性能面  jvmじゃん？  Akka Test  ActorモデルのUnitTest どこまでやるの？が正確？ unit test全般？  Scalaを教える awaitしまくっている スピーカー入門 なせやるのか?  正しい使い方 OSSの存続に繋がる 技術への貢献度  なるには  テーマを決める CFPに応募する 先行結果 スライドを準備 練習 本番  伝えたいこと - 好きなライブラリ・ツールのプルリクの流れ - 透明性or失敗 - 個人のOSS</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://pureone-tcy.github.io/doc-site/posts/devops/docker/00003/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -941,53 +853,16 @@ tags: [&amp;ldquo;docker&amp;rdquo;] docker  namespace(名前空間)、c-group(�
     </item>
     
     <item>
-      <title>ECS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</guid>
-      <description>ECS    概念 説明     クラスタ EC2 インスタンス群   サービス タスクとクラスタ、ELB（ターゲットグループ）の紐付け   イメージ コンテナの集合（docker-compose.ymlのイメージ）    ベストプラクティス&amp;amp;アンチパターン https://www.slideshare.net/AmazonWebServicesJapan/aws-black-belt-online-seminar-2016-amazon-ec2-container-service</description>
-    </item>
-    
-    <item>
       <title>ELB</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</guid>
       <description> ELB  LBマネージドサービス 負荷分散 正常なインスタンスにリクエスト Auto Scaling  ALB (Application Load Balancer)  L7レイヤ ロードバラシング HTTP、HTTPSトラフィックを使用するWebアプリケーション用のLB  NLB (Network Load Balancer)  L4レイヤ ロードバラシング  CLB (Classic Load Balancer) SPOF  単一障害点をなくす
 改善点の例 NAT GW
  ElastiCasheのレプリケーション
  SESを用いる
-  ELB機能  EC2負荷分散 ヘルスチェック  何秒おきか、何回失敗したか  Auto Scaling  条件を決めて、配下のEC2の数を増減させる 2〜6台の範囲で 平均CPU使用率が70%を超えたら、2台、20%割ったら-2台 スケジュールでスケールもできる ELB自体もスケールする   hoge   ターゲットグループの設定  </description>
-    </item>
-    
-    <item>
-      <title>Kinesis</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</guid>
-      <description> https://qiita.com/crossroad0201/items/7509f8ecbc66d380e90e
-KCL (Kinesis Client Library)    </description>
-    </item>
-    
-    <item>
-      <title>Node.js</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>React.js</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/react/00001/</guid>
-      <description></description>
+  ELB機能  EC2負荷分散 ヘルスチェック  何秒おきか、何回失敗したか  Auto Scaling  条件を決めて、配下のEC2の数を増減させる 2〜6台の範囲で 平均CPU使用率が70%を超えたら、2台、20%割ったら-2台 スケジュールでスケールもできる ELB自体もスケールする   </description>
     </item>
     
     <item>

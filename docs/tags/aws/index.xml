@@ -13,10 +13,10 @@
     
     <item>
       <title>AWS と CircleCI で実現する DevOps</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</link>
       <pubDate>Wed, 13 Mar 2019 14:30:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/ci/00001/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/cicd/00001/</guid>
       <description>DepOpsとCI/CDの関係 by AWS DevOps(development operation)  無駄なサボトルネックを取り除くことで、ライフイクルを効率化し、高速化する つまり作業は全て自動化する
 1行のコードを変更したとして、通常デプロイにどれくらいの時間がかかる？ 再現性
 DevOps観点のアンチパターン 承認フローの追加（ダブルチェック、承認MTG）
@@ -35,31 +35,30 @@ Cloud9 EC2上にCloud9の環境を用意している
     
     <item>
       <title>EMR</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</link>
       <pubDate>Sat, 02 Mar 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00012/</guid>
-      <description> デザインパターン 一時的クラスタ  ジョブが実行している間だけ動作する 起動時間が短いため、コスト削減 運用コスト削減  永続的クラスタ  ジョブの実行に関係なく動作する 複数ジョブでデータ共有 一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある  決め手  データロード時間 処理時間 ジョブ数  ノード仕様 マスタノード コアノード ##
-Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</guid>
+      <description> デザインパターン 一時的クラスタ  ジョブが実行している間だけ動作する 起動時間が短いため、コスト削減 運用コスト削減  永続的クラスタ  ジョブの実行に関係なく動作する 複数ジョブでデータ共有 一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある  決め手  データロード時間 処理時間 ジョブ数  ノード仕様  TODO  Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
  巨大データをバッチ処理する並列分散処理基盤 集中管理型の分散システムで、HDFSとMapReduceの2つのコンポーネントにより、並列分散処理を実現するミドルウェア  HDFS Hadoop Distributed File System
  分散ファイルシステム 複数のサーバにファイルを分割して保持する そのため、巨大なファイルを保持することができる マスタースレーブ構成  複数のシステムが動作する環境下において、制御する側（マスター）と、制御される側（スレーブ）に役割を分担して構成される方式  入力ファイルはブロックサイズで分割される（分割されたものをブロックという）  MapReduce  分散処理フレームワーク マスタースレーブ構成  1台のJobTracker、複数台のTaskTracker   </description>
     </item>
     
     <item>
       <title>Lambda</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</link>
       <pubDate>Mon, 18 Feb 2019 22:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00011/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</guid>
       <description>サーバレスアーキテクチャの３原則  オンデマンドでサービス実行するために、コンピューティング環境を使う 目的が１つでステートレスな関数を書く プッシュベースのイベント駆動パイブラインを設計する 強力なフロントエンドを作る サードパーティサービスを活用する  サーバレスアーキテクチャのユースケース  S3にファイルを保存し、SQSでキューにデータをプッシュし、Lambda関数を起動 データ処理、変換、操作、トランスコード CSV、Json、XMLファイルの処理、データ照合、集計、イメージサイズの変更、フォーマット変換 Kinesisと連携したリアルタイムデータ処理  シャード数と関数の数が同じであり、シャードごとに関数が１つずつある  レガシーAPIプロキシ Blueprint(設計図)というサンプル付きのテンプレート Slackなどのボット開発 Amazon Echo  アーキテクチャ  バックエンドと、グルー（ワークフローを実行するために組み立てられるパイブライン処理） この２つは、相互補完が可能（組み合わせにて使う） Computer-as-back-end アーキテクチャ フロントエンドがセキュアに通信できるのであれば、分厚いフロントエンドとサードパーティサービスを活用し、イベント駆動パイブラインではなく、サーバレスバックエンドが使われる範囲を極力減らす（ナノ関数ともいう）  A Clud Guru  フロントエンドは、AngularJSで構築され、Netlifyによってホスティングされている  Amazon S3と、Amazon CloudFrontによるグローバルなコンテンツデリバリーネットワークに変更もできる  登録、認証機能のためにAuth0を使っている  フロントエンドがFirebaseなど他のサービスと直接セキュアに通信するための委任トークンを作る  Firebase（リアルタイムデータベース）  クライアントは、それぞれウェブソケットを使ってFirebaseと接続し、ほぼリアルタイムでFirebaseから更新情報を受け取る   Instant  TODO  ハイブリッドサーバレスとレガシーAPI  TODO  GraphQL  複数のラウンドトリップ、オーバーフェッチ、バージョニングに弱点のあるRESTに替わるものとして設計された（2012年〜2015年 Facebook社） 単一のエンドポイントで、宣言的な階層構造でクエリを実行する方法を提供している  １つのGraphQL Lambda関数だけで複数のデータソースにクエリを送ることが可能  AWS AppSync  https://github.</description>
     </item>
     
     <item>
       <title>AWS Batch</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</link>
       <pubDate>Thu, 17 Jan 2019 17:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00010/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</guid>
       <description>Component  VPC内で動作  Jobs  AWS Batchに送信する作業単位 EC2上で動作するコンテナ化されたアプリケーションとして、AWS Batchによって実行される作業単位 必ずJob Definitionsを参照する コンテナイメージ、コマンド、パラメータを参照する Job Definitionsのパラメータはオーバーライドが可能 Linux exe file, Shell Script, Docker Container Image
 属性 雛形のJob Definitions
  実行先が示されたJob Queues
@@ -80,68 +79,12 @@ Hadoop https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/
     </item>
     
     <item>
-      <title>S3</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</link>
-      <pubDate>Fri, 14 Dec 2018 16:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00009/</guid>
-      <description> AWS CLIを使って、S3のデータをダウンロードする $ aws s3 cp --region ap-northeast-1 s3://バケット名/ . --recursive  </description>
-    </item>
-    
-    <item>
-      <title>RDS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</link>
-      <pubDate>Wed, 28 Nov 2018 14:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00008/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>VPC EC2 Apache PHP MySQL を使ったWebアプリケーション構築</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</link>
       <pubDate>Tue, 27 Nov 2018 00:20:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00003/</guid>
       <description> OS  Amazon Linux  ホスト名の変更 $ sudo vi /etc/sysconfig/network HOSTNAME=変更するホスト名 $ sudo vi /etc/hosts 127.0.0.1 変更するホスト名 localhost $ sudo reboot  言語設定 $ sudo vi /etc/sysconfig/i18n LANG=ja_JP.UTF-8  時刻設定 $ sudo cp /usr/share/zoneinfo/Japan /etc/localtime $ sudo vi /etc/sysconfig/clock ZONE=&amp;quot;Asia/Tokyo&amp;quot; $ date  Apache PHP MySQL Git インストール $ sudo yum update -y $ sudo yum install -y httpd24 $ sudo yum install -y php70 php70-mbstring php70-pdo php70-mysqlnd $ sudo yum install -y mysql $ sudo yum install -y git  </description>
-    </item>
-    
-    <item>
-      <title>CodeDeploy</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</link>
-      <pubDate>Mon, 19 Nov 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</guid>
-      <description>##</description>
-    </item>
-    
-    <item>
-      <title>AWS CloudFormation</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</link>
-      <pubDate>Mon, 12 Nov 2018 14:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00004/</guid>
-      <description>Flow  Change AWS CLI Profile Create CloudFormation Template Create Stack  Change AWS CLI Profile  管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する (シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す) ローカルのAWSプロファイルを更新する  $ aws configure --profile pureone-worker AWS Access Key ID [None]:アクセスキー AWS Secret Access Key [None]:シークレットアクセスキー Default region name [None]:ap-northeast-1 Default output format [None]:json   Create CloudFormation Template https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
-  Create Stack  テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ  Template  AWSリソース構成を YAML or JSON で記載したドキュメント  Section  Paramters  実行時に埋め込む変数値  Mappings  実行環境によって変わる値をMap形式で定義  Resource</description>
-    </item>
-    
-    <item>
-      <title>ECS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</link>
-      <pubDate>Thu, 08 Nov 2018 14:50:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00005/</guid>
-      <description> ECR (Amazon Elastic Container Registry)  完全マネージド型の Docker コンテナレジストリ  ECS (Amazon Elastic Container Service) Service  実態は複数のdocker containerの集合体 以下を管理するもの  どんなコンテナを起動するのか 何個起動するのか リクエスト分散するのか   Task  docker container をグループ化するもの  </description>
-    </item>
-    
-    <item>
-      <title>Kinesis</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</link>
-      <pubDate>Mon, 05 Nov 2018 15:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00006/</guid>
-      <description> https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb
-Kinesis $ export AWS_DEFAULT_PROFILE=&#39;pureone-worker&#39; $ aws kinesis create-stream --stream-name kinesis-test-stream --shard-count 1 $ aws kinesis describe-stream --stream-name kinesis-test-stream $ aws kinesis put-record --stream-name kinesis-test-stream --data hogehoge_$RANDOM --partition-key $RANDOM  Scala </description>
     </item>
     
     <item>
@@ -172,35 +115,16 @@ $ cat .</description>
     </item>
     
     <item>
-      <title>ECS</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00014/</guid>
-      <description>ECS    概念 説明     クラスタ EC2 インスタンス群   サービス タスクとクラスタ、ELB（ターゲットグループ）の紐付け   イメージ コンテナの集合（docker-compose.ymlのイメージ）    ベストプラクティス&amp;amp;アンチパターン https://www.slideshare.net/AmazonWebServicesJapan/aws-black-belt-online-seminar-2016-amazon-ec2-container-service</description>
-    </item>
-    
-    <item>
       <title>ELB</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00015/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00007/</guid>
       <description> ELB  LBマネージドサービス 負荷分散 正常なインスタンスにリクエスト Auto Scaling  ALB (Application Load Balancer)  L7レイヤ ロードバラシング HTTP、HTTPSトラフィックを使用するWebアプリケーション用のLB  NLB (Network Load Balancer)  L4レイヤ ロードバラシング  CLB (Classic Load Balancer) SPOF  単一障害点をなくす
 改善点の例 NAT GW
  ElastiCasheのレプリケーション
  SESを用いる
-  ELB機能  EC2負荷分散 ヘルスチェック  何秒おきか、何回失敗したか  Auto Scaling  条件を決めて、配下のEC2の数を増減させる 2〜6台の範囲で 平均CPU使用率が70%を超えたら、2台、20%割ったら-2台 スケジュールでスケールもできる ELB自体もスケールする   hoge   ターゲットグループの設定  </description>
-    </item>
-    
-    <item>
-      <title>Kinesis</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/devops/aws/00013/</guid>
-      <description> https://qiita.com/crossroad0201/items/7509f8ecbc66d380e90e
-KCL (Kinesis Client Library)    </description>
+  ELB機能  EC2負荷分散 ヘルスチェック  何秒おきか、何回失敗したか  Auto Scaling  条件を決めて、配下のEC2の数を増減させる 2〜6台の範囲で 平均CPU使用率が70%を超えたら、2台、20%割ったら-2台 スケジュールでスケールもできる ELB自体もスケールする   </description>
     </item>
     
   </channel>

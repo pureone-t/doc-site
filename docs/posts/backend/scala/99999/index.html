@@ -49,14 +49,14 @@
     
     <title>
         
-        Scala
+        Scala 変位指定
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Scala</div>
+        <div class="section" id="title">Scala 変位指定</div>
 
         
 <div class="section" id="content">
@@ -86,26 +86,17 @@
 </ul>
 
 <p>例） クラス定義時に何の型が入るか不明であるため、型引数としてTを定義</p>
-
-<pre><code>class Glass[T](var content: T) {
-  def put(t: T): Unit = { content = t }
-  def get: T = content
-}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">](</span><span style="color:#66d9ef">var</span> content<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> put<span style="color:#f92672">(</span>t<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> content <span style="color:#66d9ef">=</span> t <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">def</span> get<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span> <span style="color:#f92672">=</span> content
+<span style="color:#f92672">}</span></code></pre></div>
 <p>型を定義する</p>
-
-<pre><code>class Drink
-class Juice extends Drink
-class Water extends Drink
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Drink</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Juice</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Drink</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Water</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Drink</span></code></pre></div>
 <p>インスタンス化するときに、型を決定する</p>
-
-<pre><code>val waterGlass = new Glass[Water](new Water)
-val juiceGlass = new Glass[Juice](new Juice)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> waterGlass <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Water</span><span style="color:#f92672">](</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Water</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">val</span> juiceGlass <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Juice</span><span style="color:#f92672">](</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Juice</span><span style="color:#f92672">)</span></code></pre></div>
 <h2 id="サブタイプ">サブタイプ</h2>
 
 <ul>
@@ -113,21 +104,15 @@ val juiceGlass = new Glass[Juice](new Juice)
 </ul>
 
 <p>例）</p>
-
-<pre><code>val drink: Drink = new Juice
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> drink<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Drink</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Juice</span></code></pre></div>
 <h2 id="非変">非変</h2>
 
 <ul>
 <li>型パラメータ<code>Glass[T]</code>は、デフォルトの状態では、サブタイプの関係が存在しない</li>
 <li>つまり<code>Water</code>が<code>Drink</code>のサブタイプであっても、<code>Glass[Water]</code>型を<code>Glass[Drink]</code>型にバインドできない</li>
 </ul>
-
-<pre><code>// コンパイルエラー
-val glassDrink: Glass[Drink] = new Glass[Water](new Water)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// コンパイルエラー
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> glassDrink<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Drink</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Water</span><span style="color:#f92672">](</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Water</span><span style="color:#f92672">)</span></code></pre></div>
 <p>これを非変といい、Scalaではデフォルト</p>
 
 <h2 id="共変">共変</h2>
@@ -136,25 +121,16 @@ val glassDrink: Glass[Drink] = new Glass[Water](new Water)
 <li>型パラメータで定義したクラスにもサブタイプの関係を利用したい場合もある</li>
 <li>その場合共変[+T]することで、サブタイプの関係を型パラメータで定義したクラスに使うことができる</li>
 </ul>
-
-<pre><code>class Glass[+T](var content: T) {
-  def put(t: T): Unit = { content = t }
-  def get: T = content
-}
-</code></pre>
-
-<pre><code>val glassDrink: Glass[Drink] = new Glass[Water](new Water)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">+T</span><span style="color:#f92672">](</span><span style="color:#66d9ef">var</span> content<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> put<span style="color:#f92672">(</span>t<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> content <span style="color:#66d9ef">=</span> t <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">def</span> get<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span> <span style="color:#f92672">=</span> content
+<span style="color:#f92672">}</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> glassDrink<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Drink</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Water</span><span style="color:#f92672">](</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Water</span><span style="color:#f92672">)</span></code></pre></div>
 <h2 id="反変">反変</h2>
 
 <ul>
 <li>共変の逆</li>
 </ul>
-
-<pre><code>val glassDrink: Glass[Water] = new Glass[Drink](new Drink)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> glassDrink<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Water</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Glass</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Drink</span><span style="color:#f92672">](</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Drink</span><span style="color:#f92672">)</span></code></pre></div>
 <h2 id="変異指定">変異指定</h2>
 
 <ul>
@@ -174,10 +150,7 @@ Any
 </ul>
 
 <h3 id="例-listは共変">例）Listは共変</h3>
-
-<pre><code>val list: List[Any] = List[Int](1,2,3)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> list<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Any</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">](</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">)</span></code></pre></div>
 <ul>
 <li><code>List[Int]</code>を<code>List[Any]</code>にバインドできる</li>
 </ul>
@@ -188,33 +161,21 @@ Any
 <li>BはAのスーパー型</li>
 <li>結果型<code>List[B]</code>は、Listがインスタンス化した要素を返すか、汎化した要素のListを返すことを表している</li>
 </ul>
-
-<pre><code>sealed abstract class List[+A] extends AbstractSeq[A]
-// 省略
-  def ::[B &gt;: A](x: B): List[B] = new scala.collection.immutable.::(x, this)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">+A</span><span style="color:#f92672">]</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">AbstractSeq</span><span style="color:#f92672">[</span><span style="color:#66d9ef">A</span><span style="color:#f92672">]</span>
+<span style="color:#75715e">// 省略
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">def</span> <span style="color:#66d9ef">:</span><span style="color:#66d9ef">:</span><span style="color:#f92672">[</span><span style="color:#66d9ef">B</span> <span style="color:#66d9ef">&gt;:</span> <span style="color:#66d9ef">A</span><span style="color:#f92672">](</span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">B</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">B</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> scala<span style="color:#f92672">.</span>collection<span style="color:#f92672">.</span>immutable<span style="color:#f92672">.</span><span style="color:#66d9ef">:</span><span style="color:#66d9ef">:</span><span style="color:#f92672">(</span><span style="color:#66d9ef">x</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">)</span></code></pre></div>
 <h3 id="例-同じ要素-int-の場合には-同じ要素-int-の-list-型が作成される">例）同じ要素（<code>Int</code>）の場合には、同じ要素（<code>Int</code>）の<code>List</code>型が作成される</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> list <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span>
+list<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span>
 
-<pre><code>scala&gt; val list = List(2,3,4)
-list: List[Int] = List(2,3,4)
-
-scala&gt; val listInt = 1 :: list
-listInt: List[Int] = List(1,2,3,4)
-</code></pre>
-
+scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> listInt <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">:</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">list</span>
+listInt<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span></code></pre></div>
 <h3 id="例-double-型を要素に追加する場合は-int-double-のスーパータイプである-anyval-型の-list-が作られる">例）<code>Double</code>型を要素に追加する場合は、<code>Int、Double</code>のスーパータイプである<code>AnyVal</code>型の<code>List</code>が作られる</h3>
-
-<pre><code>scala&gt; val listAnyVal = 0.5 :: listInt
-listAnyVal: List[AnyVal] = List(0.5,1,2,3,4)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> listAnyVal <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">0.5</span> <span style="color:#66d9ef">:</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">listInt</span>
+listAnyVal<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">AnyVal</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0.5</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span></code></pre></div>
 <h3 id="例-string-型を要素に追加する場合は-int-string-のスーパータイプである-any-型の-list-が作られる">例）<code>String</code>型を要素に追加する場合は、<code>Int、String</code>のスーパータイプである<code>Any</code>型の<code>List</code>が作られる</h3>
-
-<pre><code>scala&gt; val listAny = &quot;Hello&quot; :: listInt
-listAny: List[Any] = List(Hello,1,2,3,4)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> listAny <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span> <span style="color:#66d9ef">:</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">listInt</span>
+listAny<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">List</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Any</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span></code></pre></div>
 <ul>
 <li>通常引数の位置に共変型パラメータが入ると型安全が壊れる可能性があり、このまま型パラメータAを引数に持っていくとコンパイラに怒られる</li>
 <li>しかし、immutableなクラスであれば型は壊れない</li>
@@ -227,19 +188,16 @@ listAny: List[Any] = List(Hello,1,2,3,4)
 </ul>
 
 <p>例）仮に共変がOKだった場合に、<code>Water</code>型が<code>Juice</code>型に変わってしまう例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> arrayWater<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Water</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Water</span><span style="color:#f92672">,</span><span style="color:#a6e22e">Water</span><span style="color:#f92672">)</span>
 
-<pre><code>val arrayWater: Array[Water] = Array(Water,Water)
+<span style="color:#66d9ef">val</span> arrayDrink<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Drink</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> arrayWater
 
-val arrayDrink: Array[Drink] = arrayWater
-
-arrayDrink(0) = Juice
-</code></pre>
-
+arrayDrink<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Juice</span></code></pre></div>
 <h2 id="反変のメリット">反変のメリット</h2>
 
 <ul>
 <li>FunctionN（関数を定義するtraitで、通常はシンタックスシュガーを使う）</li>
-<li></li>
+<li>TODO</li>
 </ul>
 
 </div>

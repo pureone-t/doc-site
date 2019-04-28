@@ -13,28 +13,26 @@
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>
     
     <item>
       <title>Atom</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00001/</link>
       <pubDate>Sat, 11 Aug 2018 03:10:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00001/</guid>
-      <description>プログラミング用フォントの導入 RectyDiminished
-Atomインストール https://atom.io/
-Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00001/</guid>
+      <description>前提  プログラミング用フォントの導入
+RectyDiminished  Atomインストール  https://atom.io/
+  Editor設定 Atom -&amp;gt; Preference -&amp;gt; Editor - Font Family : Ricty Diminished
 - Show invisibles : chek on
 - Soft Wrap : chek on
-テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー Atomメニュー -&amp;gt; keymap
-&#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  dotinstall_pane alt + shift + d（ドットインストールタブを表示
-alt + shift + enter（再生）</description>
+テーマ設定  UI Theme : Atom Light Syntax Theme : Atom Light  Vim  vim-mode-plu ex-mode  ショートカットキー  Atomメニュー -&amp;gt; keymap  &#39;atom-text-editor&#39;: &#39;alt-shift-i&#39;: &#39;editor:auto-indent&#39;   「key binding resolver」 入力したショートカットキーがことで使われているかフッターに表示してくれる。  数式用  markdown-preview-plus  hugo mathjax  http://easy-copy-mathjax.</description>
     </item>
     
   </channel>

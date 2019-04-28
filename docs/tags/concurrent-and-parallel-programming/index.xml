@@ -13,12 +13,12 @@
     
     <item>
       <title>ブロッキングとノンブロッキング</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00004/</link>
       <pubDate>Mon, 25 Mar 2019 11:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00004/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00004/</guid>
       <description> https://blog.takanabe.tokyo/2015/03/26/240/
-定義 ブロッキングI/O  ネットワークとして通信先の準備をする IOが開始できるまで待機する コネクションを開くまでの待機? ブロッキングは、全ての処理は停止する  同期I/O  実際にデータのI/Oを行う IOが終わるまで待機する コネクションを使って処理するまで待機?  ノンブロッキングI/O    非同期I/O    </description>
+定義 ブロッキングI/O  ネットワークとして通信先の準備をする IOが開始できるまで待機する コネクションを開くまでの待機? ブロッキングは、全ての処理は停止する  同期I/O  実際にデータのI/Oを行う IOが終わるまで待機する コネクションを使って処理するまで待機?  ノンブロッキングI/O  TODO  非同期I/O  TODO  </description>
     </item>
     
   </channel>

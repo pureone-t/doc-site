@@ -6,10 +6,19 @@
     <description>Recent content in Scala on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Mar 2019 15:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/scala/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essential Scala</title>
+      <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00012/</link>
+      <pubDate>Fri, 26 Apr 2019 17:00:00 +0900</pubDate>
+      
+      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00012/</guid>
+      <description>2 式、型、値  Scalaのメンタルモデルにおいて、式、型、値が基本的な構成要素  式  式は値に評価される 式は型をもつ プログラムテキストでコンパイル時に存在している プログラムテキストの構成要素としては、定義や文も存在する  型  プログラム上の制限を表現する  値が一貫性をもって解釈されるようにプログラム記述を制約するもの  コンパイル時に存在し、チェックする 型消去によって実行時には存在しない  scala&amp;gt; :type 2 Int 値  メモリに保存した情報で実行時にのみ存在している 実行しているプログラムが操作の対象 Scalaの値は全てオブジェクト  評価  左から右へ評価される  scala&amp;gt; &amp;#34;Hello World!&amp;#34; res0: String = Hello World! scala&amp;gt; &amp;#34;Hello World!&amp;#34;.toUpperCase res1: String = HELLO WORLD! コンパイル  コンパイル時には文法と型を検証  オブジェクト  データと操作（メソッド）の組み合わせ  中置記法  引数が1つのメソッドは中置記法にできる  リテラル式  プログラム実行前のプログラムテキストにおける表現 評価された値と混同しないこと： 値は プログラムを実行した後のメモリ上における表現 全てのリテラル式は型をもち、値に評価される  オブジェクトリテラル  記述する際は、式ではなく宣言を利用する 空のオブジェクトを宣言する例  値に評価されないが Testという名前に「空のオブジェクト」という値がバインドされる Testを評価すると、Test.</description>
+    </item>
     
     <item>
       <title>Apache Spark</title>
@@ -22,17 +31,17 @@
     </item>
     
     <item>
-      <title>Scala</title>
+      <title>Scala 変位指定</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</link>
       <pubDate>Mon, 25 Feb 2019 12:30:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/99999/</guid>
       <description>https://speakerdeck.com/taketora/bian-wei-zhi-ding-nituitewakariyasukujie-shuo-sasetekudasai-a9b35ffb-c910-493e-a9f0-de09f6487918?slide=32
 Scala型パラメータ はじめに  クラス、インタフェース定義時に何の型が入るか決まっていないがインスタンス化する際に型を決定すること  例） クラス定義時に何の型が入るか不明であるため、型引数としてTを定義
-class Glass[T](var content: T) { def put(t: T): Unit = { content = t } def get: T = content }  型を定義する
-class Drink class Juice extends Drink class Water extends Drink  インスタンス化するときに、型を決定する
-val waterGlass = new Glass[Water](new Water) val juiceGlass = new Glass[Juice](new Juice)  サブタイプ  スーパークラスにサブクラスのインスタンスをバインドできる機能のこと  例）
-val drink: Drink = new Juice  非変  型パラメータGlass[T]は、デフォルトの状態では、サブタイプの関係が存在しない つまりWaterがDrinkのサブタイプであっても、Glass[Water]型をGlass[Drink]型にバインドできない  // コンパイルエラー val glassDrink: Glass[Drink] = new Glass[Water](new Water)  これを非変といい、Scalaではデフォルト</description>
+class Glass[T](var content: T) { def put(t: T): Unit = { content = t } def get: T = content } 型を定義する
+class Drink class Juice extends Drink class Water extends Drink インスタンス化するときに、型を決定する
+val waterGlass = new Glass[Water](new Water) val juiceGlass = new Glass[Juice](new Juice) サブタイプ  スーパークラスにサブクラスのインスタンスをバインドできる機能のこと  例）
+val drink: Drink = new Juice 非変  型パラメータGlass[T]は、デフォルトの状態では、サブタイプの関係が存在しない つまりWaterがDrinkのサブタイプであっても、Glass[Water]型をGlass[Drink]型にバインドできない  // コンパイルエラー val glassDrink: Glass[Drink] = new Glass[Water](new Water) これを非変といい、Scalaではデフォルト</description>
     </item>
     
     <item>
@@ -65,7 +74,7 @@ Set#map 遅い
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00009/</guid>
       <description>関数型プログラミングにおける副作用の除去は、結果型に副作用の元となるデータを返す 入力Aに対する出力Bを返す関数 f: A =&amp;gt; B は、内部・外部プロセスの変化に影響されない（＝副作用がない） buyCoffeの例では、請求処理という副作用を出力から排除すること
-参照透過性  同じ条件を与えれば必ず同じ結果が得られる 他のいかなる機能の結果にも影響を与えない 関数の結果型に従い、実行する全てのことがその戻り値によって表されるという不変条件 プログラムによる等式推論(equational reasoning)が可能  def add1(x: Int, y: Int): Int = x + y  var x: Int = 1 def add2(y: Int): Int = x + y  参照透過性の確認フロー 例１ val x = &amp;quot;Hello World&amp;quot; val r1 = x.reverse // dlroW olleH val r2 = x.reverse // dlroW olleH   r1、r2は同じ xをxが参照している式（その定義）と置き換える  val r1 = &amp;quot;Hello World&amp;quot;.</description>
+第2章 Scala関数型プログラミングの準備 参照透過性  同じ条件を与えれば必ず同じ結果が得られる 他のいかなる機能の結果にも影響を与えない 関数の結果型に従い、実行する全てのことがその戻り値によって表されるという不変条件 プログラムによる等式推論(equational reasoning)が可能  def add1(x: Int, y: Int): Int = x + y  var x: Int = 1 def add2(y: Int): Int = x + y  参照透過性の確認フロー 例１ val x = &amp;quot;Hello World&amp;quot; val r1 = x.reverse // dlroW olleH val r2 = x.reverse // dlroW olleH   r1、r2は同じ xをxが参照している式（その定義）と置き換える  val r1 = &amp;quot;Hello World&amp;quot;.</description>
     </item>
     
     <item>
@@ -87,15 +96,6 @@ implicit parameter  クラス定義とメソッドの実装を分離する 既�
       <guid>https://pureone-tcy.github.io/doc-site/posts/backend/scala/00004/</guid>
       <description> 参考スライド http://gakuzzzz.github.io/slides/error_handling_practice/#24
 NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } catch { case NonFatal(e) }   </description>
-    </item>
-    
-    <item>
-      <title>akka-stream</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</link>
-      <pubDate>Tue, 06 Nov 2018 16:00:00 +0900</pubDate>
-      
-      <guid>https://pureone-tcy.github.io/doc-site/posts/backend/akka/00003/</guid>
-      <description> akka-stream </description>
     </item>
     
     <item>
@@ -129,10 +129,10 @@ NonFatal  捕捉しない方がイイ例外を捕捉しない Scala try { // } c
     
     <item>
       <title>Atom &#43; ensime で Scala 開発環境を構築する</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</link>
       <pubDate>Wed, 17 Oct 2018 11:50:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/editor/00002/</guid>
+      <guid>https://pureone-tcy.github.io/doc-site/posts/other/editor/00002/</guid>
       <description> Atom Editor パッケージのインストール  language-scala Ensime setting -&amp;gt; Sbt Exec = /usr/local/bin/sbt  sbtのプラグイン設定 $ vi ~/.sbt/1.0/plugins/plugins.sbt addSbtPlugin(&amp;quot;org.ensime&amp;quot; % &amp;quot;sbt-ensime&amp;quot; % &amp;quot;2.5.1&amp;quot;)  global設定の追加 $ vi ~/.sbt/1.0/global.sbt import org.ensime.EnsimeKeys._ ensimeIgnoreMissingDirectories := true  ローカルプロジェクトより設定を読み込む プロジェクトのルートで以下を実行
 $ cd ~/PROJECT_ROOT $ sbt ensimeConfig  ensime start  プロジェクトを開いて、 command + shift + p command + shift + p ensime start  エラーが発生した場合  ensime パッケージを Atom からアンインストール $ apm install ensime/ensime-atom Atom 再起動 プロジェクトを開いて、 command + shift + p ensime start  </description>
     </item>

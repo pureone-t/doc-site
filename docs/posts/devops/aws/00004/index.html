@@ -49,18 +49,18 @@
     
     <title>
         
-        AWS CloudFormation
+        AWS Batch
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">AWS CloudFormation</div>
+        <div class="section" id="title">AWS Batch</div>
 
         
 <div class="section" id="content">
-    2018-11-12 (Mon) &#183; 78 words
+    2019-01-17 (Thu) &#183; 60 words
     
     <div class="tag-container">
         
@@ -75,96 +75,88 @@
     <hr/>
     
 
-<h1 id="flow">Flow</h1>
+<h1 id="component">Component</h1>
 
 <ul>
-<li>Change AWS CLI Profile</li>
-<li>Create CloudFormation Template</li>
-<li>Create Stack</li>
+<li>VPC内で動作</li>
 </ul>
 
-<h1 id="change-aws-cli-profile">Change AWS CLI Profile</h1>
+<h2 id="jobs">Jobs</h2>
 
 <ul>
-<li>管理コンソールより(root)、認証情報からIAMユーザのアクセスキーとシークレットアクセスキーを取得する
-(シークレットアクセスキーは、アクセスキーの生成時に一度しか表示されるないため、紛失した場合は、再度アクセスキーを取得し直す)</li>
-<li>ローカルのAWSプロファイルを更新する
-<code>
-$ aws configure --profile pureone-worker
-AWS Access Key ID [None]:アクセスキー
-AWS Secret Access Key [None]:シークレットアクセスキー
-Default region name [None]:ap-northeast-1
-Default output format [None]:json
-</code></li>
+<li>AWS Batchに送信する作業単位</li>
+<li>EC2上で動作するコンテナ化されたアプリケーションとして、AWS Batchによって実行される作業単位</li>
+<li>必ず<code>Job Definitions</code>を参照する</li>
+<li>コンテナイメージ、コマンド、パラメータを参照する</li>
+<li><code>Job Definitions</code>のパラメータはオーバーライドが可能</li>
+
+<li><p>Linux exe file, Shell Script, Docker Container Image</p>
+
+<h3 id="属性">属性</h3></li>
+
+<li><p>雛形の<code>Job Definitions</code></p></li>
+
+<li><p>実行先が示された<code>Job Queues</code></p></li>
+
+<li><p>実行コマンド</p></li>
+
+<li><p>vCPUとメモリ要件</p></li>
 </ul>
 
-<h1 id="create-cloudformation-template">Create CloudFormation Template</h1>
-
-<p><a href="https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html</a></p>
-
-<pre><code>
-</code></pre>
-
-<h1 id="create-stack">Create Stack</h1>
+<h2 id="job-queuses">Job Queuses</h2>
 
 <ul>
-<li>テンプレートとスタックは、オブジェクト指向でいうところの、クラスとインスタンスに近いイメージ</li>
+<li><p>JobのQueuesの待ち行列</p>
+
+<h3 id="属性-1">属性</h3></li>
+
+<li><p>Jobのブライオリティ(整数の値が小さい方が優先)</p></li>
+
+<li><p>実行先のCompute Envrionment</p></li>
 </ul>
 
-<h1 id="template">Template</h1>
+<h2 id="jobdefinitions">JobDefinitions</h2>
 
 <ul>
-<li>AWSリソース構成を YAML or JSON で記載したドキュメント</li>
+<li><p>jobのテンプレート</p>
+
+<h3 id="属性-2">属性</h3></li>
+
+<li><p>IAMロール</p></li>
+
+<li><p>コンテナイメージ</p></li>
+
+<li><p>実行するコマンド</p></li>
+
+<li><p>vCPUとメモリ要件</p></li>
+
+<li><p>ボリュームとマウントポイント</p></li>
+
+<li><p>環境変数</p></li>
 </ul>
 
-<h2 id="section">Section</h2>
+<h2 id="compute-environments">Compute Environments</h2>
 
 <ul>
-<li>Paramters
+<li><p>jobの実行環境</p>
 
-<ul>
-<li>実行時に埋め込む変数値</li>
-</ul></li>
-<li>Mappings
+<h3 id="属性-3">属性</h3></li>
 
-<ul>
-<li>実行環境によって変わる値をMap形式で定義</li>
-</ul></li>
+<li><p>IAM Role</p></li>
 
-<li><p>Resource</p>
+<li><p>EC2 Key pair</p></li>
 
-<ul>
-<li>AWSリソース群を定義する</li>
-</ul></li>
+<li><p>Provisioning Model</p></li>
 
-<li><p>組み込み関数</p>
+<li><p>Instance type</p></li>
 
-<ul>
-<li>Ref 他の要素の参照</li>
-<li>FindInMap</li>
-</ul></li>
+<li><p>vCPU数(最小、最大、希望の数)</p></li>
 
-<li><p>擬似パラメータ</p>
+<li><p>Networking(VPC、subnet、security、group)</p></li>
 
-<ul>
-<li>AWS::Region 汎用性</li>
-</ul></li>
-</ul>
+<li><p>実行先のコンピューと環境</p></li>
 
-<h1 id="stack">Stack</h1>
-
-<ul>
-<li><p>テンプレートから自動構築されたAWSリソースの集合</p></li>
-
-<li><p>組み込み関数を使って環境に依存しないテンプレートを目指す</p></li>
-
-<li><p>リソース追加・変更は必ず CloudFormation で行う</p></li>
-
-<li><p>テンプレートをバージョン管理する</p></li>
-
-<li><p>システムの規模やライフサイクルによってテンプレートを分割する</p></li>
-
-<li><p>JSON or YAML</p></li>
+<li><p>EC2タグ</p></li>
 </ul>
 
 </div>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="doc site by pureone-tcy.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://pureone-tcy.github.io/doc-site/">
+
+<meta name="twitter:image" content="https://pureone-tcy.github.io/doc-site/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="doc site">
+<meta name="twitter:description" property="og:description" itemprop="description" content="doc site by pureone-tcy.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://pureone-tcy.github.io/doc-site/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://pureone-tcy.github.io/doc-site/tn.png">
+
+<link rel="shortcut icon" href="https://pureone-tcy.github.io/doc-site/favicon.ico" id="favicon">
+<link rel="stylesheet" href="https://pureone-tcy.github.io/doc-site/css/style.css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+
+
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        DDD
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">DDD</div>
+
+        
+<div class="section" id="content">
+    2019-01-25 (Fri) &#183; 54 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://pureone-tcy.github.io/doc-site/tags/ddd">
+                DDD
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="ドメイン駆動設計-ddd">ドメイン駆動設計(DDD)</h1>
+
+<p><a href="https://www.slideshare.net/TakuyaKitamura1/ddd-29003356">https://www.slideshare.net/TakuyaKitamura1/ddd-29003356</a>
+- モデルを中心とした設計・開発手法
+- ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する
+- ドメインモデルをユビキタス言語として共有化
+- ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む</p>
+
+<h2 id="モデルの構成要素">モデルの構成要素</h2>
+
+<h3 id="モデルの表現">モデルの表現</h3>
+
+<ul>
+<li>Entities</li>
+<li>Value Object</li>
+<li>Service</li>
+</ul>
+
+<h3 id="モデルのライフサイクル">モデルのライフサイクル</h3>
+
+<ul>
+<li>Aggregates</li>
+<li>Factories</li>
+<li>Repositories</li>
+</ul>
+
+<h2 id="entities">Entities</h2>
+
+<h3 id="抽象的な連続性と同一性">抽象的な連続性と同一性</h3>
+
+<ul>
+<li>固有のIDを持つ</li>
+<li>分散環境、永続化前後でも追跡可能</li>
+</ul>
+
+<h3 id="属性-状態-に左右されない同一性">属性(状態)に左右されない同一性</h3>
+
+<ul>
+<li>連続性を保証するIDは、オブジェクトの属性値に左右されない</li>
+<li>属性値が全て同じでもIDが異なれば別のもの</li>
+<li>属性値が異なっていてもIDが同じであれば同じもの</li>
+<li>同一性の判断とライフサイクルは、モデル毎に個別の設計にする</li>
+</ul>
+
+<h3 id="具体例">具体例</h3>
+
+<ul>
+<li>顧客、口座、注文、在庫&hellip;etc</li>
+</ul>
+
+<h2 id="value-objects">Value Objects</h2>
+
+<h3 id="連続性と同一性が不要なオブジェクト">連続性と同一性が不要なオブジェクト</h3>
+
+<ul>
+<li>属性がどんな値であるかに焦点を置かれるもの</li>
+<li>一過性のことも多く、操作のために生成されては破棄される</li>
+<li>状態を変更できないもの(immutable)</li>
+</ul>
+
+<h3 id="他の何らかの状態を記述する属性となる">他の何らかの状態を記述する属性となる</h3>
+
+<ul>
+<li>何であるかだけが問題となり、誰であるか、あるいはどれであるかは問われないような設計の要素</li>
+<li>エンティティの属性として使用される</li>
+</ul>
+
+<h3 id="具体例-1">具体例</h3>
+
+<ul>
+<li>色、量、地域、経路&hellip;etc</li>
+</ul>
+
+<h2 id="service-todo">Service TODO</h2>
+
+<h3 id="entity-や-value-object-には不自然な操作">Entity や Value　Object には不自然な操作</h3>
+
+<ul>
+<li>操作であり状態を持たない</li>
+</ul>
+
+<h3 id="entityとvalueobjectのコントローラー">EntityとValueObjectのコントローラー</h3>
+
+<h3 id="サービスはドメイン層のものだけではない">サービスはドメイン層のものだけではない</h3>
+
+<h2 id="todo">todo</h2>
+
+<p><a href="https://little-hands.hatenablog.com/entry/2018/12/09/entity-value-object">https://little-hands.hatenablog.com/entry/2018/12/09/entity-value-object</a></p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+    <a href="https://pureone-tcy.github.io/doc-site/">
+    Top</a>
+    &nbsp;&nbsp;&nbsp;
+    
+        <a href="/doc-site/posts">back</a>
+        
+            &nbsp;&nbsp;&nbsp;
+        
+    
+
+    <a href="https://pureone-tcy.github.io/doc-site/posts">Posts</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/tags">Tags</a>
+      &nbsp;&nbsp;&nbsp;
+    <a href="https://pureone-tcy.github.io/doc-site/about">About Me</a>
+</p>
+
+</div>
+
+
+        <div class="section footer">&copy; 2018 pureone-tcy.</div>
+    </div>
+</body>
+
+</html>

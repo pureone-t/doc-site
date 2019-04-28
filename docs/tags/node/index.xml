@@ -6,6 +6,7 @@
     <description>Recent content in Node on doc site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 20 Apr 2019 13:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pureone-tcy.github.io/doc-site/tags/node/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,10 +14,10 @@
     <item>
       <title>Node.js</title>
       <link>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 20 Apr 2019 13:00:00 +0900</pubDate>
       
       <guid>https://pureone-tcy.github.io/doc-site/posts/frontend/node/00001/</guid>
-      <description></description>
+      <description>Node.js  Server Side js GoogleのV8 JavaScriptエンジンを使って構築されたサーバーサイドのJavaScriptプラットフォーム サーバアプリケーションをJavaScript言語で開発するためのプラットフォーム  特徴  Conceput : Scalable Network / Easy Building Fast イベントループ  1つのスレッドでイベントを管理 (シングルスレッド)  ノンブロッキングI/O  ブロックのないイベントループ Google V8 JavaScript エンジンによって実現   使い所  リアルタイムWEB チャットシステム ゲーム  バージョンについて  通常使用する場合は、推奨版は先頭の数字が偶数のバージョンを使用する 最新版のように先頭が奇数のバージョンは、新機能追加時の検証バージョンである  基本 モジュールとパッケージ  Node.jsでは、JavaScriptで記述されたファイルのことをモジュールという モジュール群をディレクトリにまとめたものをパッケージという パッケージ公開サイトとして Node Packaged Modules がある 公式サイトで紹介されているサードパーティ製モジュール  npm Exress Connect Socket.io HTML5 mDNS/Zeroconf/Bonjour RabbitMQ/AMQP &amp;hellip; https://www.npmjs.com/   npm(node package manager)  Node.</description>
     </item>
     
   </channel>

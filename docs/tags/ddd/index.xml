@@ -13,11 +13,11 @@
     
     <item>
       <title>DDD</title>
-      <link>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</link>
+      <link>https://pureone-tcy.github.io/doc-site/posts/design/00002/</link>
       <pubDate>Fri, 25 Jan 2019 15:00:00 +0900</pubDate>
       
-      <guid>https://pureone-tcy.github.io/doc-site/posts/common/design/00002/</guid>
-      <description>ドメイン駆動設計(DDD) https://www.slideshare.net/TakuyaKitamura1/ddd-29003356 e - モデルを中心とした設計・開発手法 - ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する - ドメインモデルをユビキタス言語として共有化 - ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む
+      <guid>https://pureone-tcy.github.io/doc-site/posts/design/00002/</guid>
+      <description>ドメイン駆動設計(DDD) https://www.slideshare.net/TakuyaKitamura1/ddd-29003356 - モデルを中心とした設計・開発手法 - ドメインエキスパートと共同でドメイン知識を抽象化したドメインモデルを作成する - ドメインモデルをユビキタス言語として共有化 - ユビキタス言語化されたドメインモデルをそのまま実装に落とし込む
 モデルの構成要素 モデルの表現  Entities Value Object Service  モデルのライフサイクル  Aggregates Factories Repositories  Entities 抽象的な連続性と同一性  固有のIDを持つ 分散環境、永続化前後でも追跡可能  属性(状態)に左右されない同一性  連続性を保証するIDは、オブジェクトの属性値に左右されない 属性値が全て同じでもIDが異なれば別のもの 属性値が異なっていてもIDが同じであれば同じもの 同一性の判断とライフサイクルは、モデル毎に個別の設計にする  具体例  顧客、口座、注文、在庫&amp;hellip;etc  Value Objects 連続性と同一性が不要なオブジェクト  属性がどんな値であるかに焦点を置かれるもの 一過性のことも多く、操作のために生成されては破棄される 状態を変更できないもの(immutable)  他の何らかの状態を記述する属性となる  何であるかだけが問題となり、誰であるか、あるいはどれであるかは問われないような設計の要素 エンティティの属性として使用される  具体例  色、量、地域、経路&amp;hellip;etc  Service TODO Entity や Value　Object には不自然な操作  操作であり状態を持たない  EntityとValueObjectのコントローラー サービスはドメイン層のものだけではない todo https://little-hands.</description>
     </item>
     

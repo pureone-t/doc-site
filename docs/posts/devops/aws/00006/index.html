@@ -49,18 +49,18 @@
     
     <title>
         
-        Kinesis
+        EMR
         
     </title>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="section" id="title">Kinesis</div>
+        <div class="section" id="title">EMR</div>
 
         
 <div class="section" id="content">
-    2018-11-05 (Mon) &#183; 30 words
+    2019-03-02 (Sat) &#183; 34 words
     
     <div class="tag-container">
         
@@ -75,17 +75,73 @@
     <hr/>
     
 
-<p><a href="https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb">https://qiita.com/oshiro/items/fac2bea668fb4e8c8cfb</a></p>
+<h1 id="デザインパターン">デザインパターン</h1>
 
-<h2 id="kinesis">Kinesis</h2>
+<h2 id="一時的クラスタ">一時的クラスタ</h2>
 
-<pre><code>$ export AWS_DEFAULT_PROFILE='pureone-worker'
-$ aws kinesis create-stream --stream-name kinesis-test-stream --shard-count 1
-$ aws kinesis describe-stream --stream-name kinesis-test-stream
-$ aws kinesis put-record --stream-name kinesis-test-stream --data hogehoge_$RANDOM --partition-key $RANDOM
-</code></pre>
+<ul>
+<li>ジョブが実行している間だけ動作する</li>
+<li>起動時間が短いため、コスト削減</li>
+<li>運用コスト削減</li>
+</ul>
 
-<h2 id="scala">Scala</h2>
+<h2 id="永続的クラスタ">永続的クラスタ</h2>
+
+<ul>
+<li>ジョブの実行に関係なく動作する</li>
+<li>複数ジョブでデータ共有</li>
+<li>一時的クラスタを何度も起動するケースに比べて、コスト削減できる場合がある</li>
+</ul>
+
+<h2 id="決め手">決め手</h2>
+
+<ul>
+<li>データロード時間</li>
+<li>処理時間</li>
+<li>ジョブ数</li>
+</ul>
+
+<h1 id="ノード仕様">ノード仕様</h1>
+
+<ul>
+<li>TODO</li>
+</ul>
+
+<h1 id="hadoop">Hadoop</h1>
+
+<p><a href="https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/">https://dev.classmethod.jp/cloud/aws/cmstudy-amazon-emr/</a></p>
+
+<ul>
+<li>巨大データをバッチ処理する並列分散処理基盤</li>
+<li>集中管理型の分散システムで、HDFSとMapReduceの2つのコンポーネントにより、並列分散処理を実現するミドルウェア</li>
+</ul>
+
+<h2 id="hdfs">HDFS</h2>
+
+<p>Hadoop Distributed File System</p>
+
+<ul>
+<li>分散ファイルシステム</li>
+<li>複数のサーバにファイルを分割して保持する</li>
+<li>そのため、巨大なファイルを保持することができる</li>
+<li>マスタースレーブ構成
+
+<ul>
+<li>複数のシステムが動作する環境下において、制御する側（マスター）と、制御される側（スレーブ）に役割を分担して構成される方式</li>
+</ul></li>
+<li>入力ファイルはブロックサイズで分割される（分割されたものをブロックという）</li>
+</ul>
+
+<h2 id="mapreduce">MapReduce</h2>
+
+<ul>
+<li>分散処理フレームワーク</li>
+<li>マスタースレーブ構成
+
+<ul>
+<li>1台のJobTracker、複数台のTaskTracker</li>
+</ul></li>
+</ul>
 
 </div>
 
